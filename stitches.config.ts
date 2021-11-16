@@ -1,4 +1,4 @@
-import { createStitches } from '@stitches/react';
+import { createStitches, ScaleValue } from '@stitches/react';
 
 import { h1, h2, h3, h4, h5, h6, body } from 'constants/typography';
 
@@ -98,6 +98,31 @@ const {
     bp3: '(min-width: 768px)',
     bp4: '(min-width: 1024px)',
   },
+  utils: {
+    p: (value: ScaleValue<"space">) => ({
+      padding: value,
+    }),
+    pt: (value: ScaleValue<"space">) => ({
+      paddingTop: value,
+    }),
+    pr: (value: ScaleValue<"space">) => ({
+      paddingRight: value,
+    }),
+    pb: (value: ScaleValue<"space">) => ({
+      paddingBottom: value,
+    }),
+    pl: (value: ScaleValue<"space">) => ({
+      paddingLeft: value,
+    }),
+    px: (value: ScaleValue<"space">) => ({
+      paddingLeft: value,
+      paddingRight: value,
+    }),
+    py: (value: ScaleValue<"space">) => ({
+      paddingTop: value,
+      paddingBottom: value,
+    }),
+  }
 });
 
 export {
