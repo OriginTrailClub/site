@@ -81,6 +81,16 @@ const {
       "text-body": "#404553",
       "text-subtle": "#687682",
     },
+    space: {
+      none: "0px",
+      "xx-small": "2px",
+      "x-small": "4px",
+      small: "8px",
+      regular: "16px",
+      large: "32px",
+      "x-large": "64px",
+      "xx-large": "128px",
+    },
   },
   media: {
     bp1: '(min-width: 480px)',
