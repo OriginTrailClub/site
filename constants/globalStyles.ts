@@ -1,5 +1,7 @@
 import { globalCss } from 'stitches.config';
 
+import { body } from 'constants/typography';
+
 // Linearly Scale font-size with CSS clamp() Based on the Viewport
 // Based on: https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
 const createBaseFontSize = () => ({
@@ -32,6 +34,8 @@ export const globalStyles = globalCss({
     color: '$text-body',
     '-webkit-font-smoothing': 'antialiased',
     '-moz-osx-font-smoothing': 'grayscale',
+    fontSize: body.fontSize,
+    lineHeight: body.lineHeight,
   },
   '#__next': {
     minHeight: '100%',
