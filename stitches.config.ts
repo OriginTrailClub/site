@@ -35,6 +35,7 @@ const {
       'header-5': h5.lineHeight as string,
       'header-6': h6.lineHeight as string,
       body: body.lineHeight as string,
+      'none': 1,
     },
     fontWeights: {
       'extra-bold': 800,
