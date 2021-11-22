@@ -19,7 +19,7 @@ export interface VisuallyHiddenProps {
   /**
    * Hidden content, which can be detected by a screen reader
    */
-   children: React.ReactNode;
+  children: React.ReactNode;
 }
 
 /**
