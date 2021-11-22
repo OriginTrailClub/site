@@ -6,7 +6,7 @@ import { body } from 'constants/typography';
 // Based on: https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
 const createBaseFontSize = () => ({
   '$$min-fs': 1,
-  '$$max-fs': 1.25,
+  '$$max-fs': 1.4,
   '$$min-vw': 20,
   '$$max-vw': 45,
 
