@@ -10,9 +10,7 @@ import { Grid } from 'components/Grid';
 
 import { Button } from 'components/Button';
 
-import { IntroductionBlock } from 'layouts/Blocks/IntroductionBlock';
-
-console.log(IntroductionBlock);
+import { PageIntroBlock } from 'layouts/Blocks/PageIntroBlock';
 
 const Home: NextPage = () => {
   return (
@@ -30,34 +28,34 @@ const Home: NextPage = () => {
         <OverviewLayout.Content>
           <Grid>
             <Grid.Item>
-              <IntroductionBlock>
-                <IntroductionBlock.Content>
-                  <IntroductionBlock.Title>
+              <PageIntroBlock>
+                <PageIntroBlock.Content>
+                  <PageIntroBlock.Title>
                     The world’s first Decentralized Knowledge Graph️
-                  </IntroductionBlock.Title>
-                  <IntroductionBlock.Description>
+                  </PageIntroBlock.Title>
+                  <PageIntroBlock.Description>
                     OriginTrail is a neutral web3 protocol in which you can
                     organize your most important assets making them discoverable
                     and verifiable using a groundbreaking decentralized
                     knowledge graph.
-                  </IntroductionBlock.Description>
-                  <IntroductionBlock.Actions>
-                    <IntroductionBlock.Action
+                  </PageIntroBlock.Description>
+                  <PageIntroBlock.Actions>
+                    <PageIntroBlock.Action
                       label="How it works"
                       Icon={PlayLineIcon}
                     />
-                    <IntroductionBlock.Action
+                    <PageIntroBlock.Action
                       variant="tertiary"
                       label="Start Learning"
                       Icon={PlayLineIcon}
                     />
-                  </IntroductionBlock.Actions>
-                </IntroductionBlock.Content>
-                <IntroductionBlock.Image
+                  </PageIntroBlock.Actions>
+                </PageIntroBlock.Content>
+                <PageIntroBlock.Image
                   src="/home/introduction.jpg"
                   alt="The world’s first Decentralized Knowledge Graph️"
                 />
-              </IntroductionBlock>
+              </PageIntroBlock>
             </Grid.Item>
             <Grid.Item>Metrics</Grid.Item>
             <Grid.Group>

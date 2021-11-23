@@ -1,15 +1,15 @@
 import * as React from 'react';
 
-import * as Styles from './IntroductionBlockImage.styles';
+import * as Styles from './PageIntroBlockImage.styles';
 
 import Image from 'next/image';
 
-export interface IntroductionBlockImageProps {
+export interface PageIntroBlockImageProps {
   src: string;
   alt: string;
 }
 
-export function IntroductionBlockImage(props: IntroductionBlockImageProps) {
+export function PageIntroBlockImage(props: PageIntroBlockImageProps) {
   const { src, alt } = props;
 
   return (

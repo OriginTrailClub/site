@@ -1,12 +1,12 @@
 import { Paragraph, ParagraphProps } from 'components/Typography';
 
-export type IntroductionBlockDescriptionProps = Pick<
+export type PageIntroBlockDescriptionProps = Pick<
   ParagraphProps,
   'children'
 >;
 
-export function IntroductionBlockDescription(
-  props: IntroductionBlockDescriptionProps
+export function PageIntroBlockDescription(
+  props: PageIntroBlockDescriptionProps
 ) {
   const { children } = props;
 

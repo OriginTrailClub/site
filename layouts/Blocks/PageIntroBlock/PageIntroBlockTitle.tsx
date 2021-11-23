@@ -1,10 +1,10 @@
 import { Heading, HeadingProps } from 'components/Typography';
 
-import * as Styles from './IntroductionBlockTitle.styles';
+import * as Styles from './PageIntroBlockTitle.styles';
 
-export type IntroductionBlockTitleProps = Pick<HeadingProps, 'children'>;
+export type PageIntroBlockTitleProps = Pick<HeadingProps, 'children'>;
 
-export function IntroductionBlockTitle(props: HeadingProps) {
+export function PageIntroBlockTitle(props: HeadingProps) {
   const { children } = props;
   return (
     <header className={Styles.container()}>

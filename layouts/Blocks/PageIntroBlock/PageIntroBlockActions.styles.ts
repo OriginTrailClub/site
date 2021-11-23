@@ -1,6 +1,6 @@
 import { css } from 'stitches.config';
 
-import * as IntroductionBlockActionStyles from './IntroductionBlockAction.styles';
+import * as PageIntroBlockActionStyles from './PageIntroBlockAction.styles';
 
 export const container = css({
   display: 'flex',
@@ -11,7 +11,7 @@ export const container = css({
   justifyContent: 'center',
   maxWidth: 'calc(100% - $small)',
 
-  [`& > .${IntroductionBlockActionStyles.container}`]: {
+  [`& > .${PageIntroBlockActionStyles.container}`]: {
     margin: 'calc($small / 2)',
   },
 });
