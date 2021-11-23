@@ -6,7 +6,7 @@ export const container = css({
   display: 'flex',
   width: 'auto',
   margin: 'calc(-$small / 2)',
-  marginTop: 'calc($large - $small)',
+  marginTop: 'calc($large + $small)',
   flexWrap: 'wrap',
   justifyContent: 'center',
   maxWidth: 'calc(100% - $small)',
