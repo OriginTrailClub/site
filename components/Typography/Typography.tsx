@@ -3,8 +3,6 @@ import { Heading, HeadingProps } from './Heading';
 
 import { styled } from 'stitches.config';
 
-import { h1, h2, h3, h4, h5, content } from 'constants/typography';
-
 type TypographyElement = React.ReactElement<
   ParagraphProps | HeadingProps
 > | null;
@@ -18,23 +16,23 @@ const TypographyContainer = styled('div', {
 
   [`& ${Heading}`]: {
     '&[data-level="1"]': {
-      marginBottom: h1.marginBottom,
+      marginBottom: 0,
     },
     '&[data-level="2"]': {
-      marginBottom: h2.marginBottom,
+      marginBottom: 0,
     },
     '&[data-level="3"]': {
-      marginBottom: h3.marginBottom,
+      marginBottom: 0,
     },
     '&[data-level="4"]': {
-      marginBottom: h4.marginBottom,
+      marginBottom: 0,
     },
     '&[data-level="5"]': {
-      marginBottom: h5.marginBottom,
+      marginBottom: 0,
     },
   },
   [`& ${Paragraph}`]: {
-    marginBottom: content.marginBottom,
+    marginBottom: 0,
   },
 });
 
