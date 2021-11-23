@@ -1,9 +1,6 @@
 import { Paragraph, ParagraphProps } from 'components/Typography';
 
-export type PageIntroBlockDescriptionProps = Pick<
-  ParagraphProps,
-  'children'
->;
+export type PageIntroBlockDescriptionProps = Pick<ParagraphProps, 'children'>;
 
 export function PageIntroBlockDescription(
   props: PageIntroBlockDescriptionProps

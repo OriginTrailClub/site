@@ -13,12 +13,11 @@ type PageIntroBlockContentElements = React.ReactElement<
 >;
 
 export interface PageIntroBlockContentProps {
-  children:
-    | PageIntroBlockContentElements
-    | PageIntroBlockContentElements[];
+  children: PageIntroBlockContentElements | PageIntroBlockContentElements[];
 }
 
 export function PageIntroBlockContent(props: PageIntroBlockContentProps) {
   const { children } = props;
+
   return <div className={Styles.container()}>{children}</div>;
 }

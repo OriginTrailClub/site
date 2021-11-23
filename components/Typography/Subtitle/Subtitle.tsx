@@ -31,10 +31,7 @@ export const Subtitle = React.forwardRef(function Subtitle(
   const { children, ...otherProps } = props;
 
   return (
-    <SubtitleElement
-      {...filterDOMProps(otherProps)}
-      ref={ref}
-    >
+    <SubtitleElement {...filterDOMProps(otherProps)} ref={ref}>
       {children}
     </SubtitleElement>
   );

@@ -6,9 +6,7 @@ import * as Styles from './PageIntroBlockActions.styles';
 type PageIntroBlockActionsElements = React.ReactElement<PageIntroBlockActionProps>;
 
 export interface PageIntroBlockActionsProps {
-  children:
-    | PageIntroBlockActionsElements
-    | PageIntroBlockActionsElements[];
+  children: PageIntroBlockActionsElements | PageIntroBlockActionsElements[];
 }
 
 export function PageIntroBlockActions(props: PageIntroBlockActionsProps) {
