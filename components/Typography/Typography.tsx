@@ -5,7 +5,9 @@ import { styled } from 'stitches.config';
 
 import { h1, h2, h3, h4, h5, content } from 'constants/typography';
 
-type TypographyElement = React.ReactElement<ParagraphProps | HeadingProps>;
+type TypographyElement = React.ReactElement<
+  ParagraphProps | HeadingProps
+> | null;
 
 export interface TypographyProps {
   children: TypographyElement | TypographyElement[];
