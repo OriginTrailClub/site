@@ -18,12 +18,11 @@ import {
 import * as Styles from './Button.styles';
 
 export interface ButtonProps<T extends React.ElementType = 'button'>
-  extends
-  ReactAriaAriaBaseButtonProps,
-  Omit<ReactAriaButtonProps, 'children' | 'isDisabled'>,
-  ReactAriaLinkButtonProps<T> {
+  extends ReactAriaAriaBaseButtonProps,
+    Omit<ReactAriaButtonProps, 'children' | 'isDisabled'>,
+    ReactAriaLinkButtonProps<T> {
   /** */
-  as?: T | React.JSXElementConstructor<any>
+  as?: T | React.JSXElementConstructor<any>;
   /**
    * Textual label for button
    */
@@ -37,9 +36,9 @@ export interface ButtonProps<T extends React.ElementType = 'button'>
    * @default false
    */
   hideLabel?: boolean;
-  /** 
-   * The visual style of the Button 
-   * @default 'primary' 
+  /**
+   * The visual style of the Button
+   * @default 'primary'
    */
   variant?: 'primary' | 'secondary' | 'tertiary';
 }
@@ -50,12 +49,23 @@ export interface ButtonProps<T extends React.ElementType = 'button'>
  * to get the attention of a user when they need to do something or to move
  * further in the flow.
  */
-export const Button = React.forwardRef(function _Button<T extends React.ElementType = 'button'>(props: ButtonProps<T>, forwardRef: React.ForwardedRef<HTMLButtonElement>) {
-  const ref = useObjectRef(forwardRef)
+export const Button = React.forwardRef(function _Button<
+  T extends React.ElementType = 'button'
+>(props: ButtonProps<T>, forwardRef: React.ForwardedRef<HTMLButtonElement>) {
+  const ref = useObjectRef(forwardRef);
 
-  const { as: ElementType = 'button', Icon, label, hideLabel = false, variant } = props;
+  const {
+    as: ElementType = 'button',
+    Icon,
+    label,
+    hideLabel = false,
+    variant,
+  } = props;
 
-  const { buttonProps } = useButton({ elementType: ElementType, ...props }, ref);
+  const { buttonProps } = useButton(
+    { elementType: ElementType, ...props },
+    ref
+  );
   const { hoverProps } = useHover({});
 
   return (

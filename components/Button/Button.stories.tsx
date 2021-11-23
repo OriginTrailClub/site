@@ -1,6 +1,6 @@
 import { Meta, Story } from '@storybook/react';
 
-import ArrowRightFillIcon from "remixicon-react/ArrowRightFillIcon";
+import ArrowRightFillIcon from 'remixicon-react/ArrowRightFillIcon';
 
 import { Button, ButtonProps } from './Button';
 
