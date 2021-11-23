@@ -19,6 +19,7 @@ export interface HeadingProps extends DOMProps {
 
 export const HeadingElement = styled('h1', {
   fontFamily: '$header',
+  color: '$text-header',
   margin: 0,
 
   variants: {
@@ -26,27 +27,32 @@ export const HeadingElement = styled('h1', {
       1: {
         fontWeight: '$extra-bold',
         fontSize: '$header-1',
-        lineHeight: '$header-1',
+        lineHeight: '$header',
       },
       2: {
         fontWeight: '$bold',
         fontSize: '$header-2',
-        lineHeight: '$header-2',
+        lineHeight: '$header',
       },
       3: {
         fontWeight: '$semi-bold',
         fontSize: '$header-3',
-        lineHeight: '$header-3',
+        lineHeight: '$header',
       },
       4: {
         fontWeight: '$semi-bold',
         fontSize: '$header-4',
-        lineHeight: '$header-4',
+        lineHeight: '$header',
       },
       5: {
         fontWeight: '$medium',
         fontSize: '$header-5',
-        lineHeight: '$header-5',
+        lineHeight: '$header',
+      },
+      6: {
+        fontWeight: '$medium',
+        fontSize: '$header-6',
+        lineHeight: '$header',
       },
     },
   },
