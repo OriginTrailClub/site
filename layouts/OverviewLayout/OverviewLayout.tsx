@@ -15,7 +15,7 @@ import {
   OverviewLayoutFooterProps,
 } from './OverviewLayoutFooter';
 
-type OverViewLayoutElement = React.ReactElement<
+type OverviewLayoutElements = React.ReactElement<
   | OverviewLayoutHeaderProps
   | OverviewLayoutContentProps
   | OverviewLayoutFooterProps
@@ -25,7 +25,7 @@ export interface OverviewLayoutProps {
   /**
    * React elements which are either OverviewLayout.Header, OverviewLayout.Content or OverviewLayout.Footer
    */
-  children: OverViewLayoutElement | OverViewLayoutElement[];
+  children: OverviewLayoutElements | OverviewLayoutElements[];
   /**
    * Page title
    */
