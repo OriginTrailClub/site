@@ -15,7 +15,7 @@ export interface ParagraphProps extends DOMProps {
    * Set text style, intro, default or compact
    * @default default
    */
-  variant: 'intro' | 'default' | 'compact',
+  variant: 'intro' | 'default' | 'compact';
 }
 
 const ParagraphElement = styled('p', {
@@ -33,9 +33,9 @@ const ParagraphElement = styled('p', {
       },
       compact: {
         fontSize: '$body-compact',
-      }
-    }
-  }
+      },
+    },
+  },
 });
 
 /**
@@ -48,8 +48,12 @@ export const Paragraph = React.forwardRef(function Paragraph(
   const { children, variant, ...otherProps } = props;
 
   return (
-    <ParagraphElement {...filterDOMProps(otherProps)} variant={variant} data-variant={variant}
-      ref={ref}>
+    <ParagraphElement
+      {...filterDOMProps(otherProps)}
+      variant={variant}
+      data-variant={variant}
+      ref={ref}
+    >
       {children}
     </ParagraphElement>
   );

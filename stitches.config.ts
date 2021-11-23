@@ -25,20 +25,20 @@ const {
       'header-3': '1.4375rem',
       'header-4': '1.1875rem',
 
-      'subtitle': '0.9375rem',
+      subtitle: '0.9375rem',
 
       'body-intro': '1.3125rem',
       'body-default': '1.0625rem',
       'body-compact': '0.9375rem',
 
-      'button': '1rem',
+      button: '1rem',
 
-      'caption': '0.75rem',
-      'cell': '0.75rem',
+      caption: '0.75rem',
+      cell: '0.75rem',
     },
     lineHeights: {
-      'header': 1.2,
-      'body': 1.5,
+      header: 1.2,
+      body: 1.5,
       none: 1,
     },
     fontWeights: {
