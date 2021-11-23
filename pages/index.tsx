@@ -3,14 +3,14 @@ import Head from 'next/head';
 
 import BankFillIcon from 'remixicon-react/BankFillIcon';
 import PlayLineIcon from 'remixicon-react/PlayLineIcon';
+import ArrowRightFillIcon from 'remixicon-react/ArrowRightFillIcon';
 
 import { OverviewLayout } from 'layouts/OverviewLayout';
+import { PageIntroBlock } from 'layouts/Blocks/PageIntroBlock';
+import { IntroBlock } from 'layouts/Blocks/IntroBlock';
 
 import { Grid } from 'components/Grid';
-
 import { Button } from 'components/Button';
-
-import { PageIntroBlock } from 'layouts/Blocks/PageIntroBlock';
 
 const Home: NextPage = () => {
   return (
@@ -59,27 +59,113 @@ const Home: NextPage = () => {
             </Grid.Item>
             <Grid.Item>Metrics</Grid.Item>
             <Grid.Group>
-              <Grid.Item>Content</Grid.Item>
+              <Grid.Item>
+                <IntroBlock>
+                  <IntroBlock.Subtitle>
+                    Harnessing Neutrality, Inclusiveness & Usability
+                  </IntroBlock.Subtitle>
+                  <IntroBlock.Title>
+                    Helping the world unlock the true potential of data assets
+                  </IntroBlock.Title>
+                  <IntroBlock.Description>
+                    Organize, discover and verify anything - from physical to
+                    digital assets like supply chain items to Art, Diplomas,
+                    Certificates, NFTs, DeFi and more. The Decentralized
+                    Knowledge Graph allows the worlds’ data assets to be
+                    structured, linked, persistent and understandable.
+                  </IntroBlock.Description>
+                  <IntroBlock.Action
+                    label="Why OriginTrail?"
+                    Icon={ArrowRightFillIcon}
+                  />
+                </IntroBlock>
+              </Grid.Item>
               <Grid.Item>Solutions</Grid.Item>
             </Grid.Group>
             <Grid.Group>
-              <Grid.Item>Content</Grid.Item>
+              <Grid.Item>
+                <IntroBlock>
+                  <IntroBlock.Subtitle>
+                    A blockchain agnostic, multi-chain protocol
+                  </IntroBlock.Subtitle>
+                  <IntroBlock.Title>
+                    The data backbone of web3,build for global use
+                  </IntroBlock.Title>
+                  <IntroBlock.Description>
+                    OrginTrail protocol has been used to create robust
+                    decentralized applications in nearly every industry
+                  </IntroBlock.Description>
+                </IntroBlock>
+              </Grid.Item>
               <Grid.Item>UseCases</Grid.Item>
             </Grid.Group>
             <Grid.Group>
-              <Grid.Item>Content</Grid.Item>
+              <Grid.Item>
+                <IntroBlock>
+                  <IntroBlock.Subtitle>
+                    A blockchain agnostic, multi-chain protocol
+                  </IntroBlock.Subtitle>
+                  <IntroBlock.Title>
+                    A global and permissionless network of nodes
+                  </IntroBlock.Title>
+                  <IntroBlock.Description>
+                    The OriginTrail Decentralized Network (ODN) is a global
+                    peer-to-peer network that is permissionless and
+                    decentralized. The protocol combines knowledge graph and
+                    blockchain technology and is build with interoperability and
+                    global standards in mind.
+                  </IntroBlock.Description>
+                  <IntroBlock.Action
+                    label="How it works"
+                    Icon={ArrowRightFillIcon}
+                  />
+                </IntroBlock>
+              </Grid.Item>
               <Grid.Item>Timeline</Grid.Item>
               <Grid.Item>Article</Grid.Item>
               <Grid.Item>Participants</Grid.Item>
             </Grid.Group>
             <Grid.Group>
-              <Grid.Item>Content</Grid.Item>
+              <Grid.Item>
+                <IntroBlock>
+                  <IntroBlock.Subtitle>
+                    Harnessing Neutrality, Inclusiveness & Usability
+                  </IntroBlock.Subtitle>
+                  <IntroBlock.Title>
+                    Helping the world unlock the true potential of data assets
+                  </IntroBlock.Title>
+                  <IntroBlock.Description>
+                    Organize, discover and verify anything - from physical to
+                    digital assets like supply chain items to Art, Diplomas,
+                    Certificates, NFTs, DeFi and more. The Decentralized
+                    Knowledge Graph allows the worlds’ data assets to be
+                    structured, linked, persistent and understandable.
+                  </IntroBlock.Description>
+                  <IntroBlock.Action
+                    label="How it works"
+                    Icon={ArrowRightFillIcon}
+                  />
+                </IntroBlock>
+              </Grid.Item>
               <Grid.Item>Products</Grid.Item>
               <Grid.Item>Quotes</Grid.Item>
               <Grid.Item>Companies</Grid.Item>
             </Grid.Group>
             <Grid.Group>
-              <Grid.Item>Content</Grid.Item>
+              <Grid.Item>
+                <IntroBlock>
+                  <IntroBlock.Subtitle>Tracers unite!</IntroBlock.Subtitle>
+                  <IntroBlock.Title>
+                    Join our vibrant community today
+                  </IntroBlock.Title>
+                  <IntroBlock.Description>
+                    OriginTrail is not a company. It is an ecosystem in which
+                    everyone can contribute. We are connected on so many levels.
+                    Let’s collaborate, learn, contribute, and spread the word.
+                    Together.
+                  </IntroBlock.Description>
+                </IntroBlock>
+              </Grid.Item>
               <Grid.Item>Socials</Grid.Item>
             </Grid.Group>
           </Grid>
