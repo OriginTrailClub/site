@@ -2,7 +2,7 @@ import { css } from 'stitches.config';
 
 export const label = css({
   color: 'currentColor',
-  fontSize: '$body',
+  fontSize: '$button',
   fontFamily: '$mono',
   fontWeight: '$semi-bold',
   lineHeight: '$none',
@@ -17,8 +17,8 @@ export const icon = css({
   color: 'currentColor',
   display: 'flex',
   alignItems: 'center',
-  width: '$fontSizes$body',
-  height: '$fontSizes$body',
+  width: '$fontSizes$button',
+  height: '$fontSizes$button',
 });
 
 export const container = css({
