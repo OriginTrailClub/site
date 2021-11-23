@@ -85,6 +85,7 @@ const {
       'text-header': '#171A23',
       'text-body': '#404553',
       'text-subtle': '#687682',
+      'text-emphasis': '$indigo-600',
     },
     space: {
       none: '0px',
