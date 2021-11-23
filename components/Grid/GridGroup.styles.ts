@@ -1,6 +1,6 @@
 import { css } from 'stitches.config';
 
-export const gridGroup = css({
+export const container = css({
   display: 'grid',
   gap: '$regular',
   py: '$regular',

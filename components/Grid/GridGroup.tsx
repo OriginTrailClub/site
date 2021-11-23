@@ -18,7 +18,7 @@ export function GridGroup(props: GridGroupProps) {
   const { children } = props;
 
   return (
-    <section {...props} className={Styles.gridGroup()}>
+    <section {...props} className={Styles.container()}>
       {children}
     </section>
   );

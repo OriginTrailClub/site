@@ -17,7 +17,7 @@ export function Grid(props: GridProps) {
   const { children } = props;
 
   return (
-    <main {...props} className={Styles.grid()}>
+    <main {...props} className={Styles.container()}>
       {children}
     </main>
   );
