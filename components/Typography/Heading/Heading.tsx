@@ -9,16 +9,17 @@ export interface HeadingProps extends DOMProps {
   /**
    * Heading content
    */
-  children: React.ReactNode;
+  children: string;
   /**
    * Sets heading level, h1 through h5
    * @default 3
    */
-  level?: 1 | 2 | 3 | 4 | 5;
+  level?: 1 | 2 | 3 | 4;
 }
 
 export const HeadingElement = styled('h1', {
   fontFamily: '$header',
+  lineHeight: '$header',
   color: '$text-header',
   margin: 0,
 
@@ -27,32 +28,18 @@ export const HeadingElement = styled('h1', {
       1: {
         fontWeight: '$extra-bold',
         fontSize: '$header-1',
-        lineHeight: '$header',
       },
       2: {
         fontWeight: '$bold',
         fontSize: '$header-2',
-        lineHeight: '$header',
       },
       3: {
         fontWeight: '$semi-bold',
         fontSize: '$header-3',
-        lineHeight: '$header',
       },
       4: {
         fontWeight: '$semi-bold',
         fontSize: '$header-4',
-        lineHeight: '$header',
-      },
-      5: {
-        fontWeight: '$medium',
-        fontSize: '$header-5',
-        lineHeight: '$header',
-      },
-      6: {
-        fontWeight: '$medium',
-        fontSize: '$header-6',
-        lineHeight: '$header',
       },
     },
   },
