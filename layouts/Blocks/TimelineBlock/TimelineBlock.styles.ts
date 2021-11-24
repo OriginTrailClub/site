@@ -1,5 +1,7 @@
 import { css } from 'stitches.config';
 
+import * as TimeLineBlockEventStyles from './TimelineBlockEvent.styles';
+
 export const container = css({
   display: 'flex',
   flexDirection: 'column',
@@ -16,30 +18,50 @@ export const contents = css({
 });
 
 export const events = css({
+  $$eventCount: 0,
+
+  $$gap: '$space$large',
+
+  $$eventSize: 'max(10vw, min(150px, 200px))',
+  
+  $$scrollPadding: 'calc((100vw - $$eventSize) / 2)',
+  $$scrollPaddingLeft: '$$scrollPadding',
+  $$scrollPaddingRight: '$$scrollPadding',
+  
+  display: 'grid',
+  gridTemplateColumns: '$$scrollPaddingLeft repeat($$eventCount, $$eventSize) $$scrollPaddingRight',
+  gridTemplateRows: '1fr',
+  gridAutoFlow: 'column',
   margin: 0,
   padding: 0,
-  display: 'grid',
-  flexDirection: 'row',
-  listStyleType: 'none',
-  gridTemplateRows: '1fr',
-  gridAutoColumns: 'minmax(0, 1fr)',
-  gridAutoFlow: 'column',
-  gridGap: '$large',
-  px: '$regular',
-  flexShrink: 0,
-});
 
-export const scrollArea = css({
+  '&:before, &:after': {
+      content: '',
+  },
+
   overflowX: 'auto',
   overflowY: 'hidden',
-  display: 'flex',
-  justifyContent: 'center',
-  WebkitOverflowScrolling: 'touch',
-});
+  scrollSnapType: 'x proximity',
 
-export const scrollContent = css({
-  width: 'auto',
-  display: 'flex',
+  // Hide scrollbar
+  MsOverflowStyle: 'none',
+  scrollbarWidth: 'none',
+  '&::-webkit-scrollbar': {
+    display: 'none',
+  },
+
+  '@bp2': {
+    $$scrollPadding: 'calc($space$regular - $space$small)',
+  },
+
+  [`.${TimeLineBlockEventStyles.container}`]: {
+      scrollSnapAlign: 'center',
+      px: '$small',
+
+      '@bp2': {
+          scrollSnapAlign: 'start'
+      },
+  }
 });
 
 export const line = css({
