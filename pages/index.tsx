@@ -8,6 +8,7 @@ import ArrowRightFillIcon from 'remixicon-react/ArrowRightFillIcon';
 import { OverviewLayout } from 'layouts/OverviewLayout';
 import { PageIntroBlock } from 'layouts/Blocks/PageIntroBlock';
 import { IntroBlock } from 'layouts/Blocks/IntroBlock';
+import { TimelineBlock } from 'layouts/Blocks/TimelineBlock';
 
 import { Grid } from 'components/Grid';
 import { Button } from 'components/Button';
@@ -121,7 +122,29 @@ const Home: NextPage = () => {
                   />
                 </IntroBlock>
               </Grid.Item>
-              <Grid.Item>Timeline</Grid.Item>
+              <Grid.Item>
+                <TimelineBlock>
+                  <TimelineBlock.Event
+                    date={new Date(2018, 11, 7)}
+                    title="Ethereum"
+                    icon="/blockchain-timeline/ethereum.svg"
+                  />
+                  <TimelineBlock.Event
+                    date={new Date(2021, 2, 23)}
+                    title="Xdai"
+                    icon="/blockchain-timeline/xdai.svg"
+                  />
+                  <TimelineBlock.Event
+                    date={new Date(2021, 7, 26)}
+                    title="Polygon"
+                    icon="/blockchain-timeline/polygon.svg"
+                  />
+                  <TimelineBlock.Event
+                    title="Polkadot"
+                    icon="/blockchain-timeline/polkadot.svg"
+                  />
+                </TimelineBlock>
+              </Grid.Item>
               <Grid.Item>Article</Grid.Item>
               <Grid.Item>Participants</Grid.Item>
             </Grid.Group>
