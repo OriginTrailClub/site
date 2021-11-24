@@ -2,8 +2,8 @@ import { css } from 'stitches.config';
 
 export const container = css({
   display: 'grid',
-  gap: '$regular',
-  py: '$regular',
+  gap: '$x-large',
+  py: '$x-large',
   width: '100%',
   gridTemplateColumns: '1fr',
 });
