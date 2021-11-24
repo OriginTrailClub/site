@@ -29,7 +29,7 @@ interface IIntroBlockComposition {
 }
 
 export const IntroBlock: React.FC<IntroBlockProps> &
-  IIntroBlockComposition = function PageIntroBlock(props) {
+  IIntroBlockComposition = function IntroBlock(props) {
   const { children } = props;
 
   return (
