@@ -34,7 +34,6 @@ interface IOverviewLayoutComposition {
   Title: React.FC<ArticleBlockTitleProps>;
   Subtitle: React.FC<ArticleBlockSubtitleProps>;
   Description: React.FC<ArticleBlockDescriptionProps>;
-
   Action: React.FC<ArticleBlockActionProps>;
   Image: React.FC<ArticleBlockImageProps>;
 }
