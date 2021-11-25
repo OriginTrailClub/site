@@ -20,7 +20,7 @@ export const cases = css({
   $$useCaseSize: 'clamp(280px, 80%, 320px)',
   $$minUseCaseSize: '$$useCaseSize',
   $$maxUseCaseSize: '$$useCaseSize',
-  $$containerSize: '$$useCaseSize',
+  $$containerSize: '100%',
 
   $$scrollPadding:
     'max(calc((100% - $$containerSize) / 2), calc($space$regular / 2))',
