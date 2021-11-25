@@ -28,6 +28,6 @@ export const contents = css({
           "description    image"
           "action         image"`,
     gridTemplateColumns: '50% 50%',
-    gridTemplateRows: 'max-content max-content max-content 1fr',
+    gridTemplateRows: 'auto auto 1fr auto',
   },
 });
