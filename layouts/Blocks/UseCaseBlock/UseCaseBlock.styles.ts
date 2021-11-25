@@ -41,6 +41,8 @@ export const cases = css({
   overflowX: 'auto',
   overflowY: 'hidden',
 
+  scrollSnapType: 'x mandatory',
+
   // Hide scrollbar
   MsOverflowStyle: 'none',
   scrollbarWidth: 'none',
@@ -55,10 +57,19 @@ export const cases = css({
     content: '',
   },
 
+  [`& > .${UseCaseBlockCaseStyles.container}`]: {
+    scrollSnapAlign: 'center',
+    margin: 'calc($space$regular / 2)',
+  },
+
   '@bp3': {
     $$containerSize: 'min(100%, calc(1234px + $space$regular))',
     $$minUseCaseSize: 'calc(((100% - $$scrollPadding * 2) - $space$large) / $$maxColumnCount)',
     $$maxUseCaseSize: 'calc((100% - $$scrollPadding * 2) / $$maxColumnCount)',
+
+    [`& > .${UseCaseBlockCaseStyles.container}`]: {
+        scrollSnapAlign: 'center',
+    },
 
     '&:before': {
       gridColumnStart: 1,
@@ -78,9 +89,5 @@ export const cases = css({
 
   '@media(min-width: calc(1234px + $space$regular * 2 + $space$large))': {
     $$minUseCaseSize: '$$maxUseCaseSize',
-  },
-
-  [`& > .${UseCaseBlockCaseStyles.container}`]: {
-    margin: 'calc($space$regular / 2)',
   },
 });
