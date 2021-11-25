@@ -12,11 +12,11 @@ export const contents = css({
   display: 'grid',
 
   gridTemplateAreas: `
-        'subtitle'
-        'title'
-        'image'
-        'description'
-        'action'
+        "subtitle"
+        "title"
+        "image"
+        "description"
+        "action"
     `,
   gridTemplateColumns: '1fr',
   gridTemplateRows: 'auto auto',
