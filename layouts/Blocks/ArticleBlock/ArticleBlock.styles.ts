@@ -27,7 +27,7 @@ export const contents = css({
           "title          image"
           "description    image"
           "action         image"`,
-    gridTemplateColumns: '50% 50%',
+    gridTemplateColumns: '1fr 1fr',
     gridTemplateRows: 'auto auto 1fr auto',
   },
 });
