@@ -22,22 +22,22 @@ export const container = css({
   overflow: 'hidden',
 
   '&:nth-of-type(4n + 1)': {
-    $$circleColor: '$colors$cyan-200', 
+    $$circleColor: '$colors$cyan-200',
     $$circleOutlineColor: '$colors$cyan-300',
   },
 
   '&:nth-of-type(4n + 2)': {
-    $$circleColor: '$colors$gray-200', 
+    $$circleColor: '$colors$gray-200',
     $$circleOutlineColor: '$colors$gray-300',
   },
 
   '&:nth-of-type(4n + 3)': {
-    $$circleColor: '$colors$indigo-200', 
+    $$circleColor: '$colors$indigo-200',
     $$circleOutlineColor: '$colors$indigo-300',
   },
 
   '&:nth-of-type(4n + 4)': {
-    $$circleColor: '$colors$green-200', 
+    $$circleColor: '$colors$green-200',
     $$circleOutlineColor: '$colors$green-300',
   },
 
@@ -47,7 +47,7 @@ export const container = css({
     },
     '&:after': {
       borderColor: '$$circleOutlineColor',
-    }
+    },
   },
 
   '@bp3': {

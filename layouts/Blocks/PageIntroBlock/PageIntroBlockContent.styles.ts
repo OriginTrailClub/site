@@ -20,7 +20,7 @@ export const container = css({
 
     [`& > .${PageIntroBlockActionsStyles.container}`]: {
       justifyContent: 'center',
-    },  
+    },
   },
 
   '@bp4': {

@@ -4,7 +4,7 @@ export const inner = css({
   display: 'flex',
   maxWidth: 1234,
   width: '100%',
-})
+});
 
 export const contents = css({
   width: '100%',
@@ -19,8 +19,8 @@ export const contents = css({
   '@bp2': {
     alignItems: 'center',
     textAlign: 'center',
-    px: '$large',      
-  }
+    px: '$large',
+  },
 });
 
 export const container = css({
@@ -40,7 +40,7 @@ export const container = css({
 
         [`& > .${inner}`]: {
           justifyContent: 'center',
-        },      
+        },
       },
       left: {
         [`& > .${inner}`]: {
@@ -50,8 +50,8 @@ export const container = css({
           alignItems: 'flex-start',
           textAlign: 'left',
           px: '$none',
-        }
+        },
       },
-    }
-  }
+    },
+  },
 });

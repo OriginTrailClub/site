@@ -9,5 +9,5 @@ export const container = css({
 
   '@bp4': {
     py: '$xx-large',
-  }
+  },
 });

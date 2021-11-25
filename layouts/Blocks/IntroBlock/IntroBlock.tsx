@@ -20,7 +20,7 @@ type IntroBlockElements = React.ReactElement<
 export interface IntroBlockProps {
   children: IntroBlockElements | IntroBlockElements[];
 
-  align?: 'left' | 'center',
+  align?: 'left' | 'center';
 }
 
 interface IIntroBlockComposition {
@@ -32,18 +32,20 @@ interface IIntroBlockComposition {
 
 export const IntroBlock: React.FC<IntroBlockProps> &
   IIntroBlockComposition = function IntroBlock(props) {
-    const { children, align = 'center' } = props;
+  const { children, align = 'center' } = props;
 
-    return (
-      <div className={Styles.container({
+  return (
+    <div
+      className={Styles.container({
         align,
-      })}>
-        <div className={Styles.inner()}>
-          <div className={Styles.contents()}>{children}</div>
-        </div>
+      })}
+    >
+      <div className={Styles.inner()}>
+        <div className={Styles.contents()}>{children}</div>
       </div>
-    );
-  };
+    </div>
+  );
+};
 
 IntroBlock.Title = IntroBlockTitle;
 IntroBlock.Description = IntroBlockDescription;

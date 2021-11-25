@@ -64,11 +64,12 @@ export const cases = css({
 
   '@bp3': {
     $$containerSize: 'min(100%, calc(1234px + $space$regular))',
-    $$minUseCaseSize: 'calc(((100% - $$scrollPadding * 2) - $space$large) / $$maxColumnCount)',
+    $$minUseCaseSize:
+      'calc(((100% - $$scrollPadding * 2) - $space$large) / $$maxColumnCount)',
     $$maxUseCaseSize: 'calc((100% - $$scrollPadding * 2) / $$maxColumnCount)',
 
     [`& > .${UseCaseBlockCaseStyles.container}`]: {
-        scrollSnapAlign: 'center',
+      scrollSnapAlign: 'center',
     },
 
     '&:before': {
