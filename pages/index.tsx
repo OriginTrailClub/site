@@ -9,6 +9,14 @@ import { OverviewLayout } from 'layouts/OverviewLayout';
 import { PageIntroBlock } from 'layouts/Blocks/PageIntroBlock';
 import { IntroBlock } from 'layouts/Blocks/IntroBlock';
 import { TimelineBlock } from 'layouts/Blocks/TimelineBlock';
+import {
+  ArticleBlock,
+  ArticleBlockAction,
+  ArticleBlockDescription,
+  ArticleBlockImage,
+  ArticleBlockSubtitle,
+  ArticleBlockTitle,
+} from 'layouts/Blocks/ArticleBlock';
 
 import { Grid } from 'components/Grid';
 import { Button } from 'components/Button';
@@ -145,7 +153,31 @@ const Home: NextPage = () => {
                   />
                 </TimelineBlock>
               </Grid.Item>
-              <Grid.Item>Article</Grid.Item>
+              <Grid.Item>
+                <ArticleBlock>
+                  <ArticleBlockSubtitle>
+                    A self-sustaining, incentiviced network
+                  </ArticleBlockSubtitle>
+                  <ArticleBlockTitle>
+                    The four network participants
+                  </ArticleBlockTitle>
+                  <ArticleBlockImage
+                    src="/home/network-participants.jpg"
+                    alt="The four network participants"
+                  />
+                  <ArticleBlockDescription>
+                    The $TRAC token is a means of compensation between data
+                    creators, data holders, and data consumers. It uses an
+                    innovative staking system to keep all parties honest. Nodes
+                    are therefore incentivized for performing consensus checks
+                    and delivering data on demand.
+                  </ArticleBlockDescription>
+                  <ArticleBlockAction
+                    label="Token Utility"
+                    Icon={ArrowRightFillIcon}
+                  />
+                </ArticleBlock>
+              </Grid.Item>
               <Grid.Item>Participants</Grid.Item>
             </Grid.Group>
             <Grid.Group>
