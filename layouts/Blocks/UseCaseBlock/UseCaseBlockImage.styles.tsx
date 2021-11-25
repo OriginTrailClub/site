@@ -29,7 +29,9 @@ export const container = css({
     transform: 'scale(1.4)',
     paddingTop: 'calc(100% + $space$x-small * 2)',
     borderRadius: 9999,
-    border: '1px dashed $indigo-100',
+    borderWidth: 1,
+    borderStyle: 'dashed',
+    borderColor: '$indigo-200',
     zIndex: -1,
   },
 
