@@ -12,7 +12,7 @@ export const aspectRatioBox = css({
   position: 'relative',
 
   '@bp3': {
-    paddingTop: '50%' /* 100% = 2/1 asepct ratio */,
+    paddingTop: '%' /* 100% = 2/1 asepct ratio */,
   },
   '@bp4': {
     paddingTop: '60%' /* 75% = 3/2 asepct ratio */,
