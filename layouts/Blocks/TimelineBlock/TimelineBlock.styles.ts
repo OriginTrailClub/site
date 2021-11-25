@@ -11,44 +11,44 @@ export const container = css({
 });
 
 export const contents = css({
-  $$fadeSize: '$space$x-large',
-
   marginTop: '$large',
   display: 'flex',
   width: '100%',
   justifyContent: 'center',
 
-  '&:after': {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    content: '',
-    background:
-      'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) calc(0% + $$fadeSize), rgba(255,255,255,0) calc(100% - $$fadeSize), rgba(255,255,255,1) 100%)',
-    pointerEvents: 'none',
-  },
-
-  '@bp2': {
-    $$fadeSize: '$space$xx-large',
-  },
-
   '@bp4': {
-    maxWidth: ' min(90vw, 1600px)',
+    maxWidth: 'calc(1234px + $space$x-large)',
   },
+
+  '@media(min-width: calc(1234px + 64px))': {
+    $$fadeSize: '$space$x-large',
+
+    '&:after': {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        content: '',
+    
+        background:
+          'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) calc(0% + $$fadeSize), rgba(255,255,255,0) calc(100% - $$fadeSize), rgba(255,255,255,1) 100%)',
+        pointerEvents: 'none',
+      },    
+  }
 });
 
 export const events = css({
   $$eventCount: 0,
 
   $$gap: '$space$large',
+  $$fadeSize: 0,
 
   // Size of a single event
-  $$eventSize: 'max(140px, 30vw)',
+  $$eventSize: 'min(140px, calc(100% / 2.6))',
 
   // Padding inside the scroll container
-  $$scrollPadding: 'calc((100vw - $$eventSize) / 2)',
+  $$scrollPadding: 'max(calc($$gap / 2), calc((100% - ($$gap / 2 + $$eventCount * $$eventSize)) / 2))',
   $$scrollPaddingLeft: '$$scrollPadding',
   $$scrollPaddingRight: '$$scrollPadding',
 
@@ -59,17 +59,17 @@ export const events = css({
   gridAutoFlow: 'column',
   margin: 0,
   padding: 0,
-
-  '&:before, &:after': {
-    content: '',
-  },
+  width: '100%',
 
   overflowX: 'auto',
   overflowY: 'hidden',
   scrollSnapType: 'x mandatory',
 
+  '&:before, &:after': {
+    content: '',
+  },
+
   '@bp2': {
-    $$scrollPadding: 'calc(($$fadeSize) + $space$regular - $space$small)',
     $$eventSize: 'max(180px, 15vw)',
   },
 
