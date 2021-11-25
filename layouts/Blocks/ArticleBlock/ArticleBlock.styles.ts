@@ -19,7 +19,6 @@ export const contents = css({
         "action"
     `,
   gridTemplateColumns: '1fr',
-  gridTemplateRows: 'auto auto',
   columnGap: '$large',
 
   '@bp4': {
