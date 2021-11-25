@@ -71,6 +71,17 @@ const {
       'green-800': '#065F46',
       'green-900': '#064E3B',
 
+      'cyan-50': '#F0FAFD',
+      'cyan-100': '#CFF1F7',
+      'cyan-200': '#ACE7F1',
+      'cyan-300': '#A4E3EF',
+      'cyan-400': '#5BCDE2',
+      'cyan-500': '#2BBBD8',
+      'cyan-600': '#00A6C7',
+      'cyan-700': '#008BA8',
+      'cyan-800': '#006C81',
+      'cyan-900': '#003D48',
+
       'gray-50': '#F9FAFB',
       'gray-100': '#F3F4F6',
       'gray-200': '#E5E7EB',
