@@ -46,11 +46,6 @@ const Home: NextPage = () => {
                       label="How it works"
                       Icon={PlayLineIcon}
                     />
-                    <PageIntroBlock.Action
-                      variant="tertiary"
-                      label="Start Learning"
-                      Icon={PlayLineIcon}
-                    />
                   </PageIntroBlock.Actions>
                 </PageIntroBlock.Content>
                 <PageIntroBlock.Image
@@ -86,12 +81,12 @@ const Home: NextPage = () => {
             </Grid.Group>
             <Grid.Group>
               <Grid.Item>
-                <IntroBlock>
+                <IntroBlock align="left">
                   <IntroBlock.Subtitle>
                     A blockchain agnostic, multi-chain protocol
                   </IntroBlock.Subtitle>
                   <IntroBlock.Title>
-                    The data backbone of web3,build for global use
+                    The data backbone of web3, build for global use
                   </IntroBlock.Title>
                   <IntroBlock.Description>
                     OrginTrail protocol has been used to create robust
