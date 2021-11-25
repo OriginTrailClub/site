@@ -10,6 +10,7 @@ export const container = css({
 export const contents = css({
   maxWidth: 1234,
   display: 'grid',
+  width: '100%',
 
   gridTemplateAreas: `
         "subtitle"
@@ -19,16 +20,17 @@ export const contents = css({
         "action"
     `,
   gridTemplateColumns: '1fr',
-  columnGap: '$large',
+  columnGap: '$regular',
 
   '@bp2': {
     gridTemplateAreas: `
-        "subtitle"
-        "title"
-        "image"
-        "description"
-        "action"`,
-    gridTemplateColumns: '1fr',
+        "subtitle       subtitle"
+        "title          title"
+        "description    image"
+        "action         image"`,
+    gridTemplateColumns:
+      'calc(100% / 13 * 7 - $space$regular / 2) calc(100% / 13 * 6 - $space$regular / 2)',
+    gridTemplateRows: 'auto auto 1fr auto',
   },
 
   '@bp3': {
@@ -38,7 +40,7 @@ export const contents = css({
         "description    image"
         "action         image"`,
     gridTemplateColumns:
-      'calc(100% / 5 * 3 - $space$large / 2) calc(100% / 5 * 2 - $space$large / 2)',
+      'calc(100% / 13 * 7 - $space$regular / 2) calc(100% / 13 * 6 - $space$regular / 2)',
     gridTemplateRows: 'auto auto 1fr auto',
   },
 
@@ -48,7 +50,8 @@ export const contents = css({
         "title          image"
         "description    image"
         "action         image"`,
-    gridTemplateColumns: '1fr 1fr',
+    gridTemplateColumns:
+      'calc(100% / 13 * 8 - $space$regular / 2) calc(100% / 13 * 5 - $space$regular / 2)',
     gridTemplateRows: 'auto auto 1fr auto',
   },
 });

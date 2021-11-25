@@ -9,7 +9,9 @@ export function ArticleBlockDescription(props: ArticleBlockDescriptionProps) {
 
   return (
     <div className={Styles.container()}>
-      <Paragraph variant="default">{children}</Paragraph>
+      <div className={Styles.contents()}>
+        <Paragraph variant="default">{children}</Paragraph>
+      </div>
     </div>
   );
 }
