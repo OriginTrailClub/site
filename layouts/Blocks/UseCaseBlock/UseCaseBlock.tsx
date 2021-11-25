@@ -13,7 +13,7 @@ import { UseCaseBlockImage, UseCaseBlockImageProps } from './UseCaseBlockImage';
 
 type UseCaseBlockElements = React.ReactElement<UseCaseBlockCaseProps>;
 
-export interface PageIntroBlockProps {
+export interface UseCaseBlockProps {
   children: UseCaseBlockElements | UseCaseBlockElements[];
 }
 
@@ -53,8 +53,8 @@ const getGridVariables = (options: IgetGridVariablesOptions): Stitches.CSS => {
   };
 };
 
-export const UseCaseBlock: React.FC<PageIntroBlockProps> &
-  IOverviewLayoutComposition = function PageIntroBlock(props) {
+export const UseCaseBlock: React.FC<UseCaseBlockProps> &
+  IOverviewLayoutComposition = function UseCaseBlock(props) {
   const { children } = props;
 
   const count = React.Children.count(children);
