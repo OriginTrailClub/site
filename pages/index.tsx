@@ -9,6 +9,7 @@ import { OverviewLayout } from 'layouts/OverviewLayout';
 import { PageIntroBlock } from 'layouts/Blocks/PageIntroBlock';
 import { IntroBlock } from 'layouts/Blocks/IntroBlock';
 import { TimelineBlock } from 'layouts/Blocks/TimelineBlock';
+import { UseCaseBlock } from 'layouts/Blocks/UseCaseBlock';
 
 import { Grid } from 'components/Grid';
 import { Button } from 'components/Button';
@@ -98,7 +99,108 @@ const Home: NextPage = () => {
                   </IntroBlock.Description>
                 </IntroBlock>
               </Grid.Item>
-              <Grid.Item>UseCases</Grid.Item>
+              <Grid.Item>
+                <UseCaseBlock>
+                  <UseCaseBlock.Case>
+                    <UseCaseBlock.Title>Supply Chains</UseCaseBlock.Title>
+                    <UseCaseBlock.Description>
+                      Vivamus magna justo, lacinia eget consectetur sed,
+                      convallis at tellus.
+                    </UseCaseBlock.Description>
+                    <UseCaseBlock.Image
+                      src="/use-cases/use-case-1.svg"
+                      alt="Supply Chains"
+                    />
+                  </UseCaseBlock.Case>
+                  <UseCaseBlock.Case>
+                    <UseCaseBlock.Title>Non Fungible Tokens</UseCaseBlock.Title>
+                    <UseCaseBlock.Description>
+                      Vivamus magna justo, lacinia eget consectetur sed,
+                      convallis at tellus.
+                    </UseCaseBlock.Description>
+                    <UseCaseBlock.Image
+                      src="/use-cases/use-case-1.svg"
+                      alt="Non Fungible Tokens"
+                    />
+                  </UseCaseBlock.Case>
+                  <UseCaseBlock.Case>
+                    <UseCaseBlock.Title>
+                      Decentralized Finance
+                    </UseCaseBlock.Title>
+                    <UseCaseBlock.Description>
+                      Vivamus magna justo, lacinia eget consectetur sed,
+                      convallis at tellus.
+                    </UseCaseBlock.Description>
+                    <UseCaseBlock.Image
+                      src="/use-cases/use-case-1.svg"
+                      alt="Decentralized Finance"
+                    />
+                  </UseCaseBlock.Case>
+                  <UseCaseBlock.Case>
+                    <UseCaseBlock.Title>Data Marketplace</UseCaseBlock.Title>
+                    <UseCaseBlock.Description>
+                      Vivamus magna justo, lacinia eget consectetur sed,
+                      convallis at tellus.
+                    </UseCaseBlock.Description>
+                    <UseCaseBlock.Image
+                      src="/use-cases/use-case-1.svg"
+                      alt="Data Marketplace"
+                    />
+                  </UseCaseBlock.Case>
+                  <UseCaseBlock.Case>
+                    <UseCaseBlock.Title>
+                      Cetifications & Compliance
+                    </UseCaseBlock.Title>
+                    <UseCaseBlock.Description>
+                      Vivamus magna justo, lacinia eget consectetur sed,
+                      convallis at tellus.
+                    </UseCaseBlock.Description>
+                    <UseCaseBlock.Image
+                      src="/use-cases/use-case-1.svg"
+                      alt="Cetifications & Compliance"
+                    />
+                  </UseCaseBlock.Case>
+                  <UseCaseBlock.Case>
+                    <UseCaseBlock.Title>
+                      Logistics & Transportation
+                    </UseCaseBlock.Title>
+                    <UseCaseBlock.Description>
+                      Vivamus magna justo, lacinia eget consectetur sed,
+                      convallis at tellus.
+                    </UseCaseBlock.Description>
+                    <UseCaseBlock.Image
+                      src="/use-cases/use-case-1.svg"
+                      alt="Logistics & Transportation"
+                    />
+                  </UseCaseBlock.Case>
+                  <UseCaseBlock.Case>
+                    <UseCaseBlock.Title>
+                      Pharmaceutical Industry
+                    </UseCaseBlock.Title>
+                    <UseCaseBlock.Description>
+                      Vivamus magna justo, lacinia eget consectetur sed,
+                      convallis at tellus.
+                    </UseCaseBlock.Description>
+                    <UseCaseBlock.Image
+                      src="/use-cases/use-case-1.svg"
+                      alt="Pharmaceutical Industry"
+                    />
+                  </UseCaseBlock.Case>
+                  <UseCaseBlock.Case>
+                    <UseCaseBlock.Title>
+                      Personal Data Management
+                    </UseCaseBlock.Title>
+                    <UseCaseBlock.Description>
+                      Vivamus magna justo, lacinia eget consectetur sed,
+                      convallis at tellus.
+                    </UseCaseBlock.Description>
+                    <UseCaseBlock.Image
+                      src="/use-cases/use-case-1.svg"
+                      alt="Personal Data Management"
+                    />
+                  </UseCaseBlock.Case>
+                </UseCaseBlock>
+              </Grid.Item>
             </Grid.Group>
             <Grid.Group>
               <Grid.Item>
