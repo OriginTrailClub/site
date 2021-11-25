@@ -9,14 +9,7 @@ import { OverviewLayout } from 'layouts/OverviewLayout';
 import { PageIntroBlock } from 'layouts/Blocks/PageIntroBlock';
 import { IntroBlock } from 'layouts/Blocks/IntroBlock';
 import { TimelineBlock } from 'layouts/Blocks/TimelineBlock';
-import {
-  ArticleBlock,
-  ArticleBlockAction,
-  ArticleBlockDescription,
-  ArticleBlockImage,
-  ArticleBlockSubtitle,
-  ArticleBlockTitle,
-} from 'layouts/Blocks/ArticleBlock';
+import { ArticleBlock } from 'layouts/Blocks/ArticleBlock';
 
 import { Grid } from 'components/Grid';
 import { Button } from 'components/Button';
@@ -155,24 +148,24 @@ const Home: NextPage = () => {
               </Grid.Item>
               <Grid.Item>
                 <ArticleBlock>
-                  <ArticleBlockSubtitle>
+                  <ArticleBlock.Subtitle>
                     A self-sustaining, incentiviced network
-                  </ArticleBlockSubtitle>
-                  <ArticleBlockTitle>
+                  </ArticleBlock.Subtitle>
+                  <ArticleBlock.Title>
                     The four network participants
-                  </ArticleBlockTitle>
-                  <ArticleBlockImage
+                  </ArticleBlock.Title>
+                  <ArticleBlock.Image
                     src="/home/network-participants.jpg"
                     alt="The four network participants"
                   />
-                  <ArticleBlockDescription>
+                  <ArticleBlock.Description>
                     The $TRAC token is a means of compensation between data
                     creators, data holders, and data consumers. It uses an
                     innovative staking system to keep all parties honest. Nodes
                     are therefore incentivized for performing consensus checks
                     and delivering data on demand.
-                  </ArticleBlockDescription>
-                  <ArticleBlockAction
+                  </ArticleBlock.Description>
+                  <ArticleBlock.Action
                     label="Token Utility"
                     Icon={ArrowRightFillIcon}
                   />
