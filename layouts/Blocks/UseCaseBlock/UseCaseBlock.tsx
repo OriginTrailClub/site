@@ -49,6 +49,7 @@ const getGridVariables = (options: IgetGridVariablesOptions): Stitches.CSS => {
   return {
     $$rowCount: rowCount,
     $$columnCount: columnCount,
+    $$maxColumnCount: maxColumns,
   };
 };
 
@@ -77,7 +78,7 @@ export const UseCaseBlock: React.FC<PageIntroBlockProps> &
               '@bp4': getGridVariables({
                 count: count,
                 maxRows: 2,
-                maxColumns: 2,
+                maxColumns: 3,
               }),
             },
           })}
