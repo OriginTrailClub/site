@@ -1,28 +1,81 @@
 import { globalCss } from 'stitches.config';
 
-// Linearly Scale font-size with CSS clamp() Based on the Viewport
-// Based on: https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
-const createBaseFontSize = () => ({
-  '$$min-fs': 1,
-  '$$max-fs': 1.2,
-  '$$min-vw': 20,
-  '$$max-vw': 45,
+interface IgenerateFontSizeClampOptions {
+  /**
+   * base font size in px, used to calculate relative units with, only
+   * override when it is not the browser default (16px).
+   *
+   * @default 16
+   */
+  baseFontSize?: number;
+  /**
+   * Size in pixels at which the maxFontSize should be reached
+   */
+  maxWidthPx: number;
+  /**
+   * Size in pixels at which the minFontSize should be reached
+   */
+  minWidthPx: number;
+  /**
+   * Amount with which the baseFontSize should be increased, which is visible when the minWidthPx is reached
+   */
+  minFontSize: number;
+  /**
+   * Amount with which the baseFontSize should be increased, which is visible when the maxWidthPx is reached
+   */
+  maxFontSize: number;
+}
 
-  '$$min-fs-rem': '$$min-fs * 1rem',
-  '$$max-fs-rem': '$$max-fs * 1rem',
-  '$$min-vw-rem': '$$min-vw * 1rem',
+/* Helper function to generate linear scaled font sizes based on constraints */
+function generateFontSizeClamp(options: IgenerateFontSizeClampOptions) {
+  const {
+    minWidthPx,
+    maxWidthPx,
+    minFontSize,
+    maxFontSize,
+    baseFontSize = 16,
+  } = options;
 
-  $$slope:
-    '($$max-fs - $$min-fs) * (100vw - $$min-vw-rem) / ($$max-vw - $$min-vw)',
+  const minWidthRem = minWidthPx / baseFontSize;
+  const maxWidthRem = maxWidthPx / baseFontSize;
 
-  fontSize: 'clamp($$min-fs-rem, $$min-fs-rem + $$slope, $$max-fs-rem)',
-});
+  const slope = (maxFontSize - minFontSize) / (maxWidthRem - minWidthRem);
+  const yAxisIntersection = -minWidthRem * slope + minFontSize;
+
+  return `clamp(${minFontSize}rem, ${yAxisIntersection}rem + ${
+    slope * 100
+  }vw, ${maxFontSize}rem)`;
+}
 
 export const globalStyles = globalCss({
   html: {
     height: '100%',
     width: '100%',
-    ...createBaseFontSize(),
+
+    fontSize: generateFontSizeClamp({
+      minWidthPx: 320,
+      maxWidthPx: 640,
+      minFontSize: 0.9,
+      maxFontSize: 1.2,
+    }),
+
+    '@bp2': {
+      fontSize: generateFontSizeClamp({
+        minWidthPx: 640,
+        maxWidthPx: 1024,
+        minFontSize: 1,
+        maxFontSize: 1.2,
+      }),
+    },
+
+    '@bp4': {
+      fontSize: generateFontSizeClamp({
+        minWidthPx: 1024,
+        maxWidthPx: 1234,
+        minFontSize: 1,
+        maxFontSize: 1.2,
+      }),
+    },
   },
   body: {
     margin: 0,
