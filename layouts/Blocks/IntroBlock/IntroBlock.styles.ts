@@ -35,6 +35,13 @@ export const container = css({
 
   variants: {
     align: {
+      center: {
+        justifyContent: 'center',
+
+        [`& > .${inner}`]: {
+          justifyContent: 'center',
+        },      
+      },
       left: {
         [`& > .${inner}`]: {
           justifyContent: 'flex-start',
