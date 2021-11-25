@@ -19,7 +19,11 @@ import {
 import { ArticleBlockImage, ArticleBlockImageProps } from './ArticleBlockImage';
 
 type ArticleBlockElements = React.ReactElement<
-  ArticleBlockTitleProps | ArticleBlockImageProps
+  | ArticleBlockSubtitleProps
+  | ArticleBlockTitleProps
+  | ArticleBlockDescriptionProps
+  | ArticleBlockActionProps
+  | ArticleBlockImageProps
 >;
 
 export interface ArticleBlockProps {
@@ -46,8 +50,8 @@ export const ArticleBlock: React.FC<ArticleBlockProps> &
   );
 };
 
-ArticleBlock.Title = ArticleBlockTitle;
 ArticleBlock.Subtitle = ArticleBlockSubtitle;
+ArticleBlock.Title = ArticleBlockTitle;
 ArticleBlock.Description = ArticleBlockDescription;
 ArticleBlock.Action = ArticleBlockAction;
 ArticleBlock.Image = ArticleBlockImage;
