@@ -1,22 +1,50 @@
 import { css } from 'stitches.config';
 
-export const container = css({
+export const inner = css({
   display: 'flex',
+  maxWidth: 1234,
   width: '100%',
-  justifyContent: 'center',
-  px: '$regular',
-});
+})
 
 export const contents = css({
   width: '100%',
-  maxWidth: 'min(720px, 80ch)',
+  maxWidth: 'min(100vw - $space$large, 80ch, 720px)',
   display: 'flex',
   flexDirection: 'column',
-  alignItems: 'center',
-  textAlign: 'center',
-  px: '$large',
+
+  alignItems: 'flex-start',
+  textAlign: 'left',
+  px: '$none',
 
   '@bp2': {
-    px: '$none',
+    alignItems: 'center',
+    textAlign: 'center',
+    px: '$large',      
+  }
+});
+
+export const container = css({
+  display: 'flex',
+  width: '100%',
+  px: '$regular',
+  justifyContent: 'center',
+
+  [`& > .${inner}`]: {
+    justifyContent: 'center',
   },
+
+  variants: {
+    align: {
+      left: {
+        [`& > .${inner}`]: {
+          justifyContent: 'flex-start',
+        },
+        [`& > .${inner} > .${contents}`]: {
+          alignItems: 'flex-start',
+          textAlign: 'left',
+          px: '$none',
+        }
+      },
+    }
+  }
 });
