@@ -16,7 +16,8 @@ export const cases = css({
   $$useCaseSize: 'clamp(280px, 80%, 320px)',
   $$containerSize: '$$useCaseSize',
 
-  $$scrollPadding: 'max(calc((100% - $$containerSize) / 2), calc($space$regular / 2))',
+  $$scrollPadding:
+    'max(calc((100% - $$containerSize) / 2), calc($space$regular / 2))',
   $$scrollPaddingLeft: '$$scrollPadding',
   $$scrollPaddingRight: '$$scrollPadding',
 
@@ -75,6 +76,6 @@ export const cases = css({
   },
 
   [`& > .${UseCaseBlockCaseStyles.container}`]: {
-      margin: 'calc($space$regular / 2)',
-  }
+    margin: 'calc($space$regular / 2)',
+  },
 });

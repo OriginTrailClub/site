@@ -5,9 +5,7 @@ import { UseCaseBlockDescriptionProps } from './UseCaseBlockDescription';
 import { UseCaseBlockImageProps } from './UseCaseBlockImage';
 
 type UseCaseBlockCaseElements = React.ReactElement<
-  | UseCaseBlockTitleProps
-  | UseCaseBlockDescriptionProps
-  | UseCaseBlockImageProps
+  UseCaseBlockTitleProps | UseCaseBlockDescriptionProps | UseCaseBlockImageProps
 >;
 
 export interface UseCaseBlockCaseProps {
