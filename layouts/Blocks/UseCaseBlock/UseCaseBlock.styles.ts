@@ -13,7 +13,13 @@ export const contents = css({
 });
 
 export const cases = css({
+  $$columnCount: 1,
+  $$rowCount: 1,
+  $$maxColumnCount: 1,
+
   $$useCaseSize: 'clamp(280px, 80%, 320px)',
+  $$minUseCaseSize: '$$useCaseSize',
+  $$maxUseCaseSize: '$$useCaseSize',
   $$containerSize: '$$useCaseSize',
 
   $$scrollPadding:
@@ -27,7 +33,7 @@ export const cases = css({
   gridTemplateRows: 'repeat($$rowCount, 1fr)',
 
   gridTemplateColumns:
-    '$$scrollPaddingLeft repeat($$columnCount, $$useCaseSize) $$scrollPaddingRight',
+    '$$scrollPaddingLeft repeat($$columnCount, minmax($$minUseCaseSize, $$maxUseCaseSize)) $$scrollPaddingRight',
 
   marginTop: 'calc(-$regular / 2)',
   marginBottom: 'calc(-$regular / 2)',
@@ -50,10 +56,9 @@ export const cases = css({
   },
 
   '@bp3': {
-    $$maxColumnCount: 2,
-
     $$containerSize: 'min(100%, calc(1234px + $space$regular))',
-    $$useCaseSize: 'calc((100% - $$scrollPadding * 2) / $$maxColumnCount)',
+    $$minUseCaseSize: 'calc(((100% - $$scrollPadding * 2) - $space$large) / $$maxColumnCount)',
+    $$maxUseCaseSize: 'calc((100% - $$scrollPadding * 2) / $$maxColumnCount)',
 
     '&:before': {
       gridColumnStart: 1,
@@ -68,11 +73,11 @@ export const cases = css({
       gridRowEnd: 'calc($$rowCount + 1)',
     },
 
-    gridTemplateRows: '1fr 1fr',
+    gridTemplateRows: 'repeat($$rowCount, 1fr)',
   },
 
-  '@bp4': {
-    $$maxColumnCount: 3,
+  '@media(min-width: calc(1234px + $space$regular * 2 + $space$large))': {
+    $$minUseCaseSize: '$$maxUseCaseSize',
   },
 
   [`& > .${UseCaseBlockCaseStyles.container}`]: {
