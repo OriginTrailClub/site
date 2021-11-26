@@ -46,11 +46,18 @@ const getGridVariables = (options: IgetGridVariablesOptions): Stitches.CSS => {
   const rowCount = Math.min(maxRows, Math.ceil(count / maxColumns));
   const columnCount = Math.ceil(count / rowCount);
 
-  return {
+  let cssVars = {
     $$rowCount: rowCount,
     $$columnCount: columnCount,
     $$maxColumnCount: maxColumns,
-  };
+  } as Stitches.CSS;
+
+  if (maxColumns >= Math.ceil(count / rowCount)) {
+    // If all elements fit horizontaly we shouldn't squish in any overlapping element
+    cssVars['$$minParticipantSize'] = '$$maxParticipantSize';
+  }
+
+  return cssVars;
 };
 
 export const UseCaseBlock: React.FC<UseCaseBlockProps> &
