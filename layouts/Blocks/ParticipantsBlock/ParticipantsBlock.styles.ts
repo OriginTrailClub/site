@@ -77,6 +77,6 @@ export const participants = css({
   },
 
   '@media(min-width: 1234px)': {
-    $$minParticipantSize: '$$maxParticipantSize !important',
+    $$minParticipantSize: '$$maxParticipantSize',
   },
 });
