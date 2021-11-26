@@ -3,13 +3,22 @@ import type * as Stitches from '@stitches/react';
 
 import * as Styles from './ParticipantsBlock.styles';
 
-import { ParticipantsBlockParticipant, ParticipantsBlockParticipantProps } from './ParticipantsBlockParticipant';
-import { ParticipantsBlockTitle, ParticipantsBlockTitleProps } from './ParticipantsBlockTitle';
+import {
+  ParticipantsBlockParticipant,
+  ParticipantsBlockParticipantProps,
+} from './ParticipantsBlockParticipant';
+import {
+  ParticipantsBlockTitle,
+  ParticipantsBlockTitleProps,
+} from './ParticipantsBlockTitle';
 import {
   ParticipantsBlockDescription,
   ParticipantsBlockDescriptionProps,
 } from './ParticipantsBlockDescription';
-import { ParticipantsBlockImage, ParticipantsBlockImageProps } from './ParticipantsBlockImage';
+import {
+  ParticipantsBlockImage,
+  ParticipantsBlockImageProps,
+} from './ParticipantsBlockImage';
 
 type ParticipantsBlockElements = React.ReactElement<ParticipantsBlockParticipantProps>;
 

@@ -5,14 +5,18 @@ import { ParticipantsBlockDescriptionProps } from './ParticipantsBlockDescriptio
 import { ParticipantsBlockImageProps } from './ParticipantsBlockImage';
 
 type ParticipantsBlockCaseElements = React.ReactElement<
-  ParticipantsBlockTitleProps | ParticipantsBlockDescriptionProps | ParticipantsBlockImageProps
+  | ParticipantsBlockTitleProps
+  | ParticipantsBlockDescriptionProps
+  | ParticipantsBlockImageProps
 >;
 
 export interface ParticipantsBlockParticipantProps {
   children: ParticipantsBlockCaseElements | ParticipantsBlockCaseElements[];
 }
 
-export function ParticipantsBlockParticipant(props: ParticipantsBlockParticipantProps) {
+export function ParticipantsBlockParticipant(
+  props: ParticipantsBlockParticipantProps
+) {
   const { children } = props;
 
   return (

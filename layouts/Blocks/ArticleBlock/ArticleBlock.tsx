@@ -17,11 +17,13 @@ import {
   ArticleBlockActionProps,
 } from './ArticleBlockAction';
 import { ArticleBlockImage, ArticleBlockImageProps } from './ArticleBlockImage';
-import { ArticleBlockContent, ArticleBlockContentProps } from './ArticleBlockContent';
+import {
+  ArticleBlockContent,
+  ArticleBlockContentProps,
+} from './ArticleBlockContent';
 
 type ArticleBlockElements = React.ReactElement<
-  | ArticleBlockContentProps
-  | ArticleBlockImageProps
+  ArticleBlockContentProps | ArticleBlockImageProps
 >;
 
 export interface ArticleBlockProps {

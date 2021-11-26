@@ -14,11 +14,11 @@ export function ArticleBlockImage(props: ArticleBlockImageProps) {
 
   return (
     <div className={Styles.container()}>
-        <div className={Styles.aspectRatioBox()}>
-          <div className={Styles.aspectRatioBoxInside()}>
-            <Image src={src} alt={alt} layout="fill" objectFit="contain" />
-          </div>
+      <div className={Styles.aspectRatioBox()}>
+        <div className={Styles.aspectRatioBoxInside()}>
+          <Image src={src} alt={alt} layout="fill" objectFit="contain" />
         </div>
+      </div>
     </div>
   );
 }

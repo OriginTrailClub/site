@@ -26,8 +26,8 @@ export const contents = css({
 
     '@bp3': {
       mb: '$none',
-      ml: '$regular'
-    }
+      ml: '$regular',
+    },
   },
 
   [`& > .${ArticleBlockContentStyles.container}`]: {
@@ -46,7 +46,7 @@ export const contents = css({
 
     '@bp3': {
       justifyContent: 'flex-start',
-    }
+    },
   },
 
   '@bp2': {
@@ -60,6 +60,6 @@ export const contents = css({
     gridTemplateColumns: '1fr 1fr',
     gridTemplateAreas: `
       "content image"
-    `
-  }
+    `,
+  },
 });

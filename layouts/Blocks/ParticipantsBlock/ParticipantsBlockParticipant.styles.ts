@@ -14,4 +14,4 @@ export const contents = css({
   px: '$small',
   pt: '$small',
   pb: '$regular',
-})
+});
