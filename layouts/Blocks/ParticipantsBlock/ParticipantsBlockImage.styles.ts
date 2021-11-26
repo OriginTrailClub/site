@@ -1,8 +1,9 @@
 import { css } from 'stitches.config';
 
 export const container = css({
-  backgroundColor: '$gray-50',
   marginBottom: '$regular',
+  border: '1px solid $gray-200',
+  backgroundColor: 'white',
 });
 
 export const aspectRatioBox = css({

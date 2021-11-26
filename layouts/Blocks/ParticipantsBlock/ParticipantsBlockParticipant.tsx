@@ -15,5 +15,9 @@ export interface ParticipantsBlockParticipantProps {
 export function ParticipantsBlockParticipant(props: ParticipantsBlockParticipantProps) {
   const { children } = props;
 
-  return <article className={Styles.container()}>{children}</article>;
+  return (
+    <article className={Styles.container()}>
+      <div className={Styles.contents()}>{children}</div>
+    </article>
+  );
 }
