@@ -10,6 +10,8 @@ import { PageIntroBlock } from 'layouts/Blocks/PageIntroBlock';
 import { IntroBlock } from 'layouts/Blocks/IntroBlock';
 import { TimelineBlock } from 'layouts/Blocks/TimelineBlock';
 import { ArticleBlock } from 'layouts/Blocks/ArticleBlock';
+import { UseCaseBlock } from 'layouts/Blocks/UseCaseBlock';
+import { ParticipantsBlock } from 'layouts/Blocks/ParticipantsBlock';
 
 import { Grid } from 'components/Grid';
 import { Button } from 'components/Button';
@@ -44,11 +46,6 @@ const Home: NextPage = () => {
                   <PageIntroBlock.Actions>
                     <PageIntroBlock.Action
                       label="How it works"
-                      Icon={PlayLineIcon}
-                    />
-                    <PageIntroBlock.Action
-                      variant="tertiary"
-                      label="Start Learning"
                       Icon={PlayLineIcon}
                     />
                   </PageIntroBlock.Actions>
@@ -86,12 +83,12 @@ const Home: NextPage = () => {
             </Grid.Group>
             <Grid.Group>
               <Grid.Item>
-                <IntroBlock>
+                <IntroBlock align="left">
                   <IntroBlock.Subtitle>
                     A blockchain agnostic, multi-chain protocol
                   </IntroBlock.Subtitle>
                   <IntroBlock.Title>
-                    The data backbone of web3,build for global use
+                    The data backbone of web3, build for global use
                   </IntroBlock.Title>
                   <IntroBlock.Description>
                     OrginTrail protocol has been used to create robust
@@ -99,7 +96,108 @@ const Home: NextPage = () => {
                   </IntroBlock.Description>
                 </IntroBlock>
               </Grid.Item>
-              <Grid.Item>UseCases</Grid.Item>
+              <Grid.Item>
+                <UseCaseBlock>
+                  <UseCaseBlock.Case>
+                    <UseCaseBlock.Title>Supply Chains</UseCaseBlock.Title>
+                    <UseCaseBlock.Description>
+                      Vivamus magna justo, lacinia eget consectetur sed,
+                      convallis at tellus.
+                    </UseCaseBlock.Description>
+                    <UseCaseBlock.Image
+                      src="/use-cases/use-case-1.png"
+                      alt="Supply Chains"
+                    />
+                  </UseCaseBlock.Case>
+                  <UseCaseBlock.Case>
+                    <UseCaseBlock.Title>Non Fungible Tokens</UseCaseBlock.Title>
+                    <UseCaseBlock.Description>
+                      Vivamus magna justo, lacinia eget consectetur sed,
+                      convallis at tellus.
+                    </UseCaseBlock.Description>
+                    <UseCaseBlock.Image
+                      src="/use-cases/use-case-3.png"
+                      alt="Non Fungible Tokens"
+                    />
+                  </UseCaseBlock.Case>
+                  <UseCaseBlock.Case>
+                    <UseCaseBlock.Title>
+                      Decentralized Finance
+                    </UseCaseBlock.Title>
+                    <UseCaseBlock.Description>
+                      Vivamus magna justo, lacinia eget consectetur sed,
+                      convallis at tellus.
+                    </UseCaseBlock.Description>
+                    <UseCaseBlock.Image
+                      src="/use-cases/use-case-2.png"
+                      alt="Decentralized Finance"
+                    />
+                  </UseCaseBlock.Case>
+                  <UseCaseBlock.Case>
+                    <UseCaseBlock.Title>Data Marketplace</UseCaseBlock.Title>
+                    <UseCaseBlock.Description>
+                      Vivamus magna justo, lacinia eget consectetur sed,
+                      convallis at tellus.
+                    </UseCaseBlock.Description>
+                    <UseCaseBlock.Image
+                      src="/use-cases/use-case-1.png"
+                      alt="Data Marketplace"
+                    />
+                  </UseCaseBlock.Case>
+                  <UseCaseBlock.Case>
+                    <UseCaseBlock.Title>
+                      Cetifications & Compliance
+                    </UseCaseBlock.Title>
+                    <UseCaseBlock.Description>
+                      Vivamus magna justo, lacinia eget consectetur sed,
+                      convallis at tellus.
+                    </UseCaseBlock.Description>
+                    <UseCaseBlock.Image
+                      src="/use-cases/use-case-3.png"
+                      alt="Cetifications & Compliance"
+                    />
+                  </UseCaseBlock.Case>
+                  <UseCaseBlock.Case>
+                    <UseCaseBlock.Title>
+                      Logistics & Transportation
+                    </UseCaseBlock.Title>
+                    <UseCaseBlock.Description>
+                      Vivamus magna justo, lacinia eget consectetur sed,
+                      convallis at tellus.
+                    </UseCaseBlock.Description>
+                    <UseCaseBlock.Image
+                      src="/use-cases/use-case-2.png"
+                      alt="Logistics & Transportation"
+                    />
+                  </UseCaseBlock.Case>
+                  <UseCaseBlock.Case>
+                    <UseCaseBlock.Title>
+                      Pharmaceutical Industry
+                    </UseCaseBlock.Title>
+                    <UseCaseBlock.Description>
+                      Vivamus magna justo, lacinia eget consectetur sed,
+                      convallis at tellus.
+                    </UseCaseBlock.Description>
+                    <UseCaseBlock.Image
+                      src="/use-cases/use-case-1.png"
+                      alt="Pharmaceutical Industry"
+                    />
+                  </UseCaseBlock.Case>
+                  <UseCaseBlock.Case>
+                    <UseCaseBlock.Title>
+                      Personal Data Management
+                    </UseCaseBlock.Title>
+                    <UseCaseBlock.Description>
+                      Vivamus magna justo, lacinia eget consectetur sed,
+                      convallis at tellus.
+                    </UseCaseBlock.Description>
+                    <UseCaseBlock.Image
+                      src="/use-cases/use-case-3.png"
+                      alt="Personal Data Management"
+                    />
+                  </UseCaseBlock.Case>
+                </UseCaseBlock>
+              </Grid.Item>
             </Grid.Group>
             <Grid.Group>
               <Grid.Item>
@@ -172,6 +270,42 @@ const Home: NextPage = () => {
                 </ArticleBlock>
               </Grid.Item>
               <Grid.Item>Participants</Grid.Item>
+              <Grid.Item>
+                <ParticipantsBlock>
+                  <ParticipantsBlock.Participant>
+                    <ParticipantsBlock.Image
+                      src="/participants/participant-1.png"
+                      alt="Data Providers"
+                    />
+                    <ParticipantsBlock.Title>Data Providers</ParticipantsBlock.Title>
+                    <ParticipantsBlock.Description>An entity that publishes ERP or other data to the OriginTrail Decentralized Network (ODN)</ParticipantsBlock.Description>
+                  </ParticipantsBlock.Participant>
+                  <ParticipantsBlock.Participant>
+                    <ParticipantsBlock.Image
+                      src="/participants/participant-1.png"
+                      alt="Data Creators"
+                    />
+                    <ParticipantsBlock.Title>Data Creators</ParticipantsBlock.Title>
+                    <ParticipantsBlock.Description>An entity that is responsible for correctly importing the data from the data provider</ParticipantsBlock.Description>
+                  </ParticipantsBlock.Participant>
+                  <ParticipantsBlock.Participant>
+                    <ParticipantsBlock.Image
+                      src="/participants/participant-1.png"
+                      alt="Data Holders"
+                    />
+                    <ParticipantsBlock.Title>Data Holders</ParticipantsBlock.Title>
+                    <ParticipantsBlock.Description>An entity that commits to storing and holding the data for a certain period of time</ParticipantsBlock.Description>
+                  </ParticipantsBlock.Participant>
+                  <ParticipantsBlock.Participant>
+                    <ParticipantsBlock.Image
+                      src="/participants/participant-1.png"
+                      alt="Data Viewers"
+                    />
+                    <ParticipantsBlock.Title>Data Viewers</ParticipantsBlock.Title>
+                    <ParticipantsBlock.Description>An entity that requests data from any of the available nodes in the ODN network</ParticipantsBlock.Description>
+                  </ParticipantsBlock.Participant>
+                </ParticipantsBlock>
+              </Grid.Item>
             </Grid.Group>
             <Grid.Group>
               <Grid.Item>

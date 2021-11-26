@@ -21,22 +21,24 @@ interface ITimelineBlockPropsComposition {
 
 export const TimelineBlock: React.FC<TimelineBlockProps> &
   ITimelineBlockPropsComposition = function TimelineBlock(props) {
-    const { children } = props;
+  const { children } = props;
 
-    return (
-      <div className={Styles.container()}>
-        <div className={Styles.contents()}>
+  return (
+    <div className={Styles.container()}>
+      <div className={Styles.contents()}>
         <div className={Styles.line()} />
-          <ul className={Styles.events({
+        <ul
+          className={Styles.events({
             css: {
               $$eventCount: React.Children.count(children),
-            }
-          })}>
-            {children}
-          </ul>
-        </div>
+            },
+          })}
+        >
+          {children}
+        </ul>
       </div>
-    );
-  };
+    </div>
+  );
+};
 
 TimelineBlock.Event = TimelineBlockEvent;

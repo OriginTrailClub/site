@@ -15,7 +15,7 @@ export interface ParagraphProps extends DOMProps {
    * Set text style, intro, default or compact
    * @default default
    */
-  variant: 'intro' | 'default' | 'compact';
+  variant?: 'intro' | 'default' | 'compact';
 }
 
 const ParagraphElement = styled('p', {

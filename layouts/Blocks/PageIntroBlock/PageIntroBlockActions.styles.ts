@@ -8,7 +8,6 @@ export const container = css({
   margin: 'calc(-$small / 2)',
   marginTop: 'calc($large + $small)',
   flexWrap: 'wrap',
-  justifyContent: 'center',
   maxWidth: 'calc(100% - $small)',
 
   [`& > .${PageIntroBlockActionStyles.container}`]: {
