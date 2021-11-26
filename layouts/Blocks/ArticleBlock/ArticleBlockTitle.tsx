@@ -7,8 +7,8 @@ export type ArticleBlockTitleProps = Pick<HeadingProps, 'children'>;
 export function ArticleBlockTitle(props: HeadingProps) {
   const { children } = props;
   return (
-    <header className={Styles.container()}>
+    <div className={Styles.container()}>
       <Heading level={3}>{children}</Heading>
-    </header>
+    </div>
   );
 }

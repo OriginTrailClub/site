@@ -2,6 +2,8 @@ import { css } from 'stitches.config';
 
 export const container = css({
   gridArea: 'image',
+  display: 'flex',
+  alignItems: 'center',
 });
 
 export const aspectRatioBox = css({

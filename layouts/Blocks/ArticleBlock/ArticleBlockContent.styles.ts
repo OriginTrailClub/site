@@ -1,6 +1,8 @@
 import { css } from 'stitches.config';
 
 export const container = css({
+  gridArea: 'content',
   display: 'flex',
-  marginTop: '$large',
+  flexDirection: 'column',
+  justifyContent: 'center',
 });

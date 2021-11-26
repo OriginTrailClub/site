@@ -17,12 +17,10 @@ import {
   ArticleBlockActionProps,
 } from './ArticleBlockAction';
 import { ArticleBlockImage, ArticleBlockImageProps } from './ArticleBlockImage';
+import { ArticleBlockContent, ArticleBlockContentProps } from './ArticleBlockContent';
 
 type ArticleBlockElements = React.ReactElement<
-  | ArticleBlockSubtitleProps
-  | ArticleBlockTitleProps
-  | ArticleBlockDescriptionProps
-  | ArticleBlockActionProps
+  | ArticleBlockContentProps
   | ArticleBlockImageProps
 >;
 
@@ -36,6 +34,7 @@ interface IOverviewLayoutComposition {
   Description: React.FC<ArticleBlockDescriptionProps>;
   Action: React.FC<ArticleBlockActionProps>;
   Image: React.FC<ArticleBlockImageProps>;
+  Content: React.FC<ArticleBlockContentProps>;
 }
 
 export const ArticleBlock: React.FC<ArticleBlockProps> &
@@ -43,9 +42,9 @@ export const ArticleBlock: React.FC<ArticleBlockProps> &
   const { children } = props;
 
   return (
-    <div className={Styles.container()}>
+    <article className={Styles.container()}>
       <div className={Styles.contents()}>{children}</div>
-    </div>
+    </article>
   );
 };
 
@@ -54,3 +53,4 @@ ArticleBlock.Title = ArticleBlockTitle;
 ArticleBlock.Description = ArticleBlockDescription;
 ArticleBlock.Action = ArticleBlockAction;
 ArticleBlock.Image = ArticleBlockImage;
+ArticleBlock.Content = ArticleBlockContent;
