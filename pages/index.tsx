@@ -20,6 +20,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
+        <meta name="robots" content="noindex" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <OverviewLayout
