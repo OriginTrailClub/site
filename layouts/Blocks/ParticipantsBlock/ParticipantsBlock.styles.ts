@@ -16,11 +16,16 @@ export const participants = css({
   $$columnCount: 1,
   $$maxColumnCount: 1,
 
-  $$scrollPadding: 'calc($space$small / 2)',
+  $$containerSize: '100%',
+
+  $$scrollPadding:
+    'max(calc((100% - $$containerSize) / 2), calc($space$small / 2))',
+  $$scrollPaddingLeft: '$$scrollPadding',
+  $$scrollPaddingRight: '$$scrollPadding',
 
   $$minParticipantSize:
-    'calc((100% - $space$large) / $$maxColumnCount)',
-  $$maxParticipantSize: 'min(calc((1234px + $space$small * 2 + $space$small / 2 * 2) / 4), calc((100% - $space$small / 2 * 2) / $$maxColumnCount))',
+    'calc(((100% - $$scrollPadding * 2) - $space$large) / $$maxColumnCount)',
+  $$maxParticipantSize: 'calc((100% - $$scrollPadding * 2) / $$maxColumnCount)',
 
   $$participantSize: 'min($$minParticipantSize, $$maxParticipantSize)',
 
@@ -56,7 +61,7 @@ export const participants = css({
 
   '@bp2': {
     $$maxColumnCount: 2,
-    $$scrollPadding: 'max(calc((100% - ($$participantSize * $$columnCount)) / 2), calc($space$small / 2))',
+    $$containerSize: 'min(100%, calc(1234px + $space$small * 3))',
 
     [`& > .${ParticipantsBlockParticipantStyles.container}`]: {
       scrollSnapAlign: 'center',
@@ -71,7 +76,7 @@ export const participants = css({
     $$maxColumnCount: 4,
   },
 
-  '@media(min-width: calc(1234px + space$small / 2 * 2))': {
+  '@media(min-width: 1234px)': {
     $$minParticipantSize: '$$maxParticipantSize !important',
   },
 });
