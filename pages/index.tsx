@@ -104,7 +104,7 @@ const Home: NextPage = () => {
                       convallis at tellus.
                     </UseCaseBlock.Description>
                     <UseCaseBlock.Image
-                      src="/use-cases/use-case-1.svg"
+                      src="/use-cases/use-case-1.png"
                       alt="Supply Chains"
                     />
                   </UseCaseBlock.Case>
@@ -115,7 +115,7 @@ const Home: NextPage = () => {
                       convallis at tellus.
                     </UseCaseBlock.Description>
                     <UseCaseBlock.Image
-                      src="/use-cases/use-case-1.svg"
+                      src="/use-cases/use-case-3.png"
                       alt="Non Fungible Tokens"
                     />
                   </UseCaseBlock.Case>
@@ -128,7 +128,7 @@ const Home: NextPage = () => {
                       convallis at tellus.
                     </UseCaseBlock.Description>
                     <UseCaseBlock.Image
-                      src="/use-cases/use-case-1.svg"
+                      src="/use-cases/use-case-2.png"
                       alt="Decentralized Finance"
                     />
                   </UseCaseBlock.Case>
@@ -139,7 +139,7 @@ const Home: NextPage = () => {
                       convallis at tellus.
                     </UseCaseBlock.Description>
                     <UseCaseBlock.Image
-                      src="/use-cases/use-case-1.svg"
+                      src="/use-cases/use-case-1.png"
                       alt="Data Marketplace"
                     />
                   </UseCaseBlock.Case>
@@ -152,7 +152,7 @@ const Home: NextPage = () => {
                       convallis at tellus.
                     </UseCaseBlock.Description>
                     <UseCaseBlock.Image
-                      src="/use-cases/use-case-1.svg"
+                      src="/use-cases/use-case-3.png"
                       alt="Cetifications & Compliance"
                     />
                   </UseCaseBlock.Case>
@@ -165,7 +165,7 @@ const Home: NextPage = () => {
                       convallis at tellus.
                     </UseCaseBlock.Description>
                     <UseCaseBlock.Image
-                      src="/use-cases/use-case-1.svg"
+                      src="/use-cases/use-case-2.png"
                       alt="Logistics & Transportation"
                     />
                   </UseCaseBlock.Case>
@@ -178,7 +178,7 @@ const Home: NextPage = () => {
                       convallis at tellus.
                     </UseCaseBlock.Description>
                     <UseCaseBlock.Image
-                      src="/use-cases/use-case-1.svg"
+                      src="/use-cases/use-case-1.png"
                       alt="Pharmaceutical Industry"
                     />
                   </UseCaseBlock.Case>
@@ -191,7 +191,7 @@ const Home: NextPage = () => {
                       convallis at tellus.
                     </UseCaseBlock.Description>
                     <UseCaseBlock.Image
-                      src="/use-cases/use-case-1.svg"
+                      src="/use-cases/use-case-3.png"
                       alt="Personal Data Management"
                     />
                   </UseCaseBlock.Case>
