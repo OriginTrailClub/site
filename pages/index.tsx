@@ -10,6 +10,7 @@ import { PageIntroBlock } from 'layouts/Blocks/PageIntroBlock';
 import { IntroBlock } from 'layouts/Blocks/IntroBlock';
 import { TimelineBlock } from 'layouts/Blocks/TimelineBlock';
 import { UseCaseBlock } from 'layouts/Blocks/UseCaseBlock';
+import { ParticipantsBlock } from 'layouts/Blocks/ParticipantsBlock';
 
 import { Grid } from 'components/Grid';
 import { Button } from 'components/Button';
@@ -243,7 +244,42 @@ const Home: NextPage = () => {
                 </TimelineBlock>
               </Grid.Item>
               <Grid.Item>Article</Grid.Item>
-              <Grid.Item>Participants</Grid.Item>
+              <Grid.Item>
+                <ParticipantsBlock>
+                  <ParticipantsBlock.Participant>
+                    <ParticipantsBlock.Image
+                      src="/participants/participant-1.png"
+                      alt="Data Providers"
+                    />
+                    <ParticipantsBlock.Title>Data Providers</ParticipantsBlock.Title>
+                    <ParticipantsBlock.Description>An entity that publishes ERP or other data to the OriginTrail Decentralized Network (ODN)</ParticipantsBlock.Description>
+                  </ParticipantsBlock.Participant>
+                  <ParticipantsBlock.Participant>
+                    <ParticipantsBlock.Image
+                      src="/participants/participant-1.png"
+                      alt="Data Creators"
+                    />
+                    <ParticipantsBlock.Title>Data Creators</ParticipantsBlock.Title>
+                    <ParticipantsBlock.Description>An entity that is responsible for correctly importing the data from the data provider</ParticipantsBlock.Description>
+                  </ParticipantsBlock.Participant>
+                  <ParticipantsBlock.Participant>
+                    <ParticipantsBlock.Image
+                      src="/participants/participant-1.png"
+                      alt="Data Holders"
+                    />
+                    <ParticipantsBlock.Title>Data Holders</ParticipantsBlock.Title>
+                    <ParticipantsBlock.Description>An entity that commits to storing and holding the data for a certain period of time</ParticipantsBlock.Description>
+                  </ParticipantsBlock.Participant>
+                  <ParticipantsBlock.Participant>
+                    <ParticipantsBlock.Image
+                      src="/participants/participant-1.png"
+                      alt="Data Viewers"
+                    />
+                    <ParticipantsBlock.Title>Data Viewers</ParticipantsBlock.Title>
+                    <ParticipantsBlock.Description>An entity that requests data from any of the available nodes in the ODN network</ParticipantsBlock.Description>
+                  </ParticipantsBlock.Participant>
+                </ParticipantsBlock>
+              </Grid.Item>
             </Grid.Group>
             <Grid.Group>
               <Grid.Item>
