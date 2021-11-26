@@ -246,26 +246,28 @@ const Home: NextPage = () => {
               </Grid.Item>
               <Grid.Item>
                 <ArticleBlock>
-                  <ArticleBlock.Subtitle>
-                    A self-sustaining, incentiviced network
-                  </ArticleBlock.Subtitle>
-                  <ArticleBlock.Title>
-                    The four network participants
-                  </ArticleBlock.Title>
+                  <ArticleBlock.Content>
+                    <ArticleBlock.Subtitle>
+                      A self-sustaining, incentiviced network
+                    </ArticleBlock.Subtitle>
+                    <ArticleBlock.Title>
+                      The four network participants
+                    </ArticleBlock.Title>
+                    <ArticleBlock.Description>
+                      The $TRAC token is a means of compensation between data
+                      creators, data holders, and data consumers. It uses an
+                      innovative staking system to keep all parties honest. Nodes
+                      are therefore incentivized for performing consensus checks
+                      and delivering data on demand.
+                    </ArticleBlock.Description>
+                    <ArticleBlock.Action
+                      label="Token Utility"
+                      Icon={ArrowRightFillIcon}
+                    />
+                  </ArticleBlock.Content>
                   <ArticleBlock.Image
                     src="/home/network-participants.jpg"
                     alt="The four network participants"
-                  />
-                  <ArticleBlock.Description>
-                    The $TRAC token is a means of compensation between data
-                    creators, data holders, and data consumers. It uses an
-                    innovative staking system to keep all parties honest. Nodes
-                    are therefore incentivized for performing consensus checks
-                    and delivering data on demand.
-                  </ArticleBlock.Description>
-                  <ArticleBlock.Action
-                    label="Token Utility"
-                    Icon={ArrowRightFillIcon}
                   />
                 </ArticleBlock>
               </Grid.Item>
