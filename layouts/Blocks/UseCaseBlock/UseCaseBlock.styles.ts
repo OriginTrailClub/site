@@ -88,7 +88,7 @@ export const cases = css({
     gridTemplateRows: 'repeat($$rowCount, 1fr)',
   },
 
-  '@media(min-width: calc(1234px + $space$regular * 2 + $space$large))': {
+  '@media(min-width: 1234px)': {
     $$minUseCaseSize: '$$maxUseCaseSize',
   },
 });
