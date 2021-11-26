@@ -1,4 +1,5 @@
 import * as React from 'react';
+import type * as Stitches from '@stitches/react';
 
 import * as Styles from './ParticipantsBlock.styles';
 
@@ -23,6 +24,33 @@ interface IOverviewLayoutComposition {
   Description: React.FC<ParticipantsBlockDescriptionProps>;
 }
 
+interface IgetGridVariablesOptions {
+  /**
+   * Total item of elements in the grid
+   */
+  count: number;
+  /**
+   * Max count of columns before it should overflow verticaly
+   */
+  maxColumns: number;
+}
+
+/* A helper method which determines the rows and columns for a grid layout */
+const getGridVariables = (options: IgetGridVariablesOptions): Stitches.CSS => {
+  const { count, maxColumns } = options;
+
+  let cssVars = {
+    $$columnCount: count,
+    $$maxColumnCount: maxColumns,
+  } as Stitches.CSS;
+
+  if (maxColumns >= count) {
+    // If all elements fit horizontaly we shouldn't squish in any overlapping element
+    cssVars['$$minParticipantSize'] = '$$maxParticipantSize';
+  }
+
+  return cssVars;
+};
 export const ParticipantsBlock: React.FC<ParticipantsBlockProps> &
   IOverviewLayoutComposition = function ParticipantsBlock(props) {
   const { children } = props;
@@ -35,7 +63,22 @@ export const ParticipantsBlock: React.FC<ParticipantsBlockProps> &
         <div
           className={Styles.participants({
             css: {
-              $$columnCount: count,
+              ...getGridVariables({
+                count: count,
+                maxColumns: 1,
+              }),
+              '@bp2': getGridVariables({
+                count: count,
+                maxColumns: 2,
+              }),
+              '@bp3': getGridVariables({
+                count: count,
+                maxColumns: 3,
+              }),
+              '@bp4': getGridVariables({
+                count: count,
+                maxColumns: 4,
+              }),
             },
           })}
         >
