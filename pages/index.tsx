@@ -269,7 +269,6 @@ const Home: NextPage = () => {
                   />
                 </ArticleBlock>
               </Grid.Item>
-              <Grid.Item>Participants</Grid.Item>
               <Grid.Item>
                 <ParticipantsBlock>
                   <ParticipantsBlock.Participant>
