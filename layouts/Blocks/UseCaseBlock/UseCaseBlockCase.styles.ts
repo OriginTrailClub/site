@@ -7,7 +7,7 @@ export const container = css({
   $$circleOutlineColor: '$colors$cyan-300',
 
   display: 'grid',
-  border: '1px solid $gray-300',
+  border: '1px solid $gray-200',
 
   gridTemplateColumns:
     '$space$regular 1fr calc(100px + $space$regular * 2) $space$regular',
