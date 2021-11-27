@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@react-aria/button": "^3.3.4",
+    "@react-aria/i18n": "^3.3.4",
     "@react-aria/interactions": "^3.6.0",
     "@react-aria/ssr": "^3.1.0",
     "@react-aria/tabs": "^3.1.0",
