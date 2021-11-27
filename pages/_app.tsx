@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app';
 
 import { SSRProvider } from '@react-aria/ssr';
-import {I18nProvider} from '@react-aria/i18n';
+import { I18nProvider } from '@react-aria/i18n';
 
 import { globalStyles } from 'constants/globalStyles';
 

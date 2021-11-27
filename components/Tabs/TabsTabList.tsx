@@ -69,7 +69,7 @@ type TabsTabListElement = React.ReactElement<TabsTabProps>;
 
 export interface TabsTabListProps extends DOMProps {
   /**
-   * All Tab elements all the Tabs.Tab keys should match the key of the corresponding Tabs.Panel 
+   * All Tab elements all the Tabs.Tab keys should match the key of the corresponding Tabs.Panel
    */
   children: TabsTabListElement[];
 }

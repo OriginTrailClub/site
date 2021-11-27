@@ -13,7 +13,7 @@ type TabsElements = React.ReactElement<TabsTabListProps | TabsPanelsProps>;
 
 export interface TabsProps {
   /**
-   * The children of the <Tabs> element. Should include `<Tabs.TabList>` and `<Tabs.Panels>` elements. 
+   * The children of the <Tabs> element. Should include `<Tabs.TabList>` and `<Tabs.Panels>` elements.
    */
   children: TabsElements | TabsElements[];
 }

@@ -2,7 +2,7 @@ import React from 'react';
 
 export interface TabsPanelProps {
   /**
-   * Unique key for the Tabs.Panel there should match the key of the corresponding Tabs.Tab 
+   * Unique key for the Tabs.Panel there should match the key of the corresponding Tabs.Tab
    */
   key: string;
   /**

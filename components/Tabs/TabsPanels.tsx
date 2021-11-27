@@ -35,8 +35,8 @@ function TabsPanelsRendered(props: TabsPanelsRenderedProps) {
 type TabsTabListElement = React.ReactElement<TabsPanelProps>;
 
 export interface TabsPanelsProps extends DOMProps {
-  /** 
-   * All Tab elements all the Tabs.Panel keys should match the key of the corresponding Tabs.Tab 
+  /**
+   * All Tab elements all the Tabs.Panel keys should match the key of the corresponding Tabs.Tab
    */
   children: TabsTabListElement[];
 }
