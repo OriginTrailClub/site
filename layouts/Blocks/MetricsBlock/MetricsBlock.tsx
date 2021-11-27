@@ -37,9 +37,7 @@ interface IMetricsBlockLayoutComposition {
 
 function MetricsBlockTabs(props: MetricsBlockProps) {
   const tabs = React.useMemo(() => {
-    return React.Children.map(props.children, (child, index) => {
-      console.log(child);
-
+    return React.Children.map(props.children, (child) => {
       return {
         key: child.props.label,
         tab: child.props.label,
