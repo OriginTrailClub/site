@@ -12,6 +12,7 @@ import { TimelineBlock } from 'layouts/Blocks/TimelineBlock';
 import { ArticleBlock } from 'layouts/Blocks/ArticleBlock';
 import { UseCaseBlock } from 'layouts/Blocks/UseCaseBlock';
 import { ParticipantsBlock } from 'layouts/Blocks/ParticipantsBlock';
+import { MetricsBlock } from 'layouts/Blocks/MetricsBlock';
 
 import { Grid } from 'components/Grid';
 import { Button } from 'components/Button';
@@ -57,7 +58,62 @@ const Home: NextPage = () => {
                 />
               </PageIntroBlock>
             </Grid.Item>
-            <Grid.Item>Metrics</Grid.Item>
+            <Grid.Item>
+              <MetricsBlock>
+                <MetricsBlock.Category label="Market">
+                  <MetricsBlock.Title>Metrics</MetricsBlock.Title>
+                  <MetricsBlock.Action
+                    label="Dashboard"
+                    Icon={ArrowRightFillIcon}
+                  />
+                  <MetricsBlock.Metrics>
+                    <MetricsBlock.Metric
+                      icon="/metrics/metric-1.png"
+                      value={184000000}
+                      label="Total Market Cap"
+                      currency="USD"
+                      style="currency"
+                    />
+                    <MetricsBlock.Metric
+                      icon="/metrics/metric-1.png"
+                      value={0.97}
+                      label="Price"
+                      currency="USD"
+                      style="currency"
+                    />
+                    <MetricsBlock.Metric
+                      icon="/metrics/metric-1.png"
+                      value={500000000}
+                      label="Max Supply"
+                    />
+                  </MetricsBlock.Metrics>
+                </MetricsBlock.Category>
+                <MetricsBlock.Category label="Network">
+                  <MetricsBlock.Title>Metrics</MetricsBlock.Title>
+                  <MetricsBlock.Action
+                    label="Dashboard"
+                    Icon={ArrowRightFillIcon}
+                  />
+                  <MetricsBlock.Metrics>
+                    <MetricsBlock.Metric
+                      icon="/metrics/metric-1.png"
+                      value={60000000}
+                      label="Total Graph Size (TGS)"
+                    />
+                    <MetricsBlock.Metric
+                      icon="/metrics/metric-1.png"
+                      value={21000}
+                      label="Total Datasets Published"
+                    />
+                    <MetricsBlock.Metric
+                      icon="/metrics/metric-1.png"
+                      value={9000000}
+                      label="Total Tokens Staked"
+                    />
+                  </MetricsBlock.Metrics>
+                </MetricsBlock.Category>
+              </MetricsBlock>
+            </Grid.Item>
             <Grid.Group>
               <Grid.Item>
                 <IntroBlock>
@@ -257,9 +313,9 @@ const Home: NextPage = () => {
                     <ArticleBlock.Description>
                       The $TRAC token is a means of compensation between data
                       creators, data holders, and data consumers. It uses an
-                      innovative staking system to keep all parties honest. Nodes
-                      are therefore incentivized for performing consensus checks
-                      and delivering data on demand.
+                      innovative staking system to keep all parties honest.
+                      Nodes are therefore incentivized for performing consensus
+                      checks and delivering data on demand.
                     </ArticleBlock.Description>
                     <ArticleBlock.Action
                       label="Token Utility"
@@ -279,32 +335,52 @@ const Home: NextPage = () => {
                       src="/participants/participant-1.png"
                       alt="Data Providers"
                     />
-                    <ParticipantsBlock.Title>Data Providers</ParticipantsBlock.Title>
-                    <ParticipantsBlock.Description>An entity that publishes ERP or other data to the OriginTrail Decentralized Network (ODN)</ParticipantsBlock.Description>
+                    <ParticipantsBlock.Title>
+                      Data Providers
+                    </ParticipantsBlock.Title>
+                    <ParticipantsBlock.Description>
+                      An entity that publishes ERP or other data to the
+                      OriginTrail Decentralized Network (ODN)
+                    </ParticipantsBlock.Description>
                   </ParticipantsBlock.Participant>
                   <ParticipantsBlock.Participant>
                     <ParticipantsBlock.Image
                       src="/participants/participant-1.png"
                       alt="Data Creators"
                     />
-                    <ParticipantsBlock.Title>Data Creators</ParticipantsBlock.Title>
-                    <ParticipantsBlock.Description>An entity that is responsible for correctly importing the data from the data provider</ParticipantsBlock.Description>
+                    <ParticipantsBlock.Title>
+                      Data Creators
+                    </ParticipantsBlock.Title>
+                    <ParticipantsBlock.Description>
+                      An entity that is responsible for correctly importing the
+                      data from the data provider
+                    </ParticipantsBlock.Description>
                   </ParticipantsBlock.Participant>
                   <ParticipantsBlock.Participant>
                     <ParticipantsBlock.Image
                       src="/participants/participant-1.png"
                       alt="Data Holders"
                     />
-                    <ParticipantsBlock.Title>Data Holders</ParticipantsBlock.Title>
-                    <ParticipantsBlock.Description>An entity that commits to storing and holding the data for a certain period of time</ParticipantsBlock.Description>
+                    <ParticipantsBlock.Title>
+                      Data Holders
+                    </ParticipantsBlock.Title>
+                    <ParticipantsBlock.Description>
+                      An entity that commits to storing and holding the data for
+                      a certain period of time
+                    </ParticipantsBlock.Description>
                   </ParticipantsBlock.Participant>
                   <ParticipantsBlock.Participant>
                     <ParticipantsBlock.Image
                       src="/participants/participant-1.png"
                       alt="Data Viewers"
                     />
-                    <ParticipantsBlock.Title>Data Viewers</ParticipantsBlock.Title>
-                    <ParticipantsBlock.Description>An entity that requests data from any of the available nodes in the ODN network</ParticipantsBlock.Description>
+                    <ParticipantsBlock.Title>
+                      Data Viewers
+                    </ParticipantsBlock.Title>
+                    <ParticipantsBlock.Description>
+                      An entity that requests data from any of the available
+                      nodes in the ODN network
+                    </ParticipantsBlock.Description>
                   </ParticipantsBlock.Participant>
                 </ParticipantsBlock>
               </Grid.Item>
