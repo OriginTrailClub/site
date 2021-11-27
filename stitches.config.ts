@@ -1,4 +1,5 @@
-import { createStitches, ScaleValue } from '@stitches/react';
+import { createStitches } from '@stitches/react';
+import type * as Stitches from '@stitches/react';
 
 const {
   styled,
@@ -114,49 +115,49 @@ const {
     bp4: '(min-width: 1024px)',
   },
   utils: {
-    p: (value: ScaleValue<'space'>) => ({
+    p: (value: Stitches.PropertyValue<'padding'>) => ({
       padding: value,
     }),
-    pt: (value: ScaleValue<'space'>) => ({
+    pt: (value: Stitches.PropertyValue<'paddingTop'>) => ({
       paddingTop: value,
     }),
-    pr: (value: ScaleValue<'space'>) => ({
+    pr: (value: Stitches.PropertyValue<'paddingRight'>) => ({
       paddingRight: value,
     }),
-    pb: (value: ScaleValue<'space'>) => ({
+    pb: (value: Stitches.PropertyValue<'paddingBottom'>) => ({
       paddingBottom: value,
     }),
-    pl: (value: ScaleValue<'space'>) => ({
+    pl: (value: Stitches.PropertyValue<'paddingLeft'>) => ({
       paddingLeft: value,
     }),
-    px: (value: ScaleValue<'space'>) => ({
+    px: (value: Stitches.PropertyValue<'padding'>) => ({
       paddingLeft: value,
       paddingRight: value,
     }),
-    py: (value: ScaleValue<'space'>) => ({
+    py: (value: Stitches.PropertyValue<'padding'>) => ({
       paddingTop: value,
       paddingBottom: value,
     }),
-    m: (value: ScaleValue<'space'>) => ({
+    m: (value: Stitches.PropertyValue<'margin'>) => ({
       margin: value,
     }),
-    mt: (value: ScaleValue<'space'>) => ({
+    mt: (value: Stitches.PropertyValue<'marginTop'>) => ({
       marginTop: value,
     }),
-    mr: (value: ScaleValue<'space'>) => ({
+    mr: (value: Stitches.PropertyValue<'marginRight'>) => ({
       marginRight: value,
     }),
-    mb: (value: ScaleValue<'space'>) => ({
+    mb: (value: Stitches.PropertyValue<'marginBottom'>) => ({
       marginBottom: value,
     }),
-    ml: (value: ScaleValue<'space'>) => ({
+    ml: (value: Stitches.PropertyValue<'marginLeft'>) => ({
       marginLeft: value,
     }),
-    mx: (value: ScaleValue<'space'>) => ({
+    mx: (value: Stitches.PropertyValue<'margin'>) => ({
       marginLeft: value,
       marginRight: value,
     }),
-    my: (value: ScaleValue<'space'>) => ({
+    my: (value: Stitches.PropertyValue<'margin'>) => ({
       marginTop: value,
       marginBottom: value,
     }),
