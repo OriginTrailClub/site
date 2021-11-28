@@ -21,8 +21,10 @@ function TabsPanelsRendered(props: TabsPanelsRenderedProps) {
     (nodes) => new ListCollection(nodes),
     { suppressTextValueWarning: true }
   );
-  
-  const selectedItem = collection.getItem(tabsListState?.selectedKey ?? collection.getFirstKey());
+
+  const selectedItem = collection.getItem(
+    tabsListState?.selectedKey ?? collection.getFirstKey()
+  );
 
   return (
     <div key={tabsListState?.selectedKey}>
