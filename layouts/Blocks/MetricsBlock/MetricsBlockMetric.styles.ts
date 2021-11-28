@@ -38,6 +38,7 @@ export const info = css({
     width: '100%',
     p: '$small',
     alignItems: 'center',
+    mr: '$none',
 
     '&:before': {
       content: '',
