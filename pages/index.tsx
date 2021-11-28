@@ -13,6 +13,7 @@ import { ArticleBlock } from 'layouts/Blocks/ArticleBlock';
 import { UseCaseBlock } from 'layouts/Blocks/UseCaseBlock';
 import { ParticipantsBlock } from 'layouts/Blocks/ParticipantsBlock';
 import { MetricsBlock } from 'layouts/Blocks/MetricsBlock';
+import { SolutionsBlock } from 'layouts/Blocks/SolutionsBlock';
 
 import { Grid } from 'components/Grid';
 import { Button } from 'components/Button';
@@ -136,7 +137,146 @@ const Home: NextPage = () => {
                   />
                 </IntroBlock>
               </Grid.Item>
-              <Grid.Item>Solutions</Grid.Item>
+              <Grid.Item>
+                <SolutionsBlock>
+                  <SolutionsBlock.Case>
+                    <SolutionsBlock.Problem>
+                      <SolutionsBlock.Image
+                        src="/solutions/solution-1.png"
+                        alt="Seamlessly connect data"
+                      />
+                      <SolutionsBlock.Title>
+                        Seamlessly connect data
+                      </SolutionsBlock.Title>
+                      <SolutionsBlock.Description>
+                        Origintrail is built on globally recognized GS1 and W3C
+                        standards which allow for efficient alignment of data
+                        from multiple data sources. It enables seamless and
+                        automatic data connection and interoperability between
+                        legacy (ERP) systems.
+                      </SolutionsBlock.Description>
+                    </SolutionsBlock.Problem>
+                    <SolutionsBlock.Solution>
+                      <SolutionsBlock.Image
+                        src="/solutions/solution-1.png"
+                        alt="Seamlessly connect data"
+                      />
+                      <SolutionsBlock.Title>
+                        Seamlessly connect data
+                      </SolutionsBlock.Title>
+                      <SolutionsBlock.Description>
+                        Origintrail is built on globally recognized GS1 and W3C
+                        standards which allow for efficient alignment of data
+                        from multiple data sources. It enables seamless and
+                        automatic data connection and interoperability between
+                        legacy (ERP) systems.
+                      </SolutionsBlock.Description>
+                    </SolutionsBlock.Solution>
+                  </SolutionsBlock.Case>
+                  <SolutionsBlock.Case>
+                    <SolutionsBlock.Problem>
+                      <SolutionsBlock.Image
+                        src="/solutions/solution-2.png"
+                        alt="Cost and scalability of blockchains"
+                      />
+                      <SolutionsBlock.Title>
+                        Cost and scalability of blockchains
+                      </SolutionsBlock.Title>
+                      <SolutionsBlock.Description>
+                        Existing blockchain solutions are expensive when it
+                        comes to data operations and lack adequate database
+                        properties. Any solution wishing to integrate blockchain
+                        needs to overcome the problem of handling interoperable
+                        data and the high cost.
+                      </SolutionsBlock.Description>
+                    </SolutionsBlock.Problem>
+                    <SolutionsBlock.Solution>
+                      <SolutionsBlock.Image
+                        src="/solutions/solution-2.png"
+                        alt="Cost and scalability of blockchains"
+                      />
+                      <SolutionsBlock.Title>
+                        Cost and scalability of blockchains
+                      </SolutionsBlock.Title>
+                      <SolutionsBlock.Description>
+                        Existing blockchain solutions are expensive when it
+                        comes to data operations and lack adequate database
+                        properties. Any solution wishing to integrate blockchain
+                        needs to overcome the problem of handling interoperable
+                        data and the high cost.
+                      </SolutionsBlock.Description>
+                    </SolutionsBlock.Solution>
+                  </SolutionsBlock.Case>
+                  <SolutionsBlock.Case>
+                    <SolutionsBlock.Problem>
+                      <SolutionsBlock.Image
+                        src="/solutions/solution-3.png"
+                        alt="Data tampering and centralization"
+                      />
+                      <SolutionsBlock.Title>
+                        Data tampering and centralization
+                      </SolutionsBlock.Title>
+                      <SolutionsBlock.Description>
+                        Current attempts to overcome data silos are done by
+                        aggregating data in a centralized way, prompting
+                        concerns about data integrity and omitting
+                        accountability. Centralisation also allows for possible
+                        data tampering and collusion between parties.
+                      </SolutionsBlock.Description>
+                    </SolutionsBlock.Problem>
+                    <SolutionsBlock.Solution>
+                      <SolutionsBlock.Image
+                        src="/solutions/solution-3.png"
+                        alt="Data tampering and centralization"
+                      />
+                      <SolutionsBlock.Title>
+                        Data tampering and centralization
+                      </SolutionsBlock.Title>
+                      <SolutionsBlock.Description>
+                        Current attempts to overcome data silos are done by
+                        aggregating data in a centralized way, prompting
+                        concerns about data integrity and omitting
+                        accountability. Centralisation also allows for possible
+                        data tampering and collusion between parties.
+                      </SolutionsBlock.Description>
+                    </SolutionsBlock.Solution>
+                  </SolutionsBlock.Case>
+                  <SolutionsBlock.Case>
+                    <SolutionsBlock.Problem>
+                      <SolutionsBlock.Image
+                        src="/solutions/solution-4.png"
+                        alt="Sensitive data protection"
+                      />
+                      <SolutionsBlock.Title>
+                        Sensitive data protection
+                      </SolutionsBlock.Title>
+                      <SolutionsBlock.Description>
+                        Companies are often reluctant to exchange data across
+                        their supply chains or other companies as they are
+                        concerned this might undermine their competitive
+                        position. Exchange of data is often enforced by power
+                        asymmetry or done because of regulatory reasons.
+                      </SolutionsBlock.Description>
+                    </SolutionsBlock.Problem>
+                    <SolutionsBlock.Solution>
+                      <SolutionsBlock.Image
+                        src="/solutions/solution-4.png"
+                        alt="Sensitive data protection"
+                      />
+                      <SolutionsBlock.Title>
+                        Sensitive data protection
+                      </SolutionsBlock.Title>
+                      <SolutionsBlock.Description>
+                        Companies are often reluctant to exchange data across
+                        their supply chains or other companies as they are
+                        concerned this might undermine their competitive
+                        position. Exchange of data is often enforced by power
+                        asymmetry or done because of regulatory reasons.
+                      </SolutionsBlock.Description>
+                    </SolutionsBlock.Solution>
+                  </SolutionsBlock.Case>
+                </SolutionsBlock>
+              </Grid.Item>
             </Grid.Group>
             <Grid.Group>
               <Grid.Item>
