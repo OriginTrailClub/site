@@ -10,12 +10,14 @@ export const metrics = css({
   display: 'grid',
   gridAutoRows: '1fr',
   gridAutoFlow: 'row',
+  mt: '$x-small',
 
   '@bp2': {
     display: 'grid',
     gridAutoColumns: '1fr',
     gridAutoFlow: 'column',
     gridColumnGap: '1px',
+    mt: '$regular',
     px: 1,
   },
 });

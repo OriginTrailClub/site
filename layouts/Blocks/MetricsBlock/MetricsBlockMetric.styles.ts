@@ -17,7 +17,6 @@ export const metric = css({
 
   '@bp2': {
     py: '$none',
-    mt: '$regular',
     flexDirection: 'column',
     borderTopWidth: 0,
 
