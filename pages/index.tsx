@@ -143,26 +143,26 @@ const Home: NextPage = () => {
                     <SolutionsBlock.Problem>
                       <SolutionsBlock.Image
                         src="/solutions/solution-1.png"
-                        alt="Seamlessly connect data"
+                        alt="Poor data interoperability"
                       />
                       <SolutionsBlock.Title>
-                        Seamlessly connect data
+                        Poor data interoperability
                       </SolutionsBlock.Title>
                       <SolutionsBlock.Description>
-                        Origintrail is built on globally recognized GS1 and W3C
-                        standards which allow for efficient alignment of data
-                        from multiple data sources. It enables seamless and
-                        automatic data connection and interoperability between
-                        legacy (ERP) systems.
+                        Data silos and low data interoperability create major
+                        technical challenges for providers that want to build
+                        collaborative applications, especially for organisations
+                        that want to establish end-to-end supply chain
+                        transparency.
                       </SolutionsBlock.Description>
                     </SolutionsBlock.Problem>
                     <SolutionsBlock.Solution>
                       <SolutionsBlock.Image
                         src="/solutions/solution-1.png"
-                        alt="Seamlessly connect data"
+                        alt="Seamless connection of data"
                       />
                       <SolutionsBlock.Title>
-                        Seamlessly connect data
+                        Seamless connection of data
                       </SolutionsBlock.Title>
                       <SolutionsBlock.Description>
                         Origintrail is built on globally recognized GS1 and W3C
@@ -193,17 +193,17 @@ const Home: NextPage = () => {
                     <SolutionsBlock.Solution>
                       <SolutionsBlock.Image
                         src="/solutions/solution-2.png"
-                        alt="Cost and scalability of blockchains"
+                        alt="Infinitly scalable and cost efficient"
                       />
                       <SolutionsBlock.Title>
-                        Cost and scalability of blockchains
+                        Infinitly scalable and cost efficient
                       </SolutionsBlock.Title>
                       <SolutionsBlock.Description>
-                        Existing blockchain solutions are expensive when it
-                        comes to data operations and lack adequate database
-                        properties. Any solution wishing to integrate blockchain
-                        needs to overcome the problem of handling interoperable
-                        data and the high cost.
+                        Origintrail does all the heavy lifting off-chain by
+                        leveraging powerfull graph data structures which allow
+                        for high flexibility and (inter)connectivity of data.
+                        Its open-source nature enables easy and efficient
+                        deployment.
                       </SolutionsBlock.Description>
                     </SolutionsBlock.Solution>
                   </SolutionsBlock.Case>
@@ -227,17 +227,17 @@ const Home: NextPage = () => {
                     <SolutionsBlock.Solution>
                       <SolutionsBlock.Image
                         src="/solutions/solution-3.png"
-                        alt="Data tampering and centralization"
+                        alt="Seamless connection of data"
                       />
                       <SolutionsBlock.Title>
-                        Data tampering and centralization
+                        Seamless connection of data
                       </SolutionsBlock.Title>
                       <SolutionsBlock.Description>
-                        Current attempts to overcome data silos are done by
-                        aggregating data in a centralized way, prompting
-                        concerns about data integrity and omitting
-                        accountability. Centralisation also allows for possible
-                        data tampering and collusion between parties.
+                        Origintrail harnasses the power of blockchain to create
+                        a tamper-proof &ldquo;fingerprint&rdquo; (a
+                        cryptographic hash) which is used to prove that data has
+                        not been modified in any way. Origintrail is being built
+                        to support many different blockchain implementations.
                       </SolutionsBlock.Description>
                     </SolutionsBlock.Solution>
                   </SolutionsBlock.Case>
@@ -255,23 +255,23 @@ const Home: NextPage = () => {
                         their supply chains or other companies as they are
                         concerned this might undermine their competitive
                         position. Exchange of data is often enforced by power
-                        asymmetry or done because of regulatory reasons.
+                        asymmetry or done because of regulatory reasons.{' '}
                       </SolutionsBlock.Description>
                     </SolutionsBlock.Problem>
                     <SolutionsBlock.Solution>
                       <SolutionsBlock.Image
                         src="/solutions/solution-4.png"
-                        alt="Sensitive data protection"
+                        alt="Privacy by default"
                       />
                       <SolutionsBlock.Title>
-                        Sensitive data protection
+                        Privacy by default
                       </SolutionsBlock.Title>
                       <SolutionsBlock.Description>
-                        Companies are often reluctant to exchange data across
-                        their supply chains or other companies as they are
-                        concerned this might undermine their competitive
-                        position. Exchange of data is often enforced by power
-                        asymmetry or done because of regulatory reasons.
+                        Data creators can set the data to be public or private,
+                        have data expire after a certain amount of time, or have
+                        that data (or parts of it) shared only with appropriate
+                        parties. Sensitive data is protected using
+                        “zero-knowledge” encryptions methods.{' '}
                       </SolutionsBlock.Description>
                     </SolutionsBlock.Solution>
                   </SolutionsBlock.Case>
