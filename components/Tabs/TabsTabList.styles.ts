@@ -8,7 +8,7 @@ export const tabs = css({
   borderBottom: '1px solid $gray-200',
 
   [`& > .${TabsTabStyles.container}`]: {
-    mr: '$regular',
+    mr: '$small',
 
     '&:last-of-type': {
       mr: '$none',
