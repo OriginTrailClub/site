@@ -35,33 +35,43 @@ export function SolutionsBlockSolution(props: SolutionsBlockSolutionProps) {
 
   const { refs, state } = context;
 
+  let Content = (
+    <div className={Styles.content()}>
+      {children}
+      <div className={Styles.close()}>
+        <Button
+          label="Dismiss"
+          variant="tertiary"
+          hideLabel
+          onPress={() => {
+            state.close();
+          }}
+          Icon={CloseFillIcon}
+        />
+      </div>
+    </div>
+  )
+
   if (state.isOpen) {
     return (
       <FocusScope restoreFocus autoFocus>
         <div
           {...mergeProps(overlayProps, triggerOverlayProps, dialogProps)}
           ref={refs.overlayRef}
-          className={Styles.container()}
+          className={Styles.container({})}
         >
-          <div className={Styles.content()}>
-            {children}
-            <div className={Styles.close()}>
-              <Button
-                label="Dismiss"
-                variant="tertiary"
-                hideLabel
-                onPress={() => {
-                  state.close();
-                }}
-                Icon={CloseFillIcon}
-              />
-            </div>
-          </div>
+          {Content}
           <DismissButton onDismiss={() => state.close()} />
         </div>
       </FocusScope>
     );
   }
 
-  return null;
+  return (
+    <div aria-hidden="true" className={Styles.container({
+      css: { visibility: 'hidden', }
+    })}>
+      {Content}
+    </div>
+  )
 }
