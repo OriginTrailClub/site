@@ -15,8 +15,6 @@ export function SolutionsBlockTitle(props: SolutionsBlockTitleProps) {
 
   const { titleProps } = context.props;
 
-  console.log(titleProps);
-
   return (
     <div className={Styles.container()}>
       <Heading {...titleProps} level={4}>
