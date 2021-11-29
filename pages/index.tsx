@@ -14,6 +14,7 @@ import { UseCaseBlock } from 'layouts/Blocks/UseCaseBlock';
 import { ParticipantsBlock } from 'layouts/Blocks/ParticipantsBlock';
 import { MetricsBlock } from 'layouts/Blocks/MetricsBlock';
 import { SolutionsBlock } from 'layouts/Blocks/SolutionsBlock';
+import { ImageBlock } from 'layouts/Blocks/ImageBlock';
 
 import { Grid } from 'components/Grid';
 import { Button } from 'components/Button';
@@ -397,6 +398,9 @@ const Home: NextPage = () => {
               </Grid.Item>
             </Grid.Group>
             <Grid.Group>
+              <Grid.Item>
+                <ImageBlock src="/home/image-1.png" alt="Helping the world unlock the true potential of data assets" />
+              </Grid.Item>
               <Grid.Item>
                 <IntroBlock>
                   <IntroBlock.Subtitle>
