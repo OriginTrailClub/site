@@ -6,7 +6,6 @@ export const container = css({
   gridRowStart: 1,
   gridRowEnd: 2,
   backgroundColor: '$indigo-50',
-  visibility: 'hidden',
   px: 'calc($regular + 1px)',
 });
 
