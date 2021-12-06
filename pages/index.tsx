@@ -16,6 +16,7 @@ import { MetricsBlock } from 'layouts/Blocks/MetricsBlock';
 import { SolutionsBlock } from 'layouts/Blocks/SolutionsBlock';
 import { ImageBlock } from 'layouts/Blocks/ImageBlock';
 import { ProductsBlock } from 'layouts/Blocks/ProductsBlock';
+import { SocialsBlock } from 'layouts/Blocks/SocialsBlock';
 
 import { Grid } from 'components/Grid';
 import { Button } from 'components/Button';
@@ -702,7 +703,34 @@ const Home: NextPage = () => {
                   </IntroBlock.Description>
                 </IntroBlock>
               </Grid.Item>
-              <Grid.Item>Socials</Grid.Item>
+              <Grid.Item>
+                <SocialsBlock>
+                  <SocialsBlock.Github
+                    href="https://github.com/origintrail"
+                    label="Github"
+                  />
+                  <SocialsBlock.Discord
+                    href="https://discord.gg/k4W8Jk9T"
+                    label="Discord"
+                  />
+                  <SocialsBlock.Twitter
+                    href="https://twitter.com/origin_trail"
+                    label="Twitter"
+                  />
+                  <SocialsBlock.Reddit
+                    href="https://www.reddit.com/r/OriginTrail/"
+                    label="Reddit"
+                  />
+                  <SocialsBlock.Telegram
+                    href="https://t.me/OriginTrail/"
+                    label="Telegram"
+                  />
+                  <SocialsBlock.Medium
+                    href="https://origintrail.medium.com/"
+                    label="Medium"
+                  />
+                </SocialsBlock>
+              </Grid.Item>
             </Grid.Group>
           </Grid>
         </OverviewLayout.Content>
