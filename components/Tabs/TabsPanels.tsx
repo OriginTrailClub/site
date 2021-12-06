@@ -46,9 +46,7 @@ export function TabsPanels(props: TabsPanelsProps) {
   return (
     <TabsPanelsRendered>
       {React.Children.map(props.children, (child) => (
-        <Item {...props} key={child.key}>
-          {child.props.children}
-        </Item>
+        <Item key={child.key}>{child.props.children}</Item>
       ))}
     </TabsPanelsRendered>
   );
