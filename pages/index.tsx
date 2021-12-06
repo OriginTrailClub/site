@@ -15,6 +15,7 @@ import { ParticipantsBlock } from 'layouts/Blocks/ParticipantsBlock';
 import { MetricsBlock } from 'layouts/Blocks/MetricsBlock';
 import { SolutionsBlock } from 'layouts/Blocks/SolutionsBlock';
 import { ImageBlock } from 'layouts/Blocks/ImageBlock';
+import { ProductsBlock } from 'layouts/Blocks/ProductsBlock';
 
 import { Grid } from 'components/Grid';
 import { Button } from 'components/Button';
@@ -399,7 +400,10 @@ const Home: NextPage = () => {
             </Grid.Group>
             <Grid.Group>
               <Grid.Item>
-                <ImageBlock src="/home/image-1.png" alt="Helping the world unlock the true potential of data assets" />
+                <ImageBlock
+                  src="/home/image-1.png"
+                  alt="Helping the world unlock the true potential of data assets"
+                />
               </Grid.Item>
               <Grid.Item>
                 <IntroBlock>
@@ -551,7 +555,135 @@ const Home: NextPage = () => {
                   />
                 </IntroBlock>
               </Grid.Item>
-              <Grid.Item>Products</Grid.Item>
+              <Grid.Item>
+                <ProductsBlock>
+                  <ProductsBlock.Product value="standards-cerfications">
+                    <ProductsBlock.Header
+                      title="Standards & Certifications"
+                      icon="/products/products-1-icon.jpg"
+                    />
+                    <ProductsBlock.Content>
+                      <ProductsBlock.Image
+                        src="/products/products-1-image.jpg"
+                        alt="Standards & Certifications"
+                      />
+                      <ProductsBlock.Description>
+                        BSI is using the OriginTrail protocol to safeguard the
+                        validity of issued training certificates and business
+                        standards. OriginTrail-based applications developed for
+                        BSI enable quick validity checks for any document by
+                        cross-referencing trusted data. This data is stored on
+                        the OriginTrail Decentralized Network, which is
+                        connected to the Ethereum blockchain.
+                      </ProductsBlock.Description>
+                      <ProductsBlock.Action
+                        label="Standards & Certifications"
+                        Icon={ArrowRightFillIcon}
+                      />
+                    </ProductsBlock.Content>
+                  </ProductsBlock.Product>
+                  <ProductsBlock.Product value="food-traceability">
+                    <ProductsBlock.Header
+                      title="Food Traceability"
+                      icon="/products/products-2-icon.jpg"
+                    />
+                    <ProductsBlock.Content>
+                      <ProductsBlock.Image
+                        src="/products/products-2-image.jpg"
+                        alt="Food Traceability"
+                      />
+                      <ProductsBlock.Description>
+                        BSI is using the OriginTrail protocol to safeguard the
+                        validity of issued training certificates and business
+                        standards. OriginTrail-based applications developed for
+                        BSI enable quick validity checks for any document by
+                        cross-referencing trusted data. This data is stored on
+                        the OriginTrail Decentralized Network, which is
+                        connected to the Ethereum blockchain.
+                      </ProductsBlock.Description>
+                      <ProductsBlock.Action
+                        label="Case study"
+                        Icon={ArrowRightFillIcon}
+                      />
+                    </ProductsBlock.Content>
+                  </ProductsBlock.Product>
+                  <ProductsBlock.Product value="rail-travel-safety">
+                    <ProductsBlock.Header
+                      title="Rail Travel Safety"
+                      icon="/products/products-3-icon.jpg"
+                    />
+                    <ProductsBlock.Content>
+                      <ProductsBlock.Image
+                        src="/products/products-3-image.jpg"
+                        alt="Rail Travel Safety"
+                      />
+                      <ProductsBlock.Description>
+                        BSI is using the OriginTrail protocol to safeguard the
+                        validity of issued training certificates and business
+                        standards. OriginTrail-based applications developed for
+                        BSI enable quick validity checks for any document by
+                        cross-referencing trusted data. This data is stored on
+                        the OriginTrail Decentralized Network, which is
+                        connected to the Ethereum blockchain.
+                      </ProductsBlock.Description>
+                      <ProductsBlock.Action
+                        label="Case study"
+                        Icon={ArrowRightFillIcon}
+                      />
+                    </ProductsBlock.Content>
+                  </ProductsBlock.Product>
+                  <ProductsBlock.Product value="sustainable-argiculture">
+                    <ProductsBlock.Header
+                      title="Sustainable Agriculture"
+                      icon="/products/products-4-icon.jpg"
+                    />
+                    <ProductsBlock.Content>
+                      <ProductsBlock.Image
+                        src="/products/products-4-image.jpg"
+                        alt="Sustainable Agriculture"
+                      />
+                      <ProductsBlock.Description>
+                        BSI is using the OriginTrail protocol to safeguard the
+                        validity of issued training certificates and business
+                        standards. OriginTrail-based applications developed for
+                        BSI enable quick validity checks for any document by
+                        cross-referencing trusted data. This data is stored on
+                        the OriginTrail Decentralized Network, which is
+                        connected to the Ethereum blockchain.
+                      </ProductsBlock.Description>
+                      <ProductsBlock.Action
+                        label="Case study"
+                        Icon={ArrowRightFillIcon}
+                      />
+                    </ProductsBlock.Content>
+                  </ProductsBlock.Product>
+                  <ProductsBlock.Product value="trusted-factory">
+                    <ProductsBlock.Header
+                      title="Trusted Factory"
+                      icon="/products/products-5-icon.jpg"
+                    />
+                    <ProductsBlock.Content>
+                      <ProductsBlock.Image
+                        src="/products/products-5-image.jpg"
+                        alt="Trusted Factory"
+                      />
+                      <ProductsBlock.Description>
+                        BSI is using the OriginTrail protocol to safeguard the
+                        validity of issued training certificates and business
+                        standards. OriginTrail-based applications developed for
+                        BSI enable quick validity checks for any document by
+                        cross-referencing trusted data. This data is stored on
+                        the OriginTrail Decentralized Network, which is
+                        connected to the Ethereum blockchain.
+                      </ProductsBlock.Description>
+                      <ProductsBlock.Action
+                        label="Case study"
+                        Icon={ArrowRightFillIcon}
+                      />
+                    </ProductsBlock.Content>
+                  </ProductsBlock.Product>
+                </ProductsBlock>
+              </Grid.Item>
               <Grid.Item>Quotes</Grid.Item>
               <Grid.Item>Companies</Grid.Item>
             </Grid.Group>
