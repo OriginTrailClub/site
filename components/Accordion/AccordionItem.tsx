@@ -14,7 +14,7 @@ export interface AccordionItemProps {
   /**
    * Visible content if item is active
    */
-  children: AccordionItemElements[];
+  children: AccordionItemElements | AccordionItemElements[];
 }
 
 export function AccordionItem(props: AccordionItemProps) {

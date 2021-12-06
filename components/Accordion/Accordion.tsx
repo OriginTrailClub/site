@@ -20,7 +20,7 @@ export interface AccordionProps extends Expandable {
   /**
    * The children of the <Accordion> element. Should include one or multiple `<Accordion.Item>` elements.
    */
-  children: AccordionElements[];
+  children: AccordionElements | AccordionElements[];
 }
 
 interface IAccordionComposition {
@@ -94,7 +94,7 @@ export const Accordion: React.FC<AccordionProps> &
     >
       {(React.Children.toArray(children) as AccordionElements[]).map(
         (child) => (
-          <Item key={child.props.value}>{child}</Item>
+          <Item key={child.props.value} textValue={child.props.value}>{child}</Item>
         )
       )}
     </AccordionRendered>
