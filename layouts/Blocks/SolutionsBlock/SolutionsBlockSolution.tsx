@@ -50,7 +50,7 @@ export function SolutionsBlockSolution(props: SolutionsBlockSolutionProps) {
         />
       </div>
     </div>
-  )
+  );
 
   if (state.isOpen) {
     return (
@@ -68,10 +68,13 @@ export function SolutionsBlockSolution(props: SolutionsBlockSolutionProps) {
   }
 
   return (
-    <div aria-hidden="true" className={Styles.container({
-      css: { visibility: 'hidden', }
-    })}>
+    <div
+      aria-hidden="true"
+      className={Styles.container({
+        css: { visibility: 'hidden' },
+      })}
+    >
       {Content}
     </div>
-  )
+  );
 }
