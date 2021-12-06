@@ -14,6 +14,7 @@ export const trigger = css({
   width: '100%',
   alignItems: 'center',
   color: '$text-header',
+  textAlign: 'start',
 });
 
 export const icon = css({
@@ -23,7 +24,6 @@ export const icon = css({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
-  justifyContent: 'center',
 });
 
 export const label = css({

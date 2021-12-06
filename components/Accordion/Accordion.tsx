@@ -94,7 +94,9 @@ export const Accordion: React.FC<AccordionProps> &
     >
       {(React.Children.toArray(children) as AccordionElements[]).map(
         (child) => (
-          <Item key={child.props.value} textValue={child.props.value}>{child}</Item>
+          <Item key={child.props.value} textValue={child.props.value}>
+            {child}
+          </Item>
         )
       )}
     </AccordionRendered>
