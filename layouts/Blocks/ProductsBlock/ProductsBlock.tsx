@@ -90,8 +90,6 @@ export const ProductsBlock: React.FC<ProductsBlockProps> &
 
   const image = images[lastExpandedKey];
 
-  console.log(image, images);
-
   return (
     <ProductsBlockContext.Provider
       value={{
