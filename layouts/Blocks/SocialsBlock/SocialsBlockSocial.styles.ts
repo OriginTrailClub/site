@@ -39,6 +39,8 @@ export const inner = css({
 export const icon = css({
   $$iconSpace: '$space$small',
 
+  display: 'flex',
+
   width: '100%',
   flexShrink: 1,
   flexGrow: 0,
