@@ -72,21 +72,21 @@ const Home: NextPage = () => {
                   />
                   <MetricsBlock.Metrics>
                     <MetricsBlock.Metric
-                      icon="/metrics/metric-1.png"
+                      icon="/metrics/market-cap.jpg"
                       value={184000000}
                       label="Total Market Cap"
                       currency="USD"
                       style="currency"
                     />
                     <MetricsBlock.Metric
-                      icon="/metrics/metric-1.png"
+                      icon="/metrics/price.jpg"
                       value={0.97}
                       label="Price"
                       currency="USD"
                       style="currency"
                     />
                     <MetricsBlock.Metric
-                      icon="/metrics/metric-1.png"
+                      icon="/metrics/max-supply.jpg"
                       value={500000000}
                       label="Max Supply"
                     />
@@ -100,17 +100,17 @@ const Home: NextPage = () => {
                   />
                   <MetricsBlock.Metrics>
                     <MetricsBlock.Metric
-                      icon="/metrics/metric-1.png"
+                      icon="/metrics/total-graph-size.jpg"
                       value={60000000}
                       label="Total Graph Size (TGS)"
                     />
                     <MetricsBlock.Metric
-                      icon="/metrics/metric-1.png"
+                      icon="/metrics/dataset-published.jpg"
                       value={21000}
                       label="Total Datasets Published"
                     />
                     <MetricsBlock.Metric
-                      icon="/metrics/metric-1.png"
+                      icon="/metrics/total-tokens-staked.jpg"
                       value={9000000}
                       label="Total Tokens Staked"
                     />
@@ -145,7 +145,7 @@ const Home: NextPage = () => {
                   <SolutionsBlock.Case>
                     <SolutionsBlock.Problem>
                       <SolutionsBlock.Image
-                        src="/solutions/solution-1.png"
+                        src="/solutions/interoperability.png"
                         alt="Poor data interoperability"
                       />
                       <SolutionsBlock.Title>
@@ -161,7 +161,7 @@ const Home: NextPage = () => {
                     </SolutionsBlock.Problem>
                     <SolutionsBlock.Solution>
                       <SolutionsBlock.Image
-                        src="/solutions/solution-1.png"
+                        src="/solutions/seamless-connection.png"
                         alt="Seamless connection of data"
                       />
                       <SolutionsBlock.Title>
@@ -179,7 +179,7 @@ const Home: NextPage = () => {
                   <SolutionsBlock.Case>
                     <SolutionsBlock.Problem>
                       <SolutionsBlock.Image
-                        src="/solutions/solution-2.png"
+                        src="/solutions/cost-scalability.png"
                         alt="Cost and scalability of blockchains"
                       />
                       <SolutionsBlock.Title>
@@ -195,7 +195,7 @@ const Home: NextPage = () => {
                     </SolutionsBlock.Problem>
                     <SolutionsBlock.Solution>
                       <SolutionsBlock.Image
-                        src="/solutions/solution-2.png"
+                        src="/solutions/infinitly-scalable.png"
                         alt="Infinitly scalable and cost efficient"
                       />
                       <SolutionsBlock.Title>
@@ -213,7 +213,7 @@ const Home: NextPage = () => {
                   <SolutionsBlock.Case>
                     <SolutionsBlock.Problem>
                       <SolutionsBlock.Image
-                        src="/solutions/solution-3.png"
+                        src="/solutions/data-tampering-centralization.png"
                         alt="Data tampering and centralization"
                       />
                       <SolutionsBlock.Title>
@@ -229,11 +229,11 @@ const Home: NextPage = () => {
                     </SolutionsBlock.Problem>
                     <SolutionsBlock.Solution>
                       <SolutionsBlock.Image
-                        src="/solutions/solution-3.png"
-                        alt="Seamless connection of data"
+                        src="/solutions/data-immutability.png"
+                        alt="Data immutability"
                       />
                       <SolutionsBlock.Title>
-                        Seamless connection of data
+                        Data immutability
                       </SolutionsBlock.Title>
                       <SolutionsBlock.Description>
                         Origintrail harnasses the power of blockchain to create
@@ -247,7 +247,7 @@ const Home: NextPage = () => {
                   <SolutionsBlock.Case>
                     <SolutionsBlock.Problem>
                       <SolutionsBlock.Image
-                        src="/solutions/solution-4.png"
+                        src="/solutions/sensitive-data-protection.png"
                         alt="Sensitive data protection"
                       />
                       <SolutionsBlock.Title>
@@ -263,7 +263,7 @@ const Home: NextPage = () => {
                     </SolutionsBlock.Problem>
                     <SolutionsBlock.Solution>
                       <SolutionsBlock.Image
-                        src="/solutions/solution-4.png"
+                        src="/solutions/privacy.png"
                         alt="Privacy by default"
                       />
                       <SolutionsBlock.Title>
@@ -305,7 +305,7 @@ const Home: NextPage = () => {
                       convallis at tellus.
                     </UseCaseBlock.Description>
                     <UseCaseBlock.Image
-                      src="/use-cases/use-case-1.png"
+                      src="/use-cases/supply-chain.png"
                       alt="Supply Chains"
                     />
                   </UseCaseBlock.Case>
@@ -316,7 +316,7 @@ const Home: NextPage = () => {
                       convallis at tellus.
                     </UseCaseBlock.Description>
                     <UseCaseBlock.Image
-                      src="/use-cases/use-case-3.png"
+                      src="/use-cases/nfts.png"
                       alt="Non Fungible Tokens"
                     />
                   </UseCaseBlock.Case>
@@ -329,7 +329,7 @@ const Home: NextPage = () => {
                       convallis at tellus.
                     </UseCaseBlock.Description>
                     <UseCaseBlock.Image
-                      src="/use-cases/use-case-2.png"
+                      src="/use-cases/defi.png"
                       alt="Decentralized Finance"
                     />
                   </UseCaseBlock.Case>
@@ -340,7 +340,7 @@ const Home: NextPage = () => {
                       convallis at tellus.
                     </UseCaseBlock.Description>
                     <UseCaseBlock.Image
-                      src="/use-cases/use-case-1.png"
+                      src="/use-cases/data-marketplace.png"
                       alt="Data Marketplace"
                     />
                   </UseCaseBlock.Case>
@@ -353,7 +353,7 @@ const Home: NextPage = () => {
                       convallis at tellus.
                     </UseCaseBlock.Description>
                     <UseCaseBlock.Image
-                      src="/use-cases/use-case-3.png"
+                      src="/use-cases/certifications.png"
                       alt="Cetifications & Compliance"
                     />
                   </UseCaseBlock.Case>
@@ -366,7 +366,7 @@ const Home: NextPage = () => {
                       convallis at tellus.
                     </UseCaseBlock.Description>
                     <UseCaseBlock.Image
-                      src="/use-cases/use-case-2.png"
+                      src="/use-cases/logistics.png"
                       alt="Logistics & Transportation"
                     />
                   </UseCaseBlock.Case>
@@ -379,7 +379,7 @@ const Home: NextPage = () => {
                       convallis at tellus.
                     </UseCaseBlock.Description>
                     <UseCaseBlock.Image
-                      src="/use-cases/use-case-1.png"
+                      src="/use-cases/pharmaceutical.png"
                       alt="Pharmaceutical Industry"
                     />
                   </UseCaseBlock.Case>
@@ -392,7 +392,7 @@ const Home: NextPage = () => {
                       convallis at tellus.
                     </UseCaseBlock.Description>
                     <UseCaseBlock.Image
-                      src="/use-cases/use-case-3.png"
+                      src="/use-cases/personal-data.png"
                       alt="Personal Data Management"
                     />
                   </UseCaseBlock.Case>
@@ -402,7 +402,7 @@ const Home: NextPage = () => {
             <Grid.Group>
               <Grid.Item>
                 <ImageBlock
-                  src="/home/image-1.png"
+                  src="/home/network-of-nodes.jpg"
                   alt="Helping the world unlock the true potential of data assets"
                 />
               </Grid.Item>
@@ -481,7 +481,7 @@ const Home: NextPage = () => {
                 <ParticipantsBlock>
                   <ParticipantsBlock.Participant>
                     <ParticipantsBlock.Image
-                      src="/participants/participant-1.png"
+                      src="/participants/data-provider.jpg"
                       alt="Data Providers"
                     />
                     <ParticipantsBlock.Title>
@@ -494,7 +494,7 @@ const Home: NextPage = () => {
                   </ParticipantsBlock.Participant>
                   <ParticipantsBlock.Participant>
                     <ParticipantsBlock.Image
-                      src="/participants/participant-1.png"
+                      src="/participants/data-creator.jpg"
                       alt="Data Creators"
                     />
                     <ParticipantsBlock.Title>
@@ -507,7 +507,7 @@ const Home: NextPage = () => {
                   </ParticipantsBlock.Participant>
                   <ParticipantsBlock.Participant>
                     <ParticipantsBlock.Image
-                      src="/participants/participant-1.png"
+                      src="/participants/data-holder.jpg"
                       alt="Data Holders"
                     />
                     <ParticipantsBlock.Title>
@@ -520,7 +520,7 @@ const Home: NextPage = () => {
                   </ParticipantsBlock.Participant>
                   <ParticipantsBlock.Participant>
                     <ParticipantsBlock.Image
-                      src="/participants/participant-1.png"
+                      src="/participants/data-viewer.jpg"
                       alt="Data Viewers"
                     />
                     <ParticipantsBlock.Title>
