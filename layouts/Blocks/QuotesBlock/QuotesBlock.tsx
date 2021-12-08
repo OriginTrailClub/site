@@ -44,7 +44,6 @@ interface IndicatorProps<T> {
   state: SingleSelectListState<T>;
 }
 
-
 function Indicator<T>(props: IndicatorProps<T>) {
   const { state, item } = props;
 
@@ -58,7 +57,7 @@ function Indicator<T>(props: IndicatorProps<T>) {
     <li className={Styles.indicator()} {...tabProps} ref={ref}>
       <VisuallyHidden>{item.textValue}</VisuallyHidden>
     </li>
-  )
+  );
 }
 
 export const QuotesBlock: React.FC<QuotesBlockSlide> &
@@ -67,13 +66,18 @@ export const QuotesBlock: React.FC<QuotesBlockSlide> &
 
   const elements = React.useMemo((): QuotesBlockElements[] => {
     return React.Children.toArray(children).map((child, index) => (
-      <Item key={index} textValue={(child as QuotesBlockElements).props.value}>{child}</Item>
+      <Item key={index} textValue={(child as QuotesBlockElements).props.value}>
+        {child}
+      </Item>
     ));
   }, [children]);
 
   const ref = React.useRef<HTMLUListElement>(null!);
 
-  const state = useTabListState({ children: elements, defaultSelectedKey: elements?.[0]?.key ?? undefined });
+  const state = useTabListState({
+    children: elements,
+    defaultSelectedKey: elements?.[0]?.key ?? undefined,
+  });
   const { tabListProps } = useTabList({ ...props }, state, ref);
 
   return (
@@ -84,7 +88,7 @@ export const QuotesBlock: React.FC<QuotesBlockSlide> &
         <div className={Styles.line()} />
         <div className={Styles.contents()}>
           <ul {...tabListProps} className={Styles.indicators()} ref={ref}>
-            {Array.from(state.collection).map(item => (
+            {Array.from(state.collection).map((item) => (
               <Indicator key={item.key} item={item} state={state} />
             ))}
           </ul>

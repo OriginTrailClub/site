@@ -14,5 +14,9 @@ export interface QuotesBlockQuoteProps {
 export function QuotesBlockQuote(props: QuotesBlockQuoteProps) {
   const { children } = props;
 
-  return <div className={Styles.container()}><div className={Styles.contents()}>{children}</div></div>;
+  return (
+    <div className={Styles.container()}>
+      <div className={Styles.contents()}>{children}</div>
+    </div>
+  );
 }

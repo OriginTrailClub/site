@@ -12,7 +12,7 @@ export function QuotesBlockImage(props: QuotesBlockImageProps) {
 
   return (
     <div className={Styles.container()}>
-      <Image src={src} alt={alt} layout="responsive" width={310} height={413} />
+      <Image src={src} alt={alt} layout="responsive" width={310} height={400} />
     </div>
   );
 }

@@ -17,7 +17,12 @@ export const navigation = css({
   mt: 'calc((-48px - 2px) / 2)',
 });
 
-export const contents = css({ maxWidth: 1234, width: '100%', display: 'flex', zIndex: 1 });
+export const contents = css({
+  maxWidth: 1234,
+  width: '100%',
+  display: 'flex',
+  zIndex: 1,
+});
 
 export const indicators = css({
   display: 'flex',
@@ -48,17 +53,17 @@ export const indicator = css({
   },
 
   '&:hover': {
-    'cursor': 'pointer',
+    cursor: 'pointer',
     '&:before': {
       backgroundColor: '$indigo-600',
-    }
+    },
   },
 
   '&[aria-selected="true"]': {
     '&:before': {
       backgroundColor: '$indigo-700',
-    }
-  }
+    },
+  },
 });
 
 export const line = css({

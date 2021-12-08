@@ -19,9 +19,5 @@ export interface QuotesBlockSlideProps {
 export function QuotesBlockSlide(props: QuotesBlockSlideProps) {
   const { children } = props;
 
-  return (
-      <figure className={Styles.container()}>
-          {children}
-      </figure>
-  );
+  return <figure className={Styles.container()}>{children}</figure>;
 }

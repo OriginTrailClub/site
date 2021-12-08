@@ -1,4 +1,4 @@
-import * as Styles from './QuotesBlockDescription.styles'
+import * as Styles from './QuotesBlockDescription.styles';
 
 import { Paragraph, ParagraphProps } from 'components/Typography';
 
