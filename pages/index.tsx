@@ -539,20 +539,16 @@ const Home: NextPage = () => {
               <Grid.Item>
                 <IntroBlock>
                   <IntroBlock.Subtitle>
-                    Harnessing Neutrality, Inclusiveness & Usability
+                    Enterprise adoption
                   </IntroBlock.Subtitle>
                   <IntroBlock.Title>
-                    Helping the world unlock the true potential of data assets
+                    Flagship products built with OriginTrail
                   </IntroBlock.Title>
                   <IntroBlock.Description>
-                    Organize, discover and verify anything - from physical to
-                    digital assets like supply chain items to Art, Diplomas,
-                    Certificates, NFTs, DeFi and more. The Decentralized
-                    Knowledge Graph allows the worlds’ data assets to be
-                    structured, linked, persistent and understandable.
+                    OriginTrail already powers trusted data exchange in different industries - including Fortune 500 companies - bringing value to users and companies around the world.
                   </IntroBlock.Description>
                   <IntroBlock.Action
-                    label="How it works"
+                    label="Use cases"
                     Icon={ArrowRightFillIcon}
                   />
                 </IntroBlock>
