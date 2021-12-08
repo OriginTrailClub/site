@@ -688,9 +688,9 @@ const Home: NextPage = () => {
               </Grid.Item>
               <Grid.Item>
                 <QuotesBlock>
-                  <QuotesBlock.Slide value="Quote 1 of 4">
+                  <QuotesBlock.Slide value="Quote Bob Metcalfe">
                     <QuotesBlock.Image
-                      src="/quotes/quote-1.png"
+                      src="/quotes/bob-metcalfe.png"
                       alt="Bob Metcalfe"
                     />
                     <QuotesBlock.Quote>
@@ -701,70 +701,70 @@ const Home: NextPage = () => {
                         exponentially.”
                       </QuotesBlock.Description>
                       <QuotesBlock.Caption>
-                        <QuotesBlock.Author name="Bob Metcalfe 1" />
+                        <QuotesBlock.Author name="Bob Metcalfe" />
                         <QuotesBlock.Role label="Advisor to Trace Labs, core developers of OriginTrail" />
                       </QuotesBlock.Caption>
                     </QuotesBlock.Quote>
                   </QuotesBlock.Slide>
-                  <QuotesBlock.Slide value="Quote 2 of 4">
+                  <QuotesBlock.Slide value="Quote Gregg Kidd">
                     <QuotesBlock.Image
-                      src="/quotes/quote-1.png"
-                      alt="Bob Metcalfe"
+                      src="/quotes/greg-kidd.png"
+                      alt="Greg Kidd"
                     />
                     <QuotesBlock.Quote>
                       <QuotesBlock.Description>
-                        “The value of a network is proportional to the square of
-                        the number of connected users. As the physical cost of
-                        the network grows linearly, its value grows
-                        exponentially.”
+                        “Identity is not just for people—but for every supply
+                        chain to track the origin and provenance of our food,
+                        drinks, and vaccines. OriginTrail makes the identity of
+                        things secure and transparent through blockchain
+                        technology.”
                       </QuotesBlock.Description>
                       <QuotesBlock.Caption>
-                        <QuotesBlock.Author name="Bob Metcalfe 2" />
-                        <QuotesBlock.Role label="Advisor to Trace Labs, core developers of OriginTrail" />
+                        <QuotesBlock.Author name="Gregg Kidd" />
+                        <QuotesBlock.Role label="CEO Global ID and Founder Hard Yaka" />
                       </QuotesBlock.Caption>
                     </QuotesBlock.Quote>
                   </QuotesBlock.Slide>
-                  <QuotesBlock.Slide value="Quote 3 of 4">
+                  <QuotesBlock.Slide value="Quote Dan Purtell">
                     <QuotesBlock.Image
-                      src="/quotes/quote-1.png"
-                      alt="Bob Metcalfe"
+                      src="/quotes/dan-purtell.png"
+                      alt="Dan Purtell"
                     />
                     <QuotesBlock.Quote>
                       <QuotesBlock.Description>
-                        “The value of a network is proportional to the square of
-                        the number of connected users. As the physical cost of
-                        the network grows linearly, its value grows
-                        exponentially.”
+                        “We’ve been working with OriginTrail since 2018. Digital
+                        trust is very important to us, OriginTrail and
+                        blockchain technology help us verify claims in a very
+                        immutable way. It’s a great strategic partnership and we
+                        plan on growing it.”
                       </QuotesBlock.Description>
                       <QuotesBlock.Caption>
-                        <QuotesBlock.Author name="Bob Metcalfe 3" />
-                        <QuotesBlock.Role label="Advisor to Trace Labs, core developers of OriginTrail" />
+                        <QuotesBlock.Author name="Dan Purtell" />
+                        <QuotesBlock.Role label="Director of Innovation BSI" />
                       </QuotesBlock.Caption>
                     </QuotesBlock.Quote>
                   </QuotesBlock.Slide>
-                  <QuotesBlock.Slide value="Quote 4 of 4">
+                  <QuotesBlock.Slide value="Quote Aaron Bradley">
                     <QuotesBlock.Image
-                      src="/quotes/quote-1.png"
-                      alt="Bob Metcalfe"
+                      src="/quotes/aaron-bradley.png"
+                      alt="Aaron Bradley"
                     />
                     <QuotesBlock.Quote>
                       <QuotesBlock.Description>
-                        “The value of a network is proportional to the square of
-                        the number of connected users. As the physical cost of
-                        the network grows linearly, its value grows
-                        exponentially.”
+                        “Very excited to be joining the advisory board of Trace
+                        Labs, though I feel like Greg Hirsch in the company of
+                        Kendall and Roman Roy. Don&apos;t @ me, it&apos;s the only
+                        standing-alongside-giants analogy I could come up with”
                       </QuotesBlock.Description>
                       <QuotesBlock.Caption>
-                        <QuotesBlock.Author name="Bob Metcalfe 4" />
-                        <QuotesBlock.Role label="Advisor to Trace Labs, core developers of OriginTrail" />
+                        <QuotesBlock.Author name="Aaron Bradley" />
+                        <QuotesBlock.Role label="Knowledge Graph Strategist EA" />
                       </QuotesBlock.Caption>
                     </QuotesBlock.Quote>
                   </QuotesBlock.Slide>
                 </QuotesBlock>
               </Grid.Item>
-              <Grid.Item>
-                  Companies
-              </Grid.Item>
+              <Grid.Item>Companies</Grid.Item>
             </Grid.Group>
             <Grid.Group>
               <Grid.Item>
