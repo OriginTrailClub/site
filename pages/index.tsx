@@ -17,6 +17,7 @@ import { SolutionsBlock } from 'layouts/Blocks/SolutionsBlock';
 import { ImageBlock } from 'layouts/Blocks/ImageBlock';
 import { ProductsBlock } from 'layouts/Blocks/ProductsBlock';
 import { SocialsBlock } from 'layouts/Blocks/SocialsBlock';
+import { QuotesBlock } from 'layouts/Blocks/QuotesBlock';
 
 import { Grid } from 'components/Grid';
 import { Button } from 'components/Button';
@@ -685,8 +686,85 @@ const Home: NextPage = () => {
                   </ProductsBlock.Product>
                 </ProductsBlock>
               </Grid.Item>
-              <Grid.Item>Quotes</Grid.Item>
-              <Grid.Item>Companies</Grid.Item>
+              <Grid.Item>
+                <QuotesBlock>
+                  <QuotesBlock.Slide value="Quote 1 of 4">
+                    <QuotesBlock.Image
+                      src="/quotes/quote-1.png"
+                      alt="Bob Metcalfe"
+                    />
+                    <QuotesBlock.Quote>
+                      <QuotesBlock.Description>
+                        “The value of a network is proportional to the square of
+                        the number of connected users. As the physical cost of
+                        the network grows linearly, its value grows
+                        exponentially.”
+                      </QuotesBlock.Description>
+                      <QuotesBlock.Caption>
+                        <QuotesBlock.Author name="Bob Metcalfe 1" />
+                        <QuotesBlock.Role label="Advisor to Trace Labs, core developers of OriginTrail" />
+                      </QuotesBlock.Caption>
+                    </QuotesBlock.Quote>
+                  </QuotesBlock.Slide>
+                  <QuotesBlock.Slide value="Quote 2 of 4">
+                    <QuotesBlock.Image
+                      src="/quotes/quote-1.png"
+                      alt="Bob Metcalfe"
+                    />
+                    <QuotesBlock.Quote>
+                      <QuotesBlock.Description>
+                        “The value of a network is proportional to the square of
+                        the number of connected users. As the physical cost of
+                        the network grows linearly, its value grows
+                        exponentially.”
+                      </QuotesBlock.Description>
+                      <QuotesBlock.Caption>
+                        <QuotesBlock.Author name="Bob Metcalfe 2" />
+                        <QuotesBlock.Role label="Advisor to Trace Labs, core developers of OriginTrail" />
+                      </QuotesBlock.Caption>
+                    </QuotesBlock.Quote>
+                  </QuotesBlock.Slide>
+                  <QuotesBlock.Slide value="Quote 3 of 4">
+                    <QuotesBlock.Image
+                      src="/quotes/quote-1.png"
+                      alt="Bob Metcalfe"
+                    />
+                    <QuotesBlock.Quote>
+                      <QuotesBlock.Description>
+                        “The value of a network is proportional to the square of
+                        the number of connected users. As the physical cost of
+                        the network grows linearly, its value grows
+                        exponentially.”
+                      </QuotesBlock.Description>
+                      <QuotesBlock.Caption>
+                        <QuotesBlock.Author name="Bob Metcalfe 3" />
+                        <QuotesBlock.Role label="Advisor to Trace Labs, core developers of OriginTrail" />
+                      </QuotesBlock.Caption>
+                    </QuotesBlock.Quote>
+                  </QuotesBlock.Slide>
+                  <QuotesBlock.Slide value="Quote 4 of 4">
+                    <QuotesBlock.Image
+                      src="/quotes/quote-1.png"
+                      alt="Bob Metcalfe"
+                    />
+                    <QuotesBlock.Quote>
+                      <QuotesBlock.Description>
+                        “The value of a network is proportional to the square of
+                        the number of connected users. As the physical cost of
+                        the network grows linearly, its value grows
+                        exponentially.”
+                      </QuotesBlock.Description>
+                      <QuotesBlock.Caption>
+                        <QuotesBlock.Author name="Bob Metcalfe 4" />
+                        <QuotesBlock.Role label="Advisor to Trace Labs, core developers of OriginTrail" />
+                      </QuotesBlock.Caption>
+                    </QuotesBlock.Quote>
+                  </QuotesBlock.Slide>
+                </QuotesBlock>
+              </Grid.Item>
+              <Grid.Item>
+                  Companies
+              </Grid.Item>
             </Grid.Group>
             <Grid.Group>
               <Grid.Item>
