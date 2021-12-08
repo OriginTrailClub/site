@@ -54,28 +54,10 @@ export const globalStyles = globalCss({
 
     fontSize: generateFontSizeClamp({
       minWidthPx: 320,
-      maxWidthPx: 640,
+      maxWidthPx: 1234,
       minFontSize: 0.9,
       maxFontSize: 1.2,
     }),
-
-    '@bp2': {
-      fontSize: generateFontSizeClamp({
-        minWidthPx: 640,
-        maxWidthPx: 1024,
-        minFontSize: 1,
-        maxFontSize: 1.2,
-      }),
-    },
-
-    '@bp4': {
-      fontSize: generateFontSizeClamp({
-        minWidthPx: 1024,
-        maxWidthPx: 1234,
-        minFontSize: 1,
-        maxFontSize: 1.2,
-      }),
-    },
   },
   body: {
     margin: 0,
