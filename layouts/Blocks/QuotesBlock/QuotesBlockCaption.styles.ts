@@ -5,4 +5,10 @@ export const container = css({
     display: 'flex',
     flexDirection: 'column',
     mr: 'calc(88px + $regular)',
+    minHeight: '$space$x-large',
+    justifyContent: 'center',
+
+    '@bp3': {
+        minHeight: 'auto',
+    }
 });

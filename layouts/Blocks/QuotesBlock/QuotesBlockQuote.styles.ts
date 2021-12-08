@@ -16,7 +16,7 @@ export const container = css({
 });
 
 export const contents = css({
-    mb: '$x-large',
+    mb: '$large',
 
     '@bp3': {
         my: 'calc($large + $regular)',
