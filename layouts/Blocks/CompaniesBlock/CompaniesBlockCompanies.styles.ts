@@ -5,8 +5,6 @@ import * as Styles from './CompaniesBlockCompany.styles';
 export const container = css({
   width: '100%',
   maxWidth: '100%',
-  overflowX: 'auto',
-  overflowY: 'hidden',
   gridArea: 'companies',
 });
 
