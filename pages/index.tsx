@@ -18,6 +18,7 @@ import { ImageBlock } from 'layouts/Blocks/ImageBlock';
 import { ProductsBlock } from 'layouts/Blocks/ProductsBlock';
 import { SocialsBlock } from 'layouts/Blocks/SocialsBlock';
 import { QuotesBlock } from 'layouts/Blocks/QuotesBlock';
+import { CompaniesBlock } from 'layouts/Blocks/CompaniesBlock';
 
 import { Grid } from 'components/Grid';
 import { Button } from 'components/Button';
@@ -538,14 +539,14 @@ const Home: NextPage = () => {
             <Grid.Group>
               <Grid.Item>
                 <IntroBlock>
-                  <IntroBlock.Subtitle>
-                    Enterprise adoption
-                  </IntroBlock.Subtitle>
+                  <IntroBlock.Subtitle>Enterprise adoption</IntroBlock.Subtitle>
                   <IntroBlock.Title>
                     Flagship products built with OriginTrail
                   </IntroBlock.Title>
                   <IntroBlock.Description>
-                    OriginTrail already powers trusted data exchange in different industries - including Fortune 500 companies - bringing value to users and companies around the world.
+                    OriginTrail already powers trusted data exchange in
+                    different industries - including Fortune 500 companies -
+                    bringing value to users and companies around the world.
                   </IntroBlock.Description>
                   <IntroBlock.Action
                     label="Use cases"
@@ -683,6 +684,38 @@ const Home: NextPage = () => {
                 </ProductsBlock>
               </Grid.Item>
               <Grid.Item>
+                <CompaniesBlock>
+                  <CompaniesBlock.Title>Ecosystem</CompaniesBlock.Title>
+                  <CompaniesBlock.CallToAction label="Map" />
+                  <CompaniesBlock.Companies>
+                    <CompaniesBlock.Company
+                      src="/ecosystem/acala.png"
+                      alt="Acala"
+                    />
+                    <CompaniesBlock.Company
+                      src="/ecosystem/sbb.png"
+                      alt="SBB"
+                    />
+                    <CompaniesBlock.Company
+                      src="/ecosystem/scan.png"
+                      alt="Scan"
+                    />
+                    <CompaniesBlock.Company
+                      src="/ecosystem/wef.png"
+                      alt="World economic forum"
+                    />
+                    <CompaniesBlock.Company
+                      src="/ecosystem/gs1.png"
+                      alt="GS1 Slovenia"
+                    />
+                    <CompaniesBlock.Company
+                      src="/ecosystem/substrate.png"
+                      alt="Substrate"
+                    />
+                  </CompaniesBlock.Companies>
+                </CompaniesBlock>
+              </Grid.Item>
+              <Grid.Item>
                 <QuotesBlock>
                   <QuotesBlock.Slide value="Quote Bob Metcalfe">
                     <QuotesBlock.Image
@@ -749,8 +782,9 @@ const Home: NextPage = () => {
                       <QuotesBlock.Description>
                         “Very excited to be joining the advisory board of Trace
                         Labs, though I feel like Greg Hirsch in the company of
-                        Kendall and Roman Roy. Don&apos;t @ me, it&apos;s the only
-                        standing-alongside-giants analogy I could come up with”
+                        Kendall and Roman Roy. Don&apos;t @ me, it&apos;s the
+                        only standing-alongside-giants analogy I could come up
+                        with”
                       </QuotesBlock.Description>
                       <QuotesBlock.Caption>
                         <QuotesBlock.Author name="Aaron Bradley" />
@@ -760,7 +794,6 @@ const Home: NextPage = () => {
                   </QuotesBlock.Slide>
                 </QuotesBlock>
               </Grid.Item>
-              <Grid.Item>Companies</Grid.Item>
             </Grid.Group>
             <Grid.Group>
               <Grid.Item>
