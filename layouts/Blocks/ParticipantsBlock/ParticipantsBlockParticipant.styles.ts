@@ -6,10 +6,10 @@ export const container = css({
 });
 
 export const contents = css({
-  marginLeft: 'calc($small / 2)',
-  marginRight: 'calc($small / 2)',
-  marginTop: '$small',
-  marginBottom: '$regular',
+  ml: 'calc($small / 2)',
+  mr: 'calc($small / 2)',
+  mt: '$small',
+  mb: '$regular',
 
   px: '$small',
   pt: '$small',

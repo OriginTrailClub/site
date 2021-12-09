@@ -25,7 +25,7 @@ export const tab = css({
   borderColor: 'transparent',
   color: '$text-subtle',
 
-  marginBottom: -2,
+  mb: -2,
 
   '&[aria-selected="true"]': {
     backgroundColor: '$indigo-50',

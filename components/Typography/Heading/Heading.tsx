@@ -21,7 +21,7 @@ export const HeadingElement = styled('h1', {
   fontFamily: '$header',
   lineHeight: '$header',
   color: '$text-header',
-  margin: 0,
+  m: 0,
 
   variants: {
     level: {

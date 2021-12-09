@@ -35,8 +35,8 @@ export const cases = css({
   gridTemplateColumns:
     '$$scrollPaddingLeft repeat($$columnCount, minmax($$minUseCaseSize, $$maxUseCaseSize)) $$scrollPaddingRight',
 
-  marginTop: 'calc(-$regular / 2)',
-  marginBottom: 'calc(-$regular / 2)',
+  mt: 'calc(-$regular / 2)',
+  mb: 'calc(-$regular / 2)',
 
   overflowX: 'auto',
   overflowY: 'hidden',
@@ -59,7 +59,7 @@ export const cases = css({
 
   [`& > .${UseCaseBlockCaseStyles.container}`]: {
     scrollSnapAlign: 'center',
-    margin: 'calc($space$regular / 2)',
+    m: 'calc($space$regular / 2)',
   },
 
   '@bp3': {

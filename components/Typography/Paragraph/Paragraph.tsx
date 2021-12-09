@@ -19,7 +19,7 @@ export interface ParagraphProps extends DOMProps {
 }
 
 const ParagraphElement = styled('p', {
-  margin: 0,
+  m: 0,
   color: '$text-body',
   lineHeight: '$body',
 

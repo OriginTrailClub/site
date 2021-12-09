@@ -16,23 +16,23 @@ const TypographyContainer = styled('div', {
 
   [`& ${Heading}`]: {
     '&[data-level="1"]': {
-      marginBottom: 0,
+      mb: 0,
     },
     '&[data-level="2"]': {
-      marginBottom: 0,
+      mb: 0,
     },
     '&[data-level="3"]': {
-      marginBottom: 0,
+      mb: 0,
     },
     '&[data-level="4"]': {
-      marginBottom: 0,
+      mb: 0,
     },
     '&[data-level="5"]': {
-      marginBottom: 0,
+      mb: 0,
     },
   },
   [`& ${Paragraph}`]: {
-    marginBottom: 0,
+    mb: 0,
   },
 });
 

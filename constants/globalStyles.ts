@@ -60,7 +60,7 @@ export const globalStyles = globalCss({
     }),
   },
   body: {
-    margin: 0,
+    m: 0,
     minHeight: '100%',
     width: '100%',
     fontFamily: '$default',

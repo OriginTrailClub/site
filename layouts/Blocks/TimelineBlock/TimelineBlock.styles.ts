@@ -11,7 +11,7 @@ export const container = css({
 });
 
 export const contents = css({
-  marginTop: '$large',
+  mt: '$large',
   display: 'flex',
   width: '100%',
   justifyContent: 'center',
@@ -58,7 +58,7 @@ export const events = css({
     '$$scrollPaddingLeft repeat($$eventCount, $$eventSize) $$scrollPaddingRight',
   gridTemplateRows: '1fr',
   gridAutoFlow: 'column',
-  margin: 0,
+  m: 0,
   padding: 0,
   width: '100%',
 

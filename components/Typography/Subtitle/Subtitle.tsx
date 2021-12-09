@@ -18,7 +18,7 @@ export const SubtitleElement = styled('h5', {
   fontSize: '$subtitle',
   fontWeight: '$medium',
   color: '$text-emphasis',
-  margin: 0,
+  m: 0,
 });
 
 /**

@@ -3,7 +3,7 @@ import { css } from 'stitches.config';
 export const container = css({
   width: '100%',
   maxWidth: 'calc(calc(1234px - $space$x-large) / 2)',
-  margin: '0 auto',
+  m: '0 auto',
 });
 
 export const aspectRatioBox = css({
