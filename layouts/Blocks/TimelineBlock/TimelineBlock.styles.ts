@@ -59,7 +59,7 @@ export const events = css({
   gridTemplateRows: '1fr',
   gridAutoFlow: 'column',
   m: 0,
-  padding: 0,
+  p: 0,
   width: '100%',
 
   overflowX: 'auto',

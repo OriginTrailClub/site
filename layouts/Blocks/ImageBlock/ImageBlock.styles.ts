@@ -11,6 +11,6 @@ export const contents = css({
   display: 'flex',
   maxWidth: 1234,
   width: '100%',
-  paddingBottom: 'min(calc(100% / 3 * 2), 360px)',
+  pb: 'min(calc(100% / 3 * 2), 360px)',
   position: 'relative',
 });

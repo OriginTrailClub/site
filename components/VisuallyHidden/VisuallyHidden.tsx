@@ -7,7 +7,7 @@ const VisuallyHiddenElement = styled('span', {
   border: 0,
   width: 1,
   height: 1,
-  padding: 0,
+  p: 0,
   m: -1,
   overflow: 'hidden',
   clip: 'rect(0, 0, 0, 0)',

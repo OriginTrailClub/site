@@ -13,7 +13,7 @@ export const container = css({
   '&:before': {
     content: '',
     width: '100%',
-    paddingBottom: '66%',
+    pb: '66%',
     height: 0,
   },
 });

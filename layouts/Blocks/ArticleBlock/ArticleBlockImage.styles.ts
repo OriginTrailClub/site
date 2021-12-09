@@ -10,7 +10,7 @@ export const aspectRatioBox = css({
   height: 0,
   width: '100%',
   overflow: 'hidden',
-  paddingTop: 'calc(100% / 3 * 2)' /* 100% = 3/2 asepct ratio */,
+  pt: 'calc(100% / 3 * 2)' /* 100% = 3/2 asepct ratio */,
   position: 'relative',
 });
 

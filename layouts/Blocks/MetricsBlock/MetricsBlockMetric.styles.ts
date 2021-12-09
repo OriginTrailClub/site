@@ -91,7 +91,7 @@ export const aspectRatioBox = css({
   height: 0,
   width: '100%',
   overflow: 'hidden',
-  paddingTop: '100%' /* 100% = 1/1 asepct ratio */,
+  pt: '100%' /* 100% = 1/1 asepct ratio */,
   position: 'relative',
   gridArea: 'image',
 });
