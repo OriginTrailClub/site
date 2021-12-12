@@ -1,9 +1,3 @@
-import { useTab } from '@react-aria/tabs';
-import { Item } from '@react-stately/collections';
-import { ItemProps } from '@react-types/shared';
-import React from 'react';
-import { TabsContext } from './TabsContext';
-
 export interface TabsTabProps {
   /**
    * Unique value for the Tabs.Tab there should match the value of the corresponding Tabs.Panel
@@ -16,5 +10,5 @@ export interface TabsTabProps {
 }
 
 export function TabsTab(props: TabsTabProps) {
-  return props.label;
+  return <>{props.label}</>;
 }
