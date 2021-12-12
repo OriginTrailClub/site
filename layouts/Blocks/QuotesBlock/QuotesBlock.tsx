@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Item } from '@react-stately/collections';
 import { SingleSelectListState } from '@react-stately/list';
 import { useTabListState } from '@react-stately/tabs';
-import { useTab, useTabList } from '@react-aria/tabs';
+import { useTab, useTabList, useTabPanel } from '@react-aria/tabs';
 import { Node } from '@react-types/shared';
 
 import * as Styles from './QuotesBlock.styles';
@@ -25,18 +25,22 @@ import { VisuallyHidden } from 'components/VisuallyHidden';
 
 type QuotesBlockElements = React.ReactElement<QuotesBlockSlideProps>;
 
-export interface QuotesBlockSlide {
-  children: QuotesBlockElements[];
+interface SlideProps<T> {
+  children: QuotesBlockSlideProps['children'],
+  state: SingleSelectListState<T>;
 }
 
-interface IQuotesBlockComposition {
-  Slide: React.FC<QuotesBlockSlideProps>;
-  Image: React.FC<QuotesBlockImageProps>;
-  Quote: React.FC<QuotesBlockQuoteProps>;
-  Description: React.FC<QuotesBlockDescriptionProps>;
-  Caption: React.FC<QuotesBlockCaptionProps>;
-  Author: React.FC<QuotesBlockAuthorProps>;
-  Role: React.FC<QuotesBlockRoleProps>;
+function Slide<T>(props: SlideProps<T>) {
+  const ref = React.useRef<HTMLDivElement>(null!);
+  const { state, children } = props;
+
+  const {tabPanelProps} = useTabPanel({}, state, ref);
+
+  return (
+    <div {...tabPanelProps} ref={ref} className={Styles.slide()}>
+      {children}
+    </div>
+  )
 }
 
 interface IndicatorProps<T> {
@@ -60,43 +64,57 @@ function Indicator<T>(props: IndicatorProps<T>) {
   );
 }
 
+export interface QuotesBlockSlide {
+  children: QuotesBlockElements[];
+}
+
+interface IQuotesBlockComposition {
+  Slide: React.FC<QuotesBlockSlideProps>;
+  Image: React.FC<QuotesBlockImageProps>;
+  Quote: React.FC<QuotesBlockQuoteProps>;
+  Description: React.FC<QuotesBlockDescriptionProps>;
+  Caption: React.FC<QuotesBlockCaptionProps>;
+  Author: React.FC<QuotesBlockAuthorProps>;
+  Role: React.FC<QuotesBlockRoleProps>;
+}
+
 export const QuotesBlock: React.FC<QuotesBlockSlide> &
   IQuotesBlockComposition = function (props) {
-  const { children } = props;
+    const { children } = props;
 
-  const elements = React.useMemo((): QuotesBlockElements[] => {
-    return React.Children.toArray(children).map((child, index) => (
-      <Item key={index} textValue={(child as QuotesBlockElements).props.value}>
-        {child}
-      </Item>
-    ));
-  }, [children]);
+    const elements = React.useMemo((): QuotesBlockElements[] => {
+      return React.Children.toArray(children).map((child, index) => (
+        <Item key={index} textValue={(child as QuotesBlockElements).props.value}>
+          {child}
+        </Item>
+      ));
+    }, [children]);
 
-  const ref = React.useRef<HTMLUListElement>(null!);
+    const ref = React.useRef<HTMLUListElement>(null!);
 
-  const state = useTabListState({
-    children: elements,
-    defaultSelectedKey: elements?.[0]?.key ?? undefined,
-  });
-  const { tabListProps } = useTabList({ ...props }, state, ref);
+    const state = useTabListState({
+      children: elements,
+      defaultSelectedKey: elements?.[0]?.key ?? undefined,
+    });
+    const { tabListProps } = useTabList({ ...props }, state, ref);
 
-  return (
-    <div className={Styles.container()}>
-      <div className={Styles.slide()}>{state.selectedItem.rendered}</div>
+    return (
+      <div className={Styles.container()}>
+        <Slide state={state}>{state.selectedItem.rendered}</Slide>
 
-      <div className={Styles.navigation()}>
-        <div className={Styles.line()} />
-        <div className={Styles.contents()}>
-          <ul {...tabListProps} className={Styles.indicators()} ref={ref}>
-            {Array.from(state.collection).map((item) => (
-              <Indicator key={item.key} item={item} state={state} />
-            ))}
-          </ul>
+        <div className={Styles.navigation()}>
+          <div className={Styles.line()} />
+          <div className={Styles.contents()}>
+            <ul {...tabListProps} className={Styles.indicators()} ref={ref}>
+              {Array.from(state.collection).map((item) => (
+                <Indicator key={item.key} item={item} state={state} />
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  };
 
 QuotesBlock.Slide = QuotesBlockSlide;
 QuotesBlock.Image = QuotesBlockImage;
