@@ -22,3 +22,9 @@ export const aspectRatioBoxInside = css({
   width: '100%',
   height: '100%',
 });
+
+export const image = css({
+  width: '100%',
+  height: '100%',
+  position: 'relative',
+})

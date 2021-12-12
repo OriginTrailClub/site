@@ -16,7 +16,9 @@ export function PageIntroBlockImage(props: PageIntroBlockImageProps) {
     <div className={Styles.container()}>
       <div className={Styles.aspectRatioBox()}>
         <div className={Styles.aspectRatioBoxInside()}>
-          <Image src={src} alt={alt} layout="fill" objectFit="contain" />
+          <div className={Styles.image()}>
+            <Image priority src={src} alt={alt} layout="fill" objectFit="contain" />
+          </div>
         </div>
       </div>
     </div>
