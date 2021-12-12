@@ -30,5 +30,5 @@ export const contents = css({
     left: '$regular',
     right: '$regular',
     bottom: '$regular',
-  }}
-);
+  },
+});

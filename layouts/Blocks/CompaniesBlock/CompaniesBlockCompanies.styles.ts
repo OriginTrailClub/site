@@ -21,31 +21,31 @@ export const companies = css({
     display: 'none',
 
     '&:nth-of-type(-n+3)': {
-        display: 'flex',
-    }
+      display: 'flex',
+    },
   },
 
   '@bp1': {
     [`& > .${Styles.container()}`]: {
-        '&:nth-of-type(-n+4)': {
-            display: 'flex',
-        }
-    }  
+      '&:nth-of-type(-n+4)': {
+        display: 'flex',
+      },
+    },
   },
 
   '@bp3': {
     [`& > .${Styles.container()}`]: {
-        '&:nth-of-type(-n+5)': {
-            display: 'flex',
-        }
-    }  
+      '&:nth-of-type(-n+5)': {
+        display: 'flex',
+      },
+    },
   },
 
   '@bp4': {
     [`& > .${Styles.container()}`]: {
-        '&:nth-of-type(-n+6)': {
-            display: 'flex',
-        }
-    }  
-  }
+      '&:nth-of-type(-n+6)': {
+        display: 'flex',
+      },
+    },
+  },
 });
