@@ -25,7 +25,9 @@ export function MetricsBlockMetric(props: MetricsBlockMetricProps) {
       <div className={Styles.icon()}>
         <div className={Styles.aspectRatioBox()}>
           <div className={Styles.aspectRatioBoxInside()}>
-            <Image src={icon} alt={label} layout="fill" objectFit="contain" />
+            <div className={Styles.image()}>
+              <Image src={icon} alt={label} layout="fill" objectFit="contain" />
+            </div>
           </div>
         </div>
       </div>
