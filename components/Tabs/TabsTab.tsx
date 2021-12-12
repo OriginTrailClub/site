@@ -1,18 +1,20 @@
+import { useTab } from '@react-aria/tabs';
 import { Item } from '@react-stately/collections';
 import { ItemProps } from '@react-types/shared';
 import React from 'react';
+import { TabsContext } from './TabsContext';
 
 export interface TabsTabProps {
   /**
-   * Unique key for the Tabs.Tab there should match the key of the corresponding Tabs.Panel
+   * Unique value for the Tabs.Tab there should match the value of the corresponding Tabs.Panel
    */
-  key: string;
+  value: string;
   /**
    * Textual label for tab
    */
   label: string;
 }
 
-export function TabsTab(props: TabsTabProps): null {
-  return null;
+export function TabsTab(props: TabsTabProps) {
+  return props.label;
 }

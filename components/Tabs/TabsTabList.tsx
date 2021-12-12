@@ -31,40 +31,6 @@ function TabsTabInner<T>(props: TabsTabInnerProps<T>) {
   );
 }
 
-export interface TabsTabListInnerProps extends DOMProps {
-  children: CollectionChildren<object>;
-}
-
-function TabsTabListInner(props: TabsTabListInnerProps) {
-  const tabContext = React.useContext(TabsContext);
-  const { state: tabsState } = tabContext;
-  const { setTabsListState } = tabsState;
-
-  const ref = React.useRef<HTMLDivElement>(null!);
-
-  const state = useTabListState({ children: props.children });
-  const { tabListProps } = useTabList({ ...props }, state, ref);
-
-  React.useEffect(() => {
-    setTabsListState(state);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [
-    state.disabledKeys,
-    state.selectedItem,
-    state.selectedKey,
-    props.children,
-    setTabsListState,
-  ]);
-
-  return (
-    <div {...tabListProps} className={Styles.tabs()} ref={ref}>
-      {Array.from(state.collection).map((item) => (
-        <TabsTabInner key={item.key} item={item} state={state} />
-      ))}
-    </div>
-  );
-}
-
 type TabsTabListElement = React.ReactElement<TabsTabProps>;
 
 export interface TabsTabListProps extends DOMProps {
@@ -74,12 +40,46 @@ export interface TabsTabListProps extends DOMProps {
   children: TabsTabListElement[];
 }
 
+
 export function TabsTabList(props: TabsTabListProps) {
+  const { children } = props;
+
+  const { state } = React.useContext(TabsContext);
+  const { setTabsListState } = state;
+
+  const ref = React.useRef<HTMLDivElement>(null!);
+
+  const elements = React.useMemo((): CollectionChildren<TabsTabListElement> => {
+    return React.Children.toArray(children).map((child, index) => {
+      const { value } = (child as TabsTabListElement).props;
+
+      return (
+        <Item key={value} textValue={value}>
+          {child}
+        </Item>
+      )
+    });
+  }, [children]);
+
+  const tabListState = useTabListState({ children: elements });
+  const { tabListProps } = useTabList({ children: elements }, tabListState, ref);
+
+  React.useEffect(() => {
+    setTabsListState(tabListState);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [
+    tabListState.disabledKeys,
+    tabListState.selectedItem,
+    tabListState.selectedKey,
+    props.children,
+    setTabsListState,
+  ]);
+
   return (
-    <TabsTabListInner>
-      {React.Children.map(props.children, (child) => (
-        <Item key={child.key}>{child.props.label}</Item>
+    <div {...tabListProps} className={Styles.tabs()} ref={ref} key={tabListState.selectedKey}>
+      {Array.from(tabListState.collection).map(item => (
+        <TabsTabInner key={item.key} item={item} state={tabListState} />
       ))}
-    </TabsTabListInner>
+    </div>
   );
 }
