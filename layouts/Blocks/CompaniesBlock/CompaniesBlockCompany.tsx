@@ -14,7 +14,6 @@ export function CompaniesBlockCompany(props: CompaniesBlockCompanyProps) {
     <li className={Styles.container()}>
       <div className={Styles.contents()}>
         <div className={Styles.image()}>
-
           <Image
             alt={alt}
             src={src}

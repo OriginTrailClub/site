@@ -40,7 +40,6 @@ export interface TabsTabListProps extends DOMProps {
   children: TabsTabListElement[];
 }
 
-
 export function TabsTabList(props: TabsTabListProps) {
   const { children } = props;
 
@@ -57,12 +56,16 @@ export function TabsTabList(props: TabsTabListProps) {
         <Item key={value} textValue={value}>
           {child}
         </Item>
-      )
+      );
     });
   }, [children]);
 
   const tabListState = useTabListState({ children: elements });
-  const { tabListProps } = useTabList({ children: elements }, tabListState, ref);
+  const { tabListProps } = useTabList(
+    { children: elements },
+    tabListState,
+    ref
+  );
 
   React.useEffect(() => {
     setTabsListState(tabListState);
@@ -76,8 +79,13 @@ export function TabsTabList(props: TabsTabListProps) {
   ]);
 
   return (
-    <div {...tabListProps} className={Styles.tabs()} ref={ref} key={tabListState.selectedKey}>
-      {Array.from(tabListState.collection).map(item => (
+    <div
+      {...tabListProps}
+      className={Styles.tabs()}
+      ref={ref}
+      key={tabListState.selectedKey}
+    >
+      {Array.from(tabListState.collection).map((item) => (
         <TabsTabInner key={item.key} item={item} state={tabListState} />
       ))}
     </div>

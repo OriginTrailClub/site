@@ -14,14 +14,13 @@ export interface TabsPanelProps {
 }
 
 export function TabsPanel(props: TabsPanelProps) {
-
   const { children } = props;
 
   const { state } = React.useContext(TabsContext);
 
   const { tabsListState } = state;
 
-  const ref = React.useRef<HTMLDivElement>(null!)
+  const ref = React.useRef<HTMLDivElement>(null!);
 
   const { tabPanelProps } = useTabPanel({}, tabsListState, ref);
 
@@ -29,5 +28,5 @@ export function TabsPanel(props: TabsPanelProps) {
     <div {...tabPanelProps} ref={ref}>
       {children}
     </div>
-  )
+  );
 }

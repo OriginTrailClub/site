@@ -25,15 +25,15 @@ import { Button } from 'components/Button';
 
 interface HomePageProps {
   network: {
-    totalJobs: number,
-    activeNodes: number,
-    stakedTokens: number,
-  },
+    totalJobs: number;
+    activeNodes: number;
+    stakedTokens: number;
+  };
   market: {
-    marketCap: number,
-    price: number,
-    maxSupply: number,
-  }
+    marketCap: number;
+    price: number;
+    maxSupply: number;
+  };
 }
 
 export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
@@ -45,18 +45,17 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
       network: {
         totalJobs: data?.All?.TotalJobs,
         activeNodes: data?.All?.ActiveNodes,
-        stakedTokens: data?.All?.StakedTokens
+        stakedTokens: data?.All?.StakedTokens,
       },
       market: {
         marketCap: data?.MarketCapUsd,
         price: data?.PriceUsd,
         maxSupply: 500000000,
-      }
+      },
     },
     revalidate: 60 * 30,
   };
-}
-
+};
 
 const Home: NextPage<HomePageProps> = (props) => {
   const { market, network } = props;

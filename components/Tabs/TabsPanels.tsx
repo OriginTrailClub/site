@@ -31,7 +31,7 @@ export function TabsPanels(props: TabsPanelsProps) {
         <Item key={value} textValue={value}>
           {child}
         </Item>
-      )
+      );
     });
   }, [children]);
 
@@ -41,11 +41,11 @@ export function TabsPanels(props: TabsPanelsProps) {
     { suppressTextValueWarning: true }
   );
 
-  const selectedItem = collection.getItem(
-    tabsListState?.selectedKey
-  );
+  const selectedItem = collection.getItem(tabsListState?.selectedKey);
 
-  return <React.Fragment key={tabsListState?.selectedKey}>
-    {selectedItem ? selectedItem.rendered : null}
-  </React.Fragment>
+  return (
+    <React.Fragment key={tabsListState?.selectedKey}>
+      {selectedItem ? selectedItem.rendered : null}
+    </React.Fragment>
+  );
 }

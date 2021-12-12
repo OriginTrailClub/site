@@ -7,12 +7,19 @@ export interface MetricsBlockMetricProps {
   value: number;
   currency?: string;
   style?: 'decimal' | 'currency';
-  notation?: 'standard' | 'compact',
+  notation?: 'standard' | 'compact';
   icon: string;
 }
 
 export function MetricsBlockMetric(props: MetricsBlockMetricProps) {
-  const { label, value, currency, style = 'decimal', icon, notation = 'standard' } = props;
+  const {
+    label,
+    value,
+    currency,
+    style = 'decimal',
+    icon,
+    notation = 'standard',
+  } = props;
 
   let formatter = useNumberFormatter({
     notation,
