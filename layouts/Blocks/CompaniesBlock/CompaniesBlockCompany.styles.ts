@@ -20,15 +20,19 @@ export const container = css({
 
 export const contents = css({
   position: 'absolute',
-  top: '$small',
-  left: '$small',
-  right: '$small',
-  bottom: '$small',
+  p: '$small',
+  top: 0,
+  right: 0,
+  bottom: 0,
+  left: 0,
 
   '@bp3': {
-    top: '$regular',
-    left: '$regular',
-    right: '$regular',
-    bottom: '$regular',
+    p: '$regular',
   },
 });
+
+export const image = css({
+  position: 'relative',
+  width: '100%',
+  height: '100%',
+})

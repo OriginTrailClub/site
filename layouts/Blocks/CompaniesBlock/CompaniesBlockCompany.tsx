@@ -13,14 +13,16 @@ export function CompaniesBlockCompany(props: CompaniesBlockCompanyProps) {
   return (
     <li className={Styles.container()}>
       <div className={Styles.contents()}>
-        <Image
-          alt={alt}
-          src={src}
-          width={161}
-          height={90}
-          layout="fill"
-          objectFit="contain"
-        />
+        <div className={Styles.image()}>
+
+          <Image
+            alt={alt}
+            src={src}
+            layout="fill"
+            objectPosition="center"
+            objectFit="contain"
+          />
+        </div>
       </div>
     </li>
   );
