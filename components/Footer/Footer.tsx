@@ -1,12 +1,47 @@
-import * as Styles from './Footer.styles';
+import { FooterDisclaimer, FooterDisclaimerProps } from './FooterDisclaimer';
+import { FooterProjectInfo, FooterProjectInfoProps } from './FooterProjectInfo';
 
-export interface FooterProps
-  extends Omit<React.HTMLProps<HTMLElement>, 'className' | 'style'> {}
+/*
+
+<Footer>
+  <Footer.ProjectInfo />
+  <Footer.Disclaimer />
+</Footer>
+
+*/
+
+type FooterElements = React.ReactElement<
+  FooterDisclaimerProps | FooterProjectInfoProps
+>;
+
+export interface FooterProps {
+  children: FooterElements[];
+}
 
 export function Footer(props: FooterProps) {
-  return (
-    <footer {...props} className={Styles.container()}>
-      footer
-    </footer>
-  );
+  const { children } = props;
+
+  return <>{children}</>;
 }
+
+Footer.Disclaimer = FooterDisclaimer;
+Footer.ProjectInfo = FooterProjectInfo;
+
+// export function Footer() {
+//   return (
+//       <aside className={Styles.container()}>
+//         <div className={Styles.contents()}>
+//         </div>
+//       </aside>
+//       <div className={Styles.delimiter()}
+//       <footer {...props}>
+//         <div>
+
+//         </div>
+//         <div />
+
+//         Made with () by the community
+//       </footer>
+//     </div>
+//   );
+// }
