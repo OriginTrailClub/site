@@ -26,7 +26,7 @@ import { VisuallyHidden } from 'components/VisuallyHidden';
 type QuotesBlockElements = React.ReactElement<QuotesBlockSlideProps>;
 
 interface SlideProps<T> {
-  children: QuotesBlockSlideProps['children'],
+  children: React.ReactNode,
   state: SingleSelectListState<T>;
 }
 
