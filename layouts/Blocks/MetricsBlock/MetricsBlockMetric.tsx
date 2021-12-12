@@ -18,6 +18,7 @@ export function MetricsBlockMetric(props: MetricsBlockMetricProps) {
     compactDisplay: 'short',
     style,
     currency,
+    maximumFractionDigits: 2,
   });
 
   return (
