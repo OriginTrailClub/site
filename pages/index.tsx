@@ -1,4 +1,4 @@
-import type { NextPage } from 'next';
+import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 
 import BankFillIcon from 'remixicon-react/BankFillIcon';
@@ -23,7 +23,44 @@ import { CompaniesBlock } from 'layouts/Blocks/CompaniesBlock';
 import { Grid } from 'components/Grid';
 import { Button } from 'components/Button';
 
-const Home: NextPage = () => {
+interface HomePageProps {
+  network: {
+    totalJobs: number,
+    activeNodes: number,
+    stakedTokens: number,
+  },
+  market: {
+    marketCap: number,
+    price: number,
+    maxSupply: number,
+  }
+}
+
+export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
+  const res = await fetch(`https://v5api.othub.info/api/Home/HomeV3`);
+  const data = await res.json();
+
+  return {
+    props: {
+      network: {
+        totalJobs: data?.All?.TotalJobs,
+        activeNodes: data?.All?.ActiveNodes,
+        stakedTokens: data?.All?.StakedTokens
+      },
+      market: {
+        marketCap: data?.MarketCapUsd,
+        price: data?.PriceUsd,
+        maxSupply: 500000000,
+      }
+    },
+    revalidate: 60 * 30,
+  };
+}
+
+
+const Home: NextPage<HomePageProps> = (props) => {
+  const { market, network } = props;
+
   return (
     <>
       <Head>
@@ -75,14 +112,15 @@ const Home: NextPage = () => {
                   <MetricsBlock.Metrics>
                     <MetricsBlock.Metric
                       icon="/metrics/market-cap.jpg"
-                      value={184000000}
+                      value={market.marketCap}
                       label="Total Market Cap"
                       currency="USD"
+                      notation="compact"
                       style="currency"
                     />
                     <MetricsBlock.Metric
                       icon="/metrics/price.jpg"
-                      value={0.97}
+                      value={market.price}
                       label="Price"
                       currency="USD"
                       style="currency"
@@ -90,6 +128,7 @@ const Home: NextPage = () => {
                     <MetricsBlock.Metric
                       icon="/metrics/max-supply.jpg"
                       value={500000000}
+                      notation="compact"
                       label="Max Supply"
                     />
                   </MetricsBlock.Metrics>
@@ -103,17 +142,20 @@ const Home: NextPage = () => {
                   <MetricsBlock.Metrics>
                     <MetricsBlock.Metric
                       icon="/metrics/total-graph-size.jpg"
-                      value={60000000}
-                      label="Total Graph Size (TGS)"
+                      value={network.activeNodes}
+                      notation="compact"
+                      label="Active Nodes"
                     />
                     <MetricsBlock.Metric
                       icon="/metrics/dataset-published.jpg"
-                      value={21000}
+                      value={network.totalJobs}
+                      notation="compact"
                       label="Total Datasets Published"
                     />
                     <MetricsBlock.Metric
                       icon="/metrics/total-tokens-staked.jpg"
-                      value={9000000}
+                      value={network.stakedTokens}
+                      notation="compact"
                       label="Total Tokens Staked"
                     />
                   </MetricsBlock.Metrics>
