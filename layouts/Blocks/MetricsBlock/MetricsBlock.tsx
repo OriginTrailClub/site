@@ -50,12 +50,12 @@ function MetricsBlockTabs(props: MetricsBlockProps) {
     <Tabs>
       <Tabs.TabList>
         {tabs.map((tab) => (
-          <Tabs.Tab label={tab.tab} key={tab.key} />
+          <Tabs.Tab label={tab.tab} value={tab.key} key={tab.key}/>
         ))}
       </Tabs.TabList>
       <Tabs.Panels>
         {tabs.map((tab) => (
-          <Tabs.Panel key={tab.key}>
+          <Tabs.Panel value={tab.key} key={tab.key}>
             <div className={Styles.panel()}>{tab.pannel}</div>
           </Tabs.Panel>
         ))}
