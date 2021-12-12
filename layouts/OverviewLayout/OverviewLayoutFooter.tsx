@@ -1,7 +1,12 @@
-import { Footer, FooterProps } from 'components/Footer';
+import { Footer } from 'components/Footer';
 
-export type OverviewLayoutFooterProps = FooterProps;
+export interface OverviewLayoutFooterProps {}
 
 export function OverviewLayoutFooter(props: OverviewLayoutFooterProps) {
-  return <Footer {...props} />;
+  return (
+    <Footer>
+      <Footer.ProjectInfo />
+      <Footer.Disclaimer />
+    </Footer>
+  );
 }
