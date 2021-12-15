@@ -1677,6 +1677,24 @@
     "@react-types/shared" "^3.9.0"
     clsx "^1.1.1"
 
+"@react-aria/grid@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@react-aria/grid/-/grid-3.1.0.tgz#4243920ce6dd2195c6677f6ef2454f8c1b44bc59"
+  integrity sha512-f1b7ehV3Yiltd/d1QivTxUrvgsorkGajcXE/j1r4Owij5BdQ44/3NQ1p4onFi61ugULbqY5wGJmG254rMD8kBA==
+  dependencies:
+    "@babel/runtime" "^7.6.2"
+    "@react-aria/focus" "^3.5.0"
+    "@react-aria/i18n" "^3.3.3"
+    "@react-aria/interactions" "^3.7.0"
+    "@react-aria/live-announcer" "^3.0.1"
+    "@react-aria/selection" "^3.7.0"
+    "@react-aria/utils" "^3.10.0"
+    "@react-stately/grid" "^3.1.0"
+    "@react-stately/virtualizer" "^3.1.6"
+    "@react-types/checkbox" "^3.2.3"
+    "@react-types/grid" "^3.0.0"
+    "@react-types/shared" "^3.10.0"
+
 "@react-aria/i18n@^3.3.3", "@react-aria/i18n@^3.3.4":
   version "3.3.4"
   resolved "https://registry.yarnpkg.com/@react-aria/i18n/-/i18n-3.3.4.tgz#172b8bcff0273410e67af31f7d84e49dd3ada463"
@@ -1698,6 +1716,15 @@
     "@babel/runtime" "^7.6.2"
     "@react-aria/utils" "^3.10.0"
     "@react-types/shared" "^3.10.0"
+
+"@react-aria/live-announcer@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@react-aria/live-announcer/-/live-announcer-3.0.1.tgz#772888326808d180adc5bc9fa0b4b1416ec08811"
+  integrity sha512-c63UZ4JhXxy29F6FO1LUkQLDRzv17W4g3QQ+sy6tmFw7R5I5r8uh8jR7RCbBX7bdGCLnQDwOQ055KsM/a9MT3A==
+  dependencies:
+    "@babel/runtime" "^7.6.2"
+    "@react-aria/utils" "^3.8.2"
+    "@react-aria/visually-hidden" "^3.2.3"
 
 "@react-aria/overlays@^3.7.3":
   version "3.7.3"
@@ -1772,6 +1799,18 @@
     "@react-aria/utils" "^3.8.2"
     clsx "^1.1.1"
 
+"@react-spectrum/utils@^3.6.3":
+  version "3.6.3"
+  resolved "https://registry.yarnpkg.com/@react-spectrum/utils/-/utils-3.6.3.tgz#48ba50eb6fab0dfd8fae3ef411f2fbcbc97bb7e9"
+  integrity sha512-d2e9ZtQSwhiI/d4gSJFWnxmVvoXszKoqpQguhfbXAbFCmuZQTnSorLsrWHJ4+DUKftdA0KbirHi6EzVVPCZJkg==
+  dependencies:
+    "@babel/runtime" "^7.6.2"
+    "@react-aria/i18n" "^3.3.3"
+    "@react-aria/ssr" "^3.0.3"
+    "@react-aria/utils" "^3.10.0"
+    "@react-types/shared" "^3.10.0"
+    clsx "^1.1.1"
+
 "@react-stately/collections@^3.3.3", "@react-stately/collections@^3.3.4":
   version "3.3.4"
   resolved "https://registry.yarnpkg.com/@react-stately/collections/-/collections-3.3.4.tgz#ca9e481d2769dbebb593d5a1ed4bcc54013aef9d"
@@ -1779,6 +1818,16 @@
   dependencies:
     "@babel/runtime" "^7.6.2"
     "@react-types/shared" "^3.8.0"
+
+"@react-stately/grid@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@react-stately/grid/-/grid-3.1.0.tgz#c899d65c6ce1ef6e2e85f8312acc905a45e66a95"
+  integrity sha512-9nbmLqjWUw9v8n/1HDAziZZvDQ0SbJh1Kb79KvC4ccK2YxvQ6Q/DSLbqlEP8+r4w5C6OK+OB4R12RpxMGq3z8A==
+  dependencies:
+    "@babel/runtime" "^7.6.2"
+    "@react-stately/selection" "^3.8.0"
+    "@react-types/grid" "^3.0.0"
+    "@react-types/shared" "^3.10.0"
 
 "@react-stately/list@^3.3.0", "@react-stately/list@^3.4.0":
   version "3.4.0"
@@ -1848,6 +1897,15 @@
   dependencies:
     "@babel/runtime" "^7.6.2"
 
+"@react-stately/virtualizer@^3.1.6":
+  version "3.1.6"
+  resolved "https://registry.yarnpkg.com/@react-stately/virtualizer/-/virtualizer-3.1.6.tgz#df803dbe032b73244b1d2f5cf09ac0ec9fcd9d04"
+  integrity sha512-7ZgLa6L3c4um6oXOFhOGVytDJOjzxeD+OfQmL1Ly5WpDn++0EdYBA56PD38Umx8Lcjw+3OoMQyiZVKgLoR0Qtg==
+  dependencies:
+    "@babel/runtime" "^7.6.2"
+    "@react-aria/utils" "^3.10.0"
+    "@react-types/shared" "^3.10.0"
+
 "@react-types/accordion@3.0.0-alpha.1":
   version "3.0.0-alpha.1"
   resolved "https://registry.yarnpkg.com/@react-types/accordion/-/accordion-3.0.0-alpha.1.tgz#7973b8e3e5d0e48f5318e0e5db3544d97606ad00"
@@ -1875,6 +1933,13 @@
   integrity sha512-1i6fVtixUNlftSNbVPFRieyEy3N/GNqcqpeOsJUB1jby28ppbM+JCp3Icb0ijaNC9Nl8c/oI8srtOWIQIKUJiQ==
   dependencies:
     "@react-types/overlays" "^3.5.1"
+    "@react-types/shared" "^3.8.0"
+
+"@react-types/grid@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@react-types/grid/-/grid-3.0.0.tgz#a69446e4f99623102339b1351701c371a0c95323"
+  integrity sha512-OO3i2KfCzyLPK7fPYlVEybobiQmjZGT53rncwzOWAqD3YihTueGXYeAIpbbIZ75BrJzdcntfedPqcWwYNOaNbw==
+  dependencies:
     "@react-types/shared" "^3.8.0"
 
 "@react-types/overlays@^3.5.1":

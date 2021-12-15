@@ -13,13 +13,6 @@ export const contents = css({
 });
 
 export const cases = css({
-  $$columnCount: 1,
-  $$rowCount: 1,
-  $$maxColumnCount: 1,
-
-  $$useCaseSize: 'clamp(280px, 80%, 320px)',
-  $$minUseCaseSize: '$$useCaseSize',
-  $$maxUseCaseSize: '$$useCaseSize',
   $$containerSize: '100%',
 
   $$scrollPadding:
@@ -27,21 +20,15 @@ export const cases = css({
   $$scrollPaddingLeft: '$$scrollPadding',
   $$scrollPaddingRight: '$$scrollPadding',
 
-  display: 'grid',
-  gridAutoFlow: 'column',
-  gridAutoColumns: '$$useCaseSize',
-  gridTemplateRows: 'repeat($$rowCount, 1fr)',
+  $$useCaseSize: 'clamp(280px, 80%, 320px)',
+  $$minUseCaseSize: '$$useCaseSize',
+  $$maxUseCaseSize: '$$useCaseSize',
 
-  gridTemplateColumns:
-    '$$scrollPaddingLeft repeat($$columnCount, minmax($$minUseCaseSize, $$maxUseCaseSize)) $$scrollPaddingRight',
-
-  mt: 'calc(-$regular / 2)',
-  mb: 'calc(-$regular / 2)',
+  display: 'flex',
+  flexDirection: 'column',
 
   overflowX: 'auto',
   overflowY: 'hidden',
-
-  scrollSnapType: 'x mandatory',
 
   // Hide scrollbar
   MsOverflowStyle: 'none',
@@ -50,6 +37,22 @@ export const cases = css({
     display: 'none',
   },
 
+  scrollSnapType: 'x mandatory',
+
+  [`.${UseCaseBlockCaseStyles.container}`]: {
+    scrollSnapAlign: 'center',
+  },
+  '@bp3': {
+    $$containerSize: 'min(100%, calc(1234px + $space$regular))',
+  }
+})
+
+export const row = css({
+  display: 'grid',
+  gridAutoFlow: 'column',
+  gridAutoColumns: '$$useCaseSize',
+  gridTemplateRows: '1fr',
+
   '&:before': {
     content: '',
   },
@@ -57,38 +60,20 @@ export const cases = css({
     content: '',
   },
 
-  [`& > .${UseCaseBlockCaseStyles.container}`]: {
-    scrollSnapAlign: 'center',
-    m: 'calc($space$regular / 2)',
-  },
+  gridTemplateColumns:
+    '$$scrollPaddingLeft repeat($$columnCount, minmax($$minUseCaseSize, $$maxUseCaseSize)) $$scrollPaddingRight',
 
   '@bp3': {
     $$containerSize: 'min(100%, calc(1234px + $space$regular))',
     $$minUseCaseSize:
       'calc(((100% - $$scrollPadding * 2) - $space$large) / $$maxColumnCount)',
     $$maxUseCaseSize: 'calc((100% - $$scrollPadding * 2) / $$maxColumnCount)',
-
-    [`& > .${UseCaseBlockCaseStyles.container}`]: {
-      scrollSnapAlign: 'center',
-    },
-
-    '&:before': {
-      gridColumnStart: 1,
-      gridColumnEnd: 2,
-      gridRowStart: 1,
-      gridRowEnd: 'calc($$rowCount + 1)',
-    },
-    '&:after': {
-      gridColumnStart: 'calc(1 + $$columnCount + 1)',
-      gridColumnEnd: 'calc(1 + $$columnCount + 1)',
-      gridRowStart: 1,
-      gridRowEnd: 'calc($$rowCount + 1)',
-    },
-
-    gridTemplateRows: 'repeat($$rowCount, 1fr)',
   },
-
   '@media(min-width: 1234px)': {
     $$minUseCaseSize: '$$maxUseCaseSize',
   },
-});
+})
+
+export const cell = css({
+    m: 'calc($space$regular / 2)',
+})
