@@ -142,8 +142,6 @@ export const UseCaseBlock: React.FC<UseCaseBlockProps> &
     let useTwoColumnLayout = useMediaQuery(config.media.bp3);
 
     let rows = React.useMemo(() => {
-      console.log(useTwoColumnLayout);
-
       if (useTwoColumnLayout) {
         return part(Array.from(state.collection), 2);
       }
