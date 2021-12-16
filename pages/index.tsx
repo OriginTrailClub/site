@@ -84,8 +84,8 @@ const Home: NextPage<HomePageProps> = (props) => {
                   <PageIntroBlock.Description>
                     OriginTrail is a neutral web3 protocol in which you can
                     organize your most important assets making them discoverable
-                    and verifiable using a groundbreaking decentralized
-                    knowledge graph.
+                    and verifiable using a decentralized knowledge graph and
+                    blockchain technology.
                   </PageIntroBlock.Description>
                   <PageIntroBlock.Actions>
                     <PageIntroBlock.Action
@@ -172,8 +172,8 @@ const Home: NextPage<HomePageProps> = (props) => {
                   </IntroBlock.Title>
                   <IntroBlock.Description>
                     Organize, discover and verify anything - from physical to
-                    digital assets like supply chain items to Art, Diplomas,
-                    Certificates, NFTs, DeFi and more. The Decentralized
+                    digital assets - like supply chain items to art, diplomas,
+                    certificates, NFTs, DeFi and more. The Decentralized
                     Knowledge Graph allows the worlds’ data assets to be
                     structured, linked, persistent and understandable.
                   </IntroBlock.Description>
@@ -297,11 +297,11 @@ const Home: NextPage<HomePageProps> = (props) => {
                         Sensitive data protection
                       </SolutionsBlock.Title>
                       <SolutionsBlock.Description>
-                        Companies are often reluctant to exchange data across
-                        their supply chains or other companies as they are
-                        concerned this might undermine their competitive
-                        position. Exchange of data is often enforced by power
-                        asymmetry or done because of regulatory reasons.{' '}
+                        Companies are often reluctant to exchange data with
+                        other companies as they are concerned this might
+                        undermine their competitive position. Exchange of data
+                        is often enforced by power asymmetry or done because of
+                        regulatory reasons.{' '}
                       </SolutionsBlock.Description>
                     </SolutionsBlock.Problem>
                     <SolutionsBlock.Solution>
@@ -327,9 +327,7 @@ const Home: NextPage<HomePageProps> = (props) => {
             <Grid.Group>
               <Grid.Item>
                 <IntroBlock align="left">
-                  <IntroBlock.Subtitle>
-                    A blockchain agnostic, multi-chain protocol
-                  </IntroBlock.Subtitle>
+                  <IntroBlock.Subtitle>A new frontier</IntroBlock.Subtitle>
                   <IntroBlock.Title>
                     The data backbone of web3, build for global use
                   </IntroBlock.Title>
@@ -344,8 +342,8 @@ const Home: NextPage<HomePageProps> = (props) => {
                   <UseCaseBlock.Case value="Supply Chains">
                     <UseCaseBlock.Title>Supply Chains</UseCaseBlock.Title>
                     <UseCaseBlock.Description>
-                      Vivamus magna justo, lacinia eget consectetur sed,
-                      convallis at tellus.
+                      Increase transparency, safety, and financial performance
+                      from seed to table
                     </UseCaseBlock.Description>
                     <UseCaseBlock.Image
                       src="/use-cases/supply-chain.png"
@@ -355,8 +353,8 @@ const Home: NextPage<HomePageProps> = (props) => {
                   <UseCaseBlock.Case value="Non Fungible Tokens">
                     <UseCaseBlock.Title>Non Fungible Tokens</UseCaseBlock.Title>
                     <UseCaseBlock.Description>
-                      Vivamus magna justo, lacinia eget consectetur sed,
-                      convallis at tellus.
+                      Protect, connect and level-up NFT’s by leveraging powerful
+                      knowledge grapy technology
                     </UseCaseBlock.Description>
                     <UseCaseBlock.Image
                       src="/use-cases/nfts.png"
@@ -368,8 +366,8 @@ const Home: NextPage<HomePageProps> = (props) => {
                       Decentralized Finance
                     </UseCaseBlock.Title>
                     <UseCaseBlock.Description>
-                      Vivamus magna justo, lacinia eget consectetur sed,
-                      convallis at tellus.
+                      Collateralizing real world assets or querying real world
+                      events for use within finance
                     </UseCaseBlock.Description>
                     <UseCaseBlock.Image
                       src="/use-cases/defi.png"
@@ -379,8 +377,8 @@ const Home: NextPage<HomePageProps> = (props) => {
                   <UseCaseBlock.Case value="Data Marketplace">
                     <UseCaseBlock.Title>Data Marketplace</UseCaseBlock.Title>
                     <UseCaseBlock.Description>
-                      Vivamus magna justo, lacinia eget consectetur sed,
-                      convallis at tellus.
+                      Provide open-source infrastructure that encourage fair
+                      data exchange
                     </UseCaseBlock.Description>
                     <UseCaseBlock.Image
                       src="/use-cases/data-marketplace.png"
@@ -392,8 +390,8 @@ const Home: NextPage<HomePageProps> = (props) => {
                       Cetifications & Compliance
                     </UseCaseBlock.Title>
                     <UseCaseBlock.Description>
-                      Vivamus magna justo, lacinia eget consectetur sed,
-                      convallis at tellus.
+                      Safeguard the validity of issued training certificates and
+                      business standards
                     </UseCaseBlock.Description>
                     <UseCaseBlock.Image
                       src="/use-cases/certifications.png"
@@ -405,8 +403,8 @@ const Home: NextPage<HomePageProps> = (props) => {
                       Logistics & Transportation
                     </UseCaseBlock.Title>
                     <UseCaseBlock.Description>
-                      Vivamus magna justo, lacinia eget consectetur sed,
-                      convallis at tellus.
+                      Enhance logistics systems to achieve linked, secured, and
+                      trusted data sharing
                     </UseCaseBlock.Description>
                     <UseCaseBlock.Image
                       src="/use-cases/logistics.png"
@@ -418,8 +416,7 @@ const Home: NextPage<HomePageProps> = (props) => {
                       Pharmaceutical Industry
                     </UseCaseBlock.Title>
                     <UseCaseBlock.Description>
-                      Vivamus magna justo, lacinia eget consectetur sed,
-                      convallis at tellus.
+                      Fight fraud, power serialisation, and ensure compliance
                     </UseCaseBlock.Description>
                     <UseCaseBlock.Image
                       src="/use-cases/pharmaceutical.png"
@@ -431,8 +428,8 @@ const Home: NextPage<HomePageProps> = (props) => {
                       Personal Data Management
                     </UseCaseBlock.Title>
                     <UseCaseBlock.Description>
-                      Vivamus magna justo, lacinia eget consectetur sed,
-                      convallis at tellus.
+                      Take back control over personal data while enabling
+                      compliance
                     </UseCaseBlock.Description>
                     <UseCaseBlock.Image
                       src="/use-cases/personal-data.png"
@@ -633,13 +630,12 @@ const Home: NextPage<HomePageProps> = (props) => {
                         alt="Food Traceability"
                       />
                       <ProductsBlock.Description>
-                        BSI is using the OriginTrail protocol to safeguard the
-                        validity of issued training certificates and business
-                        standards. OriginTrail-based applications developed for
-                        BSI enable quick validity checks for any document by
-                        cross-referencing trusted data. This data is stored on
-                        the OriginTrail Decentralized Network, which is
-                        connected to the Ethereum blockchain.
+                        Perutnina Ptuj - the largest poultry producer in
+                        Southeastern Europe - is showcasing the benefits of
+                        premium breeding in the local environment to its
+                        customers. By scanning a QR code, consumers can meet
+                        farmers and learn about animal-friendly conditions on
+                        their farms.
                       </ProductsBlock.Description>
                       <ProductsBlock.Action
                         label="Case study"
@@ -658,13 +654,13 @@ const Home: NextPage<HomePageProps> = (props) => {
                         alt="Rail Travel Safety"
                       />
                       <ProductsBlock.Description>
-                        BSI is using the OriginTrail protocol to safeguard the
-                        validity of issued training certificates and business
-                        standards. OriginTrail-based applications developed for
-                        BSI enable quick validity checks for any document by
-                        cross-referencing trusted data. This data is stored on
-                        the OriginTrail Decentralized Network, which is
-                        connected to the Ethereum blockchain.
+                        Ensuring the safety of train travel by tracking every
+                        piece of rail track material used by the Swiss Federal
+                        Railways. SBB is looking to move beyond the state of the
+                        art to ensure real-time availability of quality
+                        traceability information for individual parts involved
+                        in their systems to deliver one of the world's most
+                        reliable rail journeys.
                       </ProductsBlock.Description>
                       <ProductsBlock.Action
                         label="Case study"
@@ -683,13 +679,15 @@ const Home: NextPage<HomePageProps> = (props) => {
                         alt="Sustainable Agriculture"
                       />
                       <ProductsBlock.Description>
-                        BSI is using the OriginTrail protocol to safeguard the
-                        validity of issued training certificates and business
-                        standards. OriginTrail-based applications developed for
-                        BSI enable quick validity checks for any document by
-                        cross-referencing trusted data. This data is stored on
-                        the OriginTrail Decentralized Network, which is
-                        connected to the Ethereum blockchain.
+                        The OriginTrail protocol is helping with the digital
+                        transformation of the European countryside. European
+                        agriculture is on its way to become smarter, more
+                        efficient, and more sustainable through continuous
+                        digital innovation and research. As part of this digital
+                        agricultural revolution, the OriginTrail protocol is
+                        supporting several trusted agri-food supply chain
+                        solutions within Europe-wide research and innovation
+                        consortia.
                       </ProductsBlock.Description>
                       <ProductsBlock.Action
                         label="Case study"
@@ -708,13 +706,16 @@ const Home: NextPage<HomePageProps> = (props) => {
                         alt="Trusted Factory"
                       />
                       <ProductsBlock.Description>
-                        BSI is using the OriginTrail protocol to safeguard the
-                        validity of issued training certificates and business
-                        standards. OriginTrail-based applications developed for
-                        BSI enable quick validity checks for any document by
-                        cross-referencing trusted data. This data is stored on
-                        the OriginTrail Decentralized Network, which is
-                        connected to the Ethereum blockchain.
+                        BSI and SCAN are utilizing the OriginTrail protocol to
+                        ensure the integrity of security audits for some of the
+                        largest US importers. Today, SCAN has more than 21,300
+                        factories in its database, with several hundred new
+                        audits conducted monthly. All of the audits are secured
+                        utilizing the OriginTrail Decentralized Network and
+                        comply with SCAN’s rigorous data privacy requirements.
+                        With flexible data permissions, the solution enables
+                        SCAN to share data with government agencies such as
+                        CTPAT.
                       </ProductsBlock.Description>
                       <ProductsBlock.Action
                         label="Case study"
