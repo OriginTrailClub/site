@@ -518,8 +518,8 @@ const Home: NextPage<HomePageProps> = (props) => {
                 </ArticleBlock>
               </Grid.Item>
               <Grid.Item>
-                <ParticipantsBlock>
-                  <ParticipantsBlock.Participant>
+                <ParticipantsBlock aria-label="Network Participants">
+                  <ParticipantsBlock.Participant value="Data Providers">
                     <ParticipantsBlock.Image
                       src="/participants/data-provider.jpg"
                       alt="Data Providers"
@@ -532,7 +532,7 @@ const Home: NextPage<HomePageProps> = (props) => {
                       OriginTrail Decentralized Network (ODN)
                     </ParticipantsBlock.Description>
                   </ParticipantsBlock.Participant>
-                  <ParticipantsBlock.Participant>
+                  <ParticipantsBlock.Participant value="Data Creators">
                     <ParticipantsBlock.Image
                       src="/participants/data-creator.jpg"
                       alt="Data Creators"
@@ -545,7 +545,7 @@ const Home: NextPage<HomePageProps> = (props) => {
                       data from the data provider
                     </ParticipantsBlock.Description>
                   </ParticipantsBlock.Participant>
-                  <ParticipantsBlock.Participant>
+                  <ParticipantsBlock.Participant value="Data Holders">
                     <ParticipantsBlock.Image
                       src="/participants/data-holder.jpg"
                       alt="Data Holders"
@@ -558,7 +558,7 @@ const Home: NextPage<HomePageProps> = (props) => {
                       a certain period of time
                     </ParticipantsBlock.Description>
                   </ParticipantsBlock.Participant>
-                  <ParticipantsBlock.Participant>
+                  <ParticipantsBlock.Participant value="Data Viewers">
                     <ParticipantsBlock.Image
                       src="/participants/data-viewer.jpg"
                       alt="Data Viewers"
@@ -659,7 +659,7 @@ const Home: NextPage<HomePageProps> = (props) => {
                         Railways. SBB is looking to move beyond the state of the
                         art to ensure real-time availability of quality
                         traceability information for individual parts involved
-                        in their systems to deliver one of the world's most
+                        in their systems to deliver one of the world&#39;s most
                         reliable rail journeys.
                       </ProductsBlock.Description>
                       <ProductsBlock.Action
