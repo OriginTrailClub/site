@@ -1,6 +1,13 @@
 import * as React from 'react';
 import type * as Stitches from '@stitches/react';
 
+import { GridNode } from '@react-types/grid';
+import { AriaLabelingProps } from '@react-types/shared';
+import { GridCollection, GridState, useGridState } from '@react-stately/grid';
+import { useGrid, useGridCell, useGridRow } from '@react-aria/grid';
+import { Item } from '@react-stately/collections';
+import { useListState } from '@react-stately/list';
+
 import * as Styles from './ParticipantsBlock.styles';
 
 import {
@@ -22,7 +29,7 @@ import {
 
 type ParticipantsBlockElements = React.ReactElement<ParticipantsBlockParticipantProps>;
 
-export interface ParticipantsBlockProps {
+export interface ParticipantsBlockProps extends AriaLabelingProps {
   children: ParticipantsBlockElements | ParticipantsBlockElements[];
 }
 
@@ -60,16 +67,99 @@ const getGridVariables = (options: IgetGridVariablesOptions): Stitches.CSS => {
 
   return cssVars;
 };
+
+interface CellProps<T> {
+  item: GridNode<T>,
+  state: GridState<T, GridCollection<T>>
+}
+
+function Cell<T>(props: CellProps<T>) {
+  const { state, item } = props;
+
+  let cellRef = React.useRef<HTMLDivElement>(null!);
+
+  let { gridCellProps } = useGridCell({
+    node: item,
+    focusMode: 'cell'
+  }, state, cellRef);
+
+  return (
+    <div {...gridCellProps} ref={cellRef} className={Styles.cell({
+      type: item.props.type,
+    })}>
+      {item.rendered}
+    </div>
+  )
+}
+
+interface RowProps<T> {
+  item: GridNode<T>,
+  state: GridState<T, GridCollection<T>>
+}
+
+function Row<T>(props: RowProps<T>) {
+  const { state, item } = props;
+
+  let rowRef = React.useRef<HTMLDivElement>(null!);
+
+  let { rowProps } = useGridRow({ node: item }, state, rowRef);
+
+  return (
+    <div {...rowProps} ref={rowRef} className={Styles.row()}>
+      {Array.from(item.childNodes).map(cell => (
+        <Cell key={cell.key} state={state} item={cell} />
+      ))}
+    </div>
+  )
+}
+
 export const ParticipantsBlock: React.FC<ParticipantsBlockProps> &
   IOverviewLayoutComposition = function ParticipantsBlock(props) {
-  const { children } = props;
+  const { children, ...otherProps } = props;
+
+  let participantsRef = React.useRef<HTMLDivElement>(null!);
 
   const count = React.Children.count(children);
+
+  const elements = React.useMemo((): ParticipantsBlockElements[] => {
+    return (React.Children.toArray(children) as ParticipantsBlockElements[]).map((child, index) => {
+      return (
+        <Item key={index} textValue={child.props.value}>
+          {child}
+        </Item>
+      );
+    });
+  }, [children]);
+
+  let state = useListState({
+    children: elements,
+  });
+
+  let gridState = useGridState({
+    collection: new GridCollection({
+      columnCount: 4,
+      items: [{
+        type: 'item',
+        childNodes: Array.from(state.collection).map((cell, index) => ({
+          ...cell,
+          index: index,
+          type: 'cell'
+        }))
+      }]
+    })
+  });
+
+  let { gridProps } = useGrid({
+    focusMode: 'cell',
+    ...otherProps,
+  }, gridState, participantsRef);
 
   return (
     <div className={Styles.container()}>
       <div className={Styles.contents()}>
         <div
+          {...gridProps}
+          ref={participantsRef}
           className={Styles.participants({
             css: {
               ...getGridVariables({
@@ -91,7 +181,13 @@ export const ParticipantsBlock: React.FC<ParticipantsBlockProps> &
             },
           })}
         >
-          {children}
+            {Array.from(gridState.collection).map(item =>
+              (<Row
+                key={item.key}
+                state={gridState}
+                item={item}
+              />)
+            )}
         </div>
       </div>
     </div>

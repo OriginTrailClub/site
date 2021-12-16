@@ -29,13 +29,6 @@ export const participants = css({
 
   $$participantSize: 'min($$minParticipantSize, $$maxParticipantSize)',
 
-  display: 'grid',
-  gridAutoFlow: 'column',
-  gridTemplateRows: '1fr',
-
-  gridTemplateColumns:
-    '$$scrollPadding repeat($$columnCount, $$participantSize) $$scrollPadding',
-
   overflowX: 'auto',
   overflowY: 'hidden',
 
@@ -80,3 +73,23 @@ export const participants = css({
     $$minParticipantSize: '$$maxParticipantSize',
   },
 });
+
+
+export const row = css({
+  display: 'grid',
+  gridAutoFlow: 'column',
+  gridTemplateRows: '1fr',
+  gridTemplateColumns:
+    '$$scrollPadding repeat($$columnCount, $$participantSize) $$scrollPadding',
+
+  '&:before': {
+    content: '',
+  },
+  '&:after': {
+    content: '',
+  },  
+});
+
+export const cell = css({
+  scrollSnapAlign: 'center',
+})

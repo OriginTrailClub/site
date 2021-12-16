@@ -12,6 +12,9 @@ type ParticipantsBlockCaseElements = React.ReactElement<
 
 export interface ParticipantsBlockParticipantProps {
   children: ParticipantsBlockCaseElements | ParticipantsBlockCaseElements[];
+
+  /** A string representation of the use cases contents, used for features like typeahead. */
+  value: string;
 }
 
 export function ParticipantsBlockParticipant(
