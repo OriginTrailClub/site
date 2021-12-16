@@ -19,10 +19,11 @@ import {
 } from './UseCaseBlockDescription';
 import { UseCaseBlockImage, UseCaseBlockImageProps } from './UseCaseBlockImage';
 import { GridNode } from '@react-types/grid';
+import { AriaLabelingProps } from '@react-types/shared';
 
 type UseCaseBlockElements = React.ReactElement<UseCaseBlockCaseProps>;
 
-export interface UseCaseBlockProps {
+export interface UseCaseBlockProps extends AriaLabelingProps {
   children: UseCaseBlockElements | UseCaseBlockElements[];
 }
 
@@ -119,16 +120,16 @@ function Row<T>(props: RowProps<T>) {
 
 export const UseCaseBlock: React.FC<UseCaseBlockProps> &
   IOverviewLayoutComposition = function UseCaseBlock(props) {
-    const { children } = props;
+    const { children, ...otherProps } = props;
 
     const count = React.Children.count(children);
 
     const casesListRef = React.useRef<HTMLDivElement>(null);
 
     const elements = React.useMemo((): UseCaseBlockElements[] => {
-      return React.Children.toArray(children).map((child, index) => {
+      return (React.Children.toArray(children) as UseCaseBlockElements[]).map((child, index) => {
         return (
-          <Item key={index}>
+          <Item key={index} textValue={child.props.value}>
             {child}
           </Item>
         );
@@ -164,7 +165,8 @@ export const UseCaseBlock: React.FC<UseCaseBlockProps> &
     });
 
     let { gridProps } = useGrid({
-      focusMode: 'cell'
+      focusMode: 'cell',
+      ...otherProps,
     }, gridState, casesListRef);
 
     return (
