@@ -91,7 +91,9 @@ function Cell<T>(props: CellProps<T>) {
   }, state, cellRef);
 
   return (
-    <div {...gridCellProps} ref={cellRef} className={Styles.cell()}>
+    <div {...gridCellProps} ref={cellRef} className={Styles.cell({
+      type: item.props.type,
+    })}>
       {item.rendered}
     </div>
   )
@@ -143,21 +145,28 @@ export const UseCaseBlock: React.FC<UseCaseBlockProps> &
     let useTwoColumnLayout = useMediaQuery(config.media.bp3);
 
     let rows = React.useMemo(() => {
+      let cells = Array.from(state.collection).map((cell, index) => ({
+        ...cell,
+        props: {
+          type: index % 3
+        },
+      }))
+
       if (useTwoColumnLayout) {
-        return part(Array.from(state.collection), 2);
+        return part(Array.from(cells), 2);
       }
 
-      return [Array.from(state.collection)];
+      return [Array.from(cells)];
     }, [useTwoColumnLayout, state.collection])
 
     let gridState = useGridState({
       collection: new GridCollection({
         columnCount: 4,
-        items: rows.map(row => ({
+        items: rows.map((row) => ({
           type: 'item',
           childNodes: row.map((cell, index) => ({
             ...cell,
-            index,
+            index: index,
             type: 'cell'
           }))
         }))

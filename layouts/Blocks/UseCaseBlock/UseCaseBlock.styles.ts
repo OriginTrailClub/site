@@ -24,7 +24,9 @@ export const cases = css({
   $$minUseCaseSize: '$$useCaseSize',
   $$maxUseCaseSize: '$$useCaseSize',
 
-  display: 'flex',
+  display: 'grid',
+  gridTemplateColumns: '1fr',
+  gridTemplateRows: '1fr',
   flexDirection: 'column',
 
   overflowX: 'auto',
@@ -42,6 +44,7 @@ export const cases = css({
   [`.${UseCaseBlockCaseStyles.container}`]: {
     scrollSnapAlign: 'center',
   },
+
   '@bp3': {
     $$containerSize: 'min(100%, calc(1234px + $space$regular))',
   }
@@ -74,6 +77,31 @@ export const row = css({
   },
 })
 
+console.log(String(UseCaseBlockCaseStyles.container()))
+
 export const cell = css({
-    m: 'calc($space$regular / 2)',
+  m: 'calc($space$regular / 2)',
+
+  variants: {
+    type: {
+      0: {
+        [`& > .${UseCaseBlockCaseStyles.container()}`]: {
+          $$circleColor: '$colors$cyan-200',
+          $$circleOutlineColor: '$colors$cyan-300',        
+        }
+      },
+      1: {
+        [`& > .${UseCaseBlockCaseStyles.container()}`]: {
+          $$circleColor: '$colors$gray-200',
+          $$circleOutlineColor: '$colors$gray-300',        
+        }
+      },
+      2: {
+        [`& > .${UseCaseBlockCaseStyles.container()}`]: {
+          $$circleColor: '$colors$indigo-200',
+          $$circleOutlineColor: '$colors$indigo-300',        
+        }
+      }
+    }
+  }
 })
