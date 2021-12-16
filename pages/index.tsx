@@ -340,8 +340,8 @@ const Home: NextPage<HomePageProps> = (props) => {
                 </IntroBlock>
               </Grid.Item>
               <Grid.Item>
-                <UseCaseBlock>
-                  <UseCaseBlock.Case>
+                <UseCaseBlock aria-label="Use cases">
+                  <UseCaseBlock.Case value="Supply Chains">
                     <UseCaseBlock.Title>Supply Chains</UseCaseBlock.Title>
                     <UseCaseBlock.Description>
                       Vivamus magna justo, lacinia eget consectetur sed,
@@ -352,7 +352,7 @@ const Home: NextPage<HomePageProps> = (props) => {
                       alt="Supply Chains"
                     />
                   </UseCaseBlock.Case>
-                  <UseCaseBlock.Case>
+                  <UseCaseBlock.Case value="Non Fungible Tokens">
                     <UseCaseBlock.Title>Non Fungible Tokens</UseCaseBlock.Title>
                     <UseCaseBlock.Description>
                       Vivamus magna justo, lacinia eget consectetur sed,
@@ -363,7 +363,7 @@ const Home: NextPage<HomePageProps> = (props) => {
                       alt="Non Fungible Tokens"
                     />
                   </UseCaseBlock.Case>
-                  <UseCaseBlock.Case>
+                  <UseCaseBlock.Case value="Decentralized Finance">
                     <UseCaseBlock.Title>
                       Decentralized Finance
                     </UseCaseBlock.Title>
@@ -376,7 +376,7 @@ const Home: NextPage<HomePageProps> = (props) => {
                       alt="Decentralized Finance"
                     />
                   </UseCaseBlock.Case>
-                  <UseCaseBlock.Case>
+                  <UseCaseBlock.Case value="Data Marketplace">
                     <UseCaseBlock.Title>Data Marketplace</UseCaseBlock.Title>
                     <UseCaseBlock.Description>
                       Vivamus magna justo, lacinia eget consectetur sed,
@@ -387,7 +387,7 @@ const Home: NextPage<HomePageProps> = (props) => {
                       alt="Data Marketplace"
                     />
                   </UseCaseBlock.Case>
-                  <UseCaseBlock.Case>
+                  <UseCaseBlock.Case value="Cetifications and Compliance">
                     <UseCaseBlock.Title>
                       Cetifications & Compliance
                     </UseCaseBlock.Title>
@@ -400,7 +400,7 @@ const Home: NextPage<HomePageProps> = (props) => {
                       alt="Cetifications & Compliance"
                     />
                   </UseCaseBlock.Case>
-                  <UseCaseBlock.Case>
+                  <UseCaseBlock.Case value="Logistics and Transportation">
                     <UseCaseBlock.Title>
                       Logistics & Transportation
                     </UseCaseBlock.Title>
@@ -413,7 +413,7 @@ const Home: NextPage<HomePageProps> = (props) => {
                       alt="Logistics & Transportation"
                     />
                   </UseCaseBlock.Case>
-                  <UseCaseBlock.Case>
+                  <UseCaseBlock.Case value="Pharmaceutical Industry">
                     <UseCaseBlock.Title>
                       Pharmaceutical Industry
                     </UseCaseBlock.Title>
@@ -426,7 +426,7 @@ const Home: NextPage<HomePageProps> = (props) => {
                       alt="Pharmaceutical Industry"
                     />
                   </UseCaseBlock.Case>
-                  <UseCaseBlock.Case>
+                  <UseCaseBlock.Case value="Personal Data Management">
                     <UseCaseBlock.Title>
                       Personal Data Management
                     </UseCaseBlock.Title>
