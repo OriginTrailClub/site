@@ -77,8 +77,6 @@ export const row = css({
   },
 })
 
-console.log(String(UseCaseBlockCaseStyles.container()))
-
 export const cell = css({
   m: 'calc($space$regular / 2)',
 
