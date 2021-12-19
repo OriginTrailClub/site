@@ -5,9 +5,17 @@ import { GridCollection, GridState, useGridState } from '@react-stately/grid';
 import { useListState } from '@react-stately/list';
 import { Item } from '@react-stately/collections';
 import { useGrid, useGridCell, useGridRow } from '@react-aria/grid';
+import { GridNode } from '@react-types/grid';
+import { AriaLabelingProps } from '@react-types/shared';
+
+import ArrowRightLineIcon from 'remixicon-react/ArrowRightLineIcon';
+import ArrowLeftLineIcon from 'remixicon-react/ArrowLeftLineIcon';
 
 import { config } from 'stitches.config';
-import {useMediaQuery} from 'hooks/useMediaQuery';
+
+import { VisuallyHidden } from 'components/VisuallyHidden';
+
+import { useMediaQuery } from 'hooks/useMediaQuery';
 
 import * as Styles from './UseCaseBlock.styles';
 
@@ -18,8 +26,10 @@ import {
   UseCaseBlockDescriptionProps,
 } from './UseCaseBlockDescription';
 import { UseCaseBlockImage, UseCaseBlockImageProps } from './UseCaseBlockImage';
-import { GridNode } from '@react-types/grid';
-import { AriaLabelingProps } from '@react-types/shared';
+import { useButton } from '@react-aria/button';
+import { FocusWithinProps, useFocusWithin } from '@react-aria/interactions';
+import { mergeProps } from '@react-aria/utils';
+import { PressEvents } from '@react-types/shared';
 
 type UseCaseBlockElements = React.ReactElement<UseCaseBlockCaseProps>;
 
@@ -69,43 +79,122 @@ const getGridVariables = (options: IgetGridVariablesOptions): Stitches.CSS => {
   return cssVars;
 };
 
-// Splits an array in n groups
-function part<T>(arr: T[], n: number) {
-  const count = Math.ceil(arr.length / n);
-  return [...Array(n)].map((_, i) => arr.slice(i * count, (i + 1) * count));
-};
+interface NavigationProps {
+  variant?: 'next' | 'previous';
 
-interface CellProps<T> {
-  item: GridNode<T>,
-  state: GridState<T, GridCollection<T>>
+  isVisible: boolean;
+
+  onPress: PressEvents['onPress'];
 }
 
-function Cell<T>(props: CellProps<T>) {
-  const { state, item } = props;
+function Navigation(props: NavigationProps) {
+  const { isVisible, onPress, variant = 'next' } = props;
 
-  let cellRef = React.useRef<HTMLDivElement>(null!);
+  let ref = React.useRef<HTMLButtonElement>(null!);
 
-  let { gridCellProps } = useGridCell({
-    node: item,
-    focusMode: 'cell'
-  }, state, cellRef);
+  const { buttonProps } = useButton({ elementType: 'button', onPress }, ref);
+
+  const Icon = variant === 'previous' ? ArrowLeftLineIcon : ArrowRightLineIcon
 
   return (
-    <div {...gridCellProps} ref={cellRef} className={Styles.cell({
-      type: item.props.type,
-    })}>
-      {item.rendered}
+    <div
+      className={Styles.navigation({
+        variant,
+        visible: isVisible,
+      })}
+    >
+      <button {...buttonProps} className={Styles.navigationButton()} tabIndex={-1}>
+        <VisuallyHidden>Show next</VisuallyHidden>
+        <span className={Styles.navigationIcon()}>
+          <Icon />
+        </span>
+      </button>
     </div>
   )
 }
 
+// Splits an array in n groups
+function part<T>(arr: T[], n: number) {
+  const count = Math.ceil(arr.length / n);
+  return [...Array(n)].map((_, i) => arr.slice(i * count, (i + 1) * count));
+}
+
+// Debounce a execution of the callback for x miliseconds
+const debounce = <F extends (...args: any[]) => any>(
+  callback: F,
+  wait: number
+) => {
+  let timeoutId: number;
+
+  return (...args: Parameters<F>) => {
+    window.clearTimeout(timeoutId);
+    timeoutId = window.setTimeout(() => {
+      callback.apply(null, args);
+    }, wait);
+  };
+};
+
+interface CellProps<T> {
+  item: GridNode<T>;
+  state: GridState<T, GridCollection<T>>;
+  gridRef: React.MutableRefObject<HTMLDivElement>;
+  onFocusWithin: FocusWithinProps['onFocusWithin'],
+}
+
+function Cell<T>(props: CellProps<T>) {
+  const { state, item, gridRef, onFocusWithin } = props;
+
+  const [isVisible, setIsVisible] = React.useState(false);
+
+  let cellRef = React.useRef<HTMLDivElement>(null!);
+
+  let { gridCellProps } = useGridCell(
+    {
+      node: item,
+      focusMode: 'cell',
+    },
+    state,
+    cellRef
+  );
+
+  const { focusWithinProps } = useFocusWithin({
+    onFocusWithin: onFocusWithin,
+  });
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.intersectionRatio >= 1),
+      {
+        root: gridRef.current,
+        threshold: 1.0,
+      }
+    );
+    observer.observe(cellRef.current);
+    return () => observer.disconnect();
+  }, [gridRef, cellRef]);
+
+  return (
+    <div
+      {...mergeProps(gridCellProps, focusWithinProps)}
+      data-visible={isVisible}
+      ref={cellRef}
+      className={Styles.cell({
+        type: item.props.type,
+      })}
+    >
+      {item.rendered}
+    </div>
+  );
+}
+
 interface RowProps<T> {
-  item: GridNode<T>,
-  state: GridState<T, GridCollection<T>>
+  item: GridNode<T>;
+  state: GridState<T, GridCollection<T>>;
+  children: React.ReactNode;
 }
 
 function Row<T>(props: RowProps<T>) {
-  const { state, item } = props;
+  const { state, item, children } = props;
 
   let rowRef = React.useRef<HTMLDivElement>(null!);
 
@@ -113,11 +202,9 @@ function Row<T>(props: RowProps<T>) {
 
   return (
     <div {...rowProps} ref={rowRef} className={Styles.row()}>
-      {Array.from(item.childNodes).map(cell => (
-        <Cell key={cell.key} state={state} item={cell} />
-      ))}
+      {children}
     </div>
-  )
+  );
 }
 
 export const UseCaseBlock: React.FC<UseCaseBlockProps> &
@@ -126,16 +213,23 @@ export const UseCaseBlock: React.FC<UseCaseBlockProps> &
 
     const count = React.Children.count(children);
 
-    const casesListRef = React.useRef<HTMLDivElement>(null);
+    const casesListRef = React.useRef<HTMLDivElement>(null!);
+    const spacerRef = React.useRef<HTMLDivElement>(null!);
+    const checkNavigationRef = React.useRef<ReturnType<typeof setTimeout>>();
+
+    const [showNext, setShowNext] = React.useState(false);
+    const [showPrevious, setShowPrevious] = React.useState(false);
 
     const elements = React.useMemo((): UseCaseBlockElements[] => {
-      return (React.Children.toArray(children) as UseCaseBlockElements[]).map((child, index) => {
-        return (
-          <Item key={index} textValue={child.props.value}>
-            {child}
-          </Item>
-        );
-      });
+      return (React.Children.toArray(children) as UseCaseBlockElements[]).map(
+        (child, index) => {
+          return (
+            <Item key={index} textValue={child.props.value}>
+              {child}
+            </Item>
+          );
+        }
+      );
     }, [children]);
 
     let state = useListState({
@@ -148,16 +242,16 @@ export const UseCaseBlock: React.FC<UseCaseBlockProps> &
       let cells = Array.from(state.collection).map((cell, index) => ({
         ...cell,
         props: {
-          type: index % 3
+          type: index % 3,
         },
-      }))
+      }));
 
       if (useTwoColumnLayout) {
         return part(Array.from(cells), 2);
       }
 
       return [Array.from(cells)];
-    }, [useTwoColumnLayout, state.collection])
+    }, [useTwoColumnLayout, state.collection]);
 
     let gridState = useGridState({
       collection: new GridCollection({
@@ -167,16 +261,116 @@ export const UseCaseBlock: React.FC<UseCaseBlockProps> &
           childNodes: row.map((cell, index) => ({
             ...cell,
             index: index,
-            type: 'cell'
-          }))
-        }))
-      })
+            type: 'cell',
+          })),
+        })),
+      }),
     });
 
-    let { gridProps } = useGrid({
-      focusMode: 'cell',
-      ...otherProps,
-    }, gridState, casesListRef);
+    let { gridProps } = useGrid(
+      {
+        focusMode: 'cell',
+        ...otherProps,
+      },
+      gridState,
+      casesListRef
+    );
+
+    const getNextCell = React.useCallback((addition) => {
+      const slides = casesListRef.current?.querySelectorAll<HTMLElement>(
+        `.${Styles.cell()}`
+      );
+      if (slides) {
+        for (let index of Array.from(slides.keys())) {
+          let currentCell = slides.item(index);
+
+          if (currentCell.dataset.visible === 'false') {
+            continue;
+          }
+
+          let nextCell = slides.item(index + addition);
+
+          if (nextCell?.dataset.visible === 'false') {
+            return nextCell;
+          }
+        }
+      }
+    }, []);
+
+    const scrollCellIntoView = React.useCallback(
+      (cell) => {
+        const { clientWidth: listWidth } = casesListRef.current;
+        const { clientWidth: cellWidth, offsetLeft: cellOffsetLeft } = cell;
+
+        let left = cellOffsetLeft - (listWidth - cellWidth) / 2;
+
+        if (useTwoColumnLayout) {
+          // TODO implement navigation for two column layout (stick to right)
+        }
+
+        casesListRef.current.scrollTo({ left, behavior: 'smooth' });
+      },
+      [useTwoColumnLayout]
+    );
+
+    const onHandleNextPress = React.useCallback(() => {
+      const nextCell = getNextCell(1);
+
+      if (nextCell) {
+        scrollCellIntoView(nextCell);
+      }
+    }, [getNextCell, scrollCellIntoView]);
+
+    const onHandlePreviousPress = React.useCallback(() => {
+      const prevCell = getNextCell(-1);
+
+      if (prevCell) {
+        scrollCellIntoView(prevCell);
+      }
+    }, [getNextCell, scrollCellIntoView]);
+
+    const onCellFocusWithin = React.useCallback(
+      (e) => {
+        setTimeout(() => {
+          scrollCellIntoView(e.target);
+        });
+      },
+      [scrollCellIntoView]
+    );
+
+    const checkNavigation = React.useCallback(() => {
+      const { scrollLeft, scrollWidth, clientWidth } = casesListRef.current;
+      const { offsetWidth } = spacerRef.current;
+
+      setShowNext(scrollWidth - scrollLeft - clientWidth > offsetWidth);
+      setShowPrevious(scrollLeft > offsetWidth);
+    }, []);
+
+    React.useEffect(() => {
+      if (checkNavigationRef.current) {
+        clearTimeout(checkNavigationRef.current);
+      }
+
+      checkNavigationRef.current = setTimeout(() => {
+        requestAnimationFrame(() => {
+          checkNavigation();
+        });
+      }, 100);
+    });
+
+    React.useEffect(() => {
+      const casesList = casesListRef.current;
+      if (casesList) {
+        const handleScrollEnd = debounce(checkNavigation, 100);
+
+        casesList.addEventListener('scroll', handleScrollEnd);
+        window.addEventListener('resize', handleScrollEnd);
+        return () => {
+          casesList.removeEventListener('scroll', handleScrollEnd);
+          window.removeEventListener('resize', handleScrollEnd);
+        };
+      }
+    }, [checkNavigation]);
 
     return (
       <div className={Styles.container()}>
@@ -204,14 +398,24 @@ export const UseCaseBlock: React.FC<UseCaseBlockProps> &
               },
             })}
           >
-            {Array.from(gridState.collection).map(item =>
-              (<Row
-                key={item.key}
-                state={gridState}
-                item={item}
-              />)
-            )}
+            {/* We use the spacer elements to detect if the left or right navigation is still necessary */}
+            <div className={Styles.spacer()} ref={spacerRef} />
+            {Array.from(gridState.collection).map((item) => (
+              <Row key={item.key} state={gridState} item={item}>
+                {Array.from(item.childNodes).map((cell) => (
+                  <Cell
+                    key={cell.key}
+                    state={gridState}
+                    item={cell}
+                    gridRef={casesListRef}
+                    onFocusWithin={onCellFocusWithin}
+                  />
+                ))}
+              </Row>
+            ))}
           </div>
+          <Navigation onPress={onHandleNextPress} isVisible={showNext} variant="next" />
+          <Navigation onPress={onHandlePreviousPress} isVisible={showPrevious} variant="previous" />
         </div>
       </div>
     );

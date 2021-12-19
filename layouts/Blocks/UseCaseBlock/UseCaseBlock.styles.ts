@@ -29,6 +29,8 @@ export const cases = css({
   gridTemplateRows: '1fr',
   flexDirection: 'column',
 
+  scrollBehavior: 'smooth',
+
   overflowX: 'auto',
   overflowY: 'hidden',
 
@@ -47,8 +49,8 @@ export const cases = css({
 
   '@bp3': {
     $$containerSize: 'min(100%, calc(1234px + $space$regular))',
-  }
-})
+  },
+});
 
 export const row = css({
   display: 'grid',
@@ -75,7 +77,7 @@ export const row = css({
   '@media(min-width: 1234px)': {
     $$minUseCaseSize: '$$maxUseCaseSize',
   },
-})
+});
 
 export const cell = css({
   m: 'calc($space$regular / 2)',
@@ -85,21 +87,84 @@ export const cell = css({
       0: {
         [`& > .${UseCaseBlockCaseStyles.container()}`]: {
           $$circleColor: '$colors$cyan-200',
-          $$circleOutlineColor: '$colors$cyan-300',        
-        }
+          $$circleOutlineColor: '$colors$cyan-300',
+        },
       },
       1: {
         [`& > .${UseCaseBlockCaseStyles.container()}`]: {
           $$circleColor: '$colors$gray-200',
-          $$circleOutlineColor: '$colors$gray-300',        
-        }
+          $$circleOutlineColor: '$colors$gray-300',
+        },
       },
       2: {
         [`& > .${UseCaseBlockCaseStyles.container()}`]: {
           $$circleColor: '$colors$indigo-200',
-          $$circleOutlineColor: '$colors$indigo-300',        
-        }
+          $$circleOutlineColor: '$colors$indigo-300',
+        },
+      },
+    },
+  },
+});
+
+export const spacer = css({
+  position: 'absolute',
+
+  top: 0,
+  left: 0,
+
+  width: '$$scrollPaddingLeft',
+});
+
+export const navigationButton = css({
+  border: 'none',
+  p: '$regular',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  textDecoration: 'none',
+
+  borderWidth: 1,
+  borderStyle: 'solid',
+  color: '$indigo-600',
+  backgroundColor: 'white',
+  borderColor: '$gray-200',
+
+  '&:hover': {
+    backgroundColor: '$indigo-50',
+  },
+  '&:active': {
+    backgroundColor: '$indigo-100',
+  },
+});
+
+export const navigationIcon = css({
+  color: 'currentColor',
+  display: 'flex',
+  alignItems: 'center',
+  width: '$fontSizes$button',
+  height: '$fontSizes$button',
+});
+
+export const navigation = css({
+  position: 'absolute',
+  bottom: 'calc($regular + $small)',
+
+  variants: {
+    variant: {
+      next: {
+        right: '$regular',
+      },
+      previous: {
+        left: '$regular',
+      }
+    },
+    visible: {
+      true: {
+        opacity: 1,
+      },
+      false: {
+        opacity: 0,
       }
     }
   }
-})
+});
