@@ -69,8 +69,8 @@ const getGridVariables = (options: IgetGridVariablesOptions): Stitches.CSS => {
 };
 
 interface CellProps<T> {
-  item: GridNode<T>,
-  state: GridState<T, GridCollection<T>>
+  item: GridNode<T>;
+  state: GridState<T, GridCollection<T>>;
 }
 
 function Cell<T>(props: CellProps<T>) {
@@ -78,23 +78,31 @@ function Cell<T>(props: CellProps<T>) {
 
   let cellRef = React.useRef<HTMLDivElement>(null!);
 
-  let { gridCellProps } = useGridCell({
-    node: item,
-    focusMode: 'cell'
-  }, state, cellRef);
+  let { gridCellProps } = useGridCell(
+    {
+      node: item,
+      focusMode: 'cell',
+    },
+    state,
+    cellRef
+  );
 
   return (
-    <div {...gridCellProps} ref={cellRef} className={Styles.cell({
-      type: item.props.type,
-    })}>
+    <div
+      {...gridCellProps}
+      ref={cellRef}
+      className={Styles.cell({
+        type: item.props.type,
+      })}
+    >
       {item.rendered}
     </div>
-  )
+  );
 }
 
 interface RowProps<T> {
-  item: GridNode<T>,
-  state: GridState<T, GridCollection<T>>
+  item: GridNode<T>;
+  state: GridState<T, GridCollection<T>>;
 }
 
 function Row<T>(props: RowProps<T>) {
@@ -106,11 +114,11 @@ function Row<T>(props: RowProps<T>) {
 
   return (
     <div {...rowProps} ref={rowRef} className={Styles.row()}>
-      {Array.from(item.childNodes).map(cell => (
+      {Array.from(item.childNodes).map((cell) => (
         <Cell key={cell.key} state={state} item={cell} />
       ))}
     </div>
-  )
+  );
 }
 
 export const ParticipantsBlock: React.FC<ParticipantsBlockProps> &
@@ -122,7 +130,9 @@ export const ParticipantsBlock: React.FC<ParticipantsBlockProps> &
   const count = React.Children.count(children);
 
   const elements = React.useMemo((): ParticipantsBlockElements[] => {
-    return (React.Children.toArray(children) as ParticipantsBlockElements[]).map((child, index) => {
+    return (React.Children.toArray(
+      children
+    ) as ParticipantsBlockElements[]).map((child, index) => {
       return (
         <Item key={index} textValue={child.props.value}>
           {child}
@@ -138,21 +148,27 @@ export const ParticipantsBlock: React.FC<ParticipantsBlockProps> &
   let gridState = useGridState({
     collection: new GridCollection({
       columnCount: 4,
-      items: [{
-        type: 'item',
-        childNodes: Array.from(state.collection).map((cell, index) => ({
-          ...cell,
-          index: index,
-          type: 'cell'
-        }))
-      }]
-    })
+      items: [
+        {
+          type: 'item',
+          childNodes: Array.from(state.collection).map((cell, index) => ({
+            ...cell,
+            index: index,
+            type: 'cell',
+          })),
+        },
+      ],
+    }),
   });
 
-  let { gridProps } = useGrid({
-    focusMode: 'cell',
-    ...otherProps,
-  }, gridState, participantsRef);
+  let { gridProps } = useGrid(
+    {
+      focusMode: 'cell',
+      ...otherProps,
+    },
+    gridState,
+    participantsRef
+  );
 
   return (
     <div className={Styles.container()}>
@@ -181,13 +197,9 @@ export const ParticipantsBlock: React.FC<ParticipantsBlockProps> &
             },
           })}
         >
-            {Array.from(gridState.collection).map(item =>
-              (<Row
-                key={item.key}
-                state={gridState}
-                item={item}
-              />)
-            )}
+          {Array.from(gridState.collection).map((item) => (
+            <Row key={item.key} state={gridState} item={item} />
+          ))}
         </div>
       </div>
     </div>

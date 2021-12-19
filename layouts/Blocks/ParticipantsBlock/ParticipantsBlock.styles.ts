@@ -74,7 +74,6 @@ export const participants = css({
   },
 });
 
-
 export const row = css({
   display: 'grid',
   gridAutoFlow: 'column',
@@ -87,9 +86,9 @@ export const row = css({
   },
   '&:after': {
     content: '',
-  },  
+  },
 });
 
 export const cell = css({
   scrollSnapAlign: 'center',
-})
+});

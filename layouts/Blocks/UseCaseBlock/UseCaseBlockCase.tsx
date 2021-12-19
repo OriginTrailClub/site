@@ -12,7 +12,7 @@ export interface UseCaseBlockCaseProps {
   children: UseCaseBlockCaseElements | UseCaseBlockCaseElements[];
 
   /** A string representation of the use cases contents, used for features like typeahead. */
-  value: string,
+  value: string;
 }
 
 export function UseCaseBlockCase(props: UseCaseBlockCaseProps) {
