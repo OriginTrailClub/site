@@ -131,7 +131,7 @@ export const navigationButton = css({
     opacity: 0,
   },
 
-  '&media (hover: none) and (pointer: coarse)': {
+  '@media (hover: none) and (pointer: coarse)': {
     display: 'none',
   },
 
