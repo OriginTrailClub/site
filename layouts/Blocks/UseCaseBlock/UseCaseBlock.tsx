@@ -82,17 +82,17 @@ const getGridVariables = (options: IgetGridVariablesOptions): Stitches.CSS => {
 interface NavigationProps {
   variant?: 'next' | 'previous';
 
-  isVisible: boolean;
+  disabled: boolean;
 
   onPress: PressEvents['onPress'];
 }
 
 function Navigation(props: NavigationProps) {
-  const { isVisible, onPress, variant = 'next' } = props;
+  const { disabled, onPress, variant = 'next' } = props;
 
   let ref = React.useRef<HTMLButtonElement>(null!);
 
-  const { buttonProps } = useButton({ elementType: 'button', onPress }, ref);
+  const { buttonProps } = useButton({ elementType: 'button', isDisabled: disabled, onPress }, ref);
 
   const Icon = variant === 'previous' ? ArrowLeftLineIcon : ArrowRightLineIcon
 
@@ -100,7 +100,6 @@ function Navigation(props: NavigationProps) {
     <div
       className={Styles.navigation({
         variant,
-        visible: isVisible,
       })}
     >
       <button {...buttonProps} className={Styles.navigationButton()} tabIndex={-1}>
@@ -256,8 +255,9 @@ export const UseCaseBlock: React.FC<UseCaseBlockProps> &
     let gridState = useGridState({
       collection: new GridCollection({
         columnCount: 4,
-        items: rows.map((row) => ({
+        items: rows.map((row, index) => ({
           type: 'item',
+          key: index,
           childNodes: row.map((cell, index) => ({
             ...cell,
             index: index,
@@ -414,8 +414,8 @@ export const UseCaseBlock: React.FC<UseCaseBlockProps> &
               </Row>
             ))}
           </div>
-          <Navigation onPress={onHandleNextPress} isVisible={showNext} variant="next" />
-          <Navigation onPress={onHandlePreviousPress} isVisible={showPrevious} variant="previous" />
+          <Navigation onPress={onHandleNextPress} disabled={!showNext} variant="next" />
+          <Navigation onPress={onHandlePreviousPress} disabled={!showPrevious} variant="previous" />
         </div>
       </div>
     );
