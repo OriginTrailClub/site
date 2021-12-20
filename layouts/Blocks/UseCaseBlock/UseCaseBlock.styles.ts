@@ -13,10 +13,10 @@ export const contents = css({
 });
 
 export const cases = css({
-  $$containerSize: '100%',
+  $$containerSize: '100vw',
 
   $$scrollPadding:
-    'max(calc((100% - $$containerSize) / 2), calc($space$regular / 2))',
+    'max(calc((100vw - $$containerSize) / 2), calc($space$regular / 2))',
   $$scrollPaddingLeft: '$$scrollPadding',
   $$scrollPaddingRight: '$$scrollPadding',
 
@@ -48,7 +48,14 @@ export const cases = css({
   },
 
   '@bp3': {
-    $$containerSize: 'min(100%, calc(1234px + $space$regular))',
+    $$containerSize: 'min(100vw, calc(1234px + $space$regular))',
+    $$minUseCaseSize:
+      'calc(((100vw - $$scrollPadding * 2) - $space$large) / $$maxColumnCount)',
+    $$maxUseCaseSize: 'calc((100vw - $$scrollPadding * 2) / $$maxColumnCount)',
+  },
+
+  '@media(min-width: 1234px)': {
+    $$minUseCaseSize: '$$maxUseCaseSize',
   },
 });
 
@@ -61,22 +68,13 @@ export const row = css({
   '&:before': {
     content: '',
   },
+  
   '&:after': {
     content: '',
   },
 
   gridTemplateColumns:
     '$$scrollPaddingLeft repeat($$columnCount, minmax($$minUseCaseSize, $$maxUseCaseSize)) $$scrollPaddingRight',
-
-  '@bp3': {
-    $$containerSize: 'min(100%, calc(1234px + $space$regular))',
-    $$minUseCaseSize:
-      'calc(((100% - $$scrollPadding * 2) - $space$large) / $$maxColumnCount)',
-    $$maxUseCaseSize: 'calc((100% - $$scrollPadding * 2) / $$maxColumnCount)',
-  },
-  '@media(min-width: 1234px)': {
-    $$minUseCaseSize: '$$maxUseCaseSize',
-  },
 });
 
 export const cell = css({
@@ -128,6 +126,10 @@ export const navigationButton = css({
   color: '$indigo-600',
   backgroundColor: 'white',
   borderColor: '$gray-200',
+
+  '&:disabled': {
+    opacity: 0,
+  },
 
   '&:hover': {
     backgroundColor: '$indigo-50',
