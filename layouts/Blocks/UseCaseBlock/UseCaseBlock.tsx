@@ -280,6 +280,7 @@ export const UseCaseBlock: React.FC<UseCaseBlockProps> &
       const slides = casesListRef.current?.querySelectorAll<HTMLElement>(
         `.${Styles.cell()}`
       );
+
       if (slides) {
         for (let index of Array.from(slides.keys())) {
           let currentCell = slides.item(index);
@@ -289,6 +290,17 @@ export const UseCaseBlock: React.FC<UseCaseBlockProps> &
           }
 
           let nextCell = slides.item(index + addition);
+
+          if (!nextCell) {
+            continue;
+          }
+
+          if (
+            (currentCell.parentElement?.dataset.key) !==
+            (nextCell.parentElement?.dataset.key)
+          ) {
+            continue;
+          }
 
           if (nextCell?.dataset.visible === 'false') {
             return nextCell;
@@ -304,13 +316,9 @@ export const UseCaseBlock: React.FC<UseCaseBlockProps> &
 
         let left = cellOffsetLeft - (listWidth - cellWidth) / 2;
 
-        if (useTwoColumnLayout) {
-          // TODO implement navigation for two column layout (stick to right)
-        }
-
         casesListRef.current.scrollTo({ left, behavior: 'smooth' });
       },
-      [useTwoColumnLayout]
+      []
     );
 
     const onHandleNextPress = React.useCallback(() => {
