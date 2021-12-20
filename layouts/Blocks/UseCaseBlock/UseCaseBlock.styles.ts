@@ -131,6 +131,10 @@ export const navigationButton = css({
     opacity: 0,
   },
 
+  '&media (hover: none) and (pointer: coarse)': {
+    display: 'none',
+  },
+
   '&:hover': {
     backgroundColor: '$indigo-50',
   },
@@ -158,14 +162,6 @@ export const navigation = css({
       },
       previous: {
         left: '$regular',
-      }
-    },
-    visible: {
-      true: {
-        opacity: 1,
-      },
-      false: {
-        opacity: 0,
       }
     }
   }
