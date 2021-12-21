@@ -210,8 +210,8 @@ export const ParticipantsBlock: React.FC<ParticipantsBlockProps> &
   let spacerRef = React.useRef<HTMLDivElement>(null!);
   let checkNavigationRef = React.useRef<ReturnType<typeof setTimeout>>();
 
-  const [showNext, setShowNext] = React.useState(true);
-  const [showPrevious, setShowPrevious] = React.useState(true);
+  const [showNext, setShowNext] = React.useState(false);
+  const [showPrevious, setShowPrevious] = React.useState(false);
 
   const count = React.Children.count(children);
 
