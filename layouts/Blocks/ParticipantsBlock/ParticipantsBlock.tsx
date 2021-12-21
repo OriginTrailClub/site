@@ -12,6 +12,9 @@ import { mergeProps } from '@react-aria/utils';
 import { Item } from '@react-stately/collections';
 import { useListState } from '@react-stately/list';
 
+import ArrowRightLineIcon from 'remixicon-react/ArrowRightLineIcon';
+import ArrowLeftLineIcon from 'remixicon-react/ArrowLeftLineIcon';
+
 import * as Styles from './ParticipantsBlock.styles';
 
 import {
@@ -30,6 +33,9 @@ import {
   ParticipantsBlockImage,
   ParticipantsBlockImageProps,
 } from './ParticipantsBlockImage';
+import { VisuallyHidden } from 'components/VisuallyHidden';
+import { useButton } from '@react-aria/button';
+import { PressEvents } from '@react-types/shared';
 
 type ParticipantsBlockElements = React.ReactElement<ParticipantsBlockParticipantProps>;
 
@@ -71,6 +77,39 @@ const getGridVariables = (options: IgetGridVariablesOptions): Stitches.CSS => {
 
   return cssVars;
 };
+
+interface NavigationProps {
+  variant?: 'next' | 'previous';
+
+  disabled: boolean;
+
+  onPress: PressEvents['onPress'];
+}
+
+function Navigation(props: NavigationProps) {
+  const { disabled, onPress, variant = 'next' } = props;
+
+  let ref = React.useRef<HTMLButtonElement>(null!);
+
+  const { buttonProps } = useButton({ elementType: 'button', isDisabled: disabled, onPress }, ref);
+
+  const Icon = variant === 'previous' ? ArrowLeftLineIcon : ArrowRightLineIcon
+
+  return (
+    <div
+      className={Styles.navigation({
+        variant,
+      })}
+    >
+      <button {...buttonProps} className={Styles.navigationButton()} tabIndex={-1}>
+        <VisuallyHidden>Show next</VisuallyHidden>
+        <span className={Styles.navigationIcon()}>
+          <Icon />
+        </span>
+      </button>
+    </div>
+  )
+}
 
 interface CellProps<T> {
   item: GridNode<T>;
@@ -151,6 +190,9 @@ export const ParticipantsBlock: React.FC<ParticipantsBlockProps> &
 
   let participantsRef = React.useRef<HTMLDivElement>(null!);
 
+  const [showNext, setShowNext] = React.useState(true);
+  const [showPrevious, setShowPrevious] = React.useState(true);
+
   const count = React.Children.count(children);
 
   const elements = React.useMemo((): ParticipantsBlockElements[] => {
@@ -196,32 +238,36 @@ export const ParticipantsBlock: React.FC<ParticipantsBlockProps> &
 
   const onCellFocusWithin = React.useCallback(() => {}, [])
 
+  const onHandleNextPress = React.useCallback(() => {}, [])
+
+  const onHandlePreviousPress = React.useCallback(() => {}, [])
+
   return (
-    <div className={Styles.container()}>
+    <div className={Styles.container({
+      css: {
+        ...getGridVariables({
+          count: count,
+          maxColumns: 1,
+        }),
+        '@bp2': getGridVariables({
+          count: count,
+          maxColumns: 2,
+        }),
+        '@bp3': getGridVariables({
+          count: count,
+          maxColumns: 3,
+        }),
+        '@bp4': getGridVariables({
+          count: count,
+          maxColumns: 4,
+        }),
+      },
+    })}>
       <div className={Styles.contents()}>
         <div
           {...gridProps}
           ref={participantsRef}
-          className={Styles.participants({
-            css: {
-              ...getGridVariables({
-                count: count,
-                maxColumns: 1,
-              }),
-              '@bp2': getGridVariables({
-                count: count,
-                maxColumns: 2,
-              }),
-              '@bp3': getGridVariables({
-                count: count,
-                maxColumns: 3,
-              }),
-              '@bp4': getGridVariables({
-                count: count,
-                maxColumns: 4,
-              }),
-            },
-          })}
+          className={Styles.participants()}
         >
           {Array.from(gridState.collection).map((item) => (
             <Row key={item.key} state={gridState} item={item}>
@@ -237,6 +283,8 @@ export const ParticipantsBlock: React.FC<ParticipantsBlockProps> &
             </Row>
           ))}
         </div>
+        <Navigation onPress={onHandleNextPress} disabled={!showNext} variant="next" />
+        <Navigation onPress={onHandlePreviousPress} disabled={!showPrevious} variant="previous" />
       </div>
     </div>
   );

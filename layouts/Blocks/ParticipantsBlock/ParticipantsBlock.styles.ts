@@ -3,6 +3,39 @@ import { css } from 'stitches.config';
 import * as ParticipantsBlockParticipantStyles from './ParticipantsBlockParticipant.styles';
 
 export const container = css({
+  $$columnCount: 1,
+  $$maxColumnCount: 1,
+
+  $$containerSize: '100vw',
+
+  $$scrollPadding:
+    'max(calc((100vw - $$containerSize) / 2), calc($space$small / 2))',
+  $$scrollPaddingLeft: '$$scrollPadding',
+  $$scrollPaddingRight: '$$scrollPadding',
+
+  $$minParticipantSize:
+    'calc(((100vw - $$scrollPadding * 2) - $space$large) / $$maxColumnCount)',
+  $$maxParticipantSize: 'calc((100vw - $$scrollPadding * 2) / $$maxColumnCount)',
+
+  $$participantSize: 'min($$minParticipantSize, $$maxParticipantSize)',
+
+  '@bp2': {
+    $$maxColumnCount: 2,
+    $$containerSize: 'min(100vw, calc(1234px + $space$small * 3))',
+  },
+
+  '@bp3': {
+    $$maxColumnCount: 3,
+  },
+
+  '@bp4': {
+    $$maxColumnCount: 4,
+  },
+
+  '@media(min-width: 1234px)': {
+    $$minParticipantSize: '$$maxParticipantSize',
+  },
+
   width: '100%',
   display: 'flex',
   justifyContent: 'center',
@@ -13,22 +46,6 @@ export const contents = css({
 });
 
 export const participants = css({
-  $$columnCount: 1,
-  $$maxColumnCount: 1,
-
-  $$containerSize: '100%',
-
-  $$scrollPadding:
-    'max(calc((100% - $$containerSize) / 2), calc($space$small / 2))',
-  $$scrollPaddingLeft: '$$scrollPadding',
-  $$scrollPaddingRight: '$$scrollPadding',
-
-  $$minParticipantSize:
-    'calc(((100% - $$scrollPadding * 2) - $space$large) / $$maxColumnCount)',
-  $$maxParticipantSize: 'calc((100% - $$scrollPadding * 2) / $$maxColumnCount)',
-
-  $$participantSize: 'min($$minParticipantSize, $$maxParticipantSize)',
-
   overflowX: 'auto',
   overflowY: 'hidden',
 
@@ -53,24 +70,9 @@ export const participants = css({
   },
 
   '@bp2': {
-    $$maxColumnCount: 2,
-    $$containerSize: 'min(100%, calc(1234px + $space$small * 3))',
-
     [`& > .${ParticipantsBlockParticipantStyles.container}`]: {
       scrollSnapAlign: 'center',
     },
-  },
-
-  '@bp3': {
-    $$maxColumnCount: 3,
-  },
-
-  '@bp4': {
-    $$maxColumnCount: 4,
-  },
-
-  '@media(min-width: 1234px)': {
-    $$minParticipantSize: '$$maxParticipantSize',
   },
 });
 
@@ -91,4 +93,58 @@ export const row = css({
 
 export const cell = css({
   scrollSnapAlign: 'center',
+});
+
+export const navigationButton = css({
+  border: 'none',
+  p: '$regular',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  textDecoration: 'none',
+
+  borderWidth: 1,
+  borderStyle: 'solid',
+  color: '$indigo-600',
+  backgroundColor: 'white',
+  borderColor: '$gray-200',
+
+  '&:disabled': {
+    opacity: 0,
+  },
+
+  '@media (hover: none) and (pointer: coarse)': {
+    display: 'none',
+  },
+
+  '&:hover': {
+    backgroundColor: '$indigo-50',
+  },
+  '&:active': {
+    backgroundColor: '$indigo-100',
+  },
+});
+
+export const navigationIcon = css({
+  color: 'currentColor',
+  display: 'flex',
+  alignItems: 'center',
+  width: '$fontSizes$button',
+  height: '$fontSizes$button',
+});
+
+export const navigation = css({
+  position: 'absolute',
+  top: 'calc(($$participantSize - (($space$small / 2) + $space$regular) * 2) / 2)',
+
+  variants: {
+    variant: {
+      next: {
+        right: '$regular',
+      },
+      previous: {
+        left: '$regular',
+      }
+    }
+  }
 });
