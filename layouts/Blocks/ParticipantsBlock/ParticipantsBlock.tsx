@@ -3,8 +3,12 @@ import type * as Stitches from '@stitches/react';
 
 import { GridNode } from '@react-types/grid';
 import { AriaLabelingProps } from '@react-types/shared';
+
 import { GridCollection, GridState, useGridState } from '@react-stately/grid';
 import { useGrid, useGridCell, useGridRow } from '@react-aria/grid';
+import { FocusWithinProps, useFocusWithin } from '@react-aria/interactions';
+import { mergeProps } from '@react-aria/utils';
+
 import { Item } from '@react-stately/collections';
 import { useListState } from '@react-stately/list';
 
@@ -71,10 +75,14 @@ const getGridVariables = (options: IgetGridVariablesOptions): Stitches.CSS => {
 interface CellProps<T> {
   item: GridNode<T>;
   state: GridState<T, GridCollection<T>>;
+  gridRef: React.MutableRefObject<HTMLDivElement>;
+  onFocusWithin: FocusWithinProps['onFocusWithin'],
 }
 
 function Cell<T>(props: CellProps<T>) {
-  const { state, item } = props;
+  const { state, item, gridRef, onFocusWithin } = props;
+
+  const [isVisible, setIsVisible] = React.useState(false);
 
   let cellRef = React.useRef<HTMLDivElement>(null!);
 
@@ -87,9 +95,26 @@ function Cell<T>(props: CellProps<T>) {
     cellRef
   );
 
+  const { focusWithinProps } = useFocusWithin({
+    onFocusWithin: onFocusWithin,
+  });
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.intersectionRatio >= 1),
+      {
+        root: gridRef.current,
+        threshold: 1.0,
+      }
+    );
+    observer.observe(cellRef.current);
+    return () => observer.disconnect();
+  }, [gridRef, cellRef]);
+
   return (
     <div
-      {...gridCellProps}
+      {...mergeProps(gridCellProps, focusWithinProps)}
+      data-visible={isVisible}
       ref={cellRef}
       className={Styles.cell({
         type: item.props.type,
@@ -103,10 +128,11 @@ function Cell<T>(props: CellProps<T>) {
 interface RowProps<T> {
   item: GridNode<T>;
   state: GridState<T, GridCollection<T>>;
+  children: React.ReactNode;
 }
 
 function Row<T>(props: RowProps<T>) {
-  const { state, item } = props;
+  const { state, item, children } = props;
 
   let rowRef = React.useRef<HTMLDivElement>(null!);
 
@@ -114,9 +140,7 @@ function Row<T>(props: RowProps<T>) {
 
   return (
     <div {...rowProps} ref={rowRef} className={Styles.row()}>
-      {Array.from(item.childNodes).map((cell) => (
-        <Cell key={cell.key} state={state} item={cell} />
-      ))}
+      {children}
     </div>
   );
 }
@@ -170,6 +194,8 @@ export const ParticipantsBlock: React.FC<ParticipantsBlockProps> &
     participantsRef
   );
 
+  const onCellFocusWithin = React.useCallback(() => {}, [])
+
   return (
     <div className={Styles.container()}>
       <div className={Styles.contents()}>
@@ -198,7 +224,17 @@ export const ParticipantsBlock: React.FC<ParticipantsBlockProps> &
           })}
         >
           {Array.from(gridState.collection).map((item) => (
-            <Row key={item.key} state={gridState} item={item} />
+            <Row key={item.key} state={gridState} item={item}>
+              {Array.from(item.childNodes).map((cell) => (
+                <Cell
+                  key={cell.key}
+                  state={gridState}
+                  item={cell}
+                  gridRef={participantsRef}
+                  onFocusWithin={onCellFocusWithin}
+                />
+              ))}
+            </Row>
           ))}
         </div>
       </div>
