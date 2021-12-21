@@ -27,7 +27,6 @@ export const cases = css({
   display: 'grid',
   gridTemplateColumns: '1fr',
   gridTemplateRows: '1fr',
-  flexDirection: 'column',
 
   scrollBehavior: 'smooth',
 
