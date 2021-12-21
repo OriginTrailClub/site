@@ -46,6 +46,10 @@ export const contents = css({
 });
 
 export const participants = css({
+  display: 'grid',
+  gridTemplateColumns: '1fr',
+  gridTemplateRows: '1fr',
+
   overflowX: 'auto',
   overflowY: 'hidden',
 
@@ -76,16 +80,27 @@ export const participants = css({
   },
 });
 
+export const spacer = css({
+  position: 'absolute',
+
+  top: 0,
+  left: 0,
+
+  width: '$$scrollPaddingLeft',
+});
+
 export const row = css({
   display: 'grid',
   gridAutoFlow: 'column',
+  gridAutoColumns: '$$participantSize',
   gridTemplateRows: '1fr',
   gridTemplateColumns:
-    '$$scrollPadding repeat($$columnCount, $$participantSize) $$scrollPadding',
+    '$$scrollPaddingLeft repeat($$columnCount, $$participantSize) $$scrollPaddingRight',
 
   '&:before': {
     content: '',
   },
+  
   '&:after': {
     content: '',
   },
@@ -93,6 +108,11 @@ export const row = css({
 
 export const cell = css({
   scrollSnapAlign: 'center',
+
+  ml: 'calc($small / 2)',
+  mr: 'calc($small / 2)',
+  mt: '$small',
+  mb: '$regular',
 });
 
 export const navigationButton = css({
