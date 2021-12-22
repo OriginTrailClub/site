@@ -79,12 +79,12 @@ const Home: NextPage<HomePageProps> = (props) => {
               <PageIntroBlock>
                 <PageIntroBlock.Content>
                   <PageIntroBlock.Title>
-                    The world’s first Decentralized Knowledge Graph️
+                    The world&apos;s first decentralized knowledge graph️
                   </PageIntroBlock.Title>
                   <PageIntroBlock.Description>
-                    OriginTrail is a neutral web3 protocol in which you can
-                    organize your most important assets making them discoverable
-                    and verifiable using a decentralized knowledge graph and
+                    OriginTrail is a neutral web3 protocol for organizing your
+                    most important assets - making them discoverable and
+                    verifiable using a decentralized knowledge graph and
                     blockchain technology.
                   </PageIntroBlock.Description>
                   <PageIntroBlock.Actions>
@@ -172,10 +172,10 @@ const Home: NextPage<HomePageProps> = (props) => {
                   </IntroBlock.Title>
                   <IntroBlock.Description>
                     Organize, discover and verify anything - from physical to
-                    digital assets - like supply chain items to art, diplomas,
-                    certificates, NFTs, DeFi and more. The Decentralized
-                    Knowledge Graph allows the worlds’ data assets to be
-                    structured, linked, persistent and understandable.
+                    digital assets. The Decentralized Knowledge Graph allows
+                    data assets (like in supply chains, art, diplomas,
+                    certificates, NFTs, DeFi, and more) to be structured,
+                    linked, persistent, and understandable.
                   </IntroBlock.Description>
                   <IntroBlock.Action
                     label="Why OriginTrail?"
@@ -211,7 +211,7 @@ const Home: NextPage<HomePageProps> = (props) => {
                         Seamless connection of data
                       </SolutionsBlock.Title>
                       <SolutionsBlock.Description>
-                        Origintrail is built on globally recognized GS1 and W3C
+                        OriginTrail is built on globally recognized GS1 and W3C
                         standards which allow for efficient alignment of data
                         from multiple data sources. It enables seamless and
                         automatic data connection and interoperability between
@@ -245,8 +245,8 @@ const Home: NextPage<HomePageProps> = (props) => {
                         Infinitly scalable and cost efficient
                       </SolutionsBlock.Title>
                       <SolutionsBlock.Description>
-                        Origintrail does all the heavy lifting off-chain by
-                        leveraging powerfull graph data structures which allow
+                        OriginTrail does all the heavy lifting off-chain by
+                        leveraging powerful graph data structures which allow
                         for high flexibility and (inter)connectivity of data.
                         Its open-source nature enables easy and efficient
                         deployment.
@@ -266,7 +266,7 @@ const Home: NextPage<HomePageProps> = (props) => {
                         Current attempts to overcome data silos are done by
                         aggregating data in a centralized way, prompting
                         concerns about data integrity and omitting
-                        accountability. Centralisation also allows for possible
+                        accountability. Centralization also allows for possible
                         data tampering and collusion between parties.
                       </SolutionsBlock.Description>
                     </SolutionsBlock.Problem>
@@ -317,7 +317,7 @@ const Home: NextPage<HomePageProps> = (props) => {
                         have data expire after a certain amount of time, or have
                         that data (or parts of it) shared only with appropriate
                         parties. Sensitive data is protected using
-                        “zero-knowledge” encryptions methods.{' '}
+                        “zero-knowledge” encryption methods.{' '}
                       </SolutionsBlock.Description>
                     </SolutionsBlock.Solution>
                   </SolutionsBlock.Case>
@@ -353,8 +353,8 @@ const Home: NextPage<HomePageProps> = (props) => {
                   <UseCaseBlock.Case value="Non Fungible Tokens">
                     <UseCaseBlock.Title>Non Fungible Tokens</UseCaseBlock.Title>
                     <UseCaseBlock.Description>
-                      Protect, connect and level-up NFT’s by leveraging powerful
-                      knowledge grapy technology
+                      Protect, connect and level-up NFTs by leveraging powerful
+                      knowledge graph technology
                     </UseCaseBlock.Description>
                     <UseCaseBlock.Image
                       src="/use-cases/nfts.png"
@@ -385,9 +385,9 @@ const Home: NextPage<HomePageProps> = (props) => {
                       alt="Data Marketplace"
                     />
                   </UseCaseBlock.Case>
-                  <UseCaseBlock.Case value="Cetifications and Compliance">
+                  <UseCaseBlock.Case value="Certifications and Compliance">
                     <UseCaseBlock.Title>
-                      Cetifications & Compliance
+                      Certifications & Compliance
                     </UseCaseBlock.Title>
                     <UseCaseBlock.Description>
                       Safeguard the validity of issued training certificates and
@@ -494,7 +494,7 @@ const Home: NextPage<HomePageProps> = (props) => {
                 <ArticleBlock>
                   <ArticleBlock.Content>
                     <ArticleBlock.Subtitle>
-                      A self-sustaining, incentiviced network
+                      A self-sustaining, incentivized network
                     </ArticleBlock.Subtitle>
                     <ArticleBlock.Title>
                       The four network participants
@@ -614,7 +614,7 @@ const Home: NextPage<HomePageProps> = (props) => {
                         connected to the Ethereum blockchain.
                       </ProductsBlock.Description>
                       <ProductsBlock.Action
-                        label="Standards & Certifications"
+                        label="Case study"
                         Icon={ArrowRightFillIcon}
                       />
                     </ProductsBlock.Content>
@@ -659,7 +659,7 @@ const Home: NextPage<HomePageProps> = (props) => {
                         Railways. SBB is looking to move beyond the state of the
                         art to ensure real-time availability of quality
                         traceability information for individual parts involved
-                        in their systems to deliver one of the world&#39;s most
+                        in their systems to deliver one of the world&apos;s most
                         reliable rail journeys.
                       </ProductsBlock.Description>
                       <ProductsBlock.Action
@@ -712,10 +712,10 @@ const Home: NextPage<HomePageProps> = (props) => {
                         factories in its database, with several hundred new
                         audits conducted monthly. All of the audits are secured
                         utilizing the OriginTrail Decentralized Network and
-                        comply with SCAN’s rigorous data privacy requirements.
-                        With flexible data permissions, the solution enables
-                        SCAN to share data with government agencies such as
-                        CTPAT.
+                        comply with SCAN&apos;s rigorous data privacy
+                        requirements. With flexible data permissions, the
+                        solution enables SCAN to share data with government
+                        agencies such as CTPAT.
                       </ProductsBlock.Description>
                       <ProductsBlock.Action
                         label="Case study"
@@ -803,11 +803,11 @@ const Home: NextPage<HomePageProps> = (props) => {
                     />
                     <QuotesBlock.Quote>
                       <QuotesBlock.Description>
-                        “We’ve been working with OriginTrail since 2018. Digital
-                        trust is very important to us, OriginTrail and
+                        “We&apos;ve been working with OriginTrail since 2018.
+                        Digital trust is very important to us, OriginTrail and
                         blockchain technology help us verify claims in a very
-                        immutable way. It’s a great strategic partnership and we
-                        plan on growing it.”
+                        immutable way. It&apos;s a great strategic partnership
+                        and we plan on growing it.”
                       </QuotesBlock.Description>
                       <QuotesBlock.Caption>
                         <QuotesBlock.Author name="Dan Purtell" />
@@ -847,8 +847,8 @@ const Home: NextPage<HomePageProps> = (props) => {
                   <IntroBlock.Description>
                     OriginTrail is not a company. It is an ecosystem in which
                     everyone can contribute. We are connected on so many levels.
-                    Let’s collaborate, learn, contribute, and spread the word.
-                    Together.
+                    Let&apos;s collaborate, learn, contribute, and spread the
+                    word. Together.
                   </IntroBlock.Description>
                 </IntroBlock>
               </Grid.Item>
