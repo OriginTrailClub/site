@@ -12,7 +12,7 @@ export interface SubtitleProps extends DOMProps {
   children: string;
 }
 
-export const SubtitleElement = styled('h5', {
+export const SubtitleElement = styled('strong', {
   fontFamily: '$header',
   lineHeight: '$header',
   fontSize: '$subtitle',
