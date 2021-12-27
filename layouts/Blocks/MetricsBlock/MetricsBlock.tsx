@@ -39,15 +39,15 @@ function MetricsBlockTabs(props: MetricsBlockProps) {
   const tabs = React.useMemo(() => {
     return React.Children.map(props.children, (child) => {
       return {
-        key: child.props.label,
-        tab: child.props.label,
+        key: child.props.value,
+        tab: child.props.value,
         pannel: child,
       };
     });
   }, [props.children]);
 
   return (
-    <Tabs>
+    <Tabs defaultSelectedKey={tabs[0].key}>
       <Tabs.TabList>
         {tabs.map((tab) => (
           <Tabs.Tab label={tab.tab} value={tab.key} key={tab.key} />

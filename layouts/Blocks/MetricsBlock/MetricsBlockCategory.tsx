@@ -9,7 +9,7 @@ type MetricsBlockCategoryElements = React.ReactElement<
 >;
 
 export interface MetricsBlockCategoryProps {
-  label: string;
+  value: string;
 
   children?: MetricsBlockCategoryElements | MetricsBlockCategoryElements[];
 }
