@@ -17,7 +17,7 @@ export function SolutionsBlockTitle(props: SolutionsBlockTitleProps) {
 
   return (
     <div className={Styles.container()}>
-      <Heading {...titleProps} level={4}>
+      <Heading {...titleProps} level={3} style={4}>
         {children}
       </Heading>
     </div>
