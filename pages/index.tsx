@@ -444,10 +444,14 @@ const Home: NextPage<HomePageProps> = (props) => {
             </Grid.Group>
             <Grid.Group>
               <Grid.Item>
-                <ImageBlock
-                  src="/home/network-of-nodes.jpg"
-                  alt="Helping the world unlock the true potential of data assets"
-                />
+                <ImageBlock>
+                  <ImageBlock.Image 
+                    src="/home/network-of-nodes.jpg"
+                    alt="Helping the world unlock the true potential of data assets"
+                    minBreakpoint="@bp3"
+                    ratio={360 / 1296}                 
+                  />
+                </ImageBlock>
               </Grid.Item>
               <Grid.Item>
                 <IntroBlock>
