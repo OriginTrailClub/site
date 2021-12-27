@@ -1,20 +1,26 @@
-import Image from 'next/image';
-
 import * as Styles from './ImageBlock.styles';
 
+import { ImageBlockImageProps, ImageBlockImage } from './ImageBlockImage';
+
+type ImageBlockElements = React.ReactElement<ImageBlockImageProps>;
+
 export interface ImageBlockProps {
-  src: string;
-  alt: string;
+  children: ImageBlockElements | ImageBlockElements[],
 }
 
-export function ImageBlock(props: ImageBlockProps) {
-  const { src, alt } = props;
+interface IImageBlockLayoutComposition {
+  Image: React.FC<ImageBlockImageProps>;
+}
+
+export const ImageBlock: React.FC<ImageBlockProps> &
+  IImageBlockLayoutComposition = function ImageBlock(props) {
+  const { children } = props;
 
   return (
     <div className={Styles.container()}>
-      <div className={Styles.contents()}>
-        <Image src={src} alt={alt} layout="fill" objectFit="contain" />
-      </div>
+      {children}
     </div>
   );
 }
+
+ImageBlock.Image = ImageBlockImage;
