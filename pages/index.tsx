@@ -102,7 +102,7 @@ const Home: NextPage<HomePageProps> = (props) => {
             </Grid.Item>
             <Grid.Item>
               <MetricsBlock>
-                <MetricsBlock.Category label="Market">
+                <MetricsBlock.Category value="Market">
                   <MetricsBlock.Title>Metrics</MetricsBlock.Title>
                   <MetricsBlock.Action
                     label="Dashboard"
@@ -132,7 +132,7 @@ const Home: NextPage<HomePageProps> = (props) => {
                     />
                   </MetricsBlock.Metrics>
                 </MetricsBlock.Category>
-                <MetricsBlock.Category label="Network">
+                <MetricsBlock.Category value="Network">
                   <MetricsBlock.Title>Metrics</MetricsBlock.Title>
                   <MetricsBlock.Action
                     label="Dashboard"
