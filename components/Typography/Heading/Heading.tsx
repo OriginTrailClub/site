@@ -11,10 +11,16 @@ export interface HeadingProps extends DOMProps {
    */
   children: string;
   /**
-   * Sets heading level, h1 through h5
+   * Sets heading level, h1 through h4
    * @default 3
    */
   level?: 1 | 2 | 3 | 4;
+  /**
+   * Sets the visual style of the heading
+   * defaults to the level property
+   * @default 3
+   */
+  style?: 1 | 2 | 3 | 4,
 }
 
 export const HeadingElement = styled('h1', {
@@ -52,17 +58,17 @@ export const Heading = React.forwardRef(function Heading(
   props: HeadingProps,
   ref: React.Ref<HTMLHeadingElement>
 ) {
-  const { children, level = 3, ...otherProps } = props;
+  const { children, level = 3, style = level, ...otherProps } = props;
 
   let HeadingTag = `h${level}` as React.ElementType;
 
   return (
     <HeadingElement
       {...filterDOMProps(otherProps)}
-      level={level}
+      level={style}
       ref={ref}
       as={HeadingTag}
-      data-level={level}
+      data-level={style}
     >
       {children}
     </HeadingElement>
