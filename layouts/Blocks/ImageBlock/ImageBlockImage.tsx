@@ -13,13 +13,13 @@ export interface ImageBlockImageProps {
     maxBreakpoint?: '@bp1' | '@bp2' | '@bp3' | '@bp4' | undefined,
 
     ratio?: number,
-}  
+}
 
 export function ImageBlockImage(props: ImageBlockImageProps) {
     const { src, alt, minBreakpoint, maxBreakpoint, ratio = 0.33 } = props;
 
     let css = {
-        pb: `calc(${ratio} * 100%)`
+        display: 'flex',
     } as Stitches.CSS;
 
     if (minBreakpoint) {
@@ -31,7 +31,7 @@ export function ImageBlockImage(props: ImageBlockImageProps) {
 
     if (maxBreakpoint) {
         css[maxBreakpoint] = {
-            display: 'flex',
+            display: 'none',
         }
     }
 
@@ -39,7 +39,13 @@ export function ImageBlockImage(props: ImageBlockImageProps) {
         <div className={Styles.container({
             css,
         })}>
-            <Image src={src} alt={alt} layout="fill" objectFit="contain" />
+            <div className={Styles.contents({
+                css: {
+                    pb: `calc(${ratio} * 100%)`
+                }
+            })}>
+                <Image src={src} alt={alt} layout="fill" objectFit="contain" />
+            </div>
         </div>
     )
 }
