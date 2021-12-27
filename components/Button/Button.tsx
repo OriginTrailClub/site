@@ -17,7 +17,7 @@ import {
 
 import * as Styles from './Button.styles';
 
-export interface ButtonProps<T extends React.ElementType = 'button'>
+export interface ButtonProps<T extends React.ElementType = 'button' | 'a'>
   extends ReactAriaAriaBaseButtonProps,
     Omit<ReactAriaButtonProps, 'children' | 'isDisabled'>,
     ReactAriaLinkButtonProps<T> {
