@@ -6,6 +6,10 @@ interface TabsContext<T> {
     tabsListState: TabListState<T>;
     setTabsListState: (state: TabListState<T>) => void;
   };
+
+  props: {
+    defaultSelectedKey?: React.Key,
+  }
 }
 
 export const TabsContext = React.createContext<TabsContext<any>>(null!);

@@ -16,6 +16,8 @@ export interface TabsProps {
    * The children of the <Tabs> element. Should include `<Tabs.TabList>` and `<Tabs.Panels>` elements.
    */
   children: TabsElements | TabsElements[];
+  /** The initialy selected tab */
+  defaultSelectedKey?: React.Key
 }
 
 interface ITabsComposition {
@@ -28,7 +30,7 @@ interface ITabsComposition {
 export const Tabs: React.FC<TabsProps> & ITabsComposition = function Tabs(
   props
 ) {
-  const { children } = props;
+  const { children, defaultSelectedKey } = props;
 
   const [tabsListState, setTabsListState] = React.useState<
     TabListState<unknown>
@@ -41,6 +43,9 @@ export const Tabs: React.FC<TabsProps> & ITabsComposition = function Tabs(
           tabsListState,
           setTabsListState,
         },
+        props: {
+          defaultSelectedKey
+        }
       }}
     >
       {children}

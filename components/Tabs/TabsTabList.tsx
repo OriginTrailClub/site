@@ -43,7 +43,7 @@ export interface TabsTabListProps extends DOMProps {
 export function TabsTabList(props: TabsTabListProps) {
   const { children } = props;
 
-  const { state } = React.useContext(TabsContext);
+  const { state, props: { defaultSelectedKey } } = React.useContext(TabsContext);
   const { setTabsListState } = state;
 
   const ref = React.useRef<HTMLDivElement>(null!);
@@ -60,7 +60,7 @@ export function TabsTabList(props: TabsTabListProps) {
     });
   }, [children]);
 
-  const tabListState = useTabListState({ children: elements });
+  const tabListState = useTabListState({ children: elements, defaultSelectedKey });
   const { tabListProps } = useTabList(
     { children: elements },
     tabListState,
