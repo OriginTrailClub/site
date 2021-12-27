@@ -2,14 +2,16 @@ import { Heading, HeadingProps } from 'components/Typography';
 
 import * as Styles from './MetricsBlockTitle.styles';
 
-export type MetricsBlockTitleProps = Pick<HeadingProps, 'children'>;
+export type MetricsBlockTitleProps = {
+  children: string,
+}
 
 export function MetricsBlockTitle(props: MetricsBlockTitleProps) {
   const { children } = props;
 
   return (
-    <div className={Styles.container()}>
-      <Heading level={3}>{children}</Heading>
-    </div>
+    <strong className={Styles.container()}>
+      {children}
+    </strong>
   );
 }

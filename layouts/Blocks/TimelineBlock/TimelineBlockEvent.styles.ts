@@ -7,7 +7,14 @@ export const container = css({
 });
 
 export const title = css({
+  mx: '$none',
   my: '$regular',
+  fontFamily: '$header',
+  lineHeight: '$header',
+  color: '$text-header',
+
+  fontWeight: '$semi-bold',
+  fontSize: '$header-4',
 });
 
 export const badge = css({

@@ -16,9 +16,9 @@ export function TimelineBlockEvent(props: TimelineBlockEventProps) {
   return (
     <li className={Styles.container()}>
       <Image src={icon} alt={title} width={56} height={56} />
-      <span className={Styles.title()}>
-        <Heading level={4}>{title}</Heading>
-      </span>
+      <strong className={Styles.title()}>
+        {title}
+      </strong>
       <span
         className={Styles.badge({
           style: date == null ? 'announced' : 'launched',
