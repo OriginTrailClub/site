@@ -91,6 +91,9 @@ const Home: NextPage<HomePageProps> = (props) => {
                     <PageIntroBlock.Action
                       label="How it works"
                       Icon={PlayLineIcon}
+                      href="https://www.youtube.com/watch?v=AsCUigu39Hw"
+                      as="a"
+                      target="_blank"
                     />
                   </PageIntroBlock.Actions>
                 </PageIntroBlock.Content>
@@ -464,6 +467,8 @@ const Home: NextPage<HomePageProps> = (props) => {
                   <IntroBlock.Action
                     label="How it works"
                     Icon={ArrowRightFillIcon}
+                    href="https://www.youtube.com/watch?v=AsCUigu39Hw"
+                    as="a"
                   />
                 </IntroBlock>
               </Grid.Item>
