@@ -94,6 +94,7 @@ const Home: NextPage<HomePageProps> = (props) => {
                       href="https://www.youtube.com/watch?v=AsCUigu39Hw"
                       as="a"
                       target="_blank"
+                      rel="noopener noreferrer"
                     />
                   </PageIntroBlock.Actions>
                 </PageIntroBlock.Content>
