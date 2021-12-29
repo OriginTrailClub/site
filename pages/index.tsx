@@ -99,7 +99,7 @@ const Home: NextPage<HomePageProps> = (props) => {
                   </PageIntroBlock.Actions>
                 </PageIntroBlock.Content>
                 <PageIntroBlock.Image
-                  src="/home/introduction.jpg"
+                  src="/home/introduction.png"
                   alt="The world’s first Decentralized Knowledge Graph️"
                 />
               </PageIntroBlock>
@@ -114,7 +114,7 @@ const Home: NextPage<HomePageProps> = (props) => {
                   />
                   <MetricsBlock.Metrics>
                     <MetricsBlock.Metric
-                      icon="/metrics/market-cap.jpg"
+                      icon="/metrics/market-cap.png"
                       value={market.marketCap}
                       label="Total Market Cap"
                       currency="USD"
@@ -122,14 +122,14 @@ const Home: NextPage<HomePageProps> = (props) => {
                       style="currency"
                     />
                     <MetricsBlock.Metric
-                      icon="/metrics/price.jpg"
+                      icon="/metrics/price.png"
                       value={market.price}
                       label="Price"
                       currency="USD"
                       style="currency"
                     />
                     <MetricsBlock.Metric
-                      icon="/metrics/max-supply.jpg"
+                      icon="/metrics/max-supply.png"
                       value={500000000}
                       notation="compact"
                       label="Max Supply"
@@ -144,19 +144,19 @@ const Home: NextPage<HomePageProps> = (props) => {
                   />
                   <MetricsBlock.Metrics>
                     <MetricsBlock.Metric
-                      icon="/metrics/total-graph-size.jpg"
+                      icon="/metrics/total-graph-size.png"
                       value={network.activeNodes}
                       notation="compact"
                       label="Active Nodes"
                     />
                     <MetricsBlock.Metric
-                      icon="/metrics/dataset-published.jpg"
+                      icon="/metrics/dataset-published.png"
                       value={network.totalJobs}
                       notation="compact"
                       label="Total Datasets Published"
                     />
                     <MetricsBlock.Metric
-                      icon="/metrics/total-tokens-staked.jpg"
+                      icon="/metrics/total-tokens-staked.png"
                       value={network.stakedTokens}
                       notation="compact"
                       label="Total Tokens Staked"
@@ -446,17 +446,17 @@ const Home: NextPage<HomePageProps> = (props) => {
             <Grid.Group>
               <Grid.Item>
                 <ImageBlock>
-                  <ImageBlock.Image 
-                    src="/home/network-of-nodes-desktop.jpg"
+                  <ImageBlock.Image
+                    src="/home/network-of-nodes-desktop.png"
                     alt="Helping the world unlock the true potential of data assets"
                     minBreakpoint="@bp4"
-                    ratio={360 / 1296}                 
+                    ratio={432 / 1234}
                   />
-                  <ImageBlock.Image 
-                    src="/home/network-of-nodes-mobile.jpg"
+                  <ImageBlock.Image
+                    src="/home/network-of-nodes-mobile.png"
                     alt="Helping the world unlock the true potential of data assets"
                     maxBreakpoint="@bp4"
-                    ratio={432 / 720}                 
+                    ratio={432 / 720}
                   />
                 </ImageBlock>
               </Grid.Item>
@@ -489,6 +489,11 @@ const Home: NextPage<HomePageProps> = (props) => {
                     date={new Date(2018, 11, 7)}
                     title="Ethereum"
                     icon="/blockchain-timeline/ethereum.svg"
+                  />
+                  <TimelineBlock.Event
+                    date={new Date(2018, 11, 7)}
+                    title="Hyperledger"
+                    icon="/blockchain-timeline/hyperledger.svg"
                   />
                   <TimelineBlock.Event
                     date={new Date(2021, 2, 23)}
@@ -528,7 +533,7 @@ const Home: NextPage<HomePageProps> = (props) => {
                     />
                   </ArticleBlock.Content>
                   <ArticleBlock.Image
-                    src="/home/network-participants.jpg"
+                    src="/home/network-participants.png"
                     alt="The four network participants"
                   />
                 </ArticleBlock>
@@ -537,7 +542,7 @@ const Home: NextPage<HomePageProps> = (props) => {
                 <ParticipantsBlock aria-label="Network Participants">
                   <ParticipantsBlock.Participant value="Data Providers">
                     <ParticipantsBlock.Image
-                      src="/participants/data-provider.jpg"
+                      src="/participants/data-provider.png"
                       alt="Data Providers"
                     />
                     <ParticipantsBlock.Title>
@@ -550,7 +555,7 @@ const Home: NextPage<HomePageProps> = (props) => {
                   </ParticipantsBlock.Participant>
                   <ParticipantsBlock.Participant value="Data Creators">
                     <ParticipantsBlock.Image
-                      src="/participants/data-creator.jpg"
+                      src="/participants/data-creator.png"
                       alt="Data Creators"
                     />
                     <ParticipantsBlock.Title>
@@ -563,7 +568,7 @@ const Home: NextPage<HomePageProps> = (props) => {
                   </ParticipantsBlock.Participant>
                   <ParticipantsBlock.Participant value="Data Holders">
                     <ParticipantsBlock.Image
-                      src="/participants/data-holder.jpg"
+                      src="/participants/data-holder.png"
                       alt="Data Holders"
                     />
                     <ParticipantsBlock.Title>
@@ -576,7 +581,7 @@ const Home: NextPage<HomePageProps> = (props) => {
                   </ParticipantsBlock.Participant>
                   <ParticipantsBlock.Participant value="Data Viewers">
                     <ParticipantsBlock.Image
-                      src="/participants/data-viewer.jpg"
+                      src="/participants/data-viewer.png"
                       alt="Data Viewers"
                     />
                     <ParticipantsBlock.Title>
@@ -763,7 +768,7 @@ const Home: NextPage<HomePageProps> = (props) => {
                       alt="World economic forum"
                     />
                     <CompaniesBlock.Company
-                      src="/ecosystem/gs1.png"
+                      src="/ecosystem/gs1-slovenija.png"
                       alt="GS1 Slovenia"
                     />
                     <CompaniesBlock.Company
