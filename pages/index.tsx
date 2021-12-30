@@ -64,7 +64,7 @@ const Home: NextPage<HomePageProps> = (props) => {
     <>
       <Head>
         <meta name="robots" content="noindex" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon-origintrail.ico" />
       </Head>
       <OverviewLayout
         title="Origintrail Club"
