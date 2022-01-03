@@ -140,6 +140,10 @@ const Home: NextPage<HomePageProps> = (props) => {
                   <MetricsBlock.Action
                     label="Dashboard"
                     Icon={ArrowRightFillIcon}
+                    href="https://othub.origin-trail.network/dashboard"
+                    as="a"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   />
                   <MetricsBlock.Metrics>
                     <MetricsBlock.Metric
@@ -170,6 +174,10 @@ const Home: NextPage<HomePageProps> = (props) => {
                   <MetricsBlock.Action
                     label="Dashboard"
                     Icon={ArrowRightFillIcon}
+                    href="https://othub.origin-trail.network/dashboard"
+                    as="a"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   />
                   <MetricsBlock.Metrics>
                     <MetricsBlock.Metric
@@ -210,10 +218,6 @@ const Home: NextPage<HomePageProps> = (props) => {
                     certificates, NFTs, DeFi, and more) to be structured,
                     linked, persistent, and understandable.
                   </IntroBlock.Description>
-                  <IntroBlock.Action
-                    label="Why OriginTrail?"
-                    Icon={ArrowRightFillIcon}
-                  />
                 </IntroBlock>
               </Grid.Item>
               <Grid.Item>
@@ -504,12 +508,6 @@ const Home: NextPage<HomePageProps> = (props) => {
                     blockchain technology and is build with interoperability and
                     global standards in mind.
                   </IntroBlock.Description>
-                  <IntroBlock.Action
-                    label="How it works"
-                    Icon={ArrowRightFillIcon}
-                    href="https://www.youtube.com/watch?v=AsCUigu39Hw"
-                    as="a"
-                  />
                 </IntroBlock>
               </Grid.Item>
               <Grid.Item>
@@ -559,6 +557,10 @@ const Home: NextPage<HomePageProps> = (props) => {
                     <ArticleBlock.Action
                       label="Token Utility"
                       Icon={ArrowRightFillIcon}
+                      href="https://medium.com/origintrail/origintrail-a-look-into-network-mechanisms-incentives-and-market-forces-e99938b8687c"
+                      as="a"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     />
                   </ArticleBlock.Content>
                   <ArticleBlock.Image
@@ -639,6 +641,10 @@ const Home: NextPage<HomePageProps> = (props) => {
                   <IntroBlock.Action
                     label="Use cases"
                     Icon={ArrowRightFillIcon}
+                    href="https://origintrail.io/case-studies"
+                    as="a"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   />
                 </IntroBlock>
               </Grid.Item>
@@ -666,6 +672,10 @@ const Home: NextPage<HomePageProps> = (props) => {
                       <ProductsBlock.Action
                         label="Case study"
                         Icon={ArrowRightFillIcon}
+                        href="https://origintrail.io/case-studies/standards-and-certifications"
+                        as="a"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       />
                     </ProductsBlock.Content>
                   </ProductsBlock.Product>
@@ -690,6 +700,10 @@ const Home: NextPage<HomePageProps> = (props) => {
                       <ProductsBlock.Action
                         label="Case study"
                         Icon={ArrowRightFillIcon}
+                        href="https://origintrail.io/case-studies/food-traceability"
+                        as="a"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       />
                     </ProductsBlock.Content>
                   </ProductsBlock.Product>
@@ -715,6 +729,10 @@ const Home: NextPage<HomePageProps> = (props) => {
                       <ProductsBlock.Action
                         label="Case study"
                         Icon={ArrowRightFillIcon}
+                        href="https://origintrail.io/case-studies/rail-travel-safety"
+                        as="a"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       />
                     </ProductsBlock.Content>
                   </ProductsBlock.Product>
@@ -742,6 +760,10 @@ const Home: NextPage<HomePageProps> = (props) => {
                       <ProductsBlock.Action
                         label="Case study"
                         Icon={ArrowRightFillIcon}
+                        href="https://origintrail.io/case-studies/sustainable-agriculture"
+                        as="a"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       />
                     </ProductsBlock.Content>
                   </ProductsBlock.Product>
@@ -770,6 +792,10 @@ const Home: NextPage<HomePageProps> = (props) => {
                       <ProductsBlock.Action
                         label="Case study"
                         Icon={ArrowRightFillIcon}
+                        href="https://origintrail.io/case-studies/trusted-factory"
+                        as="a"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       />
                     </ProductsBlock.Content>
                   </ProductsBlock.Product>
@@ -778,7 +804,13 @@ const Home: NextPage<HomePageProps> = (props) => {
               <Grid.Item>
                 <CompaniesBlock>
                   <CompaniesBlock.Title>Ecosystem</CompaniesBlock.Title>
-                  <CompaniesBlock.CallToAction label="Map" />
+                  <CompaniesBlock.CallToAction
+                    label="Map"
+                    href="https://origintrail.io/ecosystem-landscape"
+                    as="a"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  />
                   <CompaniesBlock.Companies>
                     <CompaniesBlock.Company
                       src="/ecosystem/acala.png"
