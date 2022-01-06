@@ -799,6 +799,37 @@ const Home: NextPage<HomePageProps> = (props) => {
                       />
                     </ProductsBlock.Content>
                   </ProductsBlock.Product>
+                  <ProductsBlock.Product value="AidTrust">
+                    <ProductsBlock.Header
+                      title="AidTrust"
+                      icon="/products/products-3-icon.jpg"
+                    />
+                    <ProductsBlock.Content>
+                      <ProductsBlock.Image
+                        src="/products/products-5-image.jpg"
+                        alt="AidTrust"
+                      />
+                      <ProductsBlock.Description>
+                        AidTrust brings visibility and trust to the distribution
+                        of donated medicines. Bringing together BSI&apos;s
+                        global footprint, expertise in management systems and
+                        supply chain risk management best practice, with the
+                        OriginTrail Decentralized Knowledge Graph developed by
+                        our technology partner Trace Labs, AidTrust enables
+                        visibility, risk flags, real-time decision-making, while
+                        maintaining data integrity, security and privacy, on all
+                        medicines at all stages of the supply chain.
+                      </ProductsBlock.Description>
+                      <ProductsBlock.Action
+                        label="Case study"
+                        Icon={ArrowRightFillIcon}
+                        href="https://www.bsigroup.com/globalassets/localfiles/en-gb/healthcare/donated-medicines-and-vaccines/aidtrust-case-study.pdf"
+                        as="a"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      />
+                    </ProductsBlock.Content>
+                  </ProductsBlock.Product>
                 </ProductsBlock>
               </Grid.Item>
               <Grid.Item>
