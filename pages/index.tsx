@@ -802,11 +802,11 @@ const Home: NextPage<HomePageProps> = (props) => {
                   <ProductsBlock.Product value="AidTrust">
                     <ProductsBlock.Header
                       title="AidTrust"
-                      icon="/products/products-3-icon.jpg"
+                      icon="/products/products-6-icon.jpg"
                     />
                     <ProductsBlock.Content>
                       <ProductsBlock.Image
-                        src="/products/products-5-image.jpg"
+                        src="/products/products-6-image.jpg"
                         alt="AidTrust"
                       />
                       <ProductsBlock.Description>
