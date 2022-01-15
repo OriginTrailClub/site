@@ -369,8 +369,7 @@ const Home: NextPage<HomePageProps> = (props) => {
                     The data backbone of web3, build for global use
                   </IntroBlock.Title>
                   <IntroBlock.Description>
-                    OrginTrail protocol has been used to create robust
-                    decentralized applications in nearly every industry
+                    The OriginTrail protocol is used by organizations of all shapes and sizes for building every kind of application imaginable that requires trust, data integrity and interoperability.
                   </IntroBlock.Description>
                 </IntroBlock>
               </Grid.Item>
