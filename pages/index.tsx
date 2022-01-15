@@ -524,8 +524,8 @@ const Home: NextPage<HomePageProps> = (props) => {
                   />
                   <TimelineBlock.Event
                     date={new Date(2021, 2, 23)}
-                    title="Xdai"
-                    icon="/blockchain-timeline/xdai.svg"
+                    title="Gnosis"
+                    icon="/blockchain-timeline/gnosis.svg"
                   />
                   <TimelineBlock.Event
                     date={new Date(2021, 7, 26)}
@@ -879,12 +879,9 @@ const Home: NextPage<HomePageProps> = (props) => {
                     />
                     <QuotesBlock.Quote>
                       <QuotesBlock.Description>
-                        “The value of a network is proportional to the square of
-                        the number of connected users. As the physical cost of
-                        the network grows linearly, its value grows
-                        exponentially.”
+                        “The early Metcalfe&apos;s Law talked about the connection of machines and how valuable PCs would be connected, Facebook made it all about connecting people together, what OriginTrail is working on is connectivity of data and the value that can be derived from that.”
                       </QuotesBlock.Description>
-                      <QuotesBlock.Caption>
+                      <QuotesBlock.Caption> 
                         <QuotesBlock.Author name="Bob Metcalfe" />
                         <QuotesBlock.Role label="Advisor to Trace Labs, core developers of OriginTrail" />
                       </QuotesBlock.Caption>
