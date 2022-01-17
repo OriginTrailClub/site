@@ -369,7 +369,10 @@ const Home: NextPage<HomePageProps> = (props) => {
                     The data backbone of web3, build for global use
                   </IntroBlock.Title>
                   <IntroBlock.Description>
-                    The OriginTrail protocol is used by organizations of all shapes and sizes for building every kind of application imaginable that requires trust, data integrity and interoperability.
+                    The OriginTrail protocol is used by organizations of all
+                    shapes and sizes for building every kind of application
+                    imaginable that requires trust, data integrity and
+                    interoperability.
                   </IntroBlock.Description>
                 </IntroBlock>
               </Grid.Item>
@@ -678,34 +681,6 @@ const Home: NextPage<HomePageProps> = (props) => {
                       />
                     </ProductsBlock.Content>
                   </ProductsBlock.Product>
-                  <ProductsBlock.Product value="food-traceability">
-                    <ProductsBlock.Header
-                      title="Food Traceability"
-                      icon="/products/products-2-icon.jpg"
-                    />
-                    <ProductsBlock.Content>
-                      <ProductsBlock.Image
-                        src="/products/products-2-image.jpg"
-                        alt="Food Traceability"
-                      />
-                      <ProductsBlock.Description>
-                        Perutnina Ptuj - the largest poultry producer in
-                        Southeastern Europe - is showcasing the benefits of
-                        premium breeding in the local environment to its
-                        customers. By scanning a QR code, consumers can meet
-                        farmers and learn about animal-friendly conditions on
-                        their farms.
-                      </ProductsBlock.Description>
-                      <ProductsBlock.Action
-                        label="Case study"
-                        Icon={ArrowRightFillIcon}
-                        href="https://origintrail.io/case-studies/food-traceability"
-                        as="a"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      />
-                    </ProductsBlock.Content>
-                  </ProductsBlock.Product>
                   <ProductsBlock.Product value="rail-travel-safety">
                     <ProductsBlock.Header
                       title="Rail Travel Safety"
@@ -729,6 +704,35 @@ const Home: NextPage<HomePageProps> = (props) => {
                         label="Case study"
                         Icon={ArrowRightFillIcon}
                         href="https://origintrail.io/case-studies/rail-travel-safety"
+                        as="a"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      />
+                    </ProductsBlock.Content>
+                  </ProductsBlock.Product>
+                  <ProductsBlock.Product value="trusted-bytes">
+                    <ProductsBlock.Header
+                      title="Trusted Bytes"
+                      icon="/products/products-1-icon.jpg"
+                    />
+                    <ProductsBlock.Content>
+                      <ProductsBlock.Image
+                        src="/products/products-2-image.jpg"
+                        alt="trusted-bytes"
+                      />
+                      <ProductsBlock.Description>
+                        Trusted Bytes aims to use innovative digital technology
+                        to facilitate the flow of goods across the UK border,
+                        increasing efficiency, transparency, and security of the
+                        UK food sector. This will help to create proof of food
+                        provenance by digitizing critical border transfer
+                        processes while also providing seamless real-time
+                        digital connectivity to supply chain operators.
+                      </ProductsBlock.Description>
+                      <ProductsBlock.Action
+                        label="Press release"
+                        Icon={ArrowRightFillIcon}
+                        href="https://www.bsigroup.com/en-GB/about-bsi/media-centre/press-releases/2021/april/bsi-joins-innovate-uk-consortium-designed-to-help-digitize-the-uks-fresh-produce-supply-chains/"
                         as="a"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -878,9 +882,13 @@ const Home: NextPage<HomePageProps> = (props) => {
                     />
                     <QuotesBlock.Quote>
                       <QuotesBlock.Description>
-                        “The early Metcalfe&apos;s Law talked about the connection of machines and how valuable PCs would be connected, Facebook made it all about connecting people together, what OriginTrail is working on is connectivity of data and the value that can be derived from that.”
+                        “The early Metcalfe&apos;s Law talked about the
+                        connection of machines and how valuable PCs would be
+                        connected, Facebook made it all about connecting people
+                        together, what OriginTrail is working on is connectivity
+                        of data and the value that can be derived from that.”
                       </QuotesBlock.Description>
-                      <QuotesBlock.Caption> 
+                      <QuotesBlock.Caption>
                         <QuotesBlock.Author name="Bob Metcalfe" />
                         <QuotesBlock.Role label="Advisor to Trace Labs, core developers of OriginTrail" />
                       </QuotesBlock.Caption>
