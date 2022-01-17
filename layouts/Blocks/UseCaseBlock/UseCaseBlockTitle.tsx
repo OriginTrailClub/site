@@ -9,7 +9,9 @@ export function UseCaseBlockTitle(props: UseCaseBlockTitleProps) {
 
   return (
     <div className={Styles.container()}>
-      <Heading level={3} style={4}>{children}</Heading>
+      <Heading level={3} style={4}>
+        {children}
+      </Heading>
     </div>
   );
 }

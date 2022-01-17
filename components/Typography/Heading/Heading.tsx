@@ -20,7 +20,7 @@ export interface HeadingProps extends DOMProps {
    * defaults to the level property
    * @default 3
    */
-  style?: 1 | 2 | 3 | 4,
+  style?: 1 | 2 | 3 | 4;
 }
 
 export const HeadingElement = styled('h1', {

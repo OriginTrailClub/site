@@ -5,7 +5,7 @@ import { ImageBlockImageProps, ImageBlockImage } from './ImageBlockImage';
 type ImageBlockElements = React.ReactElement<ImageBlockImageProps>;
 
 export interface ImageBlockProps {
-  children: ImageBlockElements | ImageBlockElements[],
+  children: ImageBlockElements | ImageBlockElements[];
 }
 
 interface IImageBlockLayoutComposition {
@@ -16,11 +16,7 @@ export const ImageBlock: React.FC<ImageBlockProps> &
   IImageBlockLayoutComposition = function ImageBlock(props) {
   const { children } = props;
 
-  return (
-    <div className={Styles.container()}>
-      {children}
-    </div>
-  );
-}
+  return <div className={Styles.container()}>{children}</div>;
+};
 
 ImageBlock.Image = ImageBlockImage;

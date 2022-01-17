@@ -8,6 +8,6 @@ export const container = css({
 });
 
 export const contents = css({
-    width: '100%',
-    height: 0,
-})
+  width: '100%',
+  height: 0,
+});

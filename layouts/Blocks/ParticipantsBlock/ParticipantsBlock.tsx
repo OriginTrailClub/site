@@ -65,9 +65,12 @@ function Navigation(props: NavigationProps) {
 
   let ref = React.useRef<HTMLButtonElement>(null!);
 
-  const { buttonProps } = useButton({ elementType: 'button', isDisabled: disabled, onPress }, ref);
+  const { buttonProps } = useButton(
+    { elementType: 'button', isDisabled: disabled, onPress },
+    ref
+  );
 
-  const Icon = variant === 'previous' ? ArrowLeftLineIcon : ArrowRightLineIcon
+  const Icon = variant === 'previous' ? ArrowLeftLineIcon : ArrowRightLineIcon;
 
   return (
     <div
@@ -75,21 +78,25 @@ function Navigation(props: NavigationProps) {
         variant,
       })}
     >
-      <button {...buttonProps} className={Styles.navigationButton()} tabIndex={-1}>
+      <button
+        {...buttonProps}
+        className={Styles.navigationButton()}
+        tabIndex={-1}
+      >
         <VisuallyHidden>Show next</VisuallyHidden>
         <span className={Styles.navigationIcon()}>
           <Icon />
         </span>
       </button>
     </div>
-  )
+  );
 }
 
 interface CellProps<T> {
   item: GridNode<T>;
   state: GridState<T, GridCollection<T>>;
   gridRef: React.MutableRefObject<HTMLDivElement>;
-  onFocusWithin: FocusWithinProps['onFocusWithin'],
+  onFocusWithin: FocusWithinProps['onFocusWithin'];
 }
 
 function Cell<T>(props: CellProps<T>) {
@@ -115,7 +122,7 @@ function Cell<T>(props: CellProps<T>) {
   React.useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsVisible(entry.intersectionRatio >= 1)
+        setIsVisible(entry.intersectionRatio >= 1);
       },
       {
         root: gridRef.current.parentElement,
@@ -159,7 +166,6 @@ function Row<T>(props: RowProps<T>) {
     </div>
   );
 }
-
 
 type ParticipantsBlockElements = React.ReactElement<ParticipantsBlockParticipantProps>;
 
@@ -278,17 +284,14 @@ export const ParticipantsBlock: React.FC<ParticipantsBlockProps> &
     }
   }, []);
 
-  const scrollCellIntoView = React.useCallback(
-    (cell) => {
-      const { clientWidth: listWidth } = participantsRef.current;
-      const { clientWidth: cellWidth, offsetLeft: cellOffsetLeft } = cell;
+  const scrollCellIntoView = React.useCallback((cell) => {
+    const { clientWidth: listWidth } = participantsRef.current;
+    const { clientWidth: cellWidth, offsetLeft: cellOffsetLeft } = cell;
 
-      let left = cellOffsetLeft - (listWidth - cellWidth) / 2;
+    let left = cellOffsetLeft - (listWidth - cellWidth) / 2;
 
-      participantsRef.current.scrollTo({ left, behavior: 'smooth' });
-    },
-    []
-  );
+    participantsRef.current.scrollTo({ left, behavior: 'smooth' });
+  }, []);
 
   const onHandleNextPress = React.useCallback(() => {
     const nextCell = getNextCell(1);
@@ -350,26 +353,28 @@ export const ParticipantsBlock: React.FC<ParticipantsBlockProps> &
   }, [checkNavigation]);
 
   return (
-    <div className={Styles.container({
-      css: {
-        ...getGridVariables({
-          count: count,
-          maxColumns: 1,
-        }),
-        '@bp2': getGridVariables({
-          count: count,
-          maxColumns: 2,
-        }),
-        '@bp3': getGridVariables({
-          count: count,
-          maxColumns: 3,
-        }),
-        '@bp4': getGridVariables({
-          count: count,
-          maxColumns: 4,
-        }),
-      },
-    })}>
+    <div
+      className={Styles.container({
+        css: {
+          ...getGridVariables({
+            count: count,
+            maxColumns: 1,
+          }),
+          '@bp2': getGridVariables({
+            count: count,
+            maxColumns: 2,
+          }),
+          '@bp3': getGridVariables({
+            count: count,
+            maxColumns: 3,
+          }),
+          '@bp4': getGridVariables({
+            count: count,
+            maxColumns: 4,
+          }),
+        },
+      })}
+    >
       <div className={Styles.contents()}>
         <div
           ref={participantsRef}
@@ -392,8 +397,16 @@ export const ParticipantsBlock: React.FC<ParticipantsBlockProps> &
             </Row>
           ))}
         </div>
-        <Navigation onPress={onHandleNextPress} disabled={!showNext} variant="next" />
-        <Navigation onPress={onHandlePreviousPress} disabled={!showPrevious} variant="previous" />
+        <Navigation
+          onPress={onHandleNextPress}
+          disabled={!showNext}
+          variant="next"
+        />
+        <Navigation
+          onPress={onHandlePreviousPress}
+          disabled={!showPrevious}
+          variant="previous"
+        />
       </div>
     </div>
   );

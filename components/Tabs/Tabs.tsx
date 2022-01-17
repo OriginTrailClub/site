@@ -17,7 +17,7 @@ export interface TabsProps {
    */
   children: TabsElements | TabsElements[];
   /** The initialy selected tab */
-  defaultSelectedKey?: React.Key
+  defaultSelectedKey?: React.Key;
 }
 
 interface ITabsComposition {
@@ -44,8 +44,8 @@ export const Tabs: React.FC<TabsProps> & ITabsComposition = function Tabs(
           setTabsListState,
         },
         props: {
-          defaultSelectedKey
-        }
+          defaultSelectedKey,
+        },
       }}
     >
       {children}

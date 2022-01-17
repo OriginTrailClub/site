@@ -8,8 +8,8 @@ interface TabsContext<T> {
   };
 
   props: {
-    defaultSelectedKey?: React.Key,
-  }
+    defaultSelectedKey?: React.Key;
+  };
 }
 
 export const TabsContext = React.createContext<TabsContext<any>>(null!);

@@ -67,7 +67,7 @@ export const row = css({
   '&:before': {
     content: '',
   },
-  
+
   '&:after': {
     content: '',
   },
@@ -161,7 +161,7 @@ export const navigation = css({
       },
       previous: {
         left: '$regular',
-      }
-    }
-  }
+      },
+    },
+  },
 });

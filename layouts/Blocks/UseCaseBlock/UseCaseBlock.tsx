@@ -92,9 +92,12 @@ function Navigation(props: NavigationProps) {
 
   let ref = React.useRef<HTMLButtonElement>(null!);
 
-  const { buttonProps } = useButton({ elementType: 'button', isDisabled: disabled, onPress }, ref);
+  const { buttonProps } = useButton(
+    { elementType: 'button', isDisabled: disabled, onPress },
+    ref
+  );
 
-  const Icon = variant === 'previous' ? ArrowLeftLineIcon : ArrowRightLineIcon
+  const Icon = variant === 'previous' ? ArrowLeftLineIcon : ArrowRightLineIcon;
 
   return (
     <div
@@ -102,14 +105,18 @@ function Navigation(props: NavigationProps) {
         variant,
       })}
     >
-      <button {...buttonProps} className={Styles.navigationButton()} tabIndex={-1}>
+      <button
+        {...buttonProps}
+        className={Styles.navigationButton()}
+        tabIndex={-1}
+      >
         <VisuallyHidden>Show next</VisuallyHidden>
         <span className={Styles.navigationIcon()}>
           <Icon />
         </span>
       </button>
     </div>
-  )
+  );
 }
 
 // Splits an array in n groups
@@ -137,7 +144,7 @@ interface CellProps<T> {
   item: GridNode<T>;
   state: GridState<T, GridCollection<T>>;
   gridRef: React.MutableRefObject<HTMLDivElement>;
-  onFocusWithin: FocusWithinProps['onFocusWithin'],
+  onFocusWithin: FocusWithinProps['onFocusWithin'];
 }
 
 function Cell<T>(props: CellProps<T>) {
@@ -208,226 +215,231 @@ function Row<T>(props: RowProps<T>) {
 
 export const UseCaseBlock: React.FC<UseCaseBlockProps> &
   IOverviewLayoutComposition = function UseCaseBlock(props) {
-    const { children, ...otherProps } = props;
+  const { children, ...otherProps } = props;
 
-    const count = React.Children.count(children);
+  const count = React.Children.count(children);
 
-    const casesListRef = React.useRef<HTMLDivElement>(null!);
-    const spacerRef = React.useRef<HTMLDivElement>(null!);
-    const checkNavigationRef = React.useRef<ReturnType<typeof setTimeout>>();
+  const casesListRef = React.useRef<HTMLDivElement>(null!);
+  const spacerRef = React.useRef<HTMLDivElement>(null!);
+  const checkNavigationRef = React.useRef<ReturnType<typeof setTimeout>>();
 
-    const [showNext, setShowNext] = React.useState(false);
-    const [showPrevious, setShowPrevious] = React.useState(false);
+  const [showNext, setShowNext] = React.useState(false);
+  const [showPrevious, setShowPrevious] = React.useState(false);
 
-    const elements = React.useMemo((): UseCaseBlockElements[] => {
-      return (React.Children.toArray(children) as UseCaseBlockElements[]).map(
-        (child, index) => {
-          return (
-            <Item key={index} textValue={child.props.value}>
-              {child}
-            </Item>
-          );
-        }
-      );
-    }, [children]);
-
-    let state = useListState({
-      children: elements,
-    });
-
-    let useTwoColumnLayout = useMediaQuery(config.media.bp3);
-
-    let rows = React.useMemo(() => {
-      let cells = Array.from(state.collection).map((cell, index) => ({
-        ...cell,
-        props: {
-          type: index % 3,
-        },
-      }));
-
-      if (useTwoColumnLayout) {
-        return part(Array.from(cells), 2);
+  const elements = React.useMemo((): UseCaseBlockElements[] => {
+    return (React.Children.toArray(children) as UseCaseBlockElements[]).map(
+      (child, index) => {
+        return (
+          <Item key={index} textValue={child.props.value}>
+            {child}
+          </Item>
+        );
       }
+    );
+  }, [children]);
 
-      return [Array.from(cells)];
-    }, [useTwoColumnLayout, state.collection]);
+  let state = useListState({
+    children: elements,
+  });
 
-    let gridState = useGridState({
-      collection: new GridCollection({
-        columnCount: 4,
-        items: rows.map((row, index) => ({
-          type: 'item',
-          key: index,
-          childNodes: row.map((cell, index) => ({
-            ...cell,
-            index: index,
-            type: 'cell',
-          })),
+  let useTwoColumnLayout = useMediaQuery(config.media.bp3);
+
+  let rows = React.useMemo(() => {
+    let cells = Array.from(state.collection).map((cell, index) => ({
+      ...cell,
+      props: {
+        type: index % 3,
+      },
+    }));
+
+    if (useTwoColumnLayout) {
+      return part(Array.from(cells), 2);
+    }
+
+    return [Array.from(cells)];
+  }, [useTwoColumnLayout, state.collection]);
+
+  let gridState = useGridState({
+    collection: new GridCollection({
+      columnCount: 4,
+      items: rows.map((row, index) => ({
+        type: 'item',
+        key: index,
+        childNodes: row.map((cell, index) => ({
+          ...cell,
+          index: index,
+          type: 'cell',
         })),
-      }),
-    });
+      })),
+    }),
+  });
 
-    let { gridProps } = useGrid(
-      {
-        focusMode: 'cell',
-        ...otherProps,
-      },
-      gridState,
-      casesListRef
+  let { gridProps } = useGrid(
+    {
+      focusMode: 'cell',
+      ...otherProps,
+    },
+    gridState,
+    casesListRef
+  );
+
+  const getNextCell = React.useCallback((addition) => {
+    const slides = casesListRef.current?.querySelectorAll<HTMLElement>(
+      `.${Styles.cell()}`
     );
 
-    const getNextCell = React.useCallback((addition) => {
-      const slides = casesListRef.current?.querySelectorAll<HTMLElement>(
-        `.${Styles.cell()}`
-      );
+    if (slides) {
+      for (let index of Array.from(slides.keys())) {
+        let currentCell = slides.item(index);
 
-      if (slides) {
-        for (let index of Array.from(slides.keys())) {
-          let currentCell = slides.item(index);
+        if (currentCell.dataset.visible === 'false') {
+          continue;
+        }
 
-          if (currentCell.dataset.visible === 'false') {
-            continue;
-          }
+        let nextCell = slides.item(index + addition);
 
-          let nextCell = slides.item(index + addition);
+        if (!nextCell) {
+          continue;
+        }
 
-          if (!nextCell) {
-            continue;
-          }
+        if (
+          currentCell.parentElement?.dataset.key !==
+          nextCell.parentElement?.dataset.key
+        ) {
+          continue;
+        }
 
-          if (
-            (currentCell.parentElement?.dataset.key) !==
-            (nextCell.parentElement?.dataset.key)
-          ) {
-            continue;
-          }
-
-          if (nextCell?.dataset.visible === 'false') {
-            return nextCell;
-          }
+        if (nextCell?.dataset.visible === 'false') {
+          return nextCell;
         }
       }
-    }, []);
+    }
+  }, []);
 
-    const scrollCellIntoView = React.useCallback(
-      (cell) => {
-        const { clientWidth: listWidth } = casesListRef.current;
-        const { clientWidth: cellWidth, offsetLeft: cellOffsetLeft } = cell;
+  const scrollCellIntoView = React.useCallback((cell) => {
+    const { clientWidth: listWidth } = casesListRef.current;
+    const { clientWidth: cellWidth, offsetLeft: cellOffsetLeft } = cell;
 
-        let left = cellOffsetLeft - (listWidth - cellWidth) / 2;
+    let left = cellOffsetLeft - (listWidth - cellWidth) / 2;
 
-        casesListRef.current.scrollTo({ left, behavior: 'smooth' });
-      },
-      []
-    );
+    casesListRef.current.scrollTo({ left, behavior: 'smooth' });
+  }, []);
 
-    const onHandleNextPress = React.useCallback(() => {
-      const nextCell = getNextCell(1);
+  const onHandleNextPress = React.useCallback(() => {
+    const nextCell = getNextCell(1);
 
-      if (nextCell) {
-        scrollCellIntoView(nextCell);
-      }
-    }, [getNextCell, scrollCellIntoView]);
+    if (nextCell) {
+      scrollCellIntoView(nextCell);
+    }
+  }, [getNextCell, scrollCellIntoView]);
 
-    const onHandlePreviousPress = React.useCallback(() => {
-      const prevCell = getNextCell(-1);
+  const onHandlePreviousPress = React.useCallback(() => {
+    const prevCell = getNextCell(-1);
 
-      if (prevCell) {
-        scrollCellIntoView(prevCell);
-      }
-    }, [getNextCell, scrollCellIntoView]);
+    if (prevCell) {
+      scrollCellIntoView(prevCell);
+    }
+  }, [getNextCell, scrollCellIntoView]);
 
-    const onCellFocusWithin = React.useCallback(
-      (e) => {
-        setTimeout(() => {
-          scrollCellIntoView(e.target);
-        });
-      },
-      [scrollCellIntoView]
-    );
+  const onCellFocusWithin = React.useCallback(
+    (e) => {
+      setTimeout(() => {
+        scrollCellIntoView(e.target);
+      });
+    },
+    [scrollCellIntoView]
+  );
 
-    const checkNavigation = React.useCallback(() => {
-      const { scrollLeft, scrollWidth, clientWidth } = casesListRef.current;
-      const { offsetWidth } = spacerRef.current;
+  const checkNavigation = React.useCallback(() => {
+    const { scrollLeft, scrollWidth, clientWidth } = casesListRef.current;
+    const { offsetWidth } = spacerRef.current;
 
-      setShowNext(scrollWidth - scrollLeft - clientWidth > offsetWidth);
-      setShowPrevious(scrollLeft > offsetWidth);
-    }, []);
+    setShowNext(scrollWidth - scrollLeft - clientWidth > offsetWidth);
+    setShowPrevious(scrollLeft > offsetWidth);
+  }, []);
 
-    React.useEffect(() => {
-      if (checkNavigationRef.current) {
-        clearTimeout(checkNavigationRef.current);
-      }
+  React.useEffect(() => {
+    if (checkNavigationRef.current) {
+      clearTimeout(checkNavigationRef.current);
+    }
 
-      checkNavigationRef.current = setTimeout(() => {
-        requestAnimationFrame(() => {
-          checkNavigation();
-        });
-      }, 100);
-    });
+    checkNavigationRef.current = setTimeout(() => {
+      requestAnimationFrame(() => {
+        checkNavigation();
+      });
+    }, 100);
+  });
 
-    React.useEffect(() => {
-      const casesList = casesListRef.current;
-      if (casesList) {
-        const handleScrollEnd = debounce(checkNavigation, 100);
+  React.useEffect(() => {
+    const casesList = casesListRef.current;
+    if (casesList) {
+      const handleScrollEnd = debounce(checkNavigation, 100);
 
-        casesList.addEventListener('scroll', handleScrollEnd);
-        window.addEventListener('resize', handleScrollEnd);
-        return () => {
-          casesList.removeEventListener('scroll', handleScrollEnd);
-          window.removeEventListener('resize', handleScrollEnd);
-        };
-      }
-    }, [checkNavigation]);
+      casesList.addEventListener('scroll', handleScrollEnd);
+      window.addEventListener('resize', handleScrollEnd);
+      return () => {
+        casesList.removeEventListener('scroll', handleScrollEnd);
+        window.removeEventListener('resize', handleScrollEnd);
+      };
+    }
+  }, [checkNavigation]);
 
-    return (
-      <div className={Styles.container()}>
-        <div className={Styles.contents()}>
-          <div
-            ref={casesListRef}
-            {...gridProps}
-            className={Styles.cases({
-              css: {
-                ...getGridVariables({
-                  count: count,
-                  maxRows: 1,
-                  maxColumns: 1,
-                }),
-                '@bp3': getGridVariables({
-                  count: count,
-                  maxRows: 2,
-                  maxColumns: 2,
-                }),
-                '@bp4': getGridVariables({
-                  count: count,
-                  maxRows: 2,
-                  maxColumns: 3,
-                }),
-              },
-            })}
-          >
-            {/* We use the spacer elements to detect if the left or right navigation is still necessary */}
-            <div className={Styles.spacer()} ref={spacerRef} />
-            {Array.from(gridState.collection).map((item) => (
-              <Row key={item.key} state={gridState} item={item}>
-                {Array.from(item.childNodes).map((cell) => (
-                  <Cell
-                    key={cell.key}
-                    state={gridState}
-                    item={cell}
-                    gridRef={casesListRef}
-                    onFocusWithin={onCellFocusWithin}
-                  />
-                ))}
-              </Row>
-            ))}
-          </div>
-          <Navigation onPress={onHandleNextPress} disabled={!showNext} variant="next" />
-          <Navigation onPress={onHandlePreviousPress} disabled={!showPrevious} variant="previous" />
+  return (
+    <div className={Styles.container()}>
+      <div className={Styles.contents()}>
+        <div
+          ref={casesListRef}
+          {...gridProps}
+          className={Styles.cases({
+            css: {
+              ...getGridVariables({
+                count: count,
+                maxRows: 1,
+                maxColumns: 1,
+              }),
+              '@bp3': getGridVariables({
+                count: count,
+                maxRows: 2,
+                maxColumns: 2,
+              }),
+              '@bp4': getGridVariables({
+                count: count,
+                maxRows: 2,
+                maxColumns: 3,
+              }),
+            },
+          })}
+        >
+          {/* We use the spacer elements to detect if the left or right navigation is still necessary */}
+          <div className={Styles.spacer()} ref={spacerRef} />
+          {Array.from(gridState.collection).map((item) => (
+            <Row key={item.key} state={gridState} item={item}>
+              {Array.from(item.childNodes).map((cell) => (
+                <Cell
+                  key={cell.key}
+                  state={gridState}
+                  item={cell}
+                  gridRef={casesListRef}
+                  onFocusWithin={onCellFocusWithin}
+                />
+              ))}
+            </Row>
+          ))}
         </div>
+        <Navigation
+          onPress={onHandleNextPress}
+          disabled={!showNext}
+          variant="next"
+        />
+        <Navigation
+          onPress={onHandlePreviousPress}
+          disabled={!showPrevious}
+          variant="previous"
+        />
       </div>
-    );
-  };
+    </div>
+  );
+};
 
 UseCaseBlock.Case = UseCaseBlockCase;
 UseCaseBlock.Title = UseCaseBlockTitle;

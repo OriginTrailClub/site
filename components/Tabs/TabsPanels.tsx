@@ -19,7 +19,10 @@ export interface TabsPanelsProps extends DOMProps {
 export function TabsPanels(props: TabsPanelsProps) {
   const { children } = props;
 
-  const { state, props: { defaultSelectedKey } } = React.useContext(TabsContext);
+  const {
+    state,
+    props: { defaultSelectedKey },
+  } = React.useContext(TabsContext);
 
   const { tabsListState } = state;
 
