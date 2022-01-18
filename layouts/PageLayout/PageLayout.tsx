@@ -1,22 +1,11 @@
 import { styled } from 'stitches.config';
 
-import {
-  PageLayoutHeader,
-  PageLayoutHeaderProps,
-} from './PageLayoutHeader';
-import {
-  PageLayoutContent,
-  PageLayoutContentProps,
-} from './PageLayoutContent';
-import {
-  PageLayoutFooter,
-  PageLayoutFooterProps,
-} from './PageLayoutFooter';
+import { PageLayoutHeader, PageLayoutHeaderProps } from './PageLayoutHeader';
+import { PageLayoutContent, PageLayoutContentProps } from './PageLayoutContent';
+import { PageLayoutFooter, PageLayoutFooterProps } from './PageLayoutFooter';
 
 type PageLayoutElements = React.ReactElement<
-  | PageLayoutHeaderProps
-  | PageLayoutContentProps
-  | PageLayoutFooterProps
+  PageLayoutHeaderProps | PageLayoutContentProps | PageLayoutFooterProps
 >;
 
 export interface PageLayoutProps {
@@ -41,11 +30,7 @@ export const PageLayout: React.FC<PageLayoutProps> &
   IPageLayoutComposition = function PageLayout(props) {
   const { children } = props;
 
-  return (
-    <PageLayoutContainer>
-      {children}
-    </PageLayoutContainer>
-  );
+  return <PageLayoutContainer>{children}</PageLayoutContainer>;
 };
 
 PageLayout.Header = PageLayoutHeader;

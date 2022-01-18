@@ -31,7 +31,6 @@ function MyApp({ Component, pageProps }: AppProps) {
             }
           />
           <PageLayout.Content>
-
             <Component {...pageProps} />
           </PageLayout.Content>
           <PageLayout.Footer />
