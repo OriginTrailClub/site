@@ -23,7 +23,11 @@ export const Subtitle = React.forwardRef(function Subtitle(
   const { children, ...otherProps } = props;
 
   return (
-    <strong {...filterDOMProps(otherProps)} className={Styles.container()} ref={ref}>
+    <strong
+      {...filterDOMProps(otherProps)}
+      className={Styles.container()}
+      ref={ref}
+    >
       {children}
     </strong>
   );
