@@ -6,10 +6,10 @@ import { Button, ButtonProps } from 'components/Button';
 
 export type PageIntroBlockActionProps = ButtonProps;
 
-export function PageIntroBlockAction(props: PageIntroBlockActionProps) {
+export const PageIntroBlockAction = React.forwardRef<HTMLButtonElement, PageIntroBlockActionProps>(function PageIntroBlockAction(props, ref) {
   return (
     <div className={Styles.container()}>
-      <Button {...props} />
+      <Button ref={ref} {...props} />
     </div>
   );
-}
+});

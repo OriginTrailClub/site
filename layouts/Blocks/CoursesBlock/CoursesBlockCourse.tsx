@@ -1,3 +1,5 @@
+import * as React from 'react';
+
 import * as Styles from './CoursesBlockCourse.styles';
 
 import { CoursesBlockImageProps } from './CoursesBlockImage';
@@ -10,17 +12,17 @@ type CoursesBlockCourseElements = React.ReactElement<
 
 export interface CoursesBlockCourseProps {
   children: CoursesBlockCourseElements[];
-  href: string;
-  onClick: MouseEventHandler<HTMLAnchorElement>;
-  onMouseEnter: MouseEventHandler<HTMLAnchorElement>;
+  href?: string;
+  onClick?: MouseEventHandler<HTMLAnchorElement>;
+  onMouseEnter?: MouseEventHandler<HTMLAnchorElement>;
 }
 
-export function CoursesBlockCourse(props: CoursesBlockCourseProps) {
+export const CoursesBlockCourse = React.forwardRef<HTMLAnchorElement, CoursesBlockCourseProps>(function CoursesBlockCourse(props, ref) {
   const { children } = props;
 
   return (
     <article className={Styles.container()}>
-      <a {...props} className={Styles.link()}>{children}</a>
+      <a {...props} ref={ref} className={Styles.link()}>{children}</a>
     </article>
   );
-}
+});
