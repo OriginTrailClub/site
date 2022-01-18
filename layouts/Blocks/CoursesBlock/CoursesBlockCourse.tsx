@@ -17,12 +17,17 @@ export interface CoursesBlockCourseProps {
   onMouseEnter?: MouseEventHandler<HTMLAnchorElement>;
 }
 
-export const CoursesBlockCourse = React.forwardRef<HTMLAnchorElement, CoursesBlockCourseProps>(function CoursesBlockCourse(props, ref) {
+export const CoursesBlockCourse = React.forwardRef<
+  HTMLAnchorElement,
+  CoursesBlockCourseProps
+>(function CoursesBlockCourse(props, ref) {
   const { children } = props;
 
   return (
     <article className={Styles.container()}>
-      <a {...props} ref={ref} className={Styles.link()}>{children}</a>
+      <a {...props} ref={ref} className={Styles.link()}>
+        {children}
+      </a>
     </article>
   );
 });

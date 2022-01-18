@@ -13,4 +13,4 @@ export const link = css({
   borderColor: '$gray-300',
   borderStyle: 'solid',
   textDecoration: 'none',
-})
+});
