@@ -90,21 +90,30 @@ const LearnPage: NextPage<LearnPageProps> = (props) => {
                   <CoursesBlock.Title>Courses</CoursesBlock.Title>
                   <CoursesBlock.Courses>
                     {courses.map((course) => (
-                      <CoursesBlock.Course key={course.params.slug}>
-                        <CoursesBlock.Image
-                          src={course.data.banner}
-                          alt={course.data.subject}
-                        />
-                        <CoursesBlock.Content>
-                          <CoursesBlock.Subject>
-                            {course.data.subject}
-                          </CoursesBlock.Subject>
-                          <CoursesBlock.Author name={course.data.author} />
-                          <CoursesBlock.Description>
-                            {course.data.description}
-                          </CoursesBlock.Description>
-                        </CoursesBlock.Content>
-                      </CoursesBlock.Course>
+                      <Link
+                        href={{
+                          pathname: '/learn/courses/[slug]',
+                          query: course.params,
+                        }}
+                        passHref
+                        key={course.params.slug}
+                      >
+                        <CoursesBlock.Course>
+                          <CoursesBlock.Image
+                            src={course.data.banner}
+                            alt={course.data.subject}
+                          />
+                          <CoursesBlock.Content>
+                            <CoursesBlock.Subject>
+                              {course.data.subject}
+                            </CoursesBlock.Subject>
+                            <CoursesBlock.Author name={course.data.author} />
+                            <CoursesBlock.Description>
+                              {course.data.description}
+                            </CoursesBlock.Description>
+                          </CoursesBlock.Content>
+                        </CoursesBlock.Course>
+                      </Link>
                     ))}
                   </CoursesBlock.Courses>
                 </CoursesBlock>
