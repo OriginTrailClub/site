@@ -3,18 +3,6 @@ import matter from 'gray-matter';
 import path from 'path';
 import fs from 'fs';
 
-export type Course = {
-  params: {
-    slug: string;
-  };
-  data: {
-    banner: string;
-    subject: string;
-    author: string;
-    description: string;
-  };
-};
-
 export const getCourses = async () => {
   const coursesDirectory = path.join(process.cwd(), 'courses');
 
