@@ -5,7 +5,7 @@ import Link from 'next/link';
 import BankFillIcon from 'remixicon-react/BankFillIcon';
 import ArrowRightLineIcon from 'remixicon-react/ArrowRightLineIcon';
 
-import { getCourses, Course } from 'helpers/getCourses';
+import { getCourses } from 'helpers/getCourses';
 
 import { OverviewLayout } from 'layouts/OverviewLayout';
 import { PageIntroBlock } from 'layouts/Blocks/PageIntroBlock';
@@ -13,6 +13,18 @@ import { CoursesBlock } from 'layouts/Blocks/CoursesBlock';
 
 import { Button } from 'components/Button';
 import { Grid } from 'components/Grid';
+
+type Course = {
+  params: {
+    slug: string;
+  };
+  data: {
+    banner: string;
+    subject: string;
+    author: string;
+    description: string;
+  };
+};
 
 interface LearnPageProps {
   courses: Course[];
