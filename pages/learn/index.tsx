@@ -5,7 +5,7 @@ import Link from 'next/link';
 import BankFillIcon from 'remixicon-react/BankFillIcon';
 import ArrowRightLineIcon from 'remixicon-react/ArrowRightLineIcon';
 
-import { getCourses } from 'helpers/getCourses';
+import { getCourses, Course } from 'helpers/getCourses';
 
 import { OverviewLayout } from 'layouts/OverviewLayout';
 import { PageIntroBlock } from 'layouts/Blocks/PageIntroBlock';
@@ -15,7 +15,7 @@ import { Button } from 'components/Button';
 import { Grid } from 'components/Grid';
 
 interface LearnPageProps {
-  courses: [];
+  courses: Course[];
 }
 
 export const getStaticProps = async () => {
@@ -77,42 +77,23 @@ const LearnPage: NextPage<LearnPageProps> = (props) => {
                 <CoursesBlock>
                   <CoursesBlock.Title>Courses</CoursesBlock.Title>
                   <CoursesBlock.Courses>
-                    <CoursesBlock.Course>
-                      <CoursesBlock.Image
-                        src="/courses/banner-ot-101.jpg"
-                        alt="OriginTrail 101"
-                      />
-                      <CoursesBlock.Content>
-                        <CoursesBlock.Subject>
-                          OriginTrail 101
-                        </CoursesBlock.Subject>
-                        <CoursesBlock.Author name="Amos Thomas" />
-                        <CoursesBlock.Description>
-                          In this course, you will learn how OriginTrail has
-                          been revolutionizing supply chains since 2011 and how
-                          you can make their blockchain-based solutions work for
-                          you!
-                        </CoursesBlock.Description>
-                      </CoursesBlock.Content>
-                    </CoursesBlock.Course>
-                    <CoursesBlock.Course>
-                      <CoursesBlock.Image
-                        src="/courses/banner-ot-102.jpg"
-                        alt="OriginTrail 102"
-                      />
-                      <CoursesBlock.Content>
-                        <CoursesBlock.Subject>
-                          OriginTrail 102
-                        </CoursesBlock.Subject>
-                        <CoursesBlock.Author name="Amos Thomas" />
-                        <CoursesBlock.Description>
-                          Amos is back to explain the OriginTrail Knowledge
-                          Economy. Set up your Node using best practice,
-                          understand how to connect to the wider OriginTrail
-                          Decentralized Network (ODN), and more.
-                        </CoursesBlock.Description>
-                      </CoursesBlock.Content>
-                    </CoursesBlock.Course>
+                    {courses.map((course) => (
+                      <CoursesBlock.Course key={course.params.slug}>
+                        <CoursesBlock.Image
+                          src={course.data.banner}
+                          alt={course.data.subject}
+                        />
+                        <CoursesBlock.Content>
+                          <CoursesBlock.Subject>
+                            {course.data.subject}
+                          </CoursesBlock.Subject>
+                          <CoursesBlock.Author name={course.data.author} />
+                          <CoursesBlock.Description>
+                            {course.data.description}
+                          </CoursesBlock.Description>
+                        </CoursesBlock.Content>
+                      </CoursesBlock.Course>
+                    ))}
                   </CoursesBlock.Courses>
                 </CoursesBlock>
               </Grid.Item>
