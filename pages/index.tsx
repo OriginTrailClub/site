@@ -99,7 +99,16 @@ const Home: NextPage<HomePageProps> = (props) => {
         description="The OriginTrail Community Hub is an accessible and open-source knowledge hub for and by the community. A place where Tracers can connect, collaborate, contribute and learn about all things OriginTrail"
       >
         <OverviewLayout.Header
-          CallToAction={<Button label="Donate" Icon={BankFillIcon} />}
+          CallToAction={
+            <Button
+              label="Donate"
+              Icon={BankFillIcon}
+              href="https://donate.origintrail.club"
+              as="a"
+              target="_blank"
+              rel="noopener noreferrer"
+            />
+          }
         />
         <OverviewLayout.Content>
           <Grid>
