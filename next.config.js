@@ -5,12 +5,6 @@ module.exports = {
     return [
       {
         source: '/',
-        headers: [
-          {
-            key: 'X-Robots-Tag',
-            value: 'noindex',
-          },
-        ],
       },
     ];
   },

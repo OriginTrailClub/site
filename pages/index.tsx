@@ -63,7 +63,6 @@ const Home: NextPage<HomePageProps> = (props) => {
   return (
     <>
       <Head>
-        <meta name="robots" content="noindex" />
         <title>Origintrail Community Hub</title>
         <meta
           name="description"
