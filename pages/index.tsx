@@ -284,10 +284,10 @@ const Home: NextPage<HomePageProps> = (props) => {
                     <SolutionsBlock.Solution>
                       <SolutionsBlock.Image
                         src="/solutions/infinitly-scalable.png"
-                        alt="Infinitly scalable and cost efficient"
+                        alt="Infinitely scalable and cost efficient"
                       />
                       <SolutionsBlock.Title>
-                        Infinitly scalable and cost efficient
+                        Infinitely scalable and cost efficient
                       </SolutionsBlock.Title>
                       <SolutionsBlock.Description>
                         OriginTrail does all the heavy lifting off-chain by
@@ -324,10 +324,10 @@ const Home: NextPage<HomePageProps> = (props) => {
                         Data immutability
                       </SolutionsBlock.Title>
                       <SolutionsBlock.Description>
-                        Origintrail harnasses the power of blockchain to create
+                        OriginTrail harnesses the power of blockchain to create
                         a tamper-proof &ldquo;fingerprint&rdquo; (a
                         cryptographic hash) which is used to prove that data has
-                        not been modified in any way. Origintrail is being built
+                        not been modified in any way. OriginTrail is being built
                         to support many different blockchain implementations.
                       </SolutionsBlock.Description>
                     </SolutionsBlock.Solution>
@@ -374,7 +374,7 @@ const Home: NextPage<HomePageProps> = (props) => {
                 <IntroBlock align="left">
                   <IntroBlock.Subtitle>A new frontier</IntroBlock.Subtitle>
                   <IntroBlock.Title>
-                    The data backbone of web3, build for global use
+                    The data backbone of web3, built for global use
                   </IntroBlock.Title>
                   <IntroBlock.Description>
                     The OriginTrail protocol is used by organizations of all
@@ -424,7 +424,7 @@ const Home: NextPage<HomePageProps> = (props) => {
                   <UseCaseBlock.Case value="Data Marketplace">
                     <UseCaseBlock.Title>Data Marketplace</UseCaseBlock.Title>
                     <UseCaseBlock.Description>
-                      Provide open-source infrastructure that encourage fair
+                      Provide open-source infrastructure that encourages fair
                       data exchange
                     </UseCaseBlock.Description>
                     <UseCaseBlock.Image
