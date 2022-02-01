@@ -1,14 +1,16 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Link from 'next/link';
 
 import { getCourses } from 'helpers/getCourses';
-import { getCourse } from 'helpers/getCourse';
+import { getCourse, CourseSection } from 'helpers/getCourse';
 import { ContentLayout } from 'layouts/ContentLayout/ContentLayout';
 import { MDXContent } from 'components/MDXContent';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 type Course = {
   content: MDXRemoteSerializeResult;
+  toc: CourseSection[];
   data: {
     banner: string;
     subject: string;
@@ -24,9 +26,9 @@ interface CoursePageProps {
 export const getStaticProps = async ({
   params,
 }: {
-  params: { slug: string };
+  params: { course: string };
 }) => {
-  const course = await getCourse(params);
+  const course = await getCourse(params.course);
 
   return {
     props: {
@@ -35,16 +37,24 @@ export const getStaticProps = async ({
   };
 };
 
-export async function getStaticPaths() {
+export const getStaticPaths = async () => {
   const courses = await getCourses();
 
   return {
-    paths: courses.map((course) => ({ params: course.params })),
+    paths: courses.map(({ params: { slug } }) => ({
+      params: {
+        course: slug,
+      },
+    })),
     fallback: false,
   };
-}
+};
 
 const CoursePage: NextPage<CoursePageProps> = (props) => {
+  const { course } = props;
+  const { data, toc, content } = course;
+  const { subject } = data;
+
   console.log(props);
 
   return (
@@ -53,11 +63,24 @@ const CoursePage: NextPage<CoursePageProps> = (props) => {
         <meta name="robots" content="noindex" />
       </Head>
       <ContentLayout>
-        <ContentLayout.Title>{props.course.data.subject}</ContentLayout.Title>
+        <ContentLayout.Title>{subject}</ContentLayout.Title>
         <ContentLayout.Content>
-          <MDXContent source={props.course.content} />
+          <MDXContent source={content} />
         </ContentLayout.Content>
-        <ContentLayout.Sidebar>Show lessons</ContentLayout.Sidebar>
+        <ContentLayout.Sidebar>
+          <ul>
+            {toc.map((section) => (
+              <li key={section.title}>
+                <strong>{section.title}</strong>
+                <ul>
+                  {section.lessons.map((lesson) => (
+                    <li key={lesson.slug}>{lesson.title}</li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ul>
+        </ContentLayout.Sidebar>
       </ContentLayout>
     </>
   );

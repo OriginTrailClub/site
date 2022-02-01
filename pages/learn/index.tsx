@@ -79,8 +79,10 @@ const LearnPage: NextPage<LearnPageProps> = (props) => {
                 {courses.map((course) => (
                   <Link
                     href={{
-                      pathname: '/learn/courses/[slug]',
-                      query: course.params,
+                      pathname: '/learn/courses/[course]',
+                      query: {
+                        course: course.params.slug
+                      },
                     }}
                     passHref
                     key={course.params.slug}
