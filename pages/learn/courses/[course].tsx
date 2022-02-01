@@ -55,8 +55,6 @@ const CoursePage: NextPage<CoursePageProps> = (props) => {
   const { data, toc, content } = course;
   const { subject } = data;
 
-  console.log(props);
-
   return (
     <>
       <Head>
