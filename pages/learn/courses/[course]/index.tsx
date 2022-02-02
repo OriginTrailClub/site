@@ -21,17 +21,19 @@ type Course = {
 
 interface CoursePageProps {
   course: Course;
+  params: { course: string }
 }
 
 export const getStaticProps = async ({
   params,
 }: {
-  params: { course: string };
+  params: CoursePageProps['params'];
 }) => {
   const course = await getCourse(params.course);
 
   return {
     props: {
+      params,
       course,
     },
   };
@@ -72,7 +74,17 @@ const CoursePage: NextPage<CoursePageProps> = (props) => {
                 <strong>{section.title}</strong>
                 <ul>
                   {section.lessons.map((lesson) => (
-                    <li key={lesson.slug}>{lesson.title}</li>
+                    <li key={lesson.slug}>
+                      <Link href={{
+                        pathname: '/learn/courses/[course]/[lesson]',
+                        query: {
+                          course: props.params.course,
+                          lesson: lesson.slug,
+                        }
+                      }}>
+                        {lesson.title}
+                      </Link>
+                    </li>
                   ))}
                 </ul>
               </li>
