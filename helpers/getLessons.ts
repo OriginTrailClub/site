@@ -10,7 +10,11 @@ export const getLessons = async () => {
   let lessons = [];
 
   for (let courseDirectory of coursesDirectories) {
-    const lessonDirectory = path.join(process.cwd(), 'courses', courseDirectory);
+    const lessonDirectory = path.join(
+      process.cwd(),
+      'courses',
+      courseDirectory
+    );
     const lessonFiles = fs.readdirSync(lessonDirectory);
 
     for (let lessonFile of lessonFiles) {
@@ -20,12 +24,12 @@ export const getLessons = async () => {
         const slug = result['groups']?.slug ?? '';
 
         lessons.push({
-            course: courseDirectory,
-            lesson: slug,
+          course: courseDirectory,
+          lesson: slug,
         });
       }
     }
   }
 
   return lessons;
-}
+};

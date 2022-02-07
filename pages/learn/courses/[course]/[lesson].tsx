@@ -8,67 +8,65 @@ import { MDXContent } from 'components/MDXContent';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 type Lesson = {
-    content: MDXRemoteSerializeResult;
-    data: {
-        title: string;
-    };
+  content: MDXRemoteSerializeResult;
+  data: {
+    title: string;
+  };
 };
 
 interface LessonPageProps {
-    lesson: Lesson;
-    params: {
-        course: string;
-        lesson: string;
-    }
+  lesson: Lesson;
+  params: {
+    course: string;
+    lesson: string;
+  };
 }
 
-
 export const getStaticProps = async ({
-    params,
+  params,
 }: {
-    params: LessonPageProps['params'];
+  params: LessonPageProps['params'];
 }) => {
-    const lesson = await getLesson({
-        course: params.course,
-        lesson: params.lesson,
-    });
+  const lesson = await getLesson({
+    course: params.course,
+    lesson: params.lesson,
+  });
 
-    return {
-        props: {
-            lesson,
-        },
-    };
+  return {
+    props: {
+      lesson,
+    },
+  };
 };
 
 export const getStaticPaths = async () => {
-    const lessons = await getLessons();
+  const lessons = await getLessons();
 
-    return {
-        paths: lessons.map(lesson => ({
-            params: lesson,
-        })),
-        fallback: false
-    };
+  return {
+    paths: lessons.map((lesson) => ({
+      params: lesson,
+    })),
+    fallback: false,
+  };
 };
 
-
 const LessonPage: NextPage<LessonPageProps> = (props) => {
-    const { lesson } = props;
-    const { data, content } = lesson;
-    const { title } = data;
-  
-    return (
-        <>
-            <Head>
-                <meta name="robots" content="noindex" />
-            </Head>
-            <ContentLayout>
-                <ContentLayout.Title>{title}</ContentLayout.Title>
-                <ContentLayout.Content>
-                    <MDXContent source={content} />
-                </ContentLayout.Content>
-                <ContentLayout.Sidebar>
-                    {/* <ul>
+  const { lesson } = props;
+  const { data, content } = lesson;
+  const { title } = data;
+
+  return (
+    <>
+      <Head>
+        <meta name="robots" content="noindex" />
+      </Head>
+      <ContentLayout>
+        <ContentLayout.Title>{title}</ContentLayout.Title>
+        <ContentLayout.Content>
+          <MDXContent source={content} />
+        </ContentLayout.Content>
+        <ContentLayout.Sidebar>
+          {/* <ul>
                         {toc.map((section) => (
                             <li key={section.title}>
                                 <strong>{section.title}</strong>
@@ -90,10 +88,10 @@ const LessonPage: NextPage<LessonPageProps> = (props) => {
                             </li>
                         ))}
                     </ul> */}
-                </ContentLayout.Sidebar>
-            </ContentLayout>
-        </>
-    );
+        </ContentLayout.Sidebar>
+      </ContentLayout>
+    </>
+  );
 };
 
 export default LessonPage;
