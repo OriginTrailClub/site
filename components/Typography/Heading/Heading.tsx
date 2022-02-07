@@ -42,7 +42,7 @@ export const Heading = React.forwardRef(function Heading(
       ref={ref}
       data-level={style}
       className={Styles.container({
-        level,
+        level: style,
       })}
     >
       {children}
