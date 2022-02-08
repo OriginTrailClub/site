@@ -8,6 +8,9 @@ import { ContentLayout } from 'layouts/ContentLayout/ContentLayout';
 import { MDXContent } from 'components/MDXContent';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 
+import { CourseSidebar } from 'components/CourseSidebar';
+import ArrowRightLineIcon from 'remixicon-react/ArrowRightLineIcon';
+
 type Course = {
   content: MDXRemoteSerializeResult;
   toc: CourseSection[];
@@ -21,7 +24,7 @@ type Course = {
 
 interface CoursePageProps {
   course: Course;
-  params: { course: string }
+  params: { course: string };
 }
 
 export const getStaticProps = async ({
@@ -68,28 +71,35 @@ const CoursePage: NextPage<CoursePageProps> = (props) => {
           <MDXContent source={content} />
         </ContentLayout.Content>
         <ContentLayout.Sidebar>
-          <ul>
-            {toc.map((section) => (
-              <li key={section.title}>
-                <strong>{section.title}</strong>
-                <ul>
+          <CourseSidebar>
+            <CourseSidebar.Title>Content</CourseSidebar.Title>
+            <CourseSidebar.Action label="Start" Icon={ArrowRightLineIcon} />
+            <CourseSidebar.Sections>
+              {toc.map((section) => (
+                <CourseSidebar.Section
+                  title={section.title}
+                  icon="/courses/ot-101/section-title-icon.png"
+                  key={section.title}
+                >
                   {section.lessons.map((lesson) => (
-                    <li key={lesson.slug}>
-                      <Link href={{
+                    <Link
+                      key={lesson.slug}
+                      href={{
                         pathname: '/learn/courses/[course]/[lesson]',
                         query: {
                           course: props.params.course,
                           lesson: lesson.slug,
-                        }
-                      }}>
-                        {lesson.title}
-                      </Link>
-                    </li>
+                        },
+                      }}
+                      passHref
+                    >
+                      <CourseSidebar.Lesson label={lesson.title} />
+                    </Link>
                   ))}
-                </ul>
-              </li>
-            ))}
-          </ul>
+                </CourseSidebar.Section>
+              ))}
+            </CourseSidebar.Sections>
+          </CourseSidebar>
         </ContentLayout.Sidebar>
       </ContentLayout>
     </>
