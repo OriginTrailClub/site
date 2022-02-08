@@ -20,7 +20,7 @@ export interface AccordionProps extends Expandable {
   /**
    * The children of the <Accordion> element. Should include one or multiple `<Accordion.Item>` elements.
    */
-  children: AccordionElements | AccordionElements[];
+  children: React.ReactNode;
 }
 
 interface IAccordionComposition {
