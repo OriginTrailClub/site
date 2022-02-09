@@ -9,7 +9,7 @@ export function CourseSidebarTitle(props: CourseSidebarTitleProps) {
 
   return (
     <div className={Styles.container()}>
-      <Heading level={2}>{children}</Heading>
+      <Heading level={2} style={3}>{children}</Heading>
     </div>
   );
 }
