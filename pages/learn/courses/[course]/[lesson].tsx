@@ -7,11 +7,17 @@ import { ContentLayout } from 'layouts/ContentLayout/ContentLayout';
 import { MDXContent } from 'components/MDXContent';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 
+type LessonHeading = {
+  label: string;
+  slug: string;
+}
+
 type Lesson = {
   content: MDXRemoteSerializeResult;
   data: {
     title: string;
   };
+  headings: LessonHeading[];
 };
 
 interface LessonPageProps {
@@ -52,7 +58,7 @@ export const getStaticPaths = async () => {
 
 const LessonPage: NextPage<LessonPageProps> = (props) => {
   const { lesson } = props;
-  const { data, content } = lesson;
+  const { data, content, headings } = lesson;
   const { title } = data;
 
   return (
@@ -66,28 +72,13 @@ const LessonPage: NextPage<LessonPageProps> = (props) => {
           <MDXContent source={content} />
         </ContentLayout.Content>
         <ContentLayout.Sidebar>
-          {/* <ul>
-                        {toc.map((section) => (
-                            <li key={section.title}>
-                                <strong>{section.title}</strong>
-                                <ul>
-                                    {section.lessons.map((lesson) => (
-                                        <li key={lesson.slug}>
-                                            <Link href={{
-                                                pathname: '/learn/courses/[course]/[lesson]',
-                                                query: {
-                                                    course: props.params.course,
-                                                    lesson: lesson.slug,
-                                                }
-                                            }}>
-                                                {lesson.title}
-                                            </Link>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </li>
-                        ))}
-                    </ul> */}
+          <ul>
+            {headings.map(({ label, slug }) => (
+              <li key={slug}>
+                <a href={`#${slug}`}>{label}</a>
+              </li>
+            ))}
+          </ul>
         </ContentLayout.Sidebar>
       </ContentLayout>
     </>

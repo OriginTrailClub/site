@@ -4,6 +4,8 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import { serialize } from 'next-mdx-remote/serialize';
 
+import { slugify } from 'utils/slugify';
+
 const lessonRegex = new RegExp(/^(?<order>[0-9]+)-(?<slug>.*).mdx/);
 
 export const getLesson = async ({
@@ -37,10 +39,22 @@ export const getLesson = async ({
 
   const { data, content } = matter(markdownWithMeta);
 
+  const headingsLines = content.split('\n').filter((line) => line.match(/^##\s(.*)/));
+
+  const headings = headingsLines.map(row => {
+    const text = row.replace(/^##\s(.*)/, '$1');
+
+    return {
+      label: text,
+      slug: slugify(text),
+    };
+  });
+
   const source = await serialize(content, { scope: data });
 
   return {
     data,
     content: source,
+    headings,
   };
 };
