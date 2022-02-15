@@ -39,9 +39,11 @@ export const getLesson = async ({
 
   const { data, content } = matter(markdownWithMeta);
 
-  const headingsLines = content.split('\n').filter((line) => line.match(/^##\s(.*)/));
+  const headingsLines = content
+    .split('\n')
+    .filter((line) => line.match(/^##\s(.*)/));
 
-  const headings = headingsLines.map(row => {
+  const headings = headingsLines.map((row) => {
     const text = row.replace(/^##\s(.*)/, '$1');
 
     return {

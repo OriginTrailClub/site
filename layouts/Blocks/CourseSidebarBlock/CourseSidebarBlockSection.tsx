@@ -9,7 +9,9 @@ export interface CourseSidebarBlockSectionProps {
   children: React.ReactNode;
 }
 
-export function CourseSidebarBlockSection(props: CourseSidebarBlockSectionProps) {
+export function CourseSidebarBlockSection(
+  props: CourseSidebarBlockSectionProps
+) {
   const { title, children, icon } = props;
 
   return (

@@ -73,7 +73,10 @@ const CoursePage: NextPage<CoursePageProps> = (props) => {
         <ContentLayout.Sidebar>
           <CourseSidebarBlock>
             <CourseSidebarBlock.Title>Content</CourseSidebarBlock.Title>
-            <CourseSidebarBlock.Action label="Start" Icon={ArrowRightLineIcon} />
+            <CourseSidebarBlock.Action
+              label="Start"
+              Icon={ArrowRightLineIcon}
+            />
             <CourseSidebarBlock.Sections>
               {toc.map((section) => (
                 <CourseSidebarBlock.Section
