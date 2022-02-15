@@ -1,15 +1,15 @@
 import React from 'react';
 
-import * as Styles from './CourseSidebarSection.styles';
+import * as Styles from './CourseSidebarBlockSection.styles';
 
 import { Accordion } from 'components/Accordion';
 
-export interface CourseSidebarSectionProps {
+export interface CourseSidebarBlockSectionProps {
   title: string;
   children: React.ReactNode;
 }
 
-export function CourseSidebarSection(props: CourseSidebarSectionProps) {
+export function CourseSidebarBlockSection(props: CourseSidebarBlockSectionProps) {
   const { title, children, icon } = props;
 
   return (

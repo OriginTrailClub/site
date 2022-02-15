@@ -1,10 +1,10 @@
-import * as Styles from './CourseSidebarTitle.styles';
+import * as Styles from './CourseSidebarBlockTitle.styles';
 
 import { Heading, HeadingProps } from 'components/Typography';
 
-export type CourseSidebarTitleProps = Pick<HeadingProps, 'children'>;
+export type CourseSidebarBlockTitleProps = Pick<HeadingProps, 'children'>;
 
-export function CourseSidebarTitle(props: CourseSidebarTitleProps) {
+export function CourseSidebarBlockTitle(props: CourseSidebarBlockTitleProps) {
   const { children } = props;
 
   return (

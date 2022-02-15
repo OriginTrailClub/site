@@ -1,10 +1,10 @@
-import * as Styles from './CourseSidebarLesson.styles';
+import * as Styles from './CourseSidebarBlockLesson.styles';
 
-export interface CourseSidebarLessonProps {
+export interface CourseSidebarBlockLessonProps {
   label: string;
 }
 
-export function CourseSidebarLesson(props: CourseSidebarLessonProps) {
+export function CourseSidebarBlockLesson(props: CourseSidebarBlockLessonProps) {
   const { label, ...otherProps } = props;
 
   return (

@@ -8,7 +8,7 @@ import { ContentLayout } from 'layouts/ContentLayout/ContentLayout';
 import { MDXContent } from 'components/MDXContent';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 
-import { CourseSidebar } from 'components/CourseSidebar';
+import { CourseSidebarBlock } from 'layouts/Blocks/CourseSidebarBlock';
 import ArrowRightLineIcon from 'remixicon-react/ArrowRightLineIcon';
 
 type Course = {
@@ -71,12 +71,12 @@ const CoursePage: NextPage<CoursePageProps> = (props) => {
           <MDXContent source={content} />
         </ContentLayout.Content>
         <ContentLayout.Sidebar>
-          <CourseSidebar>
-            <CourseSidebar.Title>Content</CourseSidebar.Title>
-            <CourseSidebar.Action label="Start" Icon={ArrowRightLineIcon} />
-            <CourseSidebar.Sections>
+          <CourseSidebarBlock>
+            <CourseSidebarBlock.Title>Content</CourseSidebarBlock.Title>
+            <CourseSidebarBlock.Action label="Start" Icon={ArrowRightLineIcon} />
+            <CourseSidebarBlock.Sections>
               {toc.map((section) => (
-                <CourseSidebar.Section
+                <CourseSidebarBlock.Section
                   title={section.title}
                   icon="/courses/ot-101/section-title-icon.png"
                   key={section.title}
@@ -93,13 +93,13 @@ const CoursePage: NextPage<CoursePageProps> = (props) => {
                       }}
                       passHref
                     >
-                      <CourseSidebar.Lesson label={lesson.title} />
+                      <CourseSidebarBlock.Lesson label={lesson.title} />
                     </Link>
                   ))}
-                </CourseSidebar.Section>
+                </CourseSidebarBlock.Section>
               ))}
-            </CourseSidebar.Sections>
-          </CourseSidebar>
+            </CourseSidebarBlock.Sections>
+          </CourseSidebarBlock>
         </ContentLayout.Sidebar>
       </ContentLayout>
     </>
