@@ -1,16 +1,19 @@
 import type { NextPage } from 'next';
+import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import Head from 'next/head';
 
 import { getLessons } from 'helpers/getLessons';
 import { getLesson } from 'helpers/getLesson';
-import { ContentLayout } from 'layouts/ContentLayout/ContentLayout';
+
 import { MDXContent } from 'components/MDXContent';
-import { MDXRemoteSerializeResult } from 'next-mdx-remote';
+
+import { ContentLayout } from 'layouts/ContentLayout/ContentLayout';
+import { PageContentBlock } from 'layouts/Blocks/PageContentBlock';
 
 type LessonHeading = {
   label: string;
   slug: string;
-}
+};
 
 type Lesson = {
   content: MDXRemoteSerializeResult;
@@ -72,13 +75,18 @@ const LessonPage: NextPage<LessonPageProps> = (props) => {
           <MDXContent source={content} />
         </ContentLayout.Content>
         <ContentLayout.Sidebar>
-          <ul>
-            {headings.map(({ label, slug }) => (
-              <li key={slug}>
-                <a href={`#${slug}`}>{label}</a>
-              </li>
-            ))}
-          </ul>
+          <PageContentBlock>
+            <PageContentBlock.Title>On this page</PageContentBlock.Title>
+            <PageContentBlock.Links>
+              {headings.map(({ label, slug }) => (
+                <PageContentBlock.Link
+                  key={slug}
+                  label={label}
+                  href={`#${slug}`}
+                />
+              ))}
+            </PageContentBlock.Links>
+          </PageContentBlock>
         </ContentLayout.Sidebar>
       </ContentLayout>
     </>
