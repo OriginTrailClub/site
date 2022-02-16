@@ -13,7 +13,7 @@ module.exports = {
         ],
       },
       {
-        source: 'learn/',
+        source: '/learn',
         headers: [
           {
             key: 'X-Robots-Tag',
@@ -22,7 +22,7 @@ module.exports = {
         ],
       },
       {
-        source: 'learn/courses/:course',
+        source: '/learn/courses/:course',
         headers: [
           {
             key: 'X-Robots-Tag',
@@ -31,7 +31,7 @@ module.exports = {
         ],
       },
       {
-        source: 'learn/courses/:course/:lesson',
+        source: '/learn/courses/:course/:lesson',
         headers: [
           {
             key: 'X-Robots-Tag',

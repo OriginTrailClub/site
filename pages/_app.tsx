@@ -1,4 +1,5 @@
 import type { AppProps } from 'next/app';
+import Head from 'next/head';
 
 import { SSRProvider } from '@react-aria/ssr';
 import { I18nProvider } from '@react-aria/i18n';
@@ -15,6 +16,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   globalStyles();
 
   return (
+    <>
+    <Head>
+      <meta name="robots" content="noindex" />
+    </Head>
     <I18nProvider locale="en-US">
       <SSRProvider>
         <PageLayout>
@@ -37,6 +42,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </PageLayout>
       </SSRProvider>
     </I18nProvider>
+    </>
   );
 }
 
