@@ -6,6 +6,7 @@ import { Accordion } from 'components/Accordion';
 
 export interface CourseSidebarBlockSectionProps {
   title: string;
+  icon: string;
   children: React.ReactNode;
 }
 
