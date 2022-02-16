@@ -3,8 +3,9 @@ import {
   HeadingProps,
   Paragraph,
   Typography,
+  List, ListProps, ListItemProps,
+  Bold, BoldProps,
 } from 'components/Typography';
-import { List, ListProps, ListItemProps } from 'components/Typography/List';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 const components = {
@@ -20,6 +21,8 @@ const components = {
   ul: (props: Omit<ListProps, 'style'>) => <List {...props} />,
   ol: (props: Omit<ListProps, 'style'>) => <List style="ordered" {...props} />,
   li: (props: ListItemProps) => <List.Item {...props} />,
+
+  strong: (props: BoldProps) => (<Bold {...props} />)
 };
 
 interface MDXContentProps {
