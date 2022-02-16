@@ -2,11 +2,12 @@ import { css } from 'stitches.config';
 
 import * as HeadingStyles from './Heading/Heading.styles';
 import * as ParagraphStyles from './Paragraph/Paragraph.styles';
+import * as ListStyles from './List/List.styles';
 
 export const container = css({
   maxWidth: '80ch',
 
-  [`& .${HeadingStyles.container()}`]: {
+  [`& > .${HeadingStyles.container()}`]: {
     '&[data-level="1"]': {
       mb: '$regular',
     },
@@ -23,7 +24,10 @@ export const container = css({
       mb: 0,
     },
   },
-  [`& .${ParagraphStyles.container()}`]: {
+  [`& > .${ParagraphStyles.container()}`]: {
     mb: '$large',
   },
+  [`& .${ListStyles.container()}:not(.${ListStyles.container()} .${ListStyles.container()})`]: {
+    mb: '$large',
+  }
 });
