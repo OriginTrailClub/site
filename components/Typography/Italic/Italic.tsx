@@ -1,11 +1,11 @@
 import * as Styles from './Italic.styles';
 
 export type ItalicProps = {
-    children: React.ReactNode;
-}
+  children: React.ReactNode;
+};
 
 export function Italic(props: ItalicProps) {
-    const { children } = props;
+  const { children } = props;
 
-    return (<em className={Styles.container()}>{children}</em>);
+  return <em className={Styles.container()}>{children}</em>;
 }

@@ -17,31 +17,31 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
-    <Head>
-      <meta name="robots" content="noindex" />
-    </Head>
-    <I18nProvider locale="en-US">
-      <SSRProvider>
-        <PageLayout>
-          <PageLayout.Header
-            CallToAction={
-              <Button
-                label="Donate"
-                Icon={BankFillIcon}
-                href="https://donate.origintrail.club"
-                as="a"
-                target="_blank"
-                rel="noopener noreferrer"
-              />
-            }
-          />
-          <PageLayout.Content>
-            <Component {...pageProps} />
-          </PageLayout.Content>
-          <PageLayout.Footer />
-        </PageLayout>
-      </SSRProvider>
-    </I18nProvider>
+      <Head>
+        <meta name="robots" content="noindex" />
+      </Head>
+      <I18nProvider locale="en-US">
+        <SSRProvider>
+          <PageLayout>
+            <PageLayout.Header
+              CallToAction={
+                <Button
+                  label="Donate"
+                  Icon={BankFillIcon}
+                  href="https://donate.origintrail.club"
+                  as="a"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                />
+              }
+            />
+            <PageLayout.Content>
+              <Component {...pageProps} />
+            </PageLayout.Content>
+            <PageLayout.Footer />
+          </PageLayout>
+        </SSRProvider>
+      </I18nProvider>
     </>
   );
 }

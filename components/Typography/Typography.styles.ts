@@ -29,5 +29,5 @@ export const container = css({
   },
   [`& .${ListStyles.container()}:not(.${ListStyles.container()} .${ListStyles.container()})`]: {
     mb: '$large',
-  }
+  },
 });

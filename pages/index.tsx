@@ -100,10 +100,9 @@ const Home: NextPage<HomePageProps> = (props) => {
                 The world&apos;s first decentralized knowledge graph️
               </PageIntroBlock.Title>
               <PageIntroBlock.Description>
-                OriginTrail is a neutral web3 protocol for organizing your
-                most important assets - making them discoverable and
-                verifiable using a decentralized knowledge graph and
-                blockchain technology.
+                OriginTrail is a neutral web3 protocol for organizing your most
+                important assets - making them discoverable and verifiable using
+                a decentralized knowledge graph and blockchain technology.
               </PageIntroBlock.Description>
               <PageIntroBlock.Actions>
                 <PageIntroBlock.Action
@@ -202,10 +201,10 @@ const Home: NextPage<HomePageProps> = (props) => {
               </IntroBlock.Title>
               <IntroBlock.Description>
                 Organize, discover and verify anything - from physical to
-                digital assets. The Decentralized Knowledge Graph allows
-                data assets (like in supply chains, art, diplomas,
-                certificates, NFTs, DeFi, and more) to be structured,
-                linked, persistent, and understandable.
+                digital assets. The Decentralized Knowledge Graph allows data
+                assets (like in supply chains, art, diplomas, certificates,
+                NFTs, DeFi, and more) to be structured, linked, persistent, and
+                understandable.
               </IntroBlock.Description>
             </IntroBlock>
           </Grid.Item>
@@ -224,8 +223,7 @@ const Home: NextPage<HomePageProps> = (props) => {
                     Data silos and low data interoperability create major
                     technical challenges for providers that want to build
                     collaborative applications, especially for organisations
-                    that want to establish end-to-end supply chain
-                    transparency.
+                    that want to establish end-to-end supply chain transparency.
                   </SolutionsBlock.Description>
                 </SolutionsBlock.Problem>
                 <SolutionsBlock.Solution>
@@ -238,10 +236,10 @@ const Home: NextPage<HomePageProps> = (props) => {
                   </SolutionsBlock.Title>
                   <SolutionsBlock.Description>
                     OriginTrail is built on globally recognized GS1 and W3C
-                    standards which allow for efficient alignment of data
-                    from multiple data sources. It enables seamless and
-                    automatic data connection and interoperability between
-                    legacy (ERP) systems.
+                    standards which allow for efficient alignment of data from
+                    multiple data sources. It enables seamless and automatic
+                    data connection and interoperability between legacy (ERP)
+                    systems.
                   </SolutionsBlock.Description>
                 </SolutionsBlock.Solution>
               </SolutionsBlock.Case>
@@ -255,11 +253,11 @@ const Home: NextPage<HomePageProps> = (props) => {
                     Cost and scalability of blockchains
                   </SolutionsBlock.Title>
                   <SolutionsBlock.Description>
-                    Existing blockchain solutions are expensive when it
-                    comes to data operations and lack adequate database
-                    properties. Any solution wishing to integrate blockchain
-                    needs to overcome the problem of handling interoperable
-                    data and the high cost.
+                    Existing blockchain solutions are expensive when it comes to
+                    data operations and lack adequate database properties. Any
+                    solution wishing to integrate blockchain needs to overcome
+                    the problem of handling interoperable data and the high
+                    cost.
                   </SolutionsBlock.Description>
                 </SolutionsBlock.Problem>
                 <SolutionsBlock.Solution>
@@ -272,10 +270,9 @@ const Home: NextPage<HomePageProps> = (props) => {
                   </SolutionsBlock.Title>
                   <SolutionsBlock.Description>
                     OriginTrail does all the heavy lifting off-chain by
-                    leveraging powerful graph data structures which allow
-                    for high flexibility and (inter)connectivity of data.
-                    Its open-source nature enables easy and efficient
-                    deployment.
+                    leveraging powerful graph data structures which allow for
+                    high flexibility and (inter)connectivity of data. Its
+                    open-source nature enables easy and efficient deployment.
                   </SolutionsBlock.Description>
                 </SolutionsBlock.Solution>
               </SolutionsBlock.Case>
@@ -290,10 +287,10 @@ const Home: NextPage<HomePageProps> = (props) => {
                   </SolutionsBlock.Title>
                   <SolutionsBlock.Description>
                     Current attempts to overcome data silos are done by
-                    aggregating data in a centralized way, prompting
-                    concerns about data integrity and omitting
-                    accountability. Centralization also allows for possible
-                    data tampering and collusion between parties.
+                    aggregating data in a centralized way, prompting concerns
+                    about data integrity and omitting accountability.
+                    Centralization also allows for possible data tampering and
+                    collusion between parties.
                   </SolutionsBlock.Description>
                 </SolutionsBlock.Problem>
                 <SolutionsBlock.Solution>
@@ -301,15 +298,13 @@ const Home: NextPage<HomePageProps> = (props) => {
                     src="/solutions/data-immutability.png"
                     alt="Data immutability"
                   />
-                  <SolutionsBlock.Title>
-                    Data immutability
-                  </SolutionsBlock.Title>
+                  <SolutionsBlock.Title>Data immutability</SolutionsBlock.Title>
                   <SolutionsBlock.Description>
-                    OriginTrail harnesses the power of blockchain to create
-                    a tamper-proof &ldquo;fingerprint&rdquo; (a
-                    cryptographic hash) which is used to prove that data has
-                    not been modified in any way. OriginTrail is being built
-                    to support many different blockchain implementations.
+                    OriginTrail harnesses the power of blockchain to create a
+                    tamper-proof &ldquo;fingerprint&rdquo; (a cryptographic
+                    hash) which is used to prove that data has not been modified
+                    in any way. OriginTrail is being built to support many
+                    different blockchain implementations.
                   </SolutionsBlock.Description>
                 </SolutionsBlock.Solution>
               </SolutionsBlock.Case>
@@ -323,11 +318,10 @@ const Home: NextPage<HomePageProps> = (props) => {
                     Sensitive data protection
                   </SolutionsBlock.Title>
                   <SolutionsBlock.Description>
-                    Companies are often reluctant to exchange data with
-                    other companies as they are concerned this might
-                    undermine their competitive position. Exchange of data
-                    is often enforced by power asymmetry or done because of
-                    regulatory reasons.{' '}
+                    Companies are often reluctant to exchange data with other
+                    companies as they are concerned this might undermine their
+                    competitive position. Exchange of data is often enforced by
+                    power asymmetry or done because of regulatory reasons.{' '}
                   </SolutionsBlock.Description>
                 </SolutionsBlock.Problem>
                 <SolutionsBlock.Solution>
@@ -339,11 +333,11 @@ const Home: NextPage<HomePageProps> = (props) => {
                     Privacy by default
                   </SolutionsBlock.Title>
                   <SolutionsBlock.Description>
-                    Data creators can set the data to be public or private,
-                    have data expire after a certain amount of time, or have
-                    that data (or parts of it) shared only with appropriate
-                    parties. Sensitive data is protected using
-                    “zero-knowledge” encryption methods.{' '}
+                    Data creators can set the data to be public or private, have
+                    data expire after a certain amount of time, or have that
+                    data (or parts of it) shared only with appropriate parties.
+                    Sensitive data is protected using “zero-knowledge”
+                    encryption methods.{' '}
                   </SolutionsBlock.Description>
                 </SolutionsBlock.Solution>
               </SolutionsBlock.Case>
@@ -358,10 +352,9 @@ const Home: NextPage<HomePageProps> = (props) => {
                 The data backbone of web3, built for global use
               </IntroBlock.Title>
               <IntroBlock.Description>
-                The OriginTrail protocol is used by organizations of all
-                shapes and sizes for building every kind of application
-                imaginable that requires trust, data integrity and
-                interoperability.
+                The OriginTrail protocol is used by organizations of all shapes
+                and sizes for building every kind of application imaginable that
+                requires trust, data integrity and interoperability.
               </IntroBlock.Description>
             </IntroBlock>
           </Grid.Item>
@@ -370,8 +363,8 @@ const Home: NextPage<HomePageProps> = (props) => {
               <UseCaseBlock.Case value="Supply Chains">
                 <UseCaseBlock.Title>Supply Chains</UseCaseBlock.Title>
                 <UseCaseBlock.Description>
-                  Increase transparency, safety, and financial performance
-                  from seed to table
+                  Increase transparency, safety, and financial performance from
+                  seed to table
                 </UseCaseBlock.Description>
                 <UseCaseBlock.Image
                   src="/use-cases/supply-chain.png"
@@ -390,9 +383,7 @@ const Home: NextPage<HomePageProps> = (props) => {
                 />
               </UseCaseBlock.Case>
               <UseCaseBlock.Case value="Decentralized Finance">
-                <UseCaseBlock.Title>
-                  Decentralized Finance
-                </UseCaseBlock.Title>
+                <UseCaseBlock.Title>Decentralized Finance</UseCaseBlock.Title>
                 <UseCaseBlock.Description>
                   Collateralizing real world assets or querying real world
                   events for use within finance
@@ -405,8 +396,8 @@ const Home: NextPage<HomePageProps> = (props) => {
               <UseCaseBlock.Case value="Data Marketplace">
                 <UseCaseBlock.Title>Data Marketplace</UseCaseBlock.Title>
                 <UseCaseBlock.Description>
-                  Provide open-source infrastructure that encourages fair
-                  data exchange
+                  Provide open-source infrastructure that encourages fair data
+                  exchange
                 </UseCaseBlock.Description>
                 <UseCaseBlock.Image
                   src="/use-cases/data-marketplace.png"
@@ -440,9 +431,7 @@ const Home: NextPage<HomePageProps> = (props) => {
                 />
               </UseCaseBlock.Case>
               <UseCaseBlock.Case value="Pharmaceutical Industry">
-                <UseCaseBlock.Title>
-                  Pharmaceutical Industry
-                </UseCaseBlock.Title>
+                <UseCaseBlock.Title>Pharmaceutical Industry</UseCaseBlock.Title>
                 <UseCaseBlock.Description>
                   Fight fraud, power serialisation, and ensure compliance
                 </UseCaseBlock.Description>
@@ -456,8 +445,7 @@ const Home: NextPage<HomePageProps> = (props) => {
                   Personal Data Management
                 </UseCaseBlock.Title>
                 <UseCaseBlock.Description>
-                  Take back control over personal data while enabling
-                  compliance
+                  Take back control over personal data while enabling compliance
                 </UseCaseBlock.Description>
                 <UseCaseBlock.Image
                   src="/use-cases/personal-data.png"
@@ -494,10 +482,9 @@ const Home: NextPage<HomePageProps> = (props) => {
               </IntroBlock.Title>
               <IntroBlock.Description>
                 The OriginTrail Decentralized Network (ODN) is a global
-                peer-to-peer network that is permissionless and
-                decentralized. The protocol combines knowledge graph and
-                blockchain technology and is build with interoperability and
-                global standards in mind.
+                peer-to-peer network that is permissionless and decentralized.
+                The protocol combines knowledge graph and blockchain technology
+                and is build with interoperability and global standards in mind.
               </IntroBlock.Description>
             </IntroBlock>
           </Grid.Item>
@@ -541,9 +528,9 @@ const Home: NextPage<HomePageProps> = (props) => {
                 <ArticleBlock.Description>
                   The $TRAC token is a means of compensation between data
                   creators, data holders, and data consumers. It uses an
-                  innovative staking system to keep all parties honest.
-                  Nodes are therefore incentivized for performing consensus
-                  checks and delivering data on demand.
+                  innovative staking system to keep all parties honest. Nodes
+                  are therefore incentivized for performing consensus checks and
+                  delivering data on demand.
                 </ArticleBlock.Description>
                 <ArticleBlock.Action
                   label="Token Utility"
@@ -571,8 +558,8 @@ const Home: NextPage<HomePageProps> = (props) => {
                   Data Providers
                 </ParticipantsBlock.Title>
                 <ParticipantsBlock.Description>
-                  An entity that publishes ERP or other data to the
-                  OriginTrail Decentralized Network (ODN)
+                  An entity that publishes ERP or other data to the OriginTrail
+                  Decentralized Network (ODN)
                 </ParticipantsBlock.Description>
               </ParticipantsBlock.Participant>
               <ParticipantsBlock.Participant value="Data Creators">
@@ -580,12 +567,10 @@ const Home: NextPage<HomePageProps> = (props) => {
                   src="/participants/data-creator.png"
                   alt="Data Creators"
                 />
-                <ParticipantsBlock.Title>
-                  Data Creators
-                </ParticipantsBlock.Title>
+                <ParticipantsBlock.Title>Data Creators</ParticipantsBlock.Title>
                 <ParticipantsBlock.Description>
-                  An entity that is responsible for correctly importing the
-                  data from the data provider
+                  An entity that is responsible for correctly importing the data
+                  from the data provider
                 </ParticipantsBlock.Description>
               </ParticipantsBlock.Participant>
               <ParticipantsBlock.Participant value="Data Holders">
@@ -593,12 +578,10 @@ const Home: NextPage<HomePageProps> = (props) => {
                   src="/participants/data-holder.png"
                   alt="Data Holders"
                 />
-                <ParticipantsBlock.Title>
-                  Data Holders
-                </ParticipantsBlock.Title>
+                <ParticipantsBlock.Title>Data Holders</ParticipantsBlock.Title>
                 <ParticipantsBlock.Description>
-                  An entity that commits to storing and holding the data for
-                  a certain period of time
+                  An entity that commits to storing and holding the data for a
+                  certain period of time
                 </ParticipantsBlock.Description>
               </ParticipantsBlock.Participant>
               <ParticipantsBlock.Participant value="Data Viewers">
@@ -606,12 +589,10 @@ const Home: NextPage<HomePageProps> = (props) => {
                   src="/participants/data-viewer.png"
                   alt="Data Viewers"
                 />
-                <ParticipantsBlock.Title>
-                  Data Viewers
-                </ParticipantsBlock.Title>
+                <ParticipantsBlock.Title>Data Viewers</ParticipantsBlock.Title>
                 <ParticipantsBlock.Description>
-                  An entity that requests data from any of the available
-                  nodes in the ODN network
+                  An entity that requests data from any of the available nodes
+                  in the ODN network
                 </ParticipantsBlock.Description>
               </ParticipantsBlock.Participant>
             </ParticipantsBlock>
@@ -625,9 +606,9 @@ const Home: NextPage<HomePageProps> = (props) => {
                 Flagship products built with OriginTrail
               </IntroBlock.Title>
               <IntroBlock.Description>
-                OriginTrail already powers trusted data exchange in
-                different industries - including Fortune 500 companies -
-                bringing value to users and companies around the world.
+                OriginTrail already powers trusted data exchange in different
+                industries - including Fortune 500 companies - bringing value to
+                users and companies around the world.
               </IntroBlock.Description>
               <IntroBlock.Action
                 label="Use cases"
@@ -654,11 +635,11 @@ const Home: NextPage<HomePageProps> = (props) => {
                   <ProductsBlock.Description>
                     BSI is using the OriginTrail protocol to safeguard the
                     validity of issued training certificates and business
-                    standards. OriginTrail-based applications developed for
-                    BSI enable quick validity checks for any document by
-                    cross-referencing trusted data. This data is stored on
-                    the OriginTrail Decentralized Network, which is
-                    connected to the Ethereum blockchain.
+                    standards. OriginTrail-based applications developed for BSI
+                    enable quick validity checks for any document by
+                    cross-referencing trusted data. This data is stored on the
+                    OriginTrail Decentralized Network, which is connected to the
+                    Ethereum blockchain.
                   </ProductsBlock.Description>
                   <ProductsBlock.Action
                     label="Case study"
@@ -681,13 +662,12 @@ const Home: NextPage<HomePageProps> = (props) => {
                     alt="Rail Travel Safety"
                   />
                   <ProductsBlock.Description>
-                    Ensuring the safety of train travel by tracking every
-                    piece of rail track material used by the Swiss Federal
-                    Railways. SBB is looking to move beyond the state of the
-                    art to ensure real-time availability of quality
-                    traceability information for individual parts involved
-                    in their systems to deliver one of the world&apos;s most
-                    reliable rail journeys.
+                    Ensuring the safety of train travel by tracking every piece
+                    of rail track material used by the Swiss Federal Railways.
+                    SBB is looking to move beyond the state of the art to ensure
+                    real-time availability of quality traceability information
+                    for individual parts involved in their systems to deliver
+                    one of the world&apos;s most reliable rail journeys.
                   </ProductsBlock.Description>
                   <ProductsBlock.Action
                     label="Case study"
@@ -710,13 +690,13 @@ const Home: NextPage<HomePageProps> = (props) => {
                     alt="trusted-bytes"
                   />
                   <ProductsBlock.Description>
-                    Trusted Bytes aims to use innovative digital technology
-                    to facilitate the flow of goods across the UK border,
-                    increasing efficiency, transparency, and security of the
-                    UK food sector. This will help to create proof of food
-                    provenance by digitizing critical border transfer
-                    processes while also providing seamless real-time
-                    digital connectivity to supply chain operators.
+                    Trusted Bytes aims to use innovative digital technology to
+                    facilitate the flow of goods across the UK border,
+                    increasing efficiency, transparency, and security of the UK
+                    food sector. This will help to create proof of food
+                    provenance by digitizing critical border transfer processes
+                    while also providing seamless real-time digital connectivity
+                    to supply chain operators.
                   </ProductsBlock.Description>
                   <ProductsBlock.Action
                     label="Press release"
@@ -741,13 +721,12 @@ const Home: NextPage<HomePageProps> = (props) => {
                   <ProductsBlock.Description>
                     The OriginTrail protocol is helping with the digital
                     transformation of the European countryside. European
-                    agriculture is on its way to become smarter, more
-                    efficient, and more sustainable through continuous
-                    digital innovation and research. As part of this digital
-                    agricultural revolution, the OriginTrail protocol is
-                    supporting several trusted agri-food supply chain
-                    solutions within Europe-wide research and innovation
-                    consortia.
+                    agriculture is on its way to become smarter, more efficient,
+                    and more sustainable through continuous digital innovation
+                    and research. As part of this digital agricultural
+                    revolution, the OriginTrail protocol is supporting several
+                    trusted agri-food supply chain solutions within Europe-wide
+                    research and innovation consortia.
                   </ProductsBlock.Description>
                   <ProductsBlock.Action
                     label="Case study"
@@ -773,13 +752,12 @@ const Home: NextPage<HomePageProps> = (props) => {
                     BSI and SCAN are utilizing the OriginTrail protocol to
                     ensure the integrity of security audits for some of the
                     largest US importers. Today, SCAN has more than 21,300
-                    factories in its database, with several hundred new
-                    audits conducted monthly. All of the audits are secured
-                    utilizing the OriginTrail Decentralized Network and
-                    comply with SCAN&apos;s rigorous data privacy
-                    requirements. With flexible data permissions, the
-                    solution enables SCAN to share data with government
-                    agencies such as CTPAT.
+                    factories in its database, with several hundred new audits
+                    conducted monthly. All of the audits are secured utilizing
+                    the OriginTrail Decentralized Network and comply with
+                    SCAN&apos;s rigorous data privacy requirements. With
+                    flexible data permissions, the solution enables SCAN to
+                    share data with government agencies such as CTPAT.
                   </ProductsBlock.Description>
                   <ProductsBlock.Action
                     label="Case study"
@@ -802,15 +780,15 @@ const Home: NextPage<HomePageProps> = (props) => {
                     alt="AidTrust"
                   />
                   <ProductsBlock.Description>
-                    AidTrust brings visibility and trust to the distribution
-                    of donated medicines. Bringing together BSI&apos;s
-                    global footprint, expertise in management systems and
-                    supply chain risk management best practice, with the
-                    OriginTrail Decentralized Knowledge Graph developed by
-                    our technology partner Trace Labs, AidTrust enables
-                    visibility, risk flags, real-time decision-making, while
-                    maintaining data integrity, security and privacy, on all
-                    medicines at all stages of the supply chain.
+                    AidTrust brings visibility and trust to the distribution of
+                    donated medicines. Bringing together BSI&apos;s global
+                    footprint, expertise in management systems and supply chain
+                    risk management best practice, with the OriginTrail
+                    Decentralized Knowledge Graph developed by our technology
+                    partner Trace Labs, AidTrust enables visibility, risk flags,
+                    real-time decision-making, while maintaining data integrity,
+                    security and privacy, on all medicines at all stages of the
+                    supply chain.
                   </ProductsBlock.Description>
                   <ProductsBlock.Action
                     label="Case study"
@@ -839,14 +817,8 @@ const Home: NextPage<HomePageProps> = (props) => {
                   src="/ecosystem/acala.png"
                   alt="Acala"
                 />
-                <CompaniesBlock.Company
-                  src="/ecosystem/sbb.png"
-                  alt="SBB"
-                />
-                <CompaniesBlock.Company
-                  src="/ecosystem/scan.png"
-                  alt="Scan"
-                />
+                <CompaniesBlock.Company src="/ecosystem/sbb.png" alt="SBB" />
+                <CompaniesBlock.Company src="/ecosystem/scan.png" alt="Scan" />
                 <CompaniesBlock.Company
                   src="/ecosystem/wef.png"
                   alt="World economic forum"
@@ -871,11 +843,11 @@ const Home: NextPage<HomePageProps> = (props) => {
                 />
                 <QuotesBlock.Quote>
                   <QuotesBlock.Description>
-                    “The early Metcalfe&apos;s Law talked about the
-                    connection of machines and how valuable PCs would be
-                    connected, Facebook made it all about connecting people
-                    together, what OriginTrail is working on is connectivity
-                    of data and the value that can be derived from that.”
+                    “The early Metcalfe&apos;s Law talked about the connection
+                    of machines and how valuable PCs would be connected,
+                    Facebook made it all about connecting people together, what
+                    OriginTrail is working on is connectivity of data and the
+                    value that can be derived from that.”
                   </QuotesBlock.Description>
                   <QuotesBlock.Caption>
                     <QuotesBlock.Author name="Bob Metcalfe" />
@@ -890,11 +862,10 @@ const Home: NextPage<HomePageProps> = (props) => {
                 />
                 <QuotesBlock.Quote>
                   <QuotesBlock.Description>
-                    “Identity is not just for people—but for every supply
-                    chain to track the origin and provenance of our food,
-                    drinks, and vaccines. OriginTrail makes the identity of
-                    things secure and transparent through blockchain
-                    technology.”
+                    “Identity is not just for people—but for every supply chain
+                    to track the origin and provenance of our food, drinks, and
+                    vaccines. OriginTrail makes the identity of things secure
+                    and transparent through blockchain technology.”
                   </QuotesBlock.Description>
                   <QuotesBlock.Caption>
                     <QuotesBlock.Author name="Gregg Kidd" />
@@ -912,8 +883,8 @@ const Home: NextPage<HomePageProps> = (props) => {
                     “We&apos;ve been working with OriginTrail since 2018.
                     Digital trust is very important to us, OriginTrail and
                     blockchain technology help us verify claims in a very
-                    immutable way. It&apos;s a great strategic partnership
-                    and we plan on growing it.”
+                    immutable way. It&apos;s a great strategic partnership and
+                    we plan on growing it.”
                   </QuotesBlock.Description>
                   <QuotesBlock.Caption>
                     <QuotesBlock.Author name="Dan Purtell" />
@@ -930,9 +901,8 @@ const Home: NextPage<HomePageProps> = (props) => {
                   <QuotesBlock.Description>
                     “Very excited to be joining the advisory board of Trace
                     Labs, though I feel like Greg Hirsch in the company of
-                    Kendall and Roman Roy. Don&apos;t @ me, it&apos;s the
-                    only standing-alongside-giants analogy I could come up
-                    with”
+                    Kendall and Roman Roy. Don&apos;t @ me, it&apos;s the only
+                    standing-alongside-giants analogy I could come up with”
                   </QuotesBlock.Description>
                   <QuotesBlock.Caption>
                     <QuotesBlock.Author name="Aaron Bradley" />
@@ -953,8 +923,8 @@ const Home: NextPage<HomePageProps> = (props) => {
               <IntroBlock.Description>
                 OriginTrail is not a company. It is an ecosystem in which
                 everyone can contribute. We are connected on so many levels.
-                Let&apos;s collaborate, learn, contribute, and spread the
-                word. Together.
+                Let&apos;s collaborate, learn, contribute, and spread the word.
+                Together.
               </IntroBlock.Description>
             </IntroBlock>
           </Grid.Item>
