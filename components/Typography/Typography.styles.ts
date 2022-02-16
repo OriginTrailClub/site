@@ -8,13 +8,13 @@ export const container = css({
 
   [`& .${HeadingStyles.container()}`]: {
     '&[data-level="1"]': {
-      mb: 0,
+      mb: '$regular',
     },
     '&[data-level="2"]': {
-      mb: 0,
+      mb: '$regular',
     },
     '&[data-level="3"]': {
-      mb: 0,
+      mb: '$small',
     },
     '&[data-level="4"]': {
       mb: 0,
@@ -24,6 +24,6 @@ export const container = css({
     },
   },
   [`& .${ParagraphStyles.container()}`]: {
-    mb: '1rem',
+    mb: '$large',
   },
 });
