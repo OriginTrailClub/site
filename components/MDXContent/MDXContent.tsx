@@ -14,6 +14,9 @@ const components = {
   h3: (props: Omit<HeadingProps, 'level'>) => <Heading level={3} {...props} />,
   h4: (props: Omit<HeadingProps, 'level'>) => <Heading level={4} {...props} />,
 
+  h5: () => null,
+  h6: () => null,
+
   ul: (props: Omit<ListProps, 'style'>) => <List {...props} />,
   ol: (props: Omit<ListProps, 'style'>) => <List style="ordered" {...props} />,
   li: (props: ListItemProps) => <List.Item {...props} />,
