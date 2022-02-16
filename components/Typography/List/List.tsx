@@ -4,7 +4,7 @@ import { ListItem } from "./ListItem";
 
 export type ListProps = {
     children: React.ReactNode;
-    style: 'unordered' | 'ordered';
+    style?: 'unordered' | 'ordered';
 }
 
 export function List(props: ListProps) {
