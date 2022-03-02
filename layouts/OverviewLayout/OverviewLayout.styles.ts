@@ -16,7 +16,6 @@ export const contents = css({
    "title      "
    "sidebar    "
    "content    "
-   "navigation "
   `,
 
   '@bp3': {
@@ -24,7 +23,6 @@ export const contents = css({
     "breadcrumbs breadcrumbs"
     "title       title      "
     "content     sidebar    "
-    "navigation  .          "
    `,
     gridTemplateColumns:
       'min(calc(100% / 5 * 3), 80ch) 1fr',

@@ -15,9 +15,9 @@ export const contents = css({
    "breadcrumbs"
    "title      "
    "content    "
-   "sidebar    "
    "navigation "
   `,
+  gridTemplateColumns: '1fr',
 
   '@bp3': {
     gridTemplateAreas: `
@@ -27,7 +27,13 @@ export const contents = css({
     "navigation  .          "
    `,
     gridTemplateColumns:
-      'minmax(calc(100% / 3 * 2), 80ch) min(calc(100% / 3 * 1), 340px)',
-    gridColumnGap: '$large',
+      'min(calc(100% / 5 * 3), 80ch) 1fr',
+    gridColumnGap: '$large',    
+  },
+
+  '@bp4': {
+    gridTemplateColumns:
+      'min(calc(100% / 3 * 2), 80ch) 1fr',
+    gridColumnGap: '$x-large',
   },
 });
