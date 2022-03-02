@@ -5,6 +5,7 @@ import { css } from 'stitches.config';
 export const container = css({
   display: 'flex',
   flexDirection: 'row',
+  flexWrap: 'wrap',
   listStyleType: 'none',
 
   p: '$none',
@@ -15,6 +16,10 @@ export const container = css({
 
     '&:last-of-type': {
       pr: '$none',
+
+      [`.${BreadcrumbsBreadcrumbStyles.icon()}`]: {
+        display: 'none',
+      }
     },
   },
 });
