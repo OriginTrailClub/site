@@ -27,15 +27,15 @@ export type CourseLessons = CourseLessonsSection[];
 export type CourseContent = MDXRemoteSerializeResult;
 
 export type CourseLessonMeta = {
-    title: string;
-    slug: string;
-}
+  title: string;
+  slug: string;
+};
 
 export type CourseLessonContent = MDXRemoteSerializeResult;
 
 export type CourseLessonHeading = {
-    label: string;
-    slug: string;  
-}
+  label: string;
+  slug: string;
+};
 
 export type CourseLessonHeadings = CourseLessonHeading[];

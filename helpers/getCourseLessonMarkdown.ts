@@ -26,8 +26,5 @@ export const getCourseLessonMarkdown = async (params: {
     return null;
   }
 
-  return fs.readFileSync(
-    path.join(lessonDirectory, lessonFile),
-    'utf-8'
-  );
+  return fs.readFileSync(path.join(lessonDirectory, lessonFile), 'utf-8');
 };

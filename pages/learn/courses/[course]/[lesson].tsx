@@ -6,7 +6,12 @@ import { getLessons } from 'helpers/getLessons';
 import { getCourseLessonMeta } from 'helpers/getCourseLessonMeta';
 import { getCourseLessonContent } from 'helpers/getCourseLessonContent';
 import { getCourseLessonHeadings } from 'helpers/getCourseLessonHeadings';
-import { CourseMeta, CourseLessonMeta, CourseLessonContent, CourseLessonHeadings } from 'helpers/types';
+import {
+  CourseMeta,
+  CourseLessonMeta,
+  CourseLessonContent,
+  CourseLessonHeadings,
+} from 'helpers/types';
 
 import { MDXContent } from 'components/MDXContent';
 
@@ -16,18 +21,20 @@ import { getCourseMeta } from 'helpers/getCourseMeta';
 
 interface LessonPageProps {
   lesson: {
-    meta: CourseLessonMeta
-    content: CourseLessonContent
-    headings: CourseLessonHeadings
+    meta: CourseLessonMeta;
+    content: CourseLessonContent;
+    headings: CourseLessonHeadings;
   };
   course: {
-    meta: CourseMeta
-  }
+    meta: CourseMeta;
+  };
 }
 
 export const getStaticProps = async ({
   params,
-}: { params: { course: string, lesson: string } }) => {
+}: {
+  params: { course: string; lesson: string };
+}) => {
   const lessonMeta = await getCourseLessonMeta(params);
   const lessonContent = await getCourseLessonContent(params);
   const lessonHeadings = await getCourseLessonHeadings(params);
@@ -117,10 +124,7 @@ const LessonPage: NextPage<LessonPageProps> = (props) => {
             <PageContentBlock.Links>
               {headings.map(({ label, slug }) => (
                 <Link href={`#${slug}`} key={slug} passHref replace>
-                  <PageContentBlock.Link
-                    href={`#${slug}`}
-                    label={label}
-                  />
+                  <PageContentBlock.Link href={`#${slug}`} label={label} />
                 </Link>
               ))}
             </PageContentBlock.Links>

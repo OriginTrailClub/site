@@ -1,4 +1,7 @@
-import { Breadcrumbs, BreadcrumbsBreadcrumbProps } from 'components/Breadcrumbs';
+import {
+  Breadcrumbs,
+  BreadcrumbsBreadcrumbProps,
+} from 'components/Breadcrumbs';
 
 export type ContentLayoutBreadcrumbProps = BreadcrumbsBreadcrumbProps;
 
