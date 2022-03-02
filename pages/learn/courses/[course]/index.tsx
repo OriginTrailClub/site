@@ -3,23 +3,21 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 import { getCourses } from 'helpers/getCourses';
-import { getCourse, CourseSection } from 'helpers/getCourse';
+import { getCourseMeta } from 'helpers/getCourseMeta';
+import { getCourseContent } from 'helpers/getCourseContent';
+import { getCourseLessons } from 'helpers/getCourseLessons';
+import { CourseLessons, CourseContent, CourseMeta } from 'helpers/types';
+
 import { ContentLayout } from 'layouts/ContentLayout/ContentLayout';
 import { MDXContent } from 'components/MDXContent';
-import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 import { CourseSidebarBlock } from 'layouts/Blocks/CourseSidebarBlock';
 import ArrowRightLineIcon from 'remixicon-react/ArrowRightLineIcon';
 
 type Course = {
-  content: MDXRemoteSerializeResult;
-  toc: CourseSection[];
-  data: {
-    banner: string;
-    subject: string;
-    author: string;
-    description: string;
-  };
+  content: CourseContent;
+  lessons: CourseLessons;
+  meta: CourseMeta;
 };
 
 interface CoursePageProps {
@@ -32,12 +30,17 @@ export const getStaticProps = async ({
 }: {
   params: CoursePageProps['params'];
 }) => {
-  const course = await getCourse(params.course);
+  const courseMeta = await getCourseMeta(params.course);
+  const courseLessons = await getCourseLessons(params.course);
+  const courseContent = await getCourseContent(params.course);
 
   return {
     props: {
-      params,
-      course,
+      course: {
+        meta: courseMeta,
+        lessons: courseLessons,
+        content: courseContent,
+      },
     },
   };
 };
@@ -46,7 +49,7 @@ export const getStaticPaths = async () => {
   const courses = await getCourses();
 
   return {
-    paths: courses.map(({ params: { slug } }) => ({
+    paths: courses.map(({ slug }) => ({
       params: {
         course: slug,
       },
@@ -57,8 +60,8 @@ export const getStaticPaths = async () => {
 
 const CoursePage: NextPage<CoursePageProps> = (props) => {
   const { course } = props;
-  const { data, toc, content } = course;
-  const { subject } = data;
+  const { meta, lessons, content } = course;
+  const { subject, slug } = meta;
 
   return (
     <>
@@ -66,6 +69,27 @@ const CoursePage: NextPage<CoursePageProps> = (props) => {
         <meta name="robots" content="noindex" />
       </Head>
       <ContentLayout>
+        <ContentLayout.Breadcrumbs>
+          <Link
+            href={{
+              pathname: '/learn',
+            }}
+            passHref
+          >
+            <ContentLayout.Breadcrumb label="Learn" />
+          </Link>
+          <Link
+            href={{
+              pathname: '/learn/courses/[course]',
+              query: {
+                course: slug,
+              },
+            }}
+            passHref
+          >
+            <ContentLayout.Breadcrumb label={subject} />
+          </Link>
+        </ContentLayout.Breadcrumbs>
         <ContentLayout.Title>{subject}</ContentLayout.Title>
         <ContentLayout.Content>
           <MDXContent source={content} />
@@ -78,7 +102,7 @@ const CoursePage: NextPage<CoursePageProps> = (props) => {
               Icon={ArrowRightLineIcon}
             />
             <CourseSidebarBlock.Sections>
-              {toc.map((section) => (
+              {lessons.map((section) => (
                 <CourseSidebarBlock.Section
                   title={section.title}
                   icon="/courses/ot-101/section-title-icon.png"
@@ -90,7 +114,7 @@ const CoursePage: NextPage<CoursePageProps> = (props) => {
                       href={{
                         pathname: '/learn/courses/[course]/[lesson]',
                         query: {
-                          course: props.params.course,
+                          course: slug,
                           lesson: lesson.slug,
                         },
                       }}

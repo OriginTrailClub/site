@@ -1,49 +1,49 @@
 import type { NextPage } from 'next';
-import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import Head from 'next/head';
+import Link from 'next/link';
 
 import { getLessons } from 'helpers/getLessons';
-import { getLesson } from 'helpers/getLesson';
+import { getCourseLessonMeta } from 'helpers/getCourseLessonMeta';
+import { getCourseLessonContent } from 'helpers/getCourseLessonContent';
+import { getCourseLessonHeadings } from 'helpers/getCourseLessonHeadings';
+import { CourseMeta, CourseLessonMeta, CourseLessonContent, CourseLessonHeadings } from 'helpers/types';
 
 import { MDXContent } from 'components/MDXContent';
 
 import { ContentLayout } from 'layouts/ContentLayout/ContentLayout';
 import { PageContentBlock } from 'layouts/Blocks/PageContentBlock';
-
-type LessonHeading = {
-  label: string;
-  slug: string;
-};
-
-type Lesson = {
-  content: MDXRemoteSerializeResult;
-  data: {
-    title: string;
-  };
-  headings: LessonHeading[];
-};
+import { getCourseMeta } from 'helpers/getCourseMeta';
 
 interface LessonPageProps {
-  lesson: Lesson;
-  params: {
-    course: string;
-    lesson: string;
+  lesson: {
+    meta: CourseLessonMeta
+    content: CourseLessonContent
+    headings: CourseLessonHeadings
   };
+  course: {
+    meta: CourseMeta
+  }
 }
 
 export const getStaticProps = async ({
   params,
-}: {
-  params: LessonPageProps['params'];
-}) => {
-  const lesson = await getLesson({
-    course: params.course,
-    lesson: params.lesson,
-  });
+}: { params: { course: string, lesson: string } }) => {
+  const lessonMeta = await getCourseLessonMeta(params);
+  const lessonContent = await getCourseLessonContent(params);
+  const lessonHeadings = await getCourseLessonHeadings(params);
+
+  const courseMeta = await getCourseMeta(params.course);
 
   return {
     props: {
-      lesson,
+      lesson: {
+        meta: lessonMeta,
+        content: lessonContent,
+        headings: lessonHeadings,
+      },
+      course: {
+        meta: courseMeta,
+      },
     },
   };
 };
@@ -60,9 +60,13 @@ export const getStaticPaths = async () => {
 };
 
 const LessonPage: NextPage<LessonPageProps> = (props) => {
-  const { lesson } = props;
-  const { data, content, headings } = lesson;
-  const { title } = data;
+  const { lesson, course } = props;
+
+  const { meta: courseMeta } = course;
+  const { meta: lessonMeta, content, headings } = lesson;
+
+  const { slug: courseSlug, subject: courseSubject } = courseMeta;
+  const { slug: lessonSlug, title: lessonTitle } = lessonMeta;
 
   return (
     <>
@@ -70,7 +74,40 @@ const LessonPage: NextPage<LessonPageProps> = (props) => {
         <meta name="robots" content="noindex" />
       </Head>
       <ContentLayout>
-        <ContentLayout.Title>{title}</ContentLayout.Title>
+        <ContentLayout.Breadcrumbs>
+          <Link
+            href={{
+              pathname: '/learn',
+            }}
+            passHref
+          >
+            <ContentLayout.Breadcrumb label="Learn" />
+          </Link>
+          <Link
+            href={{
+              pathname: '/learn/courses/[course]',
+              query: {
+                course: courseSlug,
+              },
+            }}
+            passHref
+          >
+            <ContentLayout.Breadcrumb label={courseSubject} />
+          </Link>
+          <Link
+            href={{
+              pathname: '/learn/courses/[course]/[lesson]',
+              query: {
+                course: courseSlug,
+                lesson: lessonSlug,
+              },
+            }}
+            passHref
+          >
+            <ContentLayout.Breadcrumb label={lessonTitle} />
+          </Link>
+        </ContentLayout.Breadcrumbs>
+        <ContentLayout.Title>{lessonTitle}</ContentLayout.Title>
         <ContentLayout.Content>
           <MDXContent source={content} />
         </ContentLayout.Content>

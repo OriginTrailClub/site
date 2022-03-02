@@ -5,29 +5,18 @@ import Link from 'next/link';
 import ArrowRightLineIcon from 'remixicon-react/ArrowRightLineIcon';
 
 import { getCourses } from 'helpers/getCourses';
+import { Courses } from 'helpers/types';
 
 import { PageIntroBlock } from 'layouts/Blocks/PageIntroBlock';
 import { CoursesBlock } from 'layouts/Blocks/CoursesBlock';
 
 import { Grid } from 'components/Grid';
 
-type Course = {
-  params: {
-    slug: string;
-  };
-  data: {
-    banner: string;
-    subject: string;
-    author: string;
-    description: string;
-  };
-};
-
 interface LearnPageProps {
-  courses: Course[];
+  courses: Courses;
 }
 
-export const getStaticProps = async () => {
+export const getStaticProps = async ({}) => {
   const courses = await getCourses();
 
   return {
@@ -81,24 +70,24 @@ const LearnPage: NextPage<LearnPageProps> = (props) => {
                     href={{
                       pathname: '/learn/courses/[course]',
                       query: {
-                        course: course.params.slug,
+                        course: course.slug,
                       },
                     }}
                     passHref
-                    key={course.params.slug}
+                    key={course.slug}
                   >
                     <CoursesBlock.Course>
                       <CoursesBlock.Image
-                        src={course.data.banner}
-                        alt={course.data.subject}
+                        src={course.banner}
+                        alt={course.subject}
                       />
                       <CoursesBlock.Content>
                         <CoursesBlock.Subject>
-                          {course.data.subject}
+                          {course.subject}
                         </CoursesBlock.Subject>
-                        <CoursesBlock.Author name={course.data.author} />
+                        <CoursesBlock.Author name={course.author} />
                         <CoursesBlock.Description>
-                          {course.data.description}
+                          {course.description}
                         </CoursesBlock.Description>
                       </CoursesBlock.Content>
                     </CoursesBlock.Course>

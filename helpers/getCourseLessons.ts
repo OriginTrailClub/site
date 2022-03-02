@@ -2,27 +2,13 @@ import path from 'path';
 import fs from 'fs';
 
 import matter from 'gray-matter';
-import { serialize } from 'next-mdx-remote/serialize';
+
+import { CourseLessonsSection } from './types';
 
 const lessonRegex = new RegExp(/^(?<order>[0-9]+)-(?<slug>.*).mdx/);
 
-type CourseLesson = {
-  title: string;
-  slug: string;
-};
-
-export type CourseSection = {
-  title: string;
-  lessons: CourseLesson[];
-};
-
-export const getCourse = async (slug: string) => {
-  const courseDirectory = path.join(process.cwd(), 'courses', slug);
-
-  const markdownWithMeta = fs.readFileSync(
-    path.join(courseDirectory, 'index.mdx'),
-    'utf-8'
-  );
+export const getCourseLessons = async (course: string) => {
+  const courseDirectory = path.join(process.cwd(), 'courses', course);
 
   const fileNames = fs.readdirSync(courseDirectory);
 
@@ -57,7 +43,7 @@ export const getCourse = async (slug: string) => {
 
   let toc = [];
 
-  let curSection: CourseSection | undefined;
+  let curSection: CourseLessonsSection | undefined;
 
   for (let lesson of lessons) {
     if (!curSection || curSection.title !== lesson.section) {
@@ -75,13 +61,5 @@ export const getCourse = async (slug: string) => {
     });
   }
 
-  const { data, content } = matter(markdownWithMeta);
-
-  const source = await serialize(content, { scope: data });
-
-  return {
-    data,
-    content: source,
-    toc,
-  };
+  return toc;
 };

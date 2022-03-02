@@ -1,7 +1,8 @@
-import matter from 'gray-matter';
-
 import path from 'path';
 import fs from 'fs';
+
+import matter from 'gray-matter';
+import { slugify } from 'utils/slugify';
 
 export const getCourses = async () => {
   const coursesDirectory = path.join(process.cwd(), 'courses');
@@ -16,10 +17,8 @@ export const getCourses = async () => {
     const { data } = matter(markdownWithMeta);
 
     return {
-      params: {
-        slug: filename.replace(/\.mdx$/, ''),
-      },
-      data,
+      slug: slugify(data.subject),
+      ...data,
     };
   });
 };
