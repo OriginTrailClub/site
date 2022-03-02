@@ -7,7 +7,7 @@ import { PaginationPrevious } from './PaginationPrevious';
 import { PaginationCounter } from './PaginationCounter';
 
 export type BreadcrumbsProps = {
-  children: React.ReactElement | React.ReactElement[];
+  children: React.ReactNode;
   'aria-label'?: string;
 };
 

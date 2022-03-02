@@ -39,3 +39,10 @@ export type CourseLessonHeading = {
 };
 
 export type CourseLessonHeadings = CourseLessonHeading[];
+
+export type CourseLessonPagination = {
+  nextLessonSlug?: string;
+  totalLessons: number;
+  currentLessonIndex: number;
+  previousLessonSlug?: string;
+};

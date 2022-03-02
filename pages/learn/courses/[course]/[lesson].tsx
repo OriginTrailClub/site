@@ -13,11 +13,13 @@ import { getCourseMeta } from 'helpers/getCourseMeta';
 import { getCourseLessonMeta } from 'helpers/getCourseLessonMeta';
 import { getCourseLessonContent } from 'helpers/getCourseLessonContent';
 import { getCourseLessonHeadings } from 'helpers/getCourseLessonHeadings';
+import { getCourseLessonPagination } from 'helpers/getCourseLessonPagination';
 import {
   CourseMeta,
   CourseLessonMeta,
   CourseLessonContent,
   CourseLessonHeadings,
+  CourseLessonPagination,
 } from 'helpers/types';
 import { Pagination } from 'components/Pagination';
 
@@ -27,6 +29,7 @@ interface LessonPageProps {
     content: CourseLessonContent;
     headings: CourseLessonHeadings;
   };
+  pagination: CourseLessonPagination;
   course: {
     meta: CourseMeta;
   };
@@ -40,6 +43,7 @@ export const getStaticProps = async ({
   const lessonMeta = await getCourseLessonMeta(params);
   const lessonContent = await getCourseLessonContent(params);
   const lessonHeadings = await getCourseLessonHeadings(params);
+  const lessonPagination = await getCourseLessonPagination(params);
 
   const courseMeta = await getCourseMeta(params.course);
 
@@ -50,6 +54,7 @@ export const getStaticProps = async ({
         content: lessonContent,
         headings: lessonHeadings,
       },
+      pagination: lessonPagination,
       course: {
         meta: courseMeta,
       },
@@ -69,13 +74,19 @@ export const getStaticPaths = async () => {
 };
 
 const LessonPage: NextPage<LessonPageProps> = (props) => {
-  const { lesson, course } = props;
+  const { lesson, course, pagination } = props;
 
   const { meta: courseMeta } = course;
   const { meta: lessonMeta, content, headings } = lesson;
 
   const { slug: courseSlug, subject: courseSubject } = courseMeta;
   const { slug: lessonSlug, title: lessonTitle } = lessonMeta;
+  const {
+    previousLessonSlug,
+    nextLessonSlug,
+    totalLessons,
+    currentLessonIndex,
+  } = pagination;
 
   return (
     <>
@@ -136,31 +147,38 @@ const LessonPage: NextPage<LessonPageProps> = (props) => {
         </ContentLayout.Sidebar>
         <ContentLayout.Pagination>
           <Pagination>
-            <Link
-              href={{
-                pathname: '/learn/courses/[course]/[lesson]',
-                query: {
-                  course: courseSlug,
-                  lesson: lessonSlug,
-                },
-              }}
-              passHref
-            >
-              <Pagination.Previous label="Previous page" as="a" />
-            </Link>
-            <Pagination.Counter current={1} total={12} />
-            <Link
-              href={{
-                pathname: '/learn/courses/[course]/[lesson]',
-                query: {
-                  course: courseSlug,
-                  lesson: lessonSlug,
-                },
-              }}
-              passHref
-            >
-              <Pagination.Next label="Next page" as="a" />
-            </Link>
+            {previousLessonSlug ? (
+              <Link
+                href={{
+                  pathname: '/learn/courses/[course]/[lesson]',
+                  query: {
+                    course: courseSlug,
+                    lesson: previousLessonSlug,
+                  },
+                }}
+                passHref
+              >
+                <Pagination.Previous label="Previous page" as="a" />
+              </Link>
+            ) : null}
+            <Pagination.Counter
+              current={currentLessonIndex}
+              total={totalLessons}
+            />
+            {nextLessonSlug ? (
+              <Link
+                href={{
+                  pathname: '/learn/courses/[course]/[lesson]',
+                  query: {
+                    course: courseSlug,
+                    lesson: nextLessonSlug,
+                  },
+                }}
+                passHref
+              >
+                <Pagination.Next label="Next page" as="a" />
+              </Link>
+            ) : null}
           </Pagination>
         </ContentLayout.Pagination>
       </ContentLayout>
