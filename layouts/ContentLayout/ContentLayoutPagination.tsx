@@ -7,7 +7,5 @@ export interface ContentLayoutPaginationProps {
 export function ContentLayoutPagination(props: ContentLayoutPaginationProps) {
   const { children } = props;
 
-  return (
-    <div className={Styles.container()}>{children}</div>
-  );
+  return <div className={Styles.container()}>{children}</div>;
 }

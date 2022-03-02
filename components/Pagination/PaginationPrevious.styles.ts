@@ -1,9 +1,9 @@
 import { css } from 'stitches.config';
 
 export const container = css({
-    display: 'flex',
+  display: 'flex',
 
-    justifyContent: 'flex-start',
+  justifyContent: 'flex-start',
 
-    gridArea: 'previous',
+  gridArea: 'previous',
 });

@@ -146,9 +146,7 @@ const LessonPage: NextPage<LessonPageProps> = (props) => {
               }}
               passHref
             >
-              <Pagination.Previous label="Previous page"
-                as="a"
-              />
+              <Pagination.Previous label="Previous page" as="a" />
             </Link>
             <Pagination.Counter current={1} total={12} />
             <Link
@@ -161,9 +159,7 @@ const LessonPage: NextPage<LessonPageProps> = (props) => {
               }}
               passHref
             >
-              <Pagination.Next label="Next page"
-                as="a"
-              />
+              <Pagination.Next label="Next page" as="a" />
             </Link>
           </Pagination>
         </ContentLayout.Pagination>

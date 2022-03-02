@@ -15,9 +15,9 @@ export function Pagination(props: BreadcrumbsProps) {
   const { children, 'aria-label': ariaLabel = 'Pagination' } = props;
 
   return (
-      <nav aria-label={ariaLabel} className={Styles.container()}>
-          {children}
-      </nav>
+    <nav aria-label={ariaLabel} className={Styles.container()}>
+      {children}
+    </nav>
   );
 }
 
