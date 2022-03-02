@@ -136,9 +136,35 @@ const LessonPage: NextPage<LessonPageProps> = (props) => {
         </ContentLayout.Sidebar>
         <ContentLayout.Pagination>
           <Pagination>
-            <Pagination.Previous label="Previous page" />
+            <Link
+              href={{
+                pathname: '/learn/courses/[course]/[lesson]',
+                query: {
+                  course: courseSlug,
+                  lesson: lessonSlug,
+                },
+              }}
+              passHref
+            >
+              <Pagination.Previous label="Previous page"
+                as="a"
+              />
+            </Link>
             <Pagination.Counter current={1} total={12} />
-            <Pagination.Next label="Next page" />
+            <Link
+              href={{
+                pathname: '/learn/courses/[course]/[lesson]',
+                query: {
+                  course: courseSlug,
+                  lesson: lessonSlug,
+                },
+              }}
+              passHref
+            >
+              <Pagination.Next label="Next page"
+                as="a"
+              />
+            </Link>
           </Pagination>
         </ContentLayout.Pagination>
       </ContentLayout>

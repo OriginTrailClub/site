@@ -4,14 +4,16 @@ import ArrowLeftLineIcon from 'remixicon-react/ArrowLeftLineIcon';
 
 import { Button, ButtonProps } from 'components/Button';
 
-type PaginationPreviousProps = Partial<Pick<ButtonProps, 'label'>>;
+type PaginationPreviousProps = Omit<ButtonProps, 'variant' | 'hideLabel' | 'Icon'>;
 
 export function PaginationPrevious(props: PaginationPreviousProps) {
-    const { label = 'Previous' } = props;
+    const { label = 'Previous', ...otherProps } = props;
+
+    console.log(otherProps);
 
     return (
         <div className={Styles.container()}>
-            <Button label={label} variant="secondary" hideLabel Icon={ArrowLeftLineIcon} />
+            <Button {...otherProps} label={label} variant="secondary" hideLabel Icon={ArrowLeftLineIcon} />
         </div>
     );
 }
