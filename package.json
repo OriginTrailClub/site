@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@react-aria/accordion": "^3.0.0-alpha.2",
+    "@react-aria/breadcrumbs": "^3.1.7",
     "@react-aria/button": "^3.3.4",
     "@react-aria/dialog": "^3.1.4",
     "@react-aria/grid": "^3.1.0",

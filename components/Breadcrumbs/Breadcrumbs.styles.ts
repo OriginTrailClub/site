@@ -4,22 +4,26 @@ import { css } from 'stitches.config';
 
 export const container = css({
   display: 'flex',
+
+  m: '-$small',
+  p: 'calc($small / 2)',
+
+  [`.${BreadcrumbsBreadcrumbStyles.container()}`]: {
+    m: 'calc($small / 2)',
+    // pr: '$small',
+
+    // '&:last-of-type': {
+    //   pr: '$none',
+    // },
+  },
+});
+
+export const list = css({
+  display: 'flex',
   flexDirection: 'row',
   flexWrap: 'wrap',
   listStyleType: 'none',
 
   p: '$none',
   m: '$none',
-
-  [`.${BreadcrumbsBreadcrumbStyles.container()}`]: {
-    pr: '$small',
-
-    '&:last-of-type': {
-      pr: '$none',
-
-      [`.${BreadcrumbsBreadcrumbStyles.icon()}`]: {
-        display: 'none',
-      }
-    },
-  },
 });
