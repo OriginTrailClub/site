@@ -10,7 +10,7 @@ export function PageContentBlockLink(props: PageContentBlockLinkProps) {
 
   return (
     <li className={Styles.container()}>
-      <a href={href} className={Styles.link()}>
+      <a {...props} href={href} className={Styles.link()}>
         {label}
       </a>
     </li>

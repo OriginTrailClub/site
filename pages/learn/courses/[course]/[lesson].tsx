@@ -116,11 +116,12 @@ const LessonPage: NextPage<LessonPageProps> = (props) => {
             <PageContentBlock.Title>On this page</PageContentBlock.Title>
             <PageContentBlock.Links>
               {headings.map(({ label, slug }) => (
-                <PageContentBlock.Link
-                  key={slug}
-                  label={label}
-                  href={`#${slug}`}
-                />
+                <Link href={`#${slug}`} key={slug} passHref replace>
+                  <PageContentBlock.Link
+                    href={`#${slug}`}
+                    label={label}
+                  />
+                </Link>
               ))}
             </PageContentBlock.Links>
           </PageContentBlock>
