@@ -7,7 +7,7 @@ import ArrowRightLineIcon from 'remixicon-react/ArrowRightLineIcon';
 import { MDXContent } from 'components/MDXContent';
 import { Breadcrumbs } from 'components/Breadcrumbs';
 
-import { ContentLayout } from 'layouts/ContentLayout/ContentLayout';
+import { OverviewLayout } from 'layouts/OverviewLayout';
 import { CourseSidebarBlock } from 'layouts/Blocks/CourseSidebarBlock';
 
 import { getCourses } from 'helpers/getCourses';
@@ -70,8 +70,8 @@ const CoursePage: NextPage<CoursePageProps> = (props) => {
       <Head>
         <meta name="robots" content="noindex" />
       </Head>
-      <ContentLayout>
-        <ContentLayout.Breadcrumbs>
+      <OverviewLayout>
+        <OverviewLayout.Breadcrumbs>
           <Breadcrumbs>
             <Link
               href={{
@@ -93,12 +93,12 @@ const CoursePage: NextPage<CoursePageProps> = (props) => {
               <Breadcrumbs.Breadcrumb label={subject} />
             </Link>
           </Breadcrumbs>
-        </ContentLayout.Breadcrumbs>
-        <ContentLayout.Title>{subject}</ContentLayout.Title>
-        <ContentLayout.Content>
+        </OverviewLayout.Breadcrumbs>
+        <OverviewLayout.Title>{subject}</OverviewLayout.Title>
+        <OverviewLayout.Content>
           <MDXContent source={content} />
-        </ContentLayout.Content>
-        <ContentLayout.Sidebar>
+        </OverviewLayout.Content>
+        <OverviewLayout.Sidebar>
           <CourseSidebarBlock>
             <CourseSidebarBlock.Title>Content</CourseSidebarBlock.Title>
             <CourseSidebarBlock.Action
@@ -131,8 +131,8 @@ const CoursePage: NextPage<CoursePageProps> = (props) => {
               ))}
             </CourseSidebarBlock.Sections>
           </CourseSidebarBlock>
-        </ContentLayout.Sidebar>
-      </ContentLayout>
+        </OverviewLayout.Sidebar>
+      </OverviewLayout>
     </>
   );
 };
