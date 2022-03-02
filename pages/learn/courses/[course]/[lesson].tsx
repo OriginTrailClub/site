@@ -2,7 +2,14 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 
+import { Breadcrumbs } from 'components/Breadcrumbs';
+import { MDXContent } from 'components/MDXContent';
+
+import { ContentLayout } from 'layouts/ContentLayout/ContentLayout';
+import { PageContentBlock } from 'layouts/Blocks/PageContentBlock';
+
 import { getLessons } from 'helpers/getLessons';
+import { getCourseMeta } from 'helpers/getCourseMeta';
 import { getCourseLessonMeta } from 'helpers/getCourseLessonMeta';
 import { getCourseLessonContent } from 'helpers/getCourseLessonContent';
 import { getCourseLessonHeadings } from 'helpers/getCourseLessonHeadings';
@@ -12,12 +19,6 @@ import {
   CourseLessonContent,
   CourseLessonHeadings,
 } from 'helpers/types';
-
-import { MDXContent } from 'components/MDXContent';
-
-import { ContentLayout } from 'layouts/ContentLayout/ContentLayout';
-import { PageContentBlock } from 'layouts/Blocks/PageContentBlock';
-import { getCourseMeta } from 'helpers/getCourseMeta';
 
 interface LessonPageProps {
   lesson: {
@@ -82,37 +83,39 @@ const LessonPage: NextPage<LessonPageProps> = (props) => {
       </Head>
       <ContentLayout>
         <ContentLayout.Breadcrumbs>
-          <Link
-            href={{
-              pathname: '/learn',
-            }}
-            passHref
-          >
-            <ContentLayout.Breadcrumb label="Learn" />
-          </Link>
-          <Link
-            href={{
-              pathname: '/learn/courses/[course]',
-              query: {
-                course: courseSlug,
-              },
-            }}
-            passHref
-          >
-            <ContentLayout.Breadcrumb label={courseSubject} />
-          </Link>
-          <Link
-            href={{
-              pathname: '/learn/courses/[course]/[lesson]',
-              query: {
-                course: courseSlug,
-                lesson: lessonSlug,
-              },
-            }}
-            passHref
-          >
-            <ContentLayout.Breadcrumb label={lessonTitle} />
-          </Link>
+          <Breadcrumbs>
+            <Link
+              href={{
+                pathname: '/learn',
+              }}
+              passHref
+            >
+              <Breadcrumbs.Breadcrumb label="Learn" />
+            </Link>
+            <Link
+              href={{
+                pathname: '/learn/courses/[course]',
+                query: {
+                  course: courseSlug,
+                },
+              }}
+              passHref
+            >
+              <Breadcrumbs.Breadcrumb label={courseSubject} />
+            </Link>
+            <Link
+              href={{
+                pathname: '/learn/courses/[course]/[lesson]',
+                query: {
+                  course: courseSlug,
+                  lesson: lessonSlug,
+                },
+              }}
+              passHref
+            >
+              <Breadcrumbs.Breadcrumb label={lessonTitle} />
+            </Link>
+          </Breadcrumbs>
         </ContentLayout.Breadcrumbs>
         <ContentLayout.Title>{lessonTitle}</ContentLayout.Title>
         <ContentLayout.Content>

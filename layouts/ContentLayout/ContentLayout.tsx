@@ -3,10 +3,6 @@ import {
   ContentLayoutBreadcrumbsProps,
 } from './ContentLayoutBreadcrumbs';
 import {
-  ContentLayoutBreadcrumb,
-  ContentLayoutBreadcrumbProps,
-} from './ContentLayoutBreadcrumb';
-import {
   ContentLayoutTitle,
   ContentLayoutTitleProps,
 } from './ContentLayoutTitle';
@@ -27,7 +23,6 @@ import * as Styles from './ContentLayout.styles';
 
 type ContentLayoutElements = React.ReactElement<
   | ContentLayoutBreadcrumbsProps
-  | ContentLayoutBreadcrumbProps
   | ContentLayoutTitleProps
   | ContentLayoutContentProps
   | ContentLayoutSidebarProps
@@ -43,7 +38,6 @@ export interface PageLayoutProps {
 
 interface IPageLayoutComposition {
   Breadcrumbs: React.FC<ContentLayoutBreadcrumbsProps>;
-  Breadcrumb: React.FC<ContentLayoutBreadcrumbProps>;
   Title: React.FC<ContentLayoutTitleProps>;
   Content: React.FC<ContentLayoutContentProps>;
   Sidebar: React.FC<ContentLayoutSidebarProps>;
@@ -62,7 +56,6 @@ export const ContentLayout: React.FC<PageLayoutProps> &
 };
 
 ContentLayout.Breadcrumbs = ContentLayoutBreadcrumbs;
-ContentLayout.Breadcrumb = ContentLayoutBreadcrumb;
 ContentLayout.Title = ContentLayoutTitle;
 ContentLayout.Content = ContentLayoutContent;
 ContentLayout.Sidebar = ContentLayoutSidebar;

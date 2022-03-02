@@ -10,11 +10,6 @@ export const container = css({
 
   [`.${BreadcrumbsBreadcrumbStyles.container()}`]: {
     m: 'calc($small / 2)',
-    // pr: '$small',
-
-    // '&:last-of-type': {
-    //   pr: '$none',
-    // },
   },
 });
 

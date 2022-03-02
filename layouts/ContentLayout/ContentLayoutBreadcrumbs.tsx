@@ -1,17 +1,9 @@
 import React from 'react';
 
-import { Breadcrumbs } from 'components/Breadcrumbs';
-
 import * as Styles from './ContentLayoutBreadcrumbs.styles';
 
-import { ContentLayoutBreadcrumbProps } from './ContentLayoutBreadcrumb';
-
-type ContentLayoutBreadcrumbsElements = React.ReactElement<ContentLayoutBreadcrumbProps>;
-
 export interface ContentLayoutBreadcrumbsProps {
-  children:
-    | ContentLayoutBreadcrumbsElements
-    | ContentLayoutBreadcrumbsElements[];
+  children: React.ReactNode
 }
 
 export function ContentLayoutBreadcrumbs(props: ContentLayoutBreadcrumbsProps) {
@@ -19,7 +11,7 @@ export function ContentLayoutBreadcrumbs(props: ContentLayoutBreadcrumbsProps) {
 
   return (
     <div className={Styles.container()}>
-      <Breadcrumbs>{children}</Breadcrumbs>
+      {children}
     </div>
   );
 }

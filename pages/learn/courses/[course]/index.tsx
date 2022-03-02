@@ -2,17 +2,19 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 
+import ArrowRightLineIcon from 'remixicon-react/ArrowRightLineIcon';
+
+import { MDXContent } from 'components/MDXContent';
+import { Breadcrumbs } from 'components/Breadcrumbs';
+
+import { ContentLayout } from 'layouts/ContentLayout/ContentLayout';
+import { CourseSidebarBlock } from 'layouts/Blocks/CourseSidebarBlock';
+
 import { getCourses } from 'helpers/getCourses';
 import { getCourseMeta } from 'helpers/getCourseMeta';
 import { getCourseContent } from 'helpers/getCourseContent';
 import { getCourseLessons } from 'helpers/getCourseLessons';
 import { CourseLessons, CourseContent, CourseMeta } from 'helpers/types';
-
-import { ContentLayout } from 'layouts/ContentLayout/ContentLayout';
-import { MDXContent } from 'components/MDXContent';
-
-import { CourseSidebarBlock } from 'layouts/Blocks/CourseSidebarBlock';
-import ArrowRightLineIcon from 'remixicon-react/ArrowRightLineIcon';
 
 type Course = {
   content: CourseContent;
@@ -70,25 +72,27 @@ const CoursePage: NextPage<CoursePageProps> = (props) => {
       </Head>
       <ContentLayout>
         <ContentLayout.Breadcrumbs>
-          <Link
-            href={{
-              pathname: '/learn',
-            }}
-            passHref
-          >
-            <ContentLayout.Breadcrumb label="Learn" />
-          </Link>
-          <Link
-            href={{
-              pathname: '/learn/courses/[course]',
-              query: {
-                course: slug,
-              },
-            }}
-            passHref
-          >
-            <ContentLayout.Breadcrumb label={subject} />
-          </Link>
+          <Breadcrumbs>
+            <Link
+              href={{
+                pathname: '/learn',
+              }}
+              passHref
+            >
+              <Breadcrumbs.Breadcrumb label="Learn" />
+            </Link>
+            <Link
+              href={{
+                pathname: '/learn/courses/[course]',
+                query: {
+                  course: slug,
+                },
+              }}
+              passHref
+            >
+              <Breadcrumbs.Breadcrumb label={subject} />
+            </Link>
+          </Breadcrumbs>
         </ContentLayout.Breadcrumbs>
         <ContentLayout.Title>{subject}</ContentLayout.Title>
         <ContentLayout.Content>
