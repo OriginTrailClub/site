@@ -1,5 +1,7 @@
-export interface ContentLayoutBreadcrumbProps {}
+import { Breadcrumbs, BreadcrumbsBreadcrumbProps } from 'components/Breadcrumbs';
+
+export type ContentLayoutBreadcrumbProps = BreadcrumbsBreadcrumbProps;
 
 export function ContentLayoutBreadcrumb(props: ContentLayoutBreadcrumbProps) {
-  return null;
+  return <Breadcrumbs.Breadcrumb {...props} />;
 }
