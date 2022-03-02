@@ -12,8 +12,6 @@ type PaginationPreviousProps = Omit<
 export function PaginationPrevious(props: PaginationPreviousProps) {
   const { label = 'Previous', ...otherProps } = props;
 
-  console.log(otherProps);
-
   return (
     <div className={Styles.container()}>
       <Button
