@@ -19,6 +19,7 @@ import {
   CourseLessonContent,
   CourseLessonHeadings,
 } from 'helpers/types';
+import { Pagination } from 'components/Pagination';
 
 interface LessonPageProps {
   lesson: {
@@ -133,6 +134,13 @@ const LessonPage: NextPage<LessonPageProps> = (props) => {
             </PageContentBlock.Links>
           </PageContentBlock>
         </ContentLayout.Sidebar>
+        <ContentLayout.Pagination>
+          <Pagination>
+            <Pagination.Previous label="Previous page" />
+            <Pagination.Counter current={1} total={12} />
+            <Pagination.Next label="Next page" />
+          </Pagination>
+        </ContentLayout.Pagination>
       </ContentLayout>
     </>
   );

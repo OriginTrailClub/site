@@ -15,9 +15,9 @@ import {
   ContentLayoutSidebarProps,
 } from './ContentLayoutSidebar';
 import {
-  ContentLayoutNavigation,
-  ContentLayoutNavigationProps,
-} from './ContentLayoutNavigation';
+  ContentLayoutPagination,
+  ContentLayoutPaginationProps,
+} from './ContentLayoutPagination';
 
 import * as Styles from './ContentLayout.styles';
 
@@ -26,7 +26,7 @@ type ContentLayoutElements = React.ReactElement<
   | ContentLayoutTitleProps
   | ContentLayoutContentProps
   | ContentLayoutSidebarProps
-  | ContentLayoutNavigationProps
+  | ContentLayoutPaginationProps
 >;
 
 export interface PageLayoutProps {
@@ -41,7 +41,7 @@ interface IPageLayoutComposition {
   Title: React.FC<ContentLayoutTitleProps>;
   Content: React.FC<ContentLayoutContentProps>;
   Sidebar: React.FC<ContentLayoutSidebarProps>;
-  Navigation: React.FC<ContentLayoutNavigationProps>;
+  Pagination: React.FC<ContentLayoutPaginationProps>;
 }
 
 export const ContentLayout: React.FC<PageLayoutProps> &
@@ -59,4 +59,4 @@ ContentLayout.Breadcrumbs = ContentLayoutBreadcrumbs;
 ContentLayout.Title = ContentLayoutTitle;
 ContentLayout.Content = ContentLayoutContent;
 ContentLayout.Sidebar = ContentLayoutSidebar;
-ContentLayout.Navigation = ContentLayoutNavigation;
+ContentLayout.Pagination = ContentLayoutPagination;
