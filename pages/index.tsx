@@ -19,7 +19,6 @@ import { QuotesBlock } from 'layouts/Blocks/QuotesBlock';
 import { CompaniesBlock } from 'layouts/Blocks/CompaniesBlock';
 
 import { Grid } from 'components/Grid';
-import { Button } from 'components/Button';
 
 interface HomePageProps {
   network: {
