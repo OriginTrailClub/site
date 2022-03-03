@@ -12,19 +12,31 @@ import {
   ItalicProps
 } from 'components/Typography';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { slugify } from 'utils/slugify';
+
+function Heading2(props: Omit<HeadingProps, 'level'>) {
+  let id;
+
+  if (typeof props.children === "string") {
+    id = slugify(props.children);
+  }
+
+  return <Heading id={id} {...props} level={2} />;
+}
 
 const components = {
   wrapper: Typography,
   p: Paragraph,
-  h2: (props: Omit<HeadingProps, 'level'>) => <Heading level={2} {...props} />,
-  h3: (props: Omit<HeadingProps, 'level'>) => <Heading level={3} {...props} />,
-  h4: (props: Omit<HeadingProps, 'level'>) => <Heading level={4} {...props} />,
+  h1: () => null,
+  h2: (props: Omit<HeadingProps, 'level'>) => <Heading2 {...props} />,
+  h3: (props: Omit<HeadingProps, 'level'>) => <Heading {...props} level={3} />,
+  h4: (props: Omit<HeadingProps, 'level'>) => <Heading {...props} level={4} />,
 
   h5: () => null,
   h6: () => null,
 
   ul: (props: Omit<ListProps, 'style'>) => <List {...props} />,
-  ol: (props: Omit<ListProps, 'style'>) => <List style="ordered" {...props} />,
+  ol: (props: Omit<ListProps, 'style'>) => <List {...props} style="ordered" />,
   li: (props: ListItemProps) => <List.Item {...props} />,
 
   strong: (props: BoldProps) => <Bold {...props} />,
