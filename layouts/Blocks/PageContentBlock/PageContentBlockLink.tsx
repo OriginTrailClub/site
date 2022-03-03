@@ -6,11 +6,11 @@ export type PageContentBlockLinkProps = {
 };
 
 export function PageContentBlockLink(props: PageContentBlockLinkProps) {
-  const { href, label } = props;
+  const { href, label, ...otherProps } = props;
 
   return (
     <li className={Styles.container()}>
-      <a {...props} href={href} className={Styles.link()}>
+      <a {...otherProps} href={href} className={Styles.link()}>
         {label}
       </a>
     </li>

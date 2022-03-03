@@ -10,13 +10,9 @@ export const link = css({
   lineHeight: '$body',
 
   width: '100%',
-});
 
-export const container = css({
   px: '$regular',
   py: '$small',
-
-  display: 'flex',
 
   borderWidth: 1,
   borderColor: 'transparent',
@@ -35,16 +31,18 @@ export const container = css({
     width: 2,
   },
 
-  '&:hover': {
+  '&:hover, &:focus': {
     borderColor: '$indigo-100',
     backgroundColor: '$indigo-50',
+
+    color: '$indigo-600',
 
     '&:before': {
       backgroundColor: '$indigo-600',
     },
-
-    [`.${link()}`]: {
-      color: '$indigo-600',
-    },
   },
+});
+
+export const container = css({
+  display: 'flex',
 });
