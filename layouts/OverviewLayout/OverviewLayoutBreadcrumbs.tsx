@@ -6,7 +6,9 @@ export interface OverviewLayoutBreadcrumbsProps {
   children: React.ReactNode;
 }
 
-export function OverviewLayoutBreadcrumbs(props: OverviewLayoutBreadcrumbsProps) {
+export function OverviewLayoutBreadcrumbs(
+  props: OverviewLayoutBreadcrumbsProps
+) {
   const { children } = props;
 
   return <div className={Styles.container()}>{children}</div>;

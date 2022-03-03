@@ -8,10 +8,10 @@ export const container = css({
   '@bp3': {
     display: 'flex',
     flexDirection: 'column',
-  }
+  },
 });
 
 export const sticky = css({
   position: 'sticky',
   top: '$large',
-})
+});

@@ -24,14 +24,12 @@ export const contents = css({
     "title       title      "
     "content     sidebar    "
    `,
-    gridTemplateColumns:
-      'min(calc(100% / 5 * 3), 80ch) 1fr',
-    gridColumnGap: '$large',    
+    gridTemplateColumns: 'min(calc(100% / 5 * 3), 80ch) 1fr',
+    gridColumnGap: '$large',
   },
 
   '@bp4': {
-    gridTemplateColumns:
-      'min(calc(100% / 3 * 2), 80ch) 1fr',
+    gridTemplateColumns: 'min(calc(100% / 3 * 2), 80ch) 1fr',
     gridColumnGap: '$x-large',
   },
 });

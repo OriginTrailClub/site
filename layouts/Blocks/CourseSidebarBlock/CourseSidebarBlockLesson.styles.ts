@@ -43,12 +43,12 @@ export const link = css({
   },
 
   '&:hover, &:focus': {
-    'color': '$indigo-600',
+    color: '$indigo-600',
 
     '&:before': {
       backgroundColor: '$indigo-50',
       borderColor: '$indigo-200',
-    }
+    },
   },
 
   '@bp1': {
@@ -57,7 +57,7 @@ export const link = css({
 
   '@bp3': {
     py: '$small',
-  }
+  },
 });
 
 export const container = css({
