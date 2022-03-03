@@ -67,5 +67,5 @@ export const label = css({
     display: 'flex',
     width: '100%',
     justifyContent: 'center',
-    py: '$regular'
+    mt: '$regular'
 });

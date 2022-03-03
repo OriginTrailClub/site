@@ -3,6 +3,7 @@ import { css } from 'stitches.config';
 import * as HeadingStyles from './Heading/Heading.styles';
 import * as ParagraphStyles from './Paragraph/Paragraph.styles';
 import * as ListStyles from './List/List.styles';
+import * as BlockStyles from './Block/Block.styles';
 
 export const container = css({
   maxWidth: '80ch',
@@ -37,6 +38,13 @@ export const container = css({
     },
   },
   [`& > .${ParagraphStyles.container()}`]: {
+    mb: '$large',
+
+    '&:last-child': {
+      mb: '$none',
+    },
+  },
+  [`& > .${BlockStyles.container()}`]: {
     mb: '$large',
 
     '&:last-child': {

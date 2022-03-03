@@ -9,9 +9,10 @@ import {
   Bold,
   BoldProps,
   Italic,
-  ItalicProps
+  ItalicProps,
+  Block
 } from 'components/Typography';
-import { YoutubeEmbed } from 'components/Embeds';
+import { YoutubeEmbed, YoutubeEmbedProps } from 'components/Embeds';
 
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { slugify } from 'utils/slugify';
@@ -44,7 +45,7 @@ const components = {
   strong: (props: BoldProps) => <Bold {...props} />,
   em: (props: ItalicProps) => <Italic {...props} />,
 
-  YoutubeEmbed,
+  YoutubeEmbed: (props: YoutubeEmbedProps) => (<Block><YoutubeEmbed {...props} /></Block>),
 };
 
 interface MDXContentProps {
