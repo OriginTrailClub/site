@@ -3,7 +3,7 @@ import * as React from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 
 import { Breadcrumbs } from 'components/Breadcrumbs';
 import { MDXContent } from 'components/MDXContent';
@@ -103,9 +103,9 @@ const LessonPage: NextPage<LessonPageProps> = (props) => {
     router.events.on('hashChangeComplete', onHashChangeComplete);
 
     return () => {
-      router.events.off("hashChangeComplete", onHashChangeComplete);
+      router.events.off('hashChangeComplete', onHashChangeComplete);
     };
-  }, [router.events, setActiveHash])
+  }, [router.events, setActiveHash]);
 
   React.useEffect(() => {
     setActiveHash(window.location.hash);
@@ -165,9 +165,13 @@ const LessonPage: NextPage<LessonPageProps> = (props) => {
 
                 return (
                   <Link href={href} key={slug} passHref replace>
-                    <PageContentBlock.Link href={href} isActive={href === activeHash} label={label} />
+                    <PageContentBlock.Link
+                      href={href}
+                      isActive={href === activeHash}
+                      label={label}
+                    />
                   </Link>
-                )
+                );
               })}
             </PageContentBlock.Links>
           </PageContentBlock>

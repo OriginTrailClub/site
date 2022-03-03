@@ -65,7 +65,7 @@ const CoursePage: NextPage<CoursePageProps> = (props) => {
   const { meta, lessons, content } = course;
   const { subject, slug } = meta;
 
-  const firstLesson = lessons?.[0]?.lessons?.[0]
+  const firstLesson = lessons?.[0]?.lessons?.[0];
 
   return (
     <>
@@ -103,21 +103,23 @@ const CoursePage: NextPage<CoursePageProps> = (props) => {
         <OverviewLayout.Sidebar>
           <CourseSidebarBlock>
             <CourseSidebarBlock.Title>Content</CourseSidebarBlock.Title>
-            {firstLesson ? <Link
-              href={{
-                pathname: '/learn/courses/[course]/[lesson]',
-                query: {
-                  course: slug,
-                  lesson: firstLesson.slug,
-                },
-              }}
-              passHref
-            >
-              <CourseSidebarBlock.Action
-                label="Start"
-                Icon={ArrowRightLineIcon}
-              />
-            </Link> : null }
+            {firstLesson ? (
+              <Link
+                href={{
+                  pathname: '/learn/courses/[course]/[lesson]',
+                  query: {
+                    course: slug,
+                    lesson: firstLesson.slug,
+                  },
+                }}
+                passHref
+              >
+                <CourseSidebarBlock.Action
+                  label="Start"
+                  Icon={ArrowRightLineIcon}
+                />
+              </Link>
+            ) : null}
             <CourseSidebarBlock.Sections>
               {lessons.map((section) => (
                 <CourseSidebarBlock.Section

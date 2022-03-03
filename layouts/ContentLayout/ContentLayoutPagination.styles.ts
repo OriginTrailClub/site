@@ -7,5 +7,5 @@ export const container = css({
 
   '@bp4': {
     mt: '$x-large',
-  }
+  },
 });

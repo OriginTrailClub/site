@@ -44,15 +44,15 @@ export const link = css({
       true: {
         borderColor: '$indigo-100',
         backgroundColor: '$indigo-50',
-    
+
         color: '$indigo-600',
-    
+
         '&:before': {
           backgroundColor: '$indigo-600',
-        },    
-      }
-    }
-  }
+        },
+      },
+    },
+  },
 });
 
 export const container = css({

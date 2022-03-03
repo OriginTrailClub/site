@@ -10,7 +10,7 @@ import {
   BoldProps,
   Italic,
   ItalicProps,
-  Block
+  Block,
 } from 'components/Typography';
 import { YoutubeEmbed, YoutubeEmbedProps } from 'components/Embeds';
 
@@ -20,7 +20,7 @@ import { slugify } from 'utils/slugify';
 function Heading2(props: Omit<HeadingProps, 'level'>) {
   let id;
 
-  if (typeof props.children === "string") {
+  if (typeof props.children === 'string') {
     id = slugify(props.children);
   }
 
@@ -45,7 +45,11 @@ const components = {
   strong: (props: BoldProps) => <Bold {...props} />,
   em: (props: ItalicProps) => <Italic {...props} />,
 
-  YoutubeEmbed: (props: YoutubeEmbedProps) => (<Block><YoutubeEmbed {...props} /></Block>),
+  YoutubeEmbed: (props: YoutubeEmbedProps) => (
+    <Block>
+      <YoutubeEmbed {...props} />
+    </Block>
+  ),
 };
 
 interface MDXContentProps {
