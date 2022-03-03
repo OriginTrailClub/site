@@ -5,9 +5,9 @@ import Link from 'next/link';
 import { SSRProvider } from '@react-aria/ssr';
 import { I18nProvider } from '@react-aria/i18n';
 
-import { globalStyles } from 'constants/globalStyles';
+import ArrowRightLineIcon from 'remixicon-react/ArrowRightLineIcon';
 
-import BookletLineIcon from 'remixicon-react/BookletLineIcon';
+import { globalStyles } from 'constants/globalStyles';
 
 import { PageLayout } from 'layouts/PageLayout';
 
@@ -31,7 +31,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 }} passHref>
                   <Button
                     label="Learn"
-                    Icon={BookletLineIcon}
+                    Icon={ArrowRightLineIcon}
                     as="a"
                   />
                 </Link>
