@@ -125,6 +125,7 @@ const CoursePage: NextPage<CoursePageProps> = (props) => {
                 <CourseSidebarBlock.Section
                   title={section.title}
                   icon="/courses/ot-101/section-title-icon.png"
+                  value={section.title}
                   key={section.title}
                 >
                   {section.lessons.map((lesson) => (

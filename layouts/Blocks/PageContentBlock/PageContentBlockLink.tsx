@@ -1,3 +1,5 @@
+import * as React from 'react';
+
 import * as Styles from './PageContentBlockLink.styles';
 
 export type PageContentBlockLinkProps = {
@@ -6,14 +8,17 @@ export type PageContentBlockLinkProps = {
   isActive?: boolean;
 };
 
-export function PageContentBlockLink(props: PageContentBlockLinkProps) {
+export const PageContentBlockLink = React.forwardRef(function PageContentBlockLink(
+  props: PageContentBlockLinkProps,
+  ref: React.Ref<HTMLAnchorElement>
+) {
   const { href, label, isActive = false, ...otherProps } = props;
 
   return (
     <li className={Styles.container()}>
-      <a {...otherProps} href={href} className={Styles.link({ isActive })}>
+      <a {...otherProps} href={href} ref={ref} className={Styles.link({ isActive })}>
         {label}
       </a>
     </li>
   );
-}
+});

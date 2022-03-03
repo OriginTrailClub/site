@@ -7,13 +7,18 @@ import ArrowRightSLineIcon from 'remixicon-react/ArrowRightSLineIcon';
 import { BreadcrumbsBreadcrumbContext } from './BreadcrumbsBreadcrumbContext';
 
 import * as Styles from './BreadcrumbsBreadcrumb.styles';
+import { useObjectRef } from '@react-aria/utils';
 
 export type BreadcrumbsBreadcrumbProps = {
   label: string;
 };
 
-export function BreadcrumbsBreadcrumb(props: BreadcrumbsBreadcrumbProps) {
-  const ref = React.useRef<HTMLAnchorElement>(null!);
+
+export const BreadcrumbsBreadcrumb = React.forwardRef(function BreadcrumbsBreadcrumb(
+  props: BreadcrumbsBreadcrumbProps,
+  forwardRef: React.Ref<HTMLAnchorElement>
+) {
+  const ref = useObjectRef(forwardRef);
 
   const context = React.useContext(BreadcrumbsBreadcrumbContext);
   const { props: contextProps } = context;
@@ -43,4 +48,4 @@ export function BreadcrumbsBreadcrumb(props: BreadcrumbsBreadcrumbProps) {
       {isCurrent ? null : <ArrowRightSLineIcon className={Styles.icon()} />}
     </li>
   );
-}
+});

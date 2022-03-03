@@ -1,3 +1,5 @@
+import * as React from 'react';
+
 import * as Styles from './PaginationPrevious.styles';
 
 import ArrowLeftLineIcon from 'remixicon-react/ArrowLeftLineIcon';
@@ -9,7 +11,10 @@ type PaginationPreviousProps = Omit<
   'variant' | 'hideLabel' | 'Icon'
 >;
 
-export function PaginationPrevious(props: PaginationPreviousProps) {
+export const PaginationPrevious = React.forwardRef(function PaginationPrevious(
+  props: PaginationPreviousProps,
+  ref: React.Ref<HTMLButtonElement>
+) {
   const { label = 'Previous', ...otherProps } = props;
 
   return (
@@ -20,7 +25,8 @@ export function PaginationPrevious(props: PaginationPreviousProps) {
         variant="secondary"
         hideLabel
         Icon={ArrowLeftLineIcon}
+        ref={ref}
       />
     </div>
   );
-}
+});

@@ -6,6 +6,7 @@ import { Accordion } from 'components/Accordion';
 
 export interface CourseSidebarBlockSectionProps {
   title: string;
+  value: string;
   icon: string;
   children: React.ReactNode;
 }
@@ -13,10 +14,10 @@ export interface CourseSidebarBlockSectionProps {
 export function CourseSidebarBlockSection(
   props: CourseSidebarBlockSectionProps
 ) {
-  const { title, children, icon } = props;
+  const { title, children, icon, value } = props;
 
   return (
-    <Accordion.Item value={title}>
+    <Accordion.Item value={value}>
       <Accordion.Header title={title} icon={icon} />
       <Accordion.Content>
         <ol className={Styles.lessons()}>{children}</ol>
