@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { ButtonProps } from 'components/Button';
 
@@ -14,7 +15,8 @@ export function Header(props: HeaderProps) {
   return (
     <header className={Styles.container()}>
       <div className={Styles.contents()}>
-        <div className={Styles.logo()}>
+        <Link passHref href={{ pathname: '/' }}>
+        <a className={Styles.logo()}>
           <Image
             priority
             src="/logo.svg"
@@ -23,7 +25,9 @@ export function Header(props: HeaderProps) {
             layout="fill"
             alt="OriginTrail Community Hub logo"
           />
-        </div>
+        </a>
+        </Link>
+
 
         <div className={Styles.callToAction()}>{CallToAction}</div>
       </div>
