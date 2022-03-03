@@ -5,11 +5,14 @@ import { css } from 'stitches.config';
 export const container = css({
   display: 'flex',
 
-  m: '-$small',
-  p: 'calc($small / 2)',
+  mx: '-$small',
+  my: '-$regular',
+  px: 'calc($small / 2)',
+  py: 'calc($regular / 2)',
 
   [`.${BreadcrumbsBreadcrumbStyles.container()}`]: {
-    m: 'calc($small / 2)',
+    mx: 'calc($small / 2)',
+    my: 'calc($regular / 2)',
   },
 });
 

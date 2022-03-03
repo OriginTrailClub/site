@@ -14,6 +14,12 @@ export const link = css({
   fontSize: '$button',
   lineHeight: '$none',
 
+  py: '$small',
+  px: '$x-small',
+
+  my: '-$small',
+  mx: '-$x-small',
+
   '&:hover': {
     textDecoration: 'underline',
   },
