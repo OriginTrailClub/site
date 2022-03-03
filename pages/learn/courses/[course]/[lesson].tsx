@@ -18,12 +18,14 @@ import { getCourseLessonMeta } from 'helpers/getCourseLessonMeta';
 import { getCourseLessonContent } from 'helpers/getCourseLessonContent';
 import { getCourseLessonHeadings } from 'helpers/getCourseLessonHeadings';
 import { getCourseLessonPagination } from 'helpers/getCourseLessonPagination';
+import { getCourseSectionMeta } from 'helpers/getCourseSectionMeta';
 import {
   CourseMeta,
   CourseLessonMeta,
   CourseLessonContent,
   CourseLessonHeadings,
   CourseLessonPagination,
+  CourseSectionMeta,
 } from 'helpers/types';
 
 interface LessonPageProps {
@@ -33,6 +35,9 @@ interface LessonPageProps {
     headings: CourseLessonHeadings;
   };
   pagination: CourseLessonPagination;
+  section: {
+    meta: CourseSectionMeta,
+  },
   course: {
     meta: CourseMeta;
   };
@@ -47,6 +52,7 @@ export const getStaticProps = async ({
   const lessonContent = await getCourseLessonContent(params);
   const lessonHeadings = await getCourseLessonHeadings(params);
   const lessonPagination = await getCourseLessonPagination(params);
+  const sectionMeta = await getCourseSectionMeta(params);
 
   const courseMeta = await getCourseMeta(params.course);
 
@@ -58,6 +64,9 @@ export const getStaticProps = async ({
         headings: lessonHeadings,
       },
       pagination: lessonPagination,
+      section: {
+        meta: sectionMeta,
+      },
       course: {
         meta: courseMeta,
       },
@@ -77,13 +86,15 @@ export const getStaticPaths = async () => {
 };
 
 const LessonPage: NextPage<LessonPageProps> = (props) => {
-  const { lesson, course, pagination } = props;
+  const { lesson, course, section, pagination } = props;
 
   const { meta: courseMeta } = course;
   const { meta: lessonMeta, content, headings } = lesson;
+  const { meta: sectionMeta } = section;
 
   const { slug: courseSlug, subject: courseSubject } = courseMeta;
   const { slug: lessonSlug, title: lessonTitle } = lessonMeta;
+  const { slug: sectionSlug, title: sectionTitle } = sectionMeta;
   const {
     previousLessonSlug,
     nextLessonSlug,
@@ -137,6 +148,18 @@ const LessonPage: NextPage<LessonPageProps> = (props) => {
               passHref
             >
               <Breadcrumbs.Breadcrumb label={courseSubject} />
+            </Link>
+            <Link
+              href={{
+                pathname: '/learn/courses/[course]/[lesson]',
+                query: {
+                  course: courseSlug,
+                  lesson: sectionSlug,
+                },
+              }}
+              passHref
+            >
+              <Breadcrumbs.Breadcrumb label={sectionTitle} />
             </Link>
             <Link
               href={{

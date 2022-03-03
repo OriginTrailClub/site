@@ -46,3 +46,8 @@ export type CourseLessonPagination = {
   currentLessonIndex: number;
   previousLessonSlug?: string;
 };
+
+export type CourseSectionMeta = {
+  title: string;
+  slug: string;
+};
