@@ -19,7 +19,7 @@ export function YoutubeEmbed(props: YoutubeEmbedProps) {
   const videoRef = React.useRef<HTMLIFrameElement>(null!);
   const placeholderRef = React.useRef<HTMLButtonElement>(null!);
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     if (isRequested) {
       videoRef.current.focus();
     }
