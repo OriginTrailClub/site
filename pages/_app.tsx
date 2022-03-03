@@ -1,12 +1,13 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import Link from 'next/link';
 
 import { SSRProvider } from '@react-aria/ssr';
 import { I18nProvider } from '@react-aria/i18n';
 
 import { globalStyles } from 'constants/globalStyles';
 
-import BankFillIcon from 'remixicon-react/BankFillIcon';
+import BookletLineIcon from 'remixicon-react/BookletLineIcon';
 
 import { PageLayout } from 'layouts/PageLayout';
 
@@ -25,14 +26,15 @@ function MyApp({ Component, pageProps }: AppProps) {
           <PageLayout>
             <PageLayout.Header
               CallToAction={
-                <Button
-                  label="Donate"
-                  Icon={BankFillIcon}
-                  href="https://donate.origintrail.club"
-                  as="a"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                />
+                <Link href={{
+                  pathname: '/learn'
+                }} passHref>
+                  <Button
+                    label="Learn"
+                    Icon={BookletLineIcon}
+                    as="a"
+                  />
+                </Link>
               }
             />
             <PageLayout.Content>
