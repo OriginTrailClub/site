@@ -10,3 +10,8 @@ export const container = css({
     flexDirection: 'column',
   }
 });
+
+export const sticky = css({
+  position: 'sticky',
+  top: '$large',
+})
