@@ -5,3 +5,8 @@ export const container = css({
   
   mb: '$large',
 });
+
+export const sticky = css({
+  position: 'sticky',
+  top: '$large',
+})
