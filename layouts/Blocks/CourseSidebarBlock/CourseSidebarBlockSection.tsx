@@ -16,7 +16,7 @@ export function CourseSidebarBlockSection(
   const { title, children, icon } = props;
 
   return (
-    <Accordion.Item value="">
+    <Accordion.Item value={title}>
       <Accordion.Header title={title} icon={icon} />
       <Accordion.Content>
         <ol className={Styles.lessons()}>{children}</ol>

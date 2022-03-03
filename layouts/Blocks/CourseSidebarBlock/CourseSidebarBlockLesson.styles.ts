@@ -2,15 +2,17 @@ import { css } from 'stitches.config';
 
 export const link = css({
   display: 'flex',
-  alignItems: 'flex-start',
   lineHeight: '$body',
   fontSize: '$button',
   fontFamily: '$mono',
   color: '$text-body',
-  py: '$small',
-  width: '100%',
   fontWeight: '$semi-bold',
   textDecoration: 'none',
+  alignItems: 'center',
+  mx: '-$regular',
+  px: '$regular',
+  py: '$xx-small',
+  width: 'calc(100% + $space$regular * 2)',
 
   '&:before': {
     zIndex: 1,
@@ -39,6 +41,14 @@ export const link = css({
     backgroundColor: '$gray-200',
     mx: 'calc((32px - 1px) / 2)',
   },
+
+  '@bp1': {
+    py: '$x-small',
+  },
+
+  '@bp3': {
+    py: '$small',
+  }
 });
 
 export const container = css({

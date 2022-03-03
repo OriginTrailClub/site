@@ -1,15 +1,5 @@
 import { css } from 'stitches.config';
 
-export const container = css({
-  width: '100%',
-  borderLeft: 0,
-  borderRight: 0,
-  borderTop: 1,
-  borderBottom: 0,
-  borderColor: '$gray-300',
-  borderStyle: 'solid',
-});
-
 export const lessons = css({
   display: 'flex',
   flexDirection: 'column',
@@ -19,4 +9,6 @@ export const lessons = css({
   m: '$none',
 
   listStyle: 'none',
+
+  mt: '-$small',
 });
