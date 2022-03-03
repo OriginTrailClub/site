@@ -59,5 +59,6 @@ interface MDXContentProps {
 export function MDXContent(props: MDXContentProps) {
   const { source } = props;
 
+  // @ts-ignore
   return <MDXRemote {...source} components={components} />;
 }
