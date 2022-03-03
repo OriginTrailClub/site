@@ -42,6 +42,15 @@ export const link = css({
     mx: 'calc((32px - 1px) / 2)',
   },
 
+  '&:hover, &:focus': {
+    'color': '$indigo-600',
+
+    '&:before': {
+      backgroundColor: '$indigo-50',
+      borderColor: '$indigo-200',
+    }
+  },
+
   '@bp1': {
     py: '$x-small',
   },
