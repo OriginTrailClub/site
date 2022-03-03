@@ -10,12 +10,24 @@ export const container = css({
   [`& > .${HeadingStyles.container()}`]: {
     '&[data-level="1"]': {
       mb: '$regular',
+
+      '&:last-child': {
+        mb: '$none',
+      },
     },
     '&[data-level="2"]': {
       mb: '$regular',
+
+      '&:last-child': {
+        mb: '$none',
+      },
     },
     '&[data-level="3"]': {
       mb: '$small',
+
+      '&:last-child': {
+        mb: '$none',
+      },
     },
     '&[data-level="4"]': {
       mb: 0,
@@ -26,8 +38,16 @@ export const container = css({
   },
   [`& > .${ParagraphStyles.container()}`]: {
     mb: '$large',
+
+    '&:last-child': {
+      mb: '$none',
+    },
   },
   [`& .${ListStyles.container()}:not(.${ListStyles.container()} .${ListStyles.container()})`]: {
     mb: '$large',
+
+    '&:last-child': {
+      mb: '$none',
+    },
   },
 });
