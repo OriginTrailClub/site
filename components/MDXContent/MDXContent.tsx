@@ -8,6 +8,8 @@ import {
   ListItemProps,
   Bold,
   BoldProps,
+  Italic,
+  ItalicProps
 } from 'components/Typography';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 
@@ -26,6 +28,7 @@ const components = {
   li: (props: ListItemProps) => <List.Item {...props} />,
 
   strong: (props: BoldProps) => <Bold {...props} />,
+  em: (props: ItalicProps) => <Italic {...props} />,
 };
 
 interface MDXContentProps {
