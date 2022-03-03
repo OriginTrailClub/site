@@ -32,15 +32,27 @@ export const link = css({
   },
 
   '&:hover, &:focus': {
-    borderColor: '$indigo-100',
-    backgroundColor: '$indigo-50',
-
     color: '$indigo-600',
 
     '&:before': {
       backgroundColor: '$indigo-600',
     },
   },
+
+  variants: {
+    isActive: {
+      true: {
+        borderColor: '$indigo-100',
+        backgroundColor: '$indigo-50',
+    
+        color: '$indigo-600',
+    
+        '&:before': {
+          backgroundColor: '$indigo-600',
+        },    
+      }
+    }
+  }
 });
 
 export const container = css({

@@ -1,9 +1,13 @@
+import * as React from 'react';
+
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useRouter } from 'next/router'
 
 import { Breadcrumbs } from 'components/Breadcrumbs';
 import { MDXContent } from 'components/MDXContent';
+import { Pagination } from 'components/Pagination';
 
 import { ContentLayout } from 'layouts/ContentLayout/ContentLayout';
 import { PageContentBlock } from 'layouts/Blocks/PageContentBlock';
@@ -21,7 +25,6 @@ import {
   CourseLessonHeadings,
   CourseLessonPagination,
 } from 'helpers/types';
-import { Pagination } from 'components/Pagination';
 
 interface LessonPageProps {
   lesson: {
@@ -88,6 +91,26 @@ const LessonPage: NextPage<LessonPageProps> = (props) => {
     currentLessonIndex,
   } = pagination;
 
+  const [activeHash, setActiveHash] = React.useState('#');
+
+  const router = useRouter();
+
+  React.useEffect(() => {
+    const onHashChangeComplete = () => {
+      setActiveHash(window.location.hash);
+    };
+
+    router.events.on('hashChangeComplete', onHashChangeComplete);
+
+    return () => {
+      router.events.off("hashChangeComplete", onHashChangeComplete);
+    };
+  }, [router.events, setActiveHash])
+
+  React.useEffect(() => {
+    setActiveHash(window.location.hash);
+  }, [setActiveHash])
+
   return (
     <>
       <Head>
@@ -137,11 +160,15 @@ const LessonPage: NextPage<LessonPageProps> = (props) => {
           <PageContentBlock>
             <PageContentBlock.Title>On this page</PageContentBlock.Title>
             <PageContentBlock.Links>
-              {headings.map(({ label, slug }) => (
-                <Link href={`#${slug}`} key={slug} passHref replace>
-                  <PageContentBlock.Link href={`#${slug}`} label={label} />
-                </Link>
-              ))}
+              {headings.map(({ label, slug }) => {
+                const href = `#${slug}`;
+
+                return (
+                  <Link href={href} key={slug} passHref replace>
+                    <PageContentBlock.Link href={href} isActive={href === activeHash} label={label} />
+                  </Link>
+                )
+              })}
             </PageContentBlock.Links>
           </PageContentBlock>
         </ContentLayout.Sidebar>
