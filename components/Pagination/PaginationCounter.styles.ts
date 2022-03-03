@@ -14,4 +14,5 @@ export const container = css({
   fontFamily: '$default',
 
   color: '$text-subtle',
+  zIndex: -1,
 });
