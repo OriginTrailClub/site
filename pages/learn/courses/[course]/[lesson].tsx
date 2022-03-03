@@ -109,7 +109,7 @@ const LessonPage: NextPage<LessonPageProps> = (props) => {
 
   React.useEffect(() => {
     setActiveHash(window.location.hash);
-  }, [setActiveHash])
+  }, [setActiveHash]);
 
   return (
     <>

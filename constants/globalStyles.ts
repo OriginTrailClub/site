@@ -51,7 +51,6 @@ export const globalStyles = globalCss({
   html: {
     height: '100%',
     width: '100%',
-    scrollBehavior: 'smooth',
 
     fontSize: generateFontSizeClamp({
       minWidthPx: 320,
@@ -80,10 +79,4 @@ export const globalStyles = globalCss({
     boxSizing: 'border-box',
     position: 'relative',
   },
-
-  '@media screen and (prefers-reduced-motion: reduce)': {
-    html: {
-      scrollBehavior: 'auto'
-    }
-  }  
 });
