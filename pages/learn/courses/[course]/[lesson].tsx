@@ -111,10 +111,16 @@ const LessonPage: NextPage<LessonPageProps> = (props) => {
       setActiveHash(window.location.hash);
     };
 
+    const onRouteChangeComplete = () => {
+      setActiveHash(window.location.hash);
+    }
+
     router.events.on('hashChangeComplete', onHashChangeComplete);
+    router.events.on('routeChangeComplete', onRouteChangeComplete)
 
     return () => {
       router.events.off('hashChangeComplete', onHashChangeComplete);
+      router.events.off('routeChangeComplete', onRouteChangeComplete)
     };
   }, [router.events, setActiveHash]);
 
