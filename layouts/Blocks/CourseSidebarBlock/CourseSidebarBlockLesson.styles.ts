@@ -1,3 +1,5 @@
+import * as CourseSidebarBlockChapterStyles from './CourseSidebarBlockChapter.styles';
+
 import { css } from 'stitches.config';
 
 export const link = css({
@@ -92,7 +94,15 @@ export const container = css({
   [`&:first-child .${link()}:after`]: {
     top: '50%',
   },
-  [`&:last-child .${link()}:after`]: {
+  [`&:last-child .${link()}:not(:has(+ .${chapters()})):after`]: {
     bottom: '50%',
   },
+
+  [`&:last-child .${chapters()} .${CourseSidebarBlockChapterStyles.container()}:first-child:after`]: {
+    top: '-50%',
+  },
+
+  [`&:last-child .${chapters()} .${CourseSidebarBlockChapterStyles.container()}:last-child:after`]: {
+    bottom: '50%',
+  }
 });
