@@ -5,6 +5,7 @@ import * as Styles from './CourseSidebarBlockLesson.styles';
 export interface CourseSidebarBlockLessonProps {
   label: string;
   children?: React.ReactNode;
+  isActive?: boolean;
 }
 
 export const CourseSidebarBlockLesson = React.forwardRef(
@@ -12,11 +13,11 @@ export const CourseSidebarBlockLesson = React.forwardRef(
     props: CourseSidebarBlockLessonProps,
     ref: React.Ref<HTMLAnchorElement>
   ) {
-    const { label, children, ...otherProps } = props;
+    const { label, children, isActive = false, ...otherProps } = props;
 
     return (
       <li className={Styles.container()}>
-        <a className={Styles.link()} {...otherProps} ref={ref}>
+        <a className={Styles.link({ isActive })} {...otherProps} ref={ref}>
           {label}
         </a>
         <ul className={Styles.chapters()}>{children}</ul>

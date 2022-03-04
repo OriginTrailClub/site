@@ -58,6 +58,20 @@ export const link = css({
   '@bp3': {
     py: '$small',
   },
+
+  variants: {
+    isActive: {
+      true: {
+        color: '$indigo-600',
+
+        '&:before': {
+          backgroundColor: '$indigo-50',
+          borderColor: '$indigo-200',
+        },    
+      },
+      false: {}
+    }
+  },
 });
 
 export const chapters = css({

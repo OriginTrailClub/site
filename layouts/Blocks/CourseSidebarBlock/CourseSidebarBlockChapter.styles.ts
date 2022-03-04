@@ -40,6 +40,20 @@ export const link = css({
       borderColor: '$indigo-200',
     },
   },
+
+  variants: {
+    isActive: {
+      true: {
+        color: '$indigo-600',
+
+        '&:before': {
+          backgroundColor: '$indigo-50',
+          borderColor: '$indigo-200',
+        },    
+      },
+      false: {}
+    }
+  },
 });
 
 export const container = css({
