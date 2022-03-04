@@ -6,4 +6,9 @@ export const container = css({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
+  mb: '$regular',
+
+  '@bp4': {
+    mb: '$large',
+  },
 });

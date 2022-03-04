@@ -3,16 +3,17 @@ import { css } from 'stitches.config';
 export const link = css({
   display: 'flex',
   lineHeight: '$body',
-  fontSize: '$button',
+  fontSize: '$caption',
   fontFamily: '$mono',
-  color: '$text-body',
-  fontWeight: '$semi-bold',
+  color: '$text-subtle',
+  fontWeight: '$medium',
   textDecoration: 'none',
   alignItems: 'center',
+
   mx: '-$regular',
   px: '$regular',
-  py: '$xx-small',
-  width: 'calc(100% + $space$regular * 2)',
+
+  py: '$x-small',
 
   '&:before': {
     zIndex: 1,
@@ -31,6 +32,17 @@ export const link = css({
     backgroundColor: '$gray-50',
   },
 
+  '&:hover, &:focus': {
+    color: '$indigo-600',
+
+    '&:before': {
+      backgroundColor: '$indigo-50',
+      borderColor: '$indigo-200',
+    },
+  },
+});
+
+export const container = css({
   '&:after': {
     content: '',
     position: 'absolute',
@@ -40,45 +52,5 @@ export const link = css({
     width: 1,
     backgroundColor: '$gray-200',
     mx: 'calc((32px - 1px) / 2)',
-  },
-
-  '&:hover, &:focus': {
-    color: '$indigo-600',
-
-    '&:before': {
-      backgroundColor: '$indigo-50',
-      borderColor: '$indigo-200',
-    },
-  },
-
-  '@bp1': {
-    py: '$x-small',
-  },
-
-  '@bp3': {
-    py: '$small',
-  },
-});
-
-export const chapters = css({
-  display: 'flex',
-  flexDirection: 'column',
-
-  p: 0,
-  m: 0,
-
-  listStyle: 'none',
-});
-
-export const container = css({
-  display: 'flex',
-  flexDirection: 'column',
-  width: '100%',
-
-  [`&:first-child .${link()}:after`]: {
-    top: '50%',
-  },
-  [`&:last-child .${link()}:after`]: {
-    bottom: '50%',
   },
 });

@@ -26,7 +26,10 @@ import {
   CourseLessonHeadings,
   CourseLessonPagination,
   CourseSectionMeta,
+  CourseLessons,
 } from 'helpers/types';
+import { CourseSidebarBlock } from 'layouts/Blocks/CourseSidebarBlock';
+import { getCourseLessons } from 'helpers/getCourseLessons';
 
 interface LessonPageProps {
   lesson: {
@@ -35,29 +38,34 @@ interface LessonPageProps {
     headings: CourseLessonHeadings;
   };
   pagination: CourseLessonPagination;
+  lessons: CourseLessons;
   section: {
-    meta: CourseSectionMeta,
-  },
+    meta: CourseSectionMeta;
+  };
   course: {
     meta: CourseMeta;
   };
+  params: { course: string; lesson: string };
 }
 
 export const getStaticProps = async ({
   params,
 }: {
-  params: { course: string; lesson: string };
+  params: LessonPageProps['params'];
 }) => {
   const lessonMeta = await getCourseLessonMeta(params);
   const lessonContent = await getCourseLessonContent(params);
   const lessonHeadings = await getCourseLessonHeadings(params);
   const lessonPagination = await getCourseLessonPagination(params);
+  const courseLessons = await getCourseLessons(params.course);
   const sectionMeta = await getCourseSectionMeta(params);
 
   const courseMeta = await getCourseMeta(params.course);
 
   return {
     props: {
+      params,
+      lessons: courseLessons,
       lesson: {
         meta: lessonMeta,
         content: lessonContent,
@@ -86,7 +94,7 @@ export const getStaticPaths = async () => {
 };
 
 const LessonPage: NextPage<LessonPageProps> = (props) => {
-  const { lesson, course, section, pagination } = props;
+  const { lesson, course, section, pagination, lessons, params } = props;
 
   const { meta: courseMeta } = course;
   const { meta: lessonMeta, content, headings } = lesson;
@@ -101,6 +109,7 @@ const LessonPage: NextPage<LessonPageProps> = (props) => {
     totalLessons,
     currentLessonIndex,
   } = pagination;
+  const { course: currentCourseSlug, lesson: currentLessonSlug } = params;
 
   const [activeHash, setActiveHash] = React.useState('#');
 
@@ -113,14 +122,14 @@ const LessonPage: NextPage<LessonPageProps> = (props) => {
 
     const onRouteChangeComplete = () => {
       setActiveHash(window.location.hash);
-    }
+    };
 
     router.events.on('hashChangeComplete', onHashChangeComplete);
-    router.events.on('routeChangeComplete', onRouteChangeComplete)
+    router.events.on('routeChangeComplete', onRouteChangeComplete);
 
     return () => {
       router.events.off('hashChangeComplete', onHashChangeComplete);
-      router.events.off('routeChangeComplete', onRouteChangeComplete)
+      router.events.off('routeChangeComplete', onRouteChangeComplete);
     };
   }, [router.events, setActiveHash]);
 
@@ -186,24 +195,55 @@ const LessonPage: NextPage<LessonPageProps> = (props) => {
           <MDXContent source={content} />
         </ContentLayout.Content>
         <ContentLayout.Sidebar>
-          <PageContentBlock>
-            <PageContentBlock.Title>On this page</PageContentBlock.Title>
-            <PageContentBlock.Links>
-              {headings.map(({ label, slug }) => {
-                const href = `#${slug}`;
+          <CourseSidebarBlock>
+            <CourseSidebarBlock.Sections>
+              {lessons.map((section) => (
+                <CourseSidebarBlock.Section
+                  title={section.title}
+                  icon="/courses/ot-101/section-title-icon.png"
+                  value={section.title}
+                  key={section.title}
+                >
+                  {section.lessons.map((lesson) => (
+                    <Link
+                      key={lesson.slug}
+                      href={{
+                        pathname: '/learn/courses/[course]/[lesson]',
+                        query: {
+                          course: courseSlug,
+                          lesson: lesson.slug,
+                        },
+                      }}
+                      passHref
+                    >
+                      <CourseSidebarBlock.Lesson label={lesson.title}>
+                        {currentLessonSlug === lesson.slug ? (
+                          <>
+                            {headings.map((heading) => {
+                              const href = `#${heading.slug}`;
 
-                return (
-                  <Link href={href} key={slug} passHref replace>
-                    <PageContentBlock.Link
-                      href={href}
-                      isActive={href === activeHash}
-                      label={label}
-                    />
-                  </Link>
-                );
-              })}
-            </PageContentBlock.Links>
-          </PageContentBlock>
+                              return (
+                                <Link
+                                  href={href}
+                                  passHref
+                                  replace
+                                  key={heading.slug}
+                                >
+                                  <CourseSidebarBlock.Chapter
+                                    label={heading.label}
+                                  />
+                                </Link>
+                              );
+                            })}
+                          </>
+                        ) : null}
+                      </CourseSidebarBlock.Lesson>
+                    </Link>
+                  ))}
+                </CourseSidebarBlock.Section>
+              ))}
+            </CourseSidebarBlock.Sections>
+          </CourseSidebarBlock>
         </ContentLayout.Sidebar>
         <ContentLayout.Pagination>
           <Pagination>

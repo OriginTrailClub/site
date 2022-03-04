@@ -8,11 +8,6 @@ export const container = css({
 
   width: '100%',
   p: '$none',
-  mt: '$regular',
 
   listStyle: 'none',
-
-  '@bp4': {
-    mt: '$large',
-  },
 });

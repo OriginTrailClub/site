@@ -6,13 +6,15 @@ import { Button, ButtonProps } from 'components/Button';
 
 export type CourseSidebarBlockActionProps = Omit<ButtonProps, 'variant'>;
 
-export const CourseSidebarBlockAction = React.forwardRef(function CourseSidebarBlockAction(
-  props: CourseSidebarBlockActionProps,
-  ref: React.Ref<HTMLButtonElement>
-) {
-  return (
-    <div className={Styles.container()}>
-      <Button {...props} ref={ref} />
-    </div>
-  );
-});
+export const CourseSidebarBlockAction = React.forwardRef(
+  function CourseSidebarBlockAction(
+    props: CourseSidebarBlockActionProps,
+    ref: React.Ref<HTMLButtonElement>
+  ) {
+    return (
+      <div className={Styles.container()}>
+        <Button {...props} ref={ref} />
+      </div>
+    );
+  }
+);

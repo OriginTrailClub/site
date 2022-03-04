@@ -3,6 +3,7 @@ import * as Styles from './CourseSidebarBlock.styles';
 import { CourseSidebarBlockSections } from './CourseSidebarBlockSections';
 import { CourseSidebarBlockSection } from './CourseSidebarBlockSection';
 import { CourseSidebarBlockLesson } from './CourseSidebarBlockLesson';
+import { CourseSidebarBlockChapter } from './CourseSidebarBlockChapter';
 import { CourseSidebarBlockAction } from './CourseSidebarBlockAction';
 import { CourseSidebarBlockTitle } from './CourseSidebarBlockTitle';
 
@@ -21,3 +22,4 @@ CourseSidebarBlock.Action = CourseSidebarBlockAction;
 CourseSidebarBlock.Sections = CourseSidebarBlockSections;
 CourseSidebarBlock.Section = CourseSidebarBlockSection;
 CourseSidebarBlock.Lesson = CourseSidebarBlockLesson;
+CourseSidebarBlock.Chapter = CourseSidebarBlockChapter;
