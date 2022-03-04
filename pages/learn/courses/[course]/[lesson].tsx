@@ -196,7 +196,7 @@ const LessonPage: NextPage<LessonPageProps> = (props) => {
         </ContentLayout.Content>
         <ContentLayout.Sidebar>
           <CourseSidebarBlock>
-            <CourseSidebarBlock.Sections>
+            <CourseSidebarBlock.Sections defaultExpandedKeys={[sectionTitle]}>
               {lessons.map((section) => (
                 <CourseSidebarBlock.Section
                   title={section.title}

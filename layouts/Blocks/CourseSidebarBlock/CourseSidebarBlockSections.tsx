@@ -1,10 +1,8 @@
 import * as Styles from './CourseSidebarBlockSections.styles';
 
-import { Accordion } from 'components/Accordion';
+import { Accordion, AccordionProps } from 'components/Accordion';
 
-export interface CourseSidebarBlockSectionsProps {
-  children: React.ReactNode;
-}
+export type CourseSidebarBlockSectionsProps = AccordionProps;
 
 export function CourseSidebarBlockSections(
   props: CourseSidebarBlockSectionsProps
@@ -13,7 +11,7 @@ export function CourseSidebarBlockSections(
 
   return (
     <div className={Styles.container()}>
-      <Accordion>{children}</Accordion>
+      <Accordion {...props}>{children}</Accordion>
     </div>
   );
 }
