@@ -49,10 +49,10 @@ export const link = css({
         '&:before': {
           backgroundColor: '$indigo-50',
           borderColor: '$indigo-200',
-        },    
+        },
       },
-      false: {}
-    }
+      false: {},
+    },
   },
 });
 

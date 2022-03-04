@@ -216,7 +216,10 @@ const LessonPage: NextPage<LessonPageProps> = (props) => {
                       }}
                       passHref
                     >
-                      <CourseSidebarBlock.Lesson label={lesson.title} isActive={currentLessonSlug === lesson.slug}>
+                      <CourseSidebarBlock.Lesson
+                        label={lesson.title}
+                        isActive={currentLessonSlug === lesson.slug}
+                      >
                         {currentLessonSlug === lesson.slug ? (
                           <>
                             {headings.map((heading) => {

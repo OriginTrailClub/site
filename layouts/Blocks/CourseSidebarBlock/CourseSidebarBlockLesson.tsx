@@ -22,9 +22,7 @@ export const CourseSidebarBlockLesson = React.forwardRef(
         <a className={Styles.link({ isActive })} {...otherProps} ref={ref}>
           {label}
         </a>
-        {hasChapters ? (
-          <ul className={Styles.chapters()}>{children}</ul>
-        ) : null}
+        {hasChapters ? <ul className={Styles.chapters()}>{children}</ul> : null}
       </li>
     );
   }

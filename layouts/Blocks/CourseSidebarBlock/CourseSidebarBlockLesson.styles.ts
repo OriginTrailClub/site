@@ -69,10 +69,10 @@ export const link = css({
         '&:before': {
           backgroundColor: '$indigo-50',
           borderColor: '$indigo-200',
-        },    
+        },
       },
-      false: {}
-    }
+      false: {},
+    },
   },
 });
 
@@ -98,17 +98,18 @@ export const container = css({
     bottom: '50%',
   },
 
-  [`&:last-child .${chapters()} .${CourseSidebarBlockChapterStyles.container()}:last-child:after`]: {
-    bottom: '50%',
-  },
+  [`&:last-child .${chapters()} .${CourseSidebarBlockChapterStyles.container()}:last-child:after`]:
+    {
+      bottom: '50%',
+    },
 
   variants: {
     hasChapters: {
       true: {
         [`&:last-child .${link()}:after`]: {
           bottom: '0%',
-        },      
-      }
-    }
-  }
+        },
+      },
+    },
+  },
 });
