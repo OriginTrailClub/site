@@ -51,11 +51,12 @@ export const container = css({
       mb: '$none',
     },
   },
-  [`& .${ListStyles.container()}:not(.${ListStyles.container()} .${ListStyles.container()})`]: {
-    mb: '$large',
+  [`& .${ListStyles.container()}:not(.${ListStyles.container()} .${ListStyles.container()})`]:
+    {
+      mb: '$large',
 
-    '&:last-child': {
-      mb: '$none',
+      '&:last-child': {
+        mb: '$none',
+      },
     },
-  },
 });

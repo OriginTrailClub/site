@@ -12,25 +12,27 @@ export const getCourseSectionMeta = async ({
   course: string;
   lesson: string;
 }) => {
-    let section;
-    const courseLessons = await getCourseLessons(course);
+  let section;
+  const courseLessons = await getCourseLessons(course);
 
-    for (section of courseLessons) {
-        const lessonIndex = section.lessons.findIndex(({ slug }) => slug === lesson);
-        
-        if (lessonIndex === -1) {
-            continue;
-        }
+  for (section of courseLessons) {
+    const lessonIndex = section.lessons.findIndex(
+      ({ slug }) => slug === lesson
+    );
 
-        break;
+    if (lessonIndex === -1) {
+      continue;
     }
 
-    if (!section) {
-        return null;
-    }
+    break;
+  }
 
-    return {
-        title: section.title,
-        slug: section.lessons[0].slug
-    }
+  if (!section) {
+    return null;
+  }
+
+  return {
+    title: section.title,
+    slug: section.lessons[0].slug,
+  };
 };

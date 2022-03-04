@@ -44,16 +44,16 @@ interface IPageLayoutComposition {
   Pagination: React.FC<ContentLayoutPaginationProps>;
 }
 
-export const ContentLayout: React.FC<PageLayoutProps> &
-  IPageLayoutComposition = function PageLayout(props) {
-  const { children } = props;
+export const ContentLayout: React.FC<PageLayoutProps> & IPageLayoutComposition =
+  function PageLayout(props) {
+    const { children } = props;
 
-  return (
-    <div className={Styles.container()}>
-      <main className={Styles.contents()}>{children}</main>
-    </div>
-  );
-};
+    return (
+      <div className={Styles.container()}>
+        <main className={Styles.contents()}>{children}</main>
+      </div>
+    );
+  };
 
 ContentLayout.Breadcrumbs = ContentLayoutBreadcrumbs;
 ContentLayout.Title = ContentLayoutTitle;

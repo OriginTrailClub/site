@@ -26,12 +26,12 @@ const PageLayoutContainer = styled('div', {
   height: '100%',
 });
 
-export const PageLayout: React.FC<PageLayoutProps> &
-  IPageLayoutComposition = function PageLayout(props) {
-  const { children } = props;
+export const PageLayout: React.FC<PageLayoutProps> & IPageLayoutComposition =
+  function PageLayout(props) {
+    const { children } = props;
 
-  return <PageLayoutContainer>{children}</PageLayoutContainer>;
-};
+    return <PageLayoutContainer>{children}</PageLayoutContainer>;
+  };
 
 PageLayout.Header = PageLayoutHeader;
 PageLayout.Content = PageLayoutContent;

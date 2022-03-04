@@ -24,13 +24,12 @@ type Course = {
 
 interface CoursePageProps {
   course: Course;
-  params: { course: string };
 }
 
 export const getStaticProps = async ({
   params,
 }: {
-  params: CoursePageProps['params'];
+  params: { course: string };
 }) => {
   const courseMeta = await getCourseMeta(params.course);
   const courseLessons = await getCourseLessons(params.course);

@@ -7,7 +7,9 @@ export const getCourseLessonPagination = async ({
   course: string;
   lesson: string;
 }) => {
-  const lessons = (await getCourseLessons(course)).flatMap(({ lessons })=> lessons);
+  const lessons = (await getCourseLessons(course)).flatMap(
+    ({ lessons }) => lessons
+  );
 
   const currentLessonIndex = lessons.findIndex(({ slug }) => slug === lesson);
 

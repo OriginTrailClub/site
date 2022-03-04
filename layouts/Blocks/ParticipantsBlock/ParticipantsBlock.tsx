@@ -167,7 +167,8 @@ function Row<T>(props: RowProps<T>) {
   );
 }
 
-type ParticipantsBlockElements = React.ReactElement<ParticipantsBlockParticipantProps>;
+type ParticipantsBlockElements =
+  React.ReactElement<ParticipantsBlockParticipantProps>;
 
 export interface ParticipantsBlockProps extends AriaLabelingProps {
   children: ParticipantsBlockElements | ParticipantsBlockElements[];
@@ -222,9 +223,9 @@ export const ParticipantsBlock: React.FC<ParticipantsBlockProps> &
   const count = React.Children.count(children);
 
   const elements = React.useMemo((): ParticipantsBlockElements[] => {
-    return (React.Children.toArray(
-      children
-    ) as ParticipantsBlockElements[]).map((child, index) => {
+    return (
+      React.Children.toArray(children) as ParticipantsBlockElements[]
+    ).map((child, index) => {
       return (
         <Item key={index} textValue={child.props.value}>
           {child}

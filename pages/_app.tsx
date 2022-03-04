@@ -27,14 +27,13 @@ function MyApp({ Component, pageProps }: AppProps) {
           <PageLayout>
             <PageLayout.Header
               CallToAction={
-                <Link href={{
-                  pathname: '/learn'
-                }} passHref>
-                  <Button
-                    label="Learn"
-                    Icon={ArrowRightLineIcon}
-                    as="a"
-                  />
+                <Link
+                  href={{
+                    pathname: '/learn',
+                  }}
+                  passHref
+                >
+                  <Button label="Learn" Icon={ArrowRightLineIcon} as="a" />
                 </Link>
               }
             />

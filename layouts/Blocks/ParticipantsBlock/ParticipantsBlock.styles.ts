@@ -156,8 +156,7 @@ export const navigationIcon = css({
 
 export const navigation = css({
   position: 'absolute',
-  top:
-    'calc(($$participantSize - (($space$small / 2) + $space$regular) * 2) / 2)',
+  top: 'calc(($$participantSize - (($space$small / 2) + $space$regular) * 2) / 2)',
 
   variants: {
     variant: {

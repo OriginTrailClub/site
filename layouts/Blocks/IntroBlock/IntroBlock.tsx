@@ -30,22 +30,22 @@ interface IIntroBlockComposition {
   Action: React.FC<IntroBlockActionProps>;
 }
 
-export const IntroBlock: React.FC<IntroBlockProps> &
-  IIntroBlockComposition = function IntroBlock(props) {
-  const { children, align = 'center' } = props;
+export const IntroBlock: React.FC<IntroBlockProps> & IIntroBlockComposition =
+  function IntroBlock(props) {
+    const { children, align = 'center' } = props;
 
-  return (
-    <div
-      className={Styles.container({
-        align,
-      })}
-    >
-      <div className={Styles.inner()}>
-        <div className={Styles.contents()}>{children}</div>
+    return (
+      <div
+        className={Styles.container({
+          align,
+        })}
+      >
+        <div className={Styles.inner()}>
+          <div className={Styles.contents()}>{children}</div>
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  };
 
 IntroBlock.Title = IntroBlockTitle;
 IntroBlock.Description = IntroBlockDescription;

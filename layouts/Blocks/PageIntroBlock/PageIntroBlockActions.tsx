@@ -3,7 +3,8 @@ import * as React from 'react';
 import { PageIntroBlockActionProps } from './PageIntroBlockAction';
 import * as Styles from './PageIntroBlockActions.styles';
 
-type PageIntroBlockActionsElements = React.ReactElement<PageIntroBlockActionProps>;
+type PageIntroBlockActionsElements =
+  React.ReactElement<PageIntroBlockActionProps>;
 
 export interface PageIntroBlockActionsProps {
   children: PageIntroBlockActionsElements | PageIntroBlockActionsElements[];
