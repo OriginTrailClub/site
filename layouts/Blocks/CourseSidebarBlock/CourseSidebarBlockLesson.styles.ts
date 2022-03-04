@@ -94,15 +94,21 @@ export const container = css({
   [`&:first-child .${link()}:after`]: {
     top: '50%',
   },
-  [`&:last-child .${link()}:not(:has(+ .${chapters()})):after`]: {
+  [`&:last-child .${link()}:after`]: {
     bottom: '50%',
-  },
-
-  [`&:last-child .${chapters()} .${CourseSidebarBlockChapterStyles.container()}:first-child:after`]: {
-    top: '-50%',
   },
 
   [`&:last-child .${chapters()} .${CourseSidebarBlockChapterStyles.container()}:last-child:after`]: {
     bottom: '50%',
+  },
+
+  variants: {
+    hasChapters: {
+      true: {
+        [`&:last-child .${link()}:after`]: {
+          bottom: '0%',
+        },      
+      }
+    }
   }
 });

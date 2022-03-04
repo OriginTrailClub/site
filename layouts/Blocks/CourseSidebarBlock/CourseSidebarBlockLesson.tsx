@@ -15,12 +15,16 @@ export const CourseSidebarBlockLesson = React.forwardRef(
   ) {
     const { label, children, isActive = false, ...otherProps } = props;
 
+    const hasChapters = React.Children.count(children) > 0;
+
     return (
-      <li className={Styles.container()}>
+      <li className={Styles.container({ hasChapters })}>
         <a className={Styles.link({ isActive })} {...otherProps} ref={ref}>
           {label}
         </a>
-        <ul className={Styles.chapters()}>{children}</ul>
+        {hasChapters ? (
+          <ul className={Styles.chapters()}>{children}</ul>
+        ) : null}
       </li>
     );
   }
