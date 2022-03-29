@@ -15,6 +15,8 @@ import {
   Block,
   Link,
   LinkProps,
+  Image,
+  ImageProps,
 } from 'components/Typography';
 import { YoutubeEmbed, YoutubeEmbedProps } from 'components/Embeds';
 import NextLink from 'next/link'
@@ -71,6 +73,8 @@ const components = {
   em: (props: ItalicProps) => <Italic {...props} />,
 
   a: (props: LinkProps) => <MDLink {...props} />,
+
+  img: (props: ImageProps) => <Image {...props} />,
 
   YoutubeEmbed: (props: YoutubeEmbedProps) => (
     <Block>
