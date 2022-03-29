@@ -16,7 +16,13 @@ export const Link = React.forwardRef(function Link(
   const { children, href, target, rel } = props;
 
   return (
-    <a href={href} target={href} rel={rel} className={Styles.container()} ref={ref}>
+    <a
+      href={href}
+      target={href}
+      rel={rel}
+      className={Styles.container()}
+      ref={ref}
+    >
       {children}
     </a>
   );
