@@ -1,0 +1,53 @@
+---
+title: Token utilities
+section: Section 2
+---
+
+<YoutubeEmbed videoId="NOjkGANKMB0" title="OT 101 — OriginTrail Token utilities" />
+
+## The Four Network Participants & Enhanced Knowledge Economy Tokenomics
+
+The $TRAC token is a means of compensation between data creators, data holders, and data consumers. It uses an innovative staking system to keep all parties honest. Nodes are therefore incentivized for performing consensus checks and delivering data on demand.
+
+![Network Participants (Figure 1)](/public/ot-101/images/network-participants.jpg)
+
+## Network Entities and Classification
+
+In order to better understand the OriginTrail P2P network structure and the incentive mechanisms within the protocol, we have to understand all the different roles within the context of the system.
+
+The main premise is that the nodes have different interests, given their roles. In order to provide fair play on the network — and a fair market — we have to understand the different entities, aims, needs and relationships operating within it. Above all, we have to understand the potential for collusion among the entities, and their possible motives, and therefore construct incentives in order to mitigate them.
+
+It is important to state that all the nodes are operated by the same software, but their function in the context of observed data determines how the nodes are perceived: one node can have different roles within different agreements. Below is a list of different entities and their roles in the system. The complete picture of interaction between participants in the OriginTrail system is presented in a data flow diagram (Figure 1).
+
+### Data Provider (DP)
+
+The Data Provider (DP) is an entity that publishes supply chain data to the network. A typical scenario would be a company that would like to publish and share its data from their ERP system about products that are part of their supply chain. Data Providers can also be consumers interacting with the network through applications, or devices, such as sensors that provide information about significant events in the supply chain.
+
+The interest of the Data Provider is to be able to safely store data on the network, as well as to be able to connect it and cross-check with the data of other DPs within the network. Depending on the use case, providing data to the network can be incentivised with the Trace token.
+
+### Data Creator Node (DC)
+
+The Data Creator node (DC) is an entity representing a node that will be responsible for importing the data provided by the DP, making sure that all the criteria of DP are met (e.g. the availability of the data on the network for a desired time or a factor of replication). While we typically expect that Data Providers will run their own Data Creator nodes, it is not a requirement. Third party DC nodes may provide the service for one or several Data Providers. The DC node is an entry point for information to the network and the relationship between the DPs and the DCs is not regulated by the protocol.
+
+The responsibility of the DC node is to negotiate, establish and maintain the service requested by the DP in relationship with its associated Data Holder (DH) nodes. Furthermore, DC nodes are responsible to check if data is available on the network during the time of service and initiate the litigation process in case of any disputes.
+
+### Data Holder Node (DH)
+
+The Data Holder (DH) is a node that has committed itself to storing the data provided by a DC node for a requested period of time and making it available for the interested parties (which could also be the DC node itself). For this service, the Data Holder will be compensated in TRAC tokens. The DH node has the responsibility to preserve the data intact in its unaltered, original form, as well as to provide high availability of the data in terms of bandwidth and uptime.
+
+It is important to note that the DH node can be a DC node at the same time, in the context of the data that it has introduced to the network. As noted, the same software runs on all the nodes in the network, providing for symmetrical relations and thus not limiting scalability.
+
+The Data Holder may also wish to find data that is not directly delivered by DCs but is popular, and offer it to interested parties. Therefore, it is probable that Data Holders will listen to the network, search for data that is frequently requested, and replicate it from other Data Holders to also store, process and offer it to the Data Viewers. However, since such Data Holders are not bound by the smart contract to provide the service, there is a certain risk that these Data Holders may offer false data or tamper with the data, or even pretend to have data that they don’t have.
+
+To mitigate this risk, a node will be required to deposit a stake for executing an agreement. This stake will be stored in case it is proven that the Data Holder tried to sell altered data while Data Viewers will have a mechanism to check if all the chunks of data are valid and initiate a litigation procedure in case of any inconsistencies.
+
+The amount of stake is set per agreement within each node. The DC node may require a minimum amount of stake to form an agreement with DH nodes, informing them of these amounts by publishing this information when they create an “Offer” on the blockchain. The stake settings can be setup either directly in the node configuration files or through a UI application (Houston).
+
+Data Holders will be able to provide a larger stake if they want to demonstrate their quality of the service to Data Viewers. However, the amount of tokens staked is not the only criteria for node selection, there are other factors that determine which node will have a chance to execute the service, as we will explain in the remainder of this paper. The system is designed to provide great service to its users and relies heavily on the nodes’ reputation (past success and reliability of executing the deals) and other factors.
+
+### Data Viewer (DV)
+
+The Data Viewer (DV) is an entity that requests data from any network node able to provide that data. The Data Viewer will be able to send two types of queries to the network. The first type is a request for listing data on the network for a specific set of batch identifiers of the product supply chain they are interested in, where they will be able to retrieve the all connected data of the product trail. The second type is a retrieval query for the specific data set from the listed one in the first request. In both cases, the Data Viewer will receive the offers from all the nodes that have the data, together with their compensation requests for retrieving of the data that will be sent. The Data Viewer can decide which offers it will accept and deposit the requested compensation funds on the escrow smart contract. The providing node then sends the encrypted data in order for the Data Viewer to test the validity of the data. Once the validity of the data is confirmed, the Data Viewer will get the key to decrypt the data while the smart contract will unlock the funds for the party that provided the data.
+
+The interest of the Data Viewer is to get the data for as affordable as possible, but also to be sure that the provided data is genuine. Therefore, the Data Viewer also has an opportunity to initiate the litigation procedure in case the data received is not valid. If that happens, and it is proven that Data Viewer received false data, the stake of the corresponding DH node is lost.
+

@@ -1,0 +1,20 @@
+---
+title: Data Integrity
+section: Section 1
+---
+
+<YoutubeEmbed videoId="uCcL1p5dV_g" title="OT 101 — OriginTrail integrity" />
+
+OriginTrail incorporates blockchain as the platform to ensure data integrity. For all the information that gets included in the system, a tamper proof "fingerprint" (a cryptographic hash) is generated and stored on the blockchain at the time of arrival. The cryptographic hash is commonly used to prove the received data has not been modified in any way, and having the hash immutable in blockchain as a reference to the original input completes this mechanism. If there is a need to check if data was tampered with, a simple hash comparison between the stored hash in the blockchain and the newly generated hash from the same data in ODN shows if changes have been made.
+
+OriginTrail supports many different blockchain implementations. The current version of OriginTrail utilizes Ethereum blockchain to provide proof of concept and initial implementation, the fully developed solution will provide interfaces to many different blockchains.
+
+## Why support multiple blockchains?
+
+There are multiple reasons for adopting this principle:
+
+- Competing blockchain solutions will evolve in unexpected ways, which will influence the pricing of blockchain usage
+- More advanced blockchain solutions in the future could be integrated
+- Supply chain stakeholders already using blockchain solutions for various purposes will be able to use the same blockchain for OriginTrail
+
+On top of the blockchain layer are two system layers - the network and data layers, which combined form the ODN system. Because of computational and storage efficiency, the ODN is able to deliver a cost-efficient solution for data integration and manipulation in for supply chain stakeholders.
