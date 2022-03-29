@@ -76,6 +76,7 @@ const components = {
 
   a: (props: LinkProps) => <MDLink {...props} />,
 
+  // eslint-disable-next-line jsx-a11y/alt-text
   img: (props: ImageProps) => <Image {...props} />,
 
   YoutubeEmbed: (props: YoutubeEmbedProps) => (
