@@ -1,8 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 
-import matter from 'gray-matter';
-import { serialize } from 'next-mdx-remote/serialize';
+import { serializeMarkdown } from './serializeMarkdown'
 
 export const getCourseContent = async (course: string) => {
   const courseDirectory = path.join(process.cwd(), 'courses', course);
@@ -12,9 +11,6 @@ export const getCourseContent = async (course: string) => {
     'utf-8'
   );
 
-  const { data, content } = matter(markdownWithMeta);
-
-  const source = await serialize(content, { scope: data });
-
+  const { source } = await serializeMarkdown(markdownWithMeta);
   return source;
 };

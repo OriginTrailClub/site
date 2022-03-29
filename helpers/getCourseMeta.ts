@@ -1,8 +1,9 @@
 import path from 'path';
 import fs from 'fs';
 
-import matter from 'gray-matter';
 import { slugify } from 'utils/slugify';
+
+import { serializeMarkdown } from './serializeMarkdown';
 
 export const getCourseMeta = async (course: string) => {
   const courseDirectory = path.join(process.cwd(), 'courses', course);
@@ -14,7 +15,7 @@ export const getCourseMeta = async (course: string) => {
 
   const {
     data: { subject },
-  } = matter(markdownWithMeta);
+  } = await serializeMarkdown(markdownWithMeta);
 
   return {
     subject,

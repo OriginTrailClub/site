@@ -1,8 +1,7 @@
-import matter from 'gray-matter';
-
 import { slugify } from 'utils/slugify';
 
 import { getCourseLessonMarkdown } from './getCourseLessonMarkdown';
+import { serializeMarkdown } from './serializeMarkdown';
 
 export const getCourseLessonMeta = async ({
   course,
@@ -19,7 +18,7 @@ export const getCourseLessonMeta = async ({
 
   const {
     data: { title },
-  } = matter(markdownWithMeta);
+  } = await serializeMarkdown(markdownWithMeta);
 
   return {
     title,

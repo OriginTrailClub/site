@@ -1,7 +1,4 @@
-import matter from 'gray-matter';
-
-import { serialize } from 'next-mdx-remote/serialize';
-
+import { serializeMarkdown } from './serializeMarkdown'
 import { getCourseLessonMarkdown } from './getCourseLessonMarkdown';
 
 export const getCourseLessonContent = async ({
@@ -17,9 +14,7 @@ export const getCourseLessonContent = async ({
     return null;
   }
 
-  const { data, content } = matter(markdownWithMeta);
-
-  const source = await serialize(content, { scope: data });
+  const { source } = await serializeMarkdown(markdownWithMeta);
 
   return source;
 };

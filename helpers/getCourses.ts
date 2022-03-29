@@ -1,24 +1,29 @@
 import path from 'path';
 import fs from 'fs';
 
-import matter from 'gray-matter';
 import { slugify } from 'utils/slugify';
+
+import {serializeMarkdown} from './serializeMarkdown';
 
 export const getCourses = async () => {
   const coursesDirectory = path.join(process.cwd(), 'courses');
 
   const files = fs.readdirSync(coursesDirectory);
 
-  return files.map((filename) => {
+  let courses = [];
+
+  for (let filename of files) {
     const markdownWithMeta = fs.readFileSync(
       path.join(coursesDirectory, filename, 'index.mdx'),
       'utf-8'
     );
-    const { data } = matter(markdownWithMeta);
+    const { data } = await serializeMarkdown(markdownWithMeta);
 
-    return {
+    courses.push({
       slug: slugify(data.subject),
       ...data,
-    };
-  });
+    });
+  }
+
+  return courses;
 };

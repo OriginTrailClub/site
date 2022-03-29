@@ -1,10 +1,9 @@
 import path from 'path';
 import fs from 'fs';
 
-import matter from 'gray-matter';
-import { serialize } from 'next-mdx-remote/serialize';
-
 import { slugify } from 'utils/slugify';
+
+import {serializeMarkdown} from './serializeMarkdown';
 
 const lessonRegex = new RegExp(/^(?<order>[0-9]+)-(?<slug>.*).mdx/);
 
@@ -37,7 +36,7 @@ export const getLesson = async ({
     'utf-8'
   );
 
-  const { data, content } = matter(markdownWithMeta);
+  const { data, content, source } = await serializeMarkdown(markdownWithMeta);
 
   const headingsLines = content
     .split('\n')
@@ -51,8 +50,6 @@ export const getLesson = async ({
       slug: slugify(text),
     };
   });
-
-  const source = await serialize(content, { scope: data });
 
   return {
     data,

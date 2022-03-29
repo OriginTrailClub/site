@@ -1,8 +1,3 @@
-import matter from 'gray-matter';
-
-import { slugify } from 'utils/slugify';
-
-import { getCourseLessonMarkdown } from './getCourseLessonMarkdown';
 import { getCourseLessons } from './getCourseLessons';
 
 export const getCourseSectionMeta = async ({

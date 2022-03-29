@@ -1,8 +1,7 @@
-import matter from 'gray-matter';
-
 import { slugify } from 'utils/slugify';
 
 import { getCourseLessonMarkdown } from './getCourseLessonMarkdown';
+import { serializeMarkdown } from './serializeMarkdown';
 
 export const getCourseLessonHeadings = async ({
   course,
@@ -17,7 +16,7 @@ export const getCourseLessonHeadings = async ({
     return null;
   }
 
-  const { content } = matter(markdownWithMeta);
+  const { content } = await serializeMarkdown(markdownWithMeta);
 
   const headingsLines = content
     .split('\n')

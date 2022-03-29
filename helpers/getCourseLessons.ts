@@ -1,8 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 
-import matter from 'gray-matter';
-
+import { serializeMarkdown } from './serializeMarkdown';
 import { CourseLessonsSection } from './types';
 
 const lessonRegex = new RegExp(/^(?<order>[0-9]+)-(?<slug>.*).mdx/);
@@ -28,7 +27,7 @@ export const getCourseLessons = async (course: string) => {
 
       const {
         data: { title, section },
-      } = matter(markdownWithMeta);
+      } = await serializeMarkdown(markdownWithMeta);
 
       lessons.push({
         order: Number(order),
