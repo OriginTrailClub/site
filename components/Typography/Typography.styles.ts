@@ -57,7 +57,7 @@ export const container = css({
 
     '&:last-child': {
       mb: '$none',
-    }
+    },
   },
   [`& .${ListStyles.container()}:not(.${ListStyles.container()} .${ListStyles.container()})`]:
     {

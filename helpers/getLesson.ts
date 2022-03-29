@@ -3,7 +3,7 @@ import fs from 'fs';
 
 import { slugify } from 'utils/slugify';
 
-import {serializeMarkdown} from './serializeMarkdown';
+import { serializeMarkdown } from './serializeMarkdown';
 
 const lessonRegex = new RegExp(/^(?<order>[0-9]+)-(?<slug>.*).mdx/);
 

@@ -1,4 +1,4 @@
-import { serializeMarkdown } from './serializeMarkdown'
+import { serializeMarkdown } from './serializeMarkdown';
 import { getCourseLessonMarkdown } from './getCourseLessonMarkdown';
 
 export const getCourseLessonContent = async ({

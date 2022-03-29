@@ -1,7 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 
-import { serializeMarkdown } from './serializeMarkdown'
+import { serializeMarkdown } from './serializeMarkdown';
 
 export const getCourseContent = async (course: string) => {
   const courseDirectory = path.join(process.cwd(), 'courses', course);

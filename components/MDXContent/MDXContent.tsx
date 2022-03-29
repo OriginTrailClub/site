@@ -19,7 +19,7 @@ import {
   ImageProps,
 } from 'components/Typography';
 import { YoutubeEmbed, YoutubeEmbedProps } from 'components/Embeds';
-import NextLink from 'next/link'
+import NextLink from 'next/link';
 
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { slugify } from 'utils/slugify';
@@ -44,14 +44,16 @@ function MDLink(props: LinkProps) {
   let el;
 
   if (isInternal) {
-    el = (<Link {...props} />)
+    el = <Link {...props} />;
   } else {
-    el = (<Link {...props} target="_blank" rel="noopener noreferrer" />);
+    el = <Link {...props} target="_blank" rel="noopener noreferrer" />;
   }
 
   return (
-    <NextLink href={props.href} passHref>{el}</NextLink>
-  )
+    <NextLink href={props.href} passHref>
+      {el}
+    </NextLink>
+  );
 }
 
 const components = {

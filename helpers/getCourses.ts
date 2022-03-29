@@ -3,7 +3,7 @@ import fs from 'fs';
 
 import { slugify } from 'utils/slugify';
 
-import {serializeMarkdown} from './serializeMarkdown';
+import { serializeMarkdown } from './serializeMarkdown';
 
 export const getCourses = async () => {
   const coursesDirectory = path.join(process.cwd(), 'courses');

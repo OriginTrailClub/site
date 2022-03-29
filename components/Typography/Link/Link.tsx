@@ -10,5 +10,9 @@ export type LinkProps = {
 export function Link(props: LinkProps) {
   const { children, href, target, rel } = props;
 
-  return <a href={href} target={href} rel={rel} className={Styles.container()}>{children}</a>;
+  return (
+    <a href={href} target={href} rel={rel} className={Styles.container()}>
+      {children}
+    </a>
+  );
 }
