@@ -6,3 +6,4 @@ export * from './Bold';
 export * from './Italic';
 export * from './Block';
 export * from './Typography';
+export * from './Link';
