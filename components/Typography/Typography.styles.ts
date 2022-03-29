@@ -3,6 +3,7 @@ import { css } from 'stitches.config';
 import * as HeadingStyles from './Heading/Heading.styles';
 import * as ParagraphStyles from './Paragraph/Paragraph.styles';
 import * as ListStyles from './List/List.styles';
+import * as ImageStyles from './Image/Image.styles';
 import * as BlockStyles from './Block/Block.styles';
 
 export const container = css({
@@ -50,6 +51,13 @@ export const container = css({
     '&:last-child': {
       mb: '$none',
     },
+  },
+  [`& > .${ImageStyles.container()}`]: {
+    mb: '$large',
+
+    '&:last-child': {
+      mb: '$none',
+    }
   },
   [`& .${ListStyles.container()}:not(.${ListStyles.container()} .${ListStyles.container()})`]:
     {

@@ -7,3 +7,4 @@ export * from './Italic';
 export * from './Block';
 export * from './Typography';
 export * from './Link';
+export * from './Image';
