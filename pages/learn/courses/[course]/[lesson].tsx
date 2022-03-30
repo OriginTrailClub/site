@@ -10,7 +10,6 @@ import { MDXContent } from 'components/MDXContent';
 import { Pagination } from 'components/Pagination';
 
 import { ContentLayout } from 'layouts/ContentLayout/ContentLayout';
-import { PageContentBlock } from 'layouts/Blocks/PageContentBlock';
 
 import { getLessons } from 'helpers/getLessons';
 import { getCourseMeta } from 'helpers/getCourseMeta';
@@ -100,7 +99,7 @@ const LessonPage: NextPage<LessonPageProps> = (props) => {
   const { meta: lessonMeta, content, headings } = lesson;
   const { meta: sectionMeta } = section;
 
-  const { slug: courseSlug, subject: courseSubject } = courseMeta;
+  const { slug: courseSlug, subject: courseSubject, description: courseDescription } = courseMeta;
   const { slug: lessonSlug, title: lessonTitle } = lessonMeta;
   const { slug: sectionSlug, title: sectionTitle } = sectionMeta;
   const {
@@ -109,7 +108,7 @@ const LessonPage: NextPage<LessonPageProps> = (props) => {
     totalLessons,
     currentLessonIndex,
   } = pagination;
-  const { course: currentCourseSlug, lesson: currentLessonSlug } = params;
+  const { lesson: currentLessonSlug } = params;
 
   const [activeHash, setActiveHash] = React.useState('#');
 
@@ -141,6 +140,10 @@ const LessonPage: NextPage<LessonPageProps> = (props) => {
     <>
       <Head>
         <title>{lessonTitle} - Origintrail Community Hub</title>
+        <meta
+          name="description"
+          content={courseDescription}
+        />
 
         <meta name="robots" content="noindex" />
       </Head>

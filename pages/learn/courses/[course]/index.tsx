@@ -62,7 +62,7 @@ export const getStaticPaths = async () => {
 const CoursePage: NextPage<CoursePageProps> = (props) => {
   const { course } = props;
   const { meta, lessons, content } = course;
-  const { subject, slug } = meta;
+  const { subject, slug, description } = meta;
 
   const firstLesson = lessons?.[0]?.lessons?.[0];
 
@@ -70,6 +70,10 @@ const CoursePage: NextPage<CoursePageProps> = (props) => {
     <>
       <Head>
         <title>{subject} - Origintrail Community Hub</title>
+        <meta
+          name="description"
+          content={description}
+        />
 
         <meta name="robots" content="noindex" />
       </Head>

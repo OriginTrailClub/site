@@ -33,7 +33,10 @@ const LearnPage: NextPage<LearnPageProps> = (props) => {
     <>
       <Head>
         <title>Learn - Origintrail Community Hub</title>
-
+        <meta
+          name="description"
+          content="Want to learn more about OriginTrail, but don’t know where to start? These structured courses will help you kickstart your blockchain journey."
+        />
 
         <meta name="robots" content="noindex" />
       </Head>

@@ -10,7 +10,7 @@ export type Course = {
 
 export type Courses = Course[];
 
-export type CourseMeta = Pick<Course, 'slug' | 'subject'>;
+export type CourseMeta = Pick<Course, 'slug' | 'subject' | 'description'>;
 
 export type CourseLesson = {
   title: string;

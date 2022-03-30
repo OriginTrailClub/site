@@ -14,10 +14,11 @@ export const getCourseMeta = async (course: string) => {
   );
 
   const {
-    data: { subject },
+    data: { subject, description },
   } = await serializeMarkdown(markdownWithMeta);
 
   return {
+    description,
     subject,
     slug: slugify(subject),
   };
