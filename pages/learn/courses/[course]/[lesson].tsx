@@ -145,6 +145,30 @@ const LessonPage: NextPage<LessonPageProps> = (props) => {
           content={courseDescription}
         />
 
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@OriginTrailClub" />
+        <meta name="twitter:title" content={`${lessonTitle} - Origintrail Community Hub`} />
+        <meta
+          name="twitter:description"
+          content={courseDescription}
+        />
+        <meta
+          name="twitter:image"
+          content="https://origintrail.club/courses/ot-101/socials/placeholder.jpg"
+        />
+        <meta name="twitter:image:alt" content={`${courseSubject} - Origintrail Community Hub`} />
+
+        <meta property="og:title" content={`${lessonTitle} - Origintrail Community Hub`} />
+        <meta
+          property="og:description"
+          content={courseDescription}
+        />
+        <meta
+          property="og:image"
+          content="https://origintrail.club/courses/ot-101/socials/placeholder.jpg"
+        />
+        <meta property="og:site_name" content="Origintrail Community Hub" />
+
         <meta name="robots" content="noindex" />
       </Head>
       <ContentLayout>

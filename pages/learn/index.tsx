@@ -38,7 +38,29 @@ const LearnPage: NextPage<LearnPageProps> = (props) => {
           content="Want to learn more about OriginTrail, but don’t know where to start? These structured courses will help you kickstart your blockchain journey."
         />
 
-        <meta name="robots" content="noindex" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@OriginTrailClub" />
+        <meta name="twitter:title" content="Learn - Origintrail Community Hub" />
+        <meta
+          name="twitter:description"
+          content="Want to learn more about OriginTrail, but don’t know where to start? These structured courses will help you kickstart your blockchain journey."
+        />
+        <meta
+          name="twitter:image"
+          content="https://origintrail.club/learn/socials/placeholder.jpg"
+        />
+        <meta name="twitter:image:alt" content="Learn - Origintrail Community Hub" />
+
+        <meta property="og:title" content="Learn - Origintrail Community Hub" />
+        <meta
+          property="og:description"
+          content="Want to learn more about OriginTrail, but don’t know where to start? These structured courses will help you kickstart your blockchain journey."
+        />
+        <meta
+          property="og:image"
+          content="https://origintrail.club/learn/socials/placeholder.jpg"
+        />
+        <meta property="og:site_name" content="Origintrail Community Hub" />
       </Head>
       <Grid>
         <Grid.Item>
