@@ -13,6 +13,7 @@ export const link = css({
   fontFamily: '$mono',
   fontSize: '$button',
   lineHeight: '$none',
+  overflowWrap: 'break-word',
 
   py: '$small',
   px: '$x-small',
