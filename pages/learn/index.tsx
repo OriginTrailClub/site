@@ -32,6 +32,9 @@ const LearnPage: NextPage<LearnPageProps> = (props) => {
   return (
     <>
       <Head>
+        <title>Learn - Origintrail Community Hub</title>
+
+
         <meta name="robots" content="noindex" />
       </Head>
       <Grid>

@@ -140,6 +140,8 @@ const LessonPage: NextPage<LessonPageProps> = (props) => {
   return (
     <>
       <Head>
+        <title>{lessonTitle} - Origintrail Community Hub</title>
+
         <meta name="robots" content="noindex" />
       </Head>
       <ContentLayout>
