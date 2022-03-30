@@ -99,7 +99,11 @@ const LessonPage: NextPage<LessonPageProps> = (props) => {
   const { meta: lessonMeta, content, headings } = lesson;
   const { meta: sectionMeta } = section;
 
-  const { slug: courseSlug, subject: courseSubject, description: courseDescription } = courseMeta;
+  const {
+    slug: courseSlug,
+    subject: courseSubject,
+    description: courseDescription,
+  } = courseMeta;
   const { slug: lessonSlug, title: lessonTitle } = lessonMeta;
   const { slug: sectionSlug, title: sectionTitle } = sectionMeta;
   const {
@@ -140,29 +144,29 @@ const LessonPage: NextPage<LessonPageProps> = (props) => {
     <>
       <Head>
         <title>{lessonTitle} - Origintrail Community Hub</title>
-        <meta
-          name="description"
-          content={courseDescription}
-        />
+        <meta name="description" content={courseDescription} />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@OriginTrailClub" />
-        <meta name="twitter:title" content={`${lessonTitle} - Origintrail Community Hub`} />
         <meta
-          name="twitter:description"
-          content={courseDescription}
+          name="twitter:title"
+          content={`${lessonTitle} - Origintrail Community Hub`}
         />
+        <meta name="twitter:description" content={courseDescription} />
         <meta
           name="twitter:image"
           content="https://origintrail.club/courses/ot-101/socials/placeholder.jpg"
         />
-        <meta name="twitter:image:alt" content={`${courseSubject} - Origintrail Community Hub`} />
-
-        <meta property="og:title" content={`${lessonTitle} - Origintrail Community Hub`} />
         <meta
-          property="og:description"
-          content={courseDescription}
+          name="twitter:image:alt"
+          content={`${courseSubject} - Origintrail Community Hub`}
         />
+
+        <meta
+          property="og:title"
+          content={`${lessonTitle} - Origintrail Community Hub`}
+        />
+        <meta property="og:description" content={courseDescription} />
         <meta
           property="og:image"
           content="https://origintrail.club/courses/ot-101/socials/placeholder.jpg"

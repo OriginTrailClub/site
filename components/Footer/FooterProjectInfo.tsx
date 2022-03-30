@@ -48,16 +48,16 @@ export function FooterProjectInfo(props: FooterProjectInfoProps) {
     <aside className={Styles.container()}>
       <div className={Styles.contents()}>
         <div className={Styles.info()}>
-        <div className={Styles.logo()}>
-          <div className={Styles.aspectRatio()}>
+          <div className={Styles.logo()}>
+            <div className={Styles.aspectRatio()}>
               <Image
                 src="/logo.svg"
                 objectPosition="left center"
                 objectFit="contain"
                 layout="fill"
                 alt="OriginTrail Community Hub logo"
-            />
-          </div>
+              />
+            </div>
           </div>
           <p className={Styles.description()}>
             OriginTrail is powered by an amazing community and core developers,
