@@ -1,67 +1,55 @@
-import { styled } from 'stitches.config';
-
-import Head from 'next/head';
-
 import {
-  OverviewLayoutHeader,
-  OverviewLayoutHeaderProps,
-} from './OverviewLayoutHeader';
+  OverviewLayoutBreadcrumbs,
+  OverviewLayoutBreadcrumbsProps,
+} from './OverviewLayoutBreadcrumbs';
+import {
+  OverviewLayoutTitle,
+  OverviewLayoutTitleProps,
+} from './OverviewLayoutTitle';
 import {
   OverviewLayoutContent,
   OverviewLayoutContentProps,
 } from './OverviewLayoutContent';
 import {
-  OverviewLayoutFooter,
-  OverviewLayoutFooterProps,
-} from './OverviewLayoutFooter';
+  OverviewLayoutSidebar,
+  OverviewLayoutSidebarProps,
+} from './OverviewLayoutSidebar';
+
+import * as Styles from './OverviewLayout.styles';
 
 type OverviewLayoutElements = React.ReactElement<
-  | OverviewLayoutHeaderProps
+  | OverviewLayoutBreadcrumbsProps
+  | OverviewLayoutTitleProps
   | OverviewLayoutContentProps
-  | OverviewLayoutFooterProps
+  | OverviewLayoutSidebarProps
 >;
 
-export interface OverviewLayoutProps {
+export interface PageLayoutProps {
   /**
-   * React elements which are either OverviewLayout.Header, OverviewLayout.Content or OverviewLayout.Footer
+   * React elements which are either OverviewLayout.Breadcrumbs, OverviewLayout.Title, OverviewLayout.Content or OverviewLayout.Sidebar
    */
   children: OverviewLayoutElements | OverviewLayoutElements[];
-  /**
-   * Page title
-   */
-  title: string;
-  /**
-   * Page description
-   */
-  description: string;
 }
 
-interface IOverviewLayoutComposition {
-  Header: React.FC<OverviewLayoutHeaderProps>;
+interface IPageLayoutComposition {
+  Breadcrumbs: React.FC<OverviewLayoutBreadcrumbsProps>;
+  Title: React.FC<OverviewLayoutTitleProps>;
   Content: React.FC<OverviewLayoutContentProps>;
-  Footer: React.FC<OverviewLayoutFooterProps>;
+  Sidebar: React.FC<OverviewLayoutSidebarProps>;
 }
 
-const OverviewLayoutContainer = styled('div', {
-  width: '100%',
-  height: '100%',
-});
-
-export const OverviewLayout: React.FC<OverviewLayoutProps> &
-  IOverviewLayoutComposition = function OverviewLayout(props) {
-  const { children, title, description } = props;
+export const OverviewLayout: React.FC<PageLayoutProps> &
+  IPageLayoutComposition = function PageLayout(props) {
+  const { children } = props;
 
   return (
-    <OverviewLayoutContainer>
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-      </Head>
-      {children}
-    </OverviewLayoutContainer>
+    <div className={Styles.container()}>
+      <main className={Styles.contents()}>{children}</main>
+    </div>
   );
 };
 
-OverviewLayout.Header = OverviewLayoutHeader;
+OverviewLayout.Breadcrumbs = OverviewLayoutBreadcrumbs;
+OverviewLayout.Title = OverviewLayoutTitle;
 OverviewLayout.Content = OverviewLayoutContent;
-OverviewLayout.Footer = OverviewLayoutFooter;
+OverviewLayout.Sidebar = OverviewLayoutSidebar;

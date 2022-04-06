@@ -36,3 +36,8 @@ export const badge = css({
     },
   },
 });
+
+export const logo = css({
+  width: 56,
+  height: 56,
+})

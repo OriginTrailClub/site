@@ -58,10 +58,14 @@ export const info = css({
   maxWidth: 376,
 });
 
-export const logo = css({
-  display: 'flex',
+export const aspectRatio = css({
   width: '100%',
+  paddingBottom: 'calc(100% / 25 * 7)',
+});
+
+export const logo = css({
   maxWidth: 180,
+  width: '100%',
   mb: '$regular',
 });
 

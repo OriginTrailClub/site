@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import * as Styles from './Paragraph.styles';
+
 import { filterDOMProps } from '@react-aria/utils';
 
 import { DOMProps } from 'types';
@@ -18,26 +20,6 @@ export interface ParagraphProps extends DOMProps {
   variant?: 'intro' | 'default' | 'compact';
 }
 
-const ParagraphElement = styled('p', {
-  m: 0,
-  color: '$text-body',
-  lineHeight: '$body',
-
-  variants: {
-    variant: {
-      intro: {
-        fontSize: '$body-intro',
-      },
-      default: {
-        fontSize: '$body-default',
-      },
-      compact: {
-        fontSize: '$body-compact',
-      },
-    },
-  },
-});
-
 /**
  * Paragraph is used to create paragraphs in the typographic hierarchy
  */
@@ -48,15 +30,15 @@ export const Paragraph = React.forwardRef(function Paragraph(
   const { children, variant, ...otherProps } = props;
 
   return (
-    <ParagraphElement
+    <p
       {...filterDOMProps(otherProps)}
-      variant={variant}
       data-variant={variant}
       ref={ref}
+      className={Styles.container({
+        variant,
+      })}
     >
       {children}
-    </ParagraphElement>
+    </p>
   );
 });
-
-Paragraph.toString = ParagraphElement.toString;

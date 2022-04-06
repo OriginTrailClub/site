@@ -2,7 +2,8 @@ import * as Styles from './CompaniesBlockCompanies.styles';
 
 import { CompaniesBlockCompanyProps } from './CompaniesBlockCompany';
 
-type CompaniesBlockCompaniesElements = React.ReactElement<CompaniesBlockCompanyProps>;
+type CompaniesBlockCompaniesElements =
+  React.ReactElement<CompaniesBlockCompanyProps>;
 
 export interface CompaniesBlockCompaniesProps {
   children: CompaniesBlockCompaniesElements[];

@@ -20,7 +20,7 @@ export interface AccordionProps extends Expandable {
   /**
    * The children of the <Accordion> element. Should include one or multiple `<Accordion.Item>` elements.
    */
-  children: AccordionElements | AccordionElements[];
+  children: React.ReactNode;
 }
 
 interface IAccordionComposition {
@@ -83,25 +83,25 @@ function AccordionRendered(props: AccordionRenderedProps) {
   );
 }
 
-export const Accordion: React.FC<AccordionProps> &
-  IAccordionComposition = function Accordion(props: AccordionProps) {
-  const { children, onExpandedChange, defaultExpandedKeys } = props;
+export const Accordion: React.FC<AccordionProps> & IAccordionComposition =
+  function Accordion(props: AccordionProps) {
+    const { children, onExpandedChange, defaultExpandedKeys } = props;
 
-  return (
-    <AccordionRendered
-      onExpandedChange={onExpandedChange}
-      defaultExpandedKeys={defaultExpandedKeys}
-    >
-      {(React.Children.toArray(children) as AccordionElements[]).map(
-        (child) => (
-          <Item key={child.props.value} textValue={child.props.value}>
-            {child}
-          </Item>
-        )
-      )}
-    </AccordionRendered>
-  );
-};
+    return (
+      <AccordionRendered
+        onExpandedChange={onExpandedChange}
+        defaultExpandedKeys={defaultExpandedKeys}
+      >
+        {(React.Children.toArray(children) as AccordionElements[]).map(
+          (child) => (
+            <Item key={child.props.value} textValue={child.props.value}>
+              {child}
+            </Item>
+          )
+        )}
+      </AccordionRendered>
+    );
+  };
 
 Accordion.Item = AccordionItem;
 Accordion.Header = AccordionHeader;

@@ -34,7 +34,12 @@ export function AccordionHeader(props: AccordionHeaderProps) {
     <h3 className={Styles.container()}>
       <button className={Styles.trigger()} {...buttonProps} ref={buttonRef}>
         <div className={Styles.icon()}>
-          <Image src={icon} alt={title} width={32} height={32} />
+          <Image 
+            src={icon} 
+            alt={title}                 
+            objectFit="contain"
+            layout="fill"
+          />
         </div>
         <span className={Styles.label()}>{title}</span>
         <div className={Styles.indicator()}>

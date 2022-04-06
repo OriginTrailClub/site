@@ -11,6 +11,7 @@ export const label = css({
 
 export const iconWrapper = css({
   p: '$small',
+  display: 'flex',
 });
 
 export const icon = css({

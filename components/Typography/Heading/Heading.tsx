@@ -1,9 +1,10 @@
 import * as React from 'react';
 
+import * as Styles from './Heading.styles';
+
 import { filterDOMProps } from '@react-aria/utils';
 
 import { DOMProps } from 'types';
-import { styled } from 'stitches.config';
 
 export interface HeadingProps extends DOMProps {
   /**
@@ -23,34 +24,6 @@ export interface HeadingProps extends DOMProps {
   style?: 1 | 2 | 3 | 4;
 }
 
-export const HeadingElement = styled('h1', {
-  fontFamily: '$header',
-  lineHeight: '$header',
-  color: '$text-header',
-  m: 0,
-
-  variants: {
-    level: {
-      1: {
-        fontWeight: '$extra-bold',
-        fontSize: '$header-1',
-      },
-      2: {
-        fontWeight: '$bold',
-        fontSize: '$header-2',
-      },
-      3: {
-        fontWeight: '$semi-bold',
-        fontSize: '$header-3',
-      },
-      4: {
-        fontWeight: '$semi-bold',
-        fontSize: '$header-4',
-      },
-    },
-  },
-});
-
 /**
  * Heading is used to create the different heading levels of the typographic hierarchy
  */
@@ -63,16 +36,16 @@ export const Heading = React.forwardRef(function Heading(
   let HeadingTag = `h${level}` as React.ElementType;
 
   return (
-    <HeadingElement
+    <HeadingTag
       {...filterDOMProps(otherProps)}
       level={style}
       ref={ref}
-      as={HeadingTag}
       data-level={style}
+      className={Styles.container({
+        level: style,
+      })}
     >
       {children}
-    </HeadingElement>
+    </HeadingTag>
   );
 });
-
-Heading.toString = HeadingElement.toString;

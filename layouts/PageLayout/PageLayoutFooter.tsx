@@ -1,8 +1,8 @@
 import { Footer } from 'components/Footer';
 
-export interface OverviewLayoutFooterProps {}
+export interface PageLayoutFooterProps {}
 
-export function OverviewLayoutFooter(props: OverviewLayoutFooterProps) {
+export function PageLayoutFooter(props: PageLayoutFooterProps) {
   return (
     <Footer>
       <Footer.ProjectInfo />
