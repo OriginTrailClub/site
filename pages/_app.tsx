@@ -19,7 +19,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <meta name="robots" content="noindex" />
         <link rel="icon" href="/favicon-origintrail.ico" />
       </Head>
       <I18nProvider locale="en-US">

@@ -98,8 +98,6 @@ const CoursePage: NextPage<CoursePageProps> = (props) => {
           content="https://origintrail.club/learn/socials/placeholder.jpg"
         />
         <meta property="og:site_name" content="Origintrail Community Hub" />
-
-        <meta name="robots" content="noindex" />
       </Head>
       <OverviewLayout>
         <OverviewLayout.Breadcrumbs>
