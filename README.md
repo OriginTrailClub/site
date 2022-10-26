@@ -29,6 +29,72 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 We encourage the developer community to submit [issues](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue) and [pull requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) for the [origintrail.club](https://origintrail.club) to this repository.
 
-### Adding content to origintrail acadamy
+### Adding content to OriginTrail Academy
 
-...
+Create a new folder in the `courses` folder with a slug of the name of the course, for example `deep-dive`.
+
+Create a new file and copy the following content.
+
+```.mdx
+---
+subject: [Title]
+description: [Short description]
+author: [Your name]
+banner: [[Link to a banner](#banner)]
+---
+
+[Course introduction]
+
+```
+
+To add pages to the course you can add multiple `.mdx` files to the course folder with the following naming convention (`[order]-[slug].mdx`).
+
+```.mdx
+
+---
+title: [Page title]
+section: [Section]
+---
+
+[Page content]
+```
+
+To group multiple page's in the same group use the same value in the section key, for example:
+
+
+```.mdx
+
+---
+title: [Page title]
+section: Tokenomics
+---
+```
+
+```.mdx
+
+---
+title: [Page title]
+section: Tokenomics
+---
+```
+
+You will end up with a folder looking like:
+
+```
+your-course/
+├─ index.mdx
+├─ 1-first-page-title.mdx
+└─ 2-second-page-title.mdx
+```
+
+#### Creating assets
+
+Create a new folder in the `public/courses` folder with the same slug as the course.
+
+##### Banner
+
+Create a image with the following properties:
+- Aspect ratio of 16 / 10
+- And at least a width of 300px
+
+Both `.jpg` and `.png` files are supported and automatically optimized in the project. 
