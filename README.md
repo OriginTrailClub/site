@@ -40,7 +40,7 @@ Create a new file and copy the following content.
 subject: [Title]
 description: [Short description]
 author: [Your name]
-banner: [[Link to a banner](#banner)]
+banner: /courses/your-asset.jpg
 ---
 
 [Course introduction]
