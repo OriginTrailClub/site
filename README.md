@@ -94,4 +94,8 @@ Create a image with the following properties:
 - Aspect ratio of 16 / 10
 - And at least a width of 300px
 
-Both `.jpg` and `.png` files are supported and automatically optimized in the project. 
+Both `.jpg` and `.png` files are supported and automatically optimized in the project.
+
+### Publishing the content
+
+If your finished adding the content you can open a [pull requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) for the [OriginTrail.club site repository](https://github.com/OriginTrailClub/site)
