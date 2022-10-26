@@ -50,7 +50,6 @@ banner: [[Link to a banner](#banner)]
 To add pages to the course you can add multiple `.mdx` files to the course folder with the following naming convention (`[order]-[slug].mdx`).
 
 ```.mdx
-
 ---
 title: [Page title]
 section: [Section]
@@ -63,7 +62,6 @@ To group multiple page's in the same group use the same value in the section key
 
 
 ```.mdx
-
 ---
 title: [Page title]
 section: Tokenomics
@@ -71,7 +69,6 @@ section: Tokenomics
 ```
 
 ```.mdx
-
 ---
 title: [Page title]
 section: Tokenomics
